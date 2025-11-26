@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Bangladeshi</title>
+
+    <!-- Google site verification for Search Console -->
+    <meta name="google-site-verification" content="c8oJ-F-8-zCV9o6AnR3mNi55ApeDDjCcLbhJ4wyZHbk" />
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     <style>
         /* Reset */
-        * { margin:0; padding:0; box-sizing:border-box; }
+        * { margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth; }
         body { font-family: 'Roboto', sans-serif; color: #2c3e50; line-height:1.6; background: #f5f7fa; }
+
         a { text-decoration:none; }
         img { max-width:100%; }
 
@@ -30,7 +39,7 @@
         .hero h1 { font-size:4rem; margin-bottom:20px; }
         .hero p { font-size:1.5rem; margin-bottom:30px; max-width:700px; }
         .hero .btn { background:#e67e22; color:white; padding:15px 30px; font-size:1.2rem; border-radius:8px; transition:0.3s; }
-        .hero .btn:hover { background:#d35400; }
+        .hero .btn:hover { background:#d35400; transform:scale(1.05); }
 
         /* Sections */
         section { padding:80px 20px; max-width:1200px; margin:0 auto; }
@@ -39,8 +48,9 @@
 
         /* Features */
         .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; margin-top:50px; }
-        .feature { background:white; padding:30px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; }
-        .feature:hover { transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.15); }
+        .feature { background:white; padding:30px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:0.3s; text-align:center; }
+        .feature:hover { transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.15); }
+        .feature i { font-size:2.5rem; margin-bottom:15px; color:#e67e22; }
         .feature h3 { font-size:1.5rem; margin-bottom:15px; color:#2c3e50; }
         .feature p { font-size:1rem; color:#666; }
 
@@ -48,10 +58,13 @@
         .contact form { max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:15px; }
         .contact input, .contact textarea { padding:15px; border:1px solid #ccc; border-radius:8px; font-size:1rem; width:100%; }
         .contact button { background:#e67e22; color:white; padding:15px; border:none; border-radius:8px; font-size:1.2rem; cursor:pointer; transition:0.3s; }
-        .contact button:hover { background:#d35400; }
+        .contact button:hover { background:#d35400; transform:scale(1.05); }
 
         /* Footer */
-        footer { text-align:center; padding:30px 20px; background:#34495e; color:white; }
+        footer { text-align:center; padding:40px 20px; background:#34495e; color:white; }
+        footer .social-icons { margin-top:15px; }
+        footer .social-icons a { color:white; margin:0 10px; font-size:1.5rem; transition:0.3s; }
+        footer .social-icons a:hover { color:#e67e22; }
 
         /* Responsive */
         @media(max-width:768px) {
@@ -60,7 +73,6 @@
             section h2 { font-size:2rem; }
             section p { font-size:1rem; }
         }
-
     </style>
 </head>
 <body>
@@ -93,18 +105,22 @@
         <h2>Our Features</h2>
         <div class="features">
             <div class="feature">
+                <i class="fas fa-brain"></i>
                 <h3>Mind Games</h3>
                 <p>Engaging and educational games to keep your mind sharp and entertained.</p>
             </div>
             <div class="feature">
+                <i class="fas fa-music"></i>
                 <h3>Cultural Resources</h3>
                 <p>Explore our collection of Bangladeshi music, literature, and art from around the world.</p>
             </div>
             <div class="feature">
+                <i class="fas fa-users"></i>
                 <h3>Community Events</h3>
                 <p>Connect with other Bangladeshis through online events, meetups, and collaborations.</p>
             </div>
             <div class="feature">
+                <i class="fas fa-book"></i>
                 <h3>Learning Tools</h3>
                 <p>Access resources to learn Bangla language, culture, and more, all in one place.</p>
             </div>
@@ -126,6 +142,12 @@
     <!-- Footer -->
     <footer>
         &copy; 2025 Hello Bangladeshi Ltd. All rights reserved.
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
     </footer>
 
 </body>
