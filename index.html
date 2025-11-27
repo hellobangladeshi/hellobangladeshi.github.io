@@ -5,448 +5,545 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Bangladeshi Ltd - Connecting Bangladeshis Worldwide</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Empowering the global Bangladeshi community through innovative digital solutions, cultural preservation, and a global opportunity hub.">
+    <meta name="keywords" content="Bangladeshi, Global Community, BD, Digital Solutions, Cultural Preservation, Opportunity Hub">
+    <meta name="author" content="Hello Bangladeshi Ltd">
     
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Lottie -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
 
     <style>
+        /* General Styles */
         * { margin:0; padding:0; box-sizing:border-box; }
         body { font-family: 'Poppins', sans-serif; color: #2c3e50; line-height:1.6; background: #f8f9fa; overflow-x: hidden; }
         a { text-decoration:none; }
-        img { max-width:100%; }
+        img { max-width:100%; height:auto; display:block; }
+        .container { max-width:1200px; margin:0 auto; padding:0 20px; }
 
         /* Navbar */
         nav {
             display:flex; justify-content:space-between; align-items:center;
-            padding:20px 60px; background:rgba(26, 35, 46, 0.95); backdrop-filter: blur(10px);
-            color:white; position:sticky; top:0; z-index:1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding:15px 60px; background:rgba(26, 35, 46, 0.98); backdrop-filter: blur(8px);
+            color:white; position:sticky; top:0; z-index:1000; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .logo { font-size:1.5rem; font-weight:700; color:#ff6b6b; }
+        .logo { font-size:1.7rem; font-weight:800; color:#ff6b6b; display:flex; align-items:center; gap:10px; }
         .menu { display:flex; gap:30px; }
-        nav a { color:white; font-weight:500; transition:0.3s; position:relative; }
-        nav a::after { content:''; position:absolute; bottom:-5px; left:0; width:0; height:2px; background:#ff6b6b; transition:0.3s; }
+        nav a { color:white; font-weight:500; transition:color 0.3s; position:relative; padding:5px 0; }
+        nav a::after { content:''; position:absolute; bottom:0; left:50%; width:0; height:3px; background:#ff6b6b; transition:all 0.3s ease-out; transform:translateX(-50%); border-radius:1.5px; }
+        nav a:hover { color:#ff6b6b; }
         nav a:hover::after { width:100%; }
+
+        /* AdSense Header Slot */
+        .adsense-header-slot {
+            width: 100%; background: #FF4081; /* Applied user preference color for professional ad context */
+            padding: 10px 0; text-align: center; font-size: 0.9rem; color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .adsense-header-slot .ad-placeholder {
+            max-width: 970px; height: 90px; margin: 0 auto; background: rgba(255, 255, 255, 0.1);
+            display: flex; align-items: center; justify-content: center; border-radius: 5px;
+            border: 1px dashed rgba(255, 255, 255, 0.5);
+        }
+        /* Media query for smaller mobile ad size */
+        @media (max-width: 768px) {
+            .adsense-header-slot .ad-placeholder { max-width: 320px; height: 50px; }
+        }
 
         /* Hero Section */
         .hero {
             display:flex; flex-direction:column; justify-content:center; align-items:center;
-            text-align:center; min-height:100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color:white; padding:60px 20px; position:relative; overflow:hidden;
+            text-align:center; min-height:90vh; background: linear-gradient(135deg, #4a69bd 0%, #3d4a69 100%);
+            color:white; padding:80px 20px; position:relative; overflow:hidden;
         }
         .hero::before {
             content:''; position:absolute; top:0; left:0; right:0; bottom:0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity:0.3;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity:0.6;
         }
-        #lottie-animation { width:350px; height:350px; margin-bottom:30px; position:relative; z-index:1; }
-        .hero h1 { font-size:4.5rem; margin-bottom:20px; font-weight:700; position:relative; z-index:1; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
-        .hero .subtitle { font-size:1.8rem; margin-bottom:15px; font-weight:300; position:relative; z-index:1; }
-        .hero p { font-size:1.3rem; margin-bottom:40px; max-width:800px; position:relative; z-index:1; opacity:0.95; }
-        .hero .cta-buttons { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; position:relative; z-index:1; }
-        .hero .btn { background:#ff6b6b; color:white; padding:18px 40px; font-size:1.1rem; border-radius:50px; transition:0.3s; box-shadow: 0 4px 15px rgba(255,107,107,0.4); font-weight:600; }
-        .hero .btn:hover { background:#ff5252; transform:translateY(-3px); box-shadow: 0 6px 20px rgba(255,107,107,0.6); }
-        .hero .btn-secondary { background:transparent; border:2px solid white; }
-        .hero .btn-secondary:hover { background:white; color:#667eea; }
+        #lottie-animation { width:300px; height:300px; margin-bottom:30px; position:relative; z-index:1; }
+        .hero h1 { font-size:4rem; margin-bottom:15px; font-weight:800; position:relative; z-index:1; text-shadow: 2px 4px 6px rgba(0,0,0,0.3); }
+        .hero .subtitle { font-size:1.6rem; margin-bottom:15px; font-weight:400; position:relative; z-index:1; opacity:0.9; }
+        .hero p { font-size:1.1rem; margin-bottom:50px; max-width:850px; position:relative; z-index:1; opacity:0.95; }
+        .hero .cta-buttons { display:flex; gap:25px; flex-wrap:wrap; justify-content:center; position:relative; z-index:1; }
+        .hero .btn { background:#ff6b6b; color:white; padding:15px 35px; font-size:1.05rem; border-radius:30px; transition:0.3s; box-shadow: 0 4px 15px rgba(255,107,107,0.4); font-weight:600; text-transform:uppercase; letter-spacing:1px; border:2px solid transparent; }
+        .hero .btn:hover { background:#ff5252; transform:translateY(-2px); box-shadow: 0 8px 25px rgba(255,107,107,0.6); }
+        .hero .btn-secondary { background:transparent; border:2px solid white; box-shadow: none; }
+        .hero .btn-secondary:hover { background:white; color:#4a69bd; box-shadow: 0 8px 25px rgba(255,255,255,0.2); }
 
         /* Stats Section */
         .stats {
-            background:#1a232e; color:white; padding:60px 20px;
+            background:#1a232e; color:white; padding:40px 20px;
             display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:40px;
             max-width:1200px; margin:0 auto; text-align:center;
         }
-        .stat h3 { font-size:3rem; color:#ff6b6b; margin-bottom:10px; font-weight:700; }
-        .stat p { font-size:1.1rem; opacity:0.9; }
+        .stat { border-right: 1px solid rgba(255,255,255,0.1); padding-right: 40px; }
+        .stat:last-child { border-right: none; padding-right: 0; }
+        .stat h3 { font-size:3.5rem; color:#ff6b6b; margin-bottom:5px; font-weight:700; }
+        .stat p { font-size:1rem; opacity:0.8; text-transform:uppercase; letter-spacing:1px; }
 
         /* Sections */
-        section { padding:100px 20px; max-width:1200px; margin:0 auto; }
-        section h2 { font-size:3rem; margin-bottom:20px; text-align:center; color:#1a232e; font-weight:700; position:relative; display:inline-block; left:50%; transform:translateX(-50%); }
-        section h2::after { content:''; position:absolute; bottom:-10px; left:50%; transform:translateX(-50%); width:80px; height:4px; background:#ff6b6b; border-radius:2px; }
-        section p { font-size:1.2rem; max-width:900px; margin:20px auto 60px; text-align:center; color:#555; line-height:1.8; }
+        section { padding:100px 0; }
+        section h2 { font-size:2.8rem; margin-bottom:15px; text-align:center; color:#1a232e; font-weight:700; position:relative; display:block; text-transform:uppercase; letter-spacing:1px; }
+        section h2::after { content:''; position:absolute; bottom:-10px; left:50%; transform:translateX(-50%); width:60px; height:4px; background:#ff6b6b; border-radius:2px; }
+        section p.section-subtitle { font-size:1.1rem; max-width:800px; margin:20px auto 60px; text-align:center; color:#666; line-height:1.7; font-weight:300; }
 
         /* About Section */
-        .about-content { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; margin-top:40px; }
+        .about-content { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; margin-top:40px; }
         .about-text { text-align:left; }
-        .about-text h3 { font-size:2rem; color:#1a232e; margin-bottom:20px; font-weight:600; }
-        .about-text p { text-align:left; margin:0 0 20px 0; }
-        .about-image { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius:20px; padding:40px; display:flex; align-items:center; justify-content:center; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-        .about-image i { font-size:150px; color:white; opacity:0.9; }
+        .about-text h3 { font-size:2rem; color:#1a232e; margin-bottom:15px; font-weight:700; }
+        .about-text p { text-align:left; margin:0 0 15px 0; font-size:1rem; color:#555; }
+        .about-image { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius:25px; padding:60px; display:flex; align-items:center; justify-content:center; box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .about-image i { font-size:180px; color:white; opacity:0.9; }
 
         /* Features */
-        .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:40px; margin-top:50px; }
-        .feature { background:white; padding:40px 30px; border-radius:20px; box-shadow:0 5px 20px rgba(0,0,0,0.08); transition:0.3s; border-top:4px solid #ff6b6b; text-align:center; }
-        .feature:hover { transform:translateY(-10px); box-shadow:0 15px 40px rgba(0,0,0,0.15); }
-        .feature i { font-size:3.5rem; color:#667eea; margin-bottom:20px; }
-        .feature h3 { font-size:1.6rem; margin-bottom:15px; color:#1a232e; font-weight:600; }
-        .feature p { font-size:1rem; color:#666; line-height:1.7; text-align:center; }
+        .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:40px; margin-top:50px; }
+        .feature { background:white; padding:40px 30px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.08); transition:transform 0.3s, box-shadow 0.3s; border-top:5px solid #ff6b6b; text-align:center; position:relative; }
+        .feature:hover { transform:translateY(-8px); box-shadow:0 18px 45px rgba(0,0,0,0.15); }
+        .feature i { font-size:3rem; color:#4a69bd; margin-bottom:20px; transition:color 0.3s; }
+        .feature:hover i { color:#ff6b6b; }
+        .feature h3 { font-size:1.4rem; margin-bottom:10px; color:#1a232e; font-weight:700; }
+        .feature p { font-size:0.95rem; color:#666; line-height:1.6; text-align:center; }
+
+        /* AdSense Feature Block Slot */
+        .adsense-feature-block-slot {
+            padding: 40px 0; text-align: center; max-width: 728px; margin: 60px auto 0;
+            background: #e9ecef; border-radius: 10px; border: 1px solid #ddd;
+        }
+        .adsense-feature-block-slot .ad-placeholder {
+            width: 90%; max-width: 728px; height: 90px; margin: 0 auto; background: rgba(0, 0, 0, 0.05);
+            display: flex; align-items: center; justify-content: center; border-radius: 5px;
+            border: 1px dashed #999;
+        }
+        @media (max-width: 768px) {
+            .adsense-feature-block-slot { max-width: 100%; padding: 20px 10px; margin-top: 40px; }
+            .adsense-feature-block-slot .ad-placeholder { max-width: 300px; height: 250px; } /* Example mobile ad size */
+        }
+
+        /* Opportunity Hub Section (New Feature) */
+        .opportunity-hub { background:#f1f4f9; }
+        .hub-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; margin-top:50px; }
+        .hub-card { background:white; padding:30px; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.05); border-left:5px solid #4a69bd; transition:transform 0.3s; }
+        .hub-card:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.1); }
+        .hub-card i { font-size:2rem; color:#ff6b6b; margin-bottom:15px; }
+        .hub-card h4 { font-size:1.3rem; margin-bottom:10px; color:#1a232e; font-weight:600; }
+        .hub-card p { font-size:0.95rem; color:#555; }
+        .hub-card a { color:#4a69bd; font-weight:500; display:inline-block; margin-top:15px; }
+
+        /* Cultural Immersion Section (New Feature) */
+        .cultural-immersion { background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); }
+        .cultural-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:30px; margin-top:50px; }
+        .cultural-item { text-align:center; padding:30px; background:white; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
+        .cultural-item i { font-size:4rem; color:#3d4a69; margin-bottom:15px; }
+        .cultural-item h4 { font-size:1.4rem; color:#1a232e; margin-bottom:10px; }
+        .cultural-item p { font-size:0.95rem; color:#666; }
 
         /* Founder Section */
-        .founder {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding:100px 20px;
-        }
+        .founder { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding:100px 0; }
         .founder-content {
-            max-width:1000px; margin:0 auto;
-            background:white; padding:60px; border-radius:20px;
-            box-shadow:0 10px 40px rgba(0,0,0,0.1);
-            display:grid; grid-template-columns:300px 1fr; gap:50px; align-items:center;
+            max-width:1000px; margin:0 auto; background:white; padding:50px; border-radius:20px;
+            box-shadow:0 15px 50px rgba(0,0,0,0.1); display:grid; grid-template-columns:250px 1fr; gap:50px; align-items:center;
         }
         .founder-image {
-            width:250px; height:250px; border-radius:50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display:flex; align-items:center; justify-content:center;
-            box-shadow:0 10px 30px rgba(102,126,234,0.3);
+            width:250px; height:250px; border-radius:50%; margin:0 auto; overflow:hidden;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff4081 100%); /* Slightly different gradient */
+            display:flex; align-items:center; justify-content:center; border:8px solid white;
+            box-shadow:0 10px 30px rgba(255,107,107,0.4);
         }
         .founder-image i { font-size:120px; color:white; }
-        .founder-info h3 { font-size:2.5rem; color:#1a232e; margin-bottom:10px; font-weight:700; }
-        .founder-info .title { font-size:1.3rem; color:#667eea; margin-bottom:20px; font-weight:500; }
-        .founder-info p { color:#555; line-height:1.8; margin-bottom:25px; text-align:left; }
+        .founder-info h3 { font-size:2.2rem; color:#1a232e; margin-bottom:5px; font-weight:700; }
+        .founder-info .title { font-size:1.1rem; color:#4a69bd; margin-bottom:20px; font-weight:500; text-transform:uppercase; letter-spacing:1px; }
+        .founder-info p { color:#555; line-height:1.7; margin-bottom:20px; text-align:left; font-size:1rem; }
         .founder-social { display:flex; gap:15px; flex-wrap:wrap; }
-        .founder-social a { color:#667eea; font-size:1.8rem; transition:0.3s; }
-        .founder-social a:hover { color:#ff6b6b; transform:scale(1.2); }
+        .founder-social a { color:#4a69bd; font-size:1.6rem; transition:0.3s; }
+        .founder-social a:hover { color:#ff6b6b; transform:scale(1.1); }
 
         /* Social Media Section */
-        .social-section { background:#1a232e; color:white; padding:100px 20px; }
+        .social-section { background:#1a232e; color:white; padding:100px 0; }
         .social-section h2 { color:white; }
         .social-section h2::after { background:#ff6b6b; }
-        .social-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; margin-top:50px; max-width:1200px; margin-left:auto; margin-right:auto; }
-        .social-card { background:rgba(255,255,255,0.05); padding:30px; border-radius:15px; text-align:center; transition:0.3s; border:1px solid rgba(255,255,255,0.1); }
-        .social-card:hover { background:rgba(255,255,255,0.1); transform:translateY(-5px); }
-        .social-card i { font-size:3rem; margin-bottom:15px; color:#ff6b6b; }
-        .social-card h4 { font-size:1.3rem; margin-bottom:10px; font-weight:600; }
-        .social-card a { color:#ff6b6b; font-size:0.95rem; transition:0.3s; word-break:break-all; }
-        .social-card a:hover { color:white; }
+        .social-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:30px; margin-top:50px; }
+        .social-card { background:rgba(255,255,255,0.08); padding:25px; border-radius:10px; text-align:center; transition:0.3s; border-bottom:3px solid #ff6b6b; }
+        .social-card:hover { background:rgba(255,255,255,0.15); transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+        .social-card i { font-size:2.5rem; margin-bottom:10px; color:#ff6b6b; }
+        .social-card h4 { font-size:1.2rem; margin-bottom:8px; font-weight:600; color:white; }
+        .social-card a { color:#4a69bd; font-size:0.9rem; transition:color 0.3s; word-break:break-all; }
+        .social-card a:hover { color:#ff6b6b; }
 
         /* Contact */
-        .contact { background:#f8f9fa; }
-        .contact form { max-width:700px; margin:0 auto; display:flex; flex-direction:column; gap:20px; background:white; padding:50px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.08); }
-        .contact input, .contact textarea { padding:18px; border:2px solid #e0e0e0; border-radius:10px; font-size:1rem; width:100%; font-family:'Poppins',sans-serif; transition:0.3s; }
-        .contact input:focus, .contact textarea:focus { outline:none; border-color:#667eea; }
-        .contact button { background:#ff6b6b; color:white; padding:18px; border:none; border-radius:50px; font-size:1.2rem; cursor:pointer; transition:0.3s; font-weight:600; box-shadow:0 4px 15px rgba(255,107,107,0.3); }
-        .contact button:hover { background:#ff5252; transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,107,107,0.4); }
+        .contact { background:white; }
+        .contact-form-container { max-width:800px; margin:0 auto; background:#f8f9fa; padding:50px; border-radius:20px; box-shadow:0 10px 40px rgba(0,0,0,0.08); border-top:5px solid #4a69bd; }
+        .contact form { display:flex; flex-direction:column; gap:20px; }
+        .contact input, .contact textarea { padding:15px; border:1px solid #ddd; border-radius:8px; font-size:1rem; width:100%; font-family:'Poppins',sans-serif; transition:border-color 0.3s; }
+        .contact input:focus, .contact textarea:focus { outline:none; border-color:#ff6b6b; box-shadow: 0 0 0 3px rgba(255,107,107,0.2); }
+        .contact button { background:#4a69bd; color:white; padding:15px; border:none; border-radius:30px; font-size:1.1rem; cursor:pointer; transition:0.3s; font-weight:600; text-transform:uppercase; letter-spacing:1px; box-shadow:0 4px 15px rgba(74,105,189,0.3); }
+        .contact button:hover { background:#3a5495; transform:translateY(-2px); box-shadow:0 6px 20px rgba(74,105,189,0.4); }
 
         /* Footer */
         footer {
-            background:#0f1419; color:white; padding:60px 20px 30px;
+            background:#101820; color:white; padding:80px 0 30px;
         }
         .footer-content {
-            max-width:1200px; margin:0 auto;
-            display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px;
+            display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:40px;
             margin-bottom:40px;
         }
-        .footer-section h3 { font-size:1.5rem; margin-bottom:20px; color:#ff6b6b; font-weight:600; }
-        .footer-section p, .footer-section a { color:#bbb; line-height:1.8; display:block; margin-bottom:10px; transition:0.3s; }
-        .footer-section a:hover { color:#ff6b6b; padding-left:5px; }
-        .footer-bottom { text-align:center; padding-top:30px; border-top:1px solid rgba(255,255,255,0.1); color:#888; }
+        .footer-section h3 { font-size:1.4rem; margin-bottom:25px; color:#ff6b6b; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; }
+        .footer-section p, .footer-section a { color:#a8b2c0; line-height:1.8; display:block; margin-bottom:10px; transition:color 0.3s, padding-left 0.3s; font-size:0.95rem; }
+        .footer-section a:hover { color:#4a69bd; padding-left:5px; }
+        .footer-contact-info i { margin-right: 10px; color: #ff6b6b; }
+        .footer-bottom { text-align:center; padding-top:30px; border-top:1px solid rgba(255,255,255,0.1); color:#777; font-size:0.9rem; }
         .footer-social { display:flex; gap:15px; margin-top:15px; }
-        .footer-social a { color:#bbb; font-size:1.5rem; transition:0.3s; }
-        .footer-social a:hover { color:#ff6b6b; }
+        .footer-social a { color:#a8b2c0; font-size:1.4rem; transition:0.3s; }
+        .footer-social a:hover { color:#4a69bd; }
+
+        /* AdSense Footer Slot (Native Ad/Sidebar) */
+        .adsense-footer-slot .ad-placeholder {
+            width: 100%; height: 250px; margin: 15px 0 0; background: rgba(255, 255, 255, 0.05);
+            display: flex; align-items: center; justify-content: center; border-radius: 5px;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+        }
 
         /* Responsive */
+        @media(max-width:992px) {
+            nav { padding:15px 30px; }
+            .hero h1 { font-size:3.5rem; }
+            .stats { grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); }
+            .stat { border-right: none; padding-right: 0; }
+            .about-content { grid-template-columns:1fr; gap:40px; }
+            .about-image { order:-1; padding:40px; }
+            .cultural-grid { grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); }
+            .founder-content { grid-template-columns:1fr; text-align:center; padding:40px 30px; }
+            .founder-info p { text-align:center; }
+            .founder-social { justify-content:center; }
+        }
+
         @media(max-width:768px) {
             nav { padding:15px 20px; flex-direction:column; gap:15px; }
             .menu { gap:15px; }
-            .hero h1 { font-size:2.5rem; }
-            .hero .subtitle { font-size:1.3rem; }
-            .hero p { font-size:1.1rem; }
-            .hero .cta-buttons { flex-direction:column; }
-            section h2 { font-size:2rem; }
-            section p { font-size:1rem; }
-            .about-content { grid-template-columns:1fr; }
-            .founder-content { grid-template-columns:1fr; text-align:center; padding:40px 30px; }
-            .founder-image { margin:0 auto; }
-            .founder-info p { text-align:center; }
-            .founder-social { justify-content:center; }
+            .hero h1 { font-size:2.8rem; }
+            .hero .subtitle { font-size:1.2rem; }
+            .hero p { font-size:1rem; }
+            .hero .cta-buttons { flex-direction:column; gap:15px; }
+            section h2 { font-size:2.2rem; }
+            section p.section-subtitle { font-size:1rem; }
             .stats { grid-template-columns:1fr 1fr; }
+            .footer-content { gap:30px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav>
-        <div class="logo"><i class="fas fa-globe-asia"></i> Hello Bangladeshi</div>
+        <div class="logo"><i class="fas fa-globe-asia"></i> HELLO BANGLADESHI LTD</div>
         <div class="menu">
             <a href="#about">About</a>
             <a href="#features">Services</a>
-            <a href="#founder">Founder</a>
-            <a href="#social">Connect</a>
+            <a href="#opportunities">Opportunities</a>
+            <a href="#cultural">Culture</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <div class="adsense-header-slot">
+        <div class="container">
+            <div class="ad-placeholder">
+                <p style="margin: 0;">ADVERTISEMENT: Header Responsive Ad Slot (970x90/320x50)</p>
+                </div>
+        </div>
+    </div>
+
     <section class="hero">
         <div id="lottie-animation"></div>
-        <h1>Hello Bangladeshi Ltd</h1>
-        <p class="subtitle">Connecting Bangladeshis Worldwide</p>
-        <p>Empowering the global Bangladeshi community through innovative digital solutions, cultural preservation, and meaningful connections across borders.</p>
+        <h1>HELLO BANGLADESHI LTD</h1>
+        <p class="subtitle">A Global Ecosystem for the Diaspora</p>
+        <p>Empowering the global Bangladeshi community through innovative digital solutions, robust professional networking, and meaningful cultural connections across all borders.</p>
         <div class="cta-buttons">
-            <a href="#about" class="btn">Discover More</a>
-            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            <a href="#opportunities" class="btn">Explore Opportunities</a>
+            <a href="#contact" class="btn btn-secondary">Partner With Us</a>
         </div>
     </section>
 
-    <!-- Stats Section -->
     <div class="stats">
         <div class="stat">
             <h3>20+</h3>
             <p>Social Platforms</p>
         </div>
         <div class="stat">
-            <h3>Global</h3>
-            <p>Reach</p>
+            <h3>50K+</h3>
+            <p>Community Members</p>
         </div>
         <div class="stat">
             <h3>24/7</h3>
-            <p>Community Support</p>
+            <p>Global Reach</p>
         </div>
         <div class="stat">
             <h3>100%</h3>
-            <p>Dedicated</p>
+            <p>Cultural Focus</p>
         </div>
     </div>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Building bridges across continents, preserving heritage, and fostering growth</p>
+    <section id="about" class="container">
+        <h2>About Our Vision</h2>
+        <p class="section-subtitle">Building bridges across continents, preserving heritage, and fostering professional and personal growth.</p>
         <div class="about-content">
             <div class="about-text">
-                <h3>Our Mission</h3>
+                <h3>Our Mission & Values</h3>
                 <p>Hello Bangladeshi Ltd is a pioneering digital platform dedicated to uniting Bangladeshis worldwide. We believe in the power of community, culture, and connection to create meaningful experiences that transcend geographical boundaries.</p>
-                <p>Through innovative technology and cultural appreciation, we provide a comprehensive ecosystem where Bangladeshis can celebrate their heritage, connect with their roots, and build lasting relationships with fellow community members around the globe.</p>
-                <p>Our platform serves as a cultural hub, offering engaging content, educational resources, entertainment, and networking opportunities designed specifically for the global Bangladeshi diaspora.</p>
+                <p>Through **innovative technology** and a deep appreciation for our heritage, we provide a comprehensive ecosystem where the Bangladeshi diaspora can celebrate their roots, connect with fellow community members, and explore global opportunities.</p>
+                <p>Our core values are **Unity**, **Innovation**, and **Cultural Preservation**, guiding us to be the premier hub for the global Bangladeshi network.</p>
             </div>
             <div class="about-image">
-                <i class="fas fa-users"></i>
+                <i class="fas fa-handshake"></i>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features">
-        <h2>Our Services</h2>
-        <p>Comprehensive solutions designed for the global Bangladeshi community</p>
-        <div class="features">
+    <hr>
+
+    <section id="features" class="container">
+        <h2>Core Services</h2>
+        <p class="section-subtitle">Comprehensive digital solutions and platforms designed to serve the needs of the global Bangladeshi community.</p>
+        <div class="features-grid">
             <div class="feature">
-                <i class="fas fa-brain"></i>
-                <h3>Mind Games & Entertainment</h3>
-                <p>Engaging puzzle games, brain teasers, and educational challenges designed to entertain while sharpening cognitive skills.</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-palette"></i>
-                <h3>Cultural Resources</h3>
-                <p>Extensive collection of Bangladeshi music, literature, art, and cultural content celebrating our rich heritage.</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-calendar-alt"></i>
-                <h3>Community Events</h3>
-                <p>Virtual meetups, cultural celebrations, webinars, and networking events connecting Bangladeshis worldwide.</p>
+                <i class="fas fa-network-wired"></i>
+                <h3>Global Social Network</h3>
+                <p>Connect with fellow Bangladeshis across **20+ social platforms** to build meaningful professional and personal relationships worldwide.</p>
             </div>
             <div class="feature">
                 <i class="fas fa-graduation-cap"></i>
-                <h3>Learning Platform</h3>
-                <p>Comprehensive resources for learning Bangla language, history, traditions, and cultural practices.</p>
+                <h3>Learning & Education</h3>
+                <p>Access comprehensive resources for learning **Bangla language**, history, traditions, and cultural practices to stay connected to your roots.</p>
             </div>
             <div class="feature">
-                <i class="fas fa-newspaper"></i>
-                <h3>News & Updates</h3>
-                <p>Stay informed with the latest news, stories, and developments from Bangladesh and the global Bangladeshi community.</p>
+                <i class="fas fa-bullhorn"></i>
+                <h3>Community Events & News</h3>
+                <p>Stay informed with the latest news, success stories, and virtual/in-person **cultural events** connecting the diaspora.</p>
             </div>
             <div class="feature">
-                <i class="fas fa-network-wired"></i>
-                <h3>Global Network</h3>
-                <p>Connect with fellow Bangladeshis across 20+ social platforms and build meaningful professional and personal relationships.</p>
+                <i class="fas fa-code"></i>
+                <h3>Digital Solutions & Tech</h3>
+                <p>Leverage our expertise in digital development, web presence, and technology consulting for community-centric projects.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-comments"></i>
+                <h3>24/7 Community Support</h3>
+                <p>Dedicated round-the-clock support channels to assist community members with queries and platform navigation.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-star"></i>
+                <h3>Talent & Showcase Hub</h3>
+                <p>A platform for Bangladeshis worldwide to showcase their talents, business ventures, and creative works to a global audience.</p>
             </div>
         </div>
     </section>
 
-    <!-- Founder Section -->
+    <div class="adsense-feature-block-slot">
+        <div class="container">
+            <div class="ad-placeholder">
+                <p style="margin: 0;">ADVERTISEMENT: In-Content Ad Slot (728x90/300x250)</p>
+                </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <section id="opportunities" class="opportunity-hub">
+        <div class="container">
+            <h2>Global Opportunity Hub</h2>
+            <p class="section-subtitle">Connecting skilled Bangladeshis with job, business, and educational ventures worldwide.</p>
+            <div class="hub-grid">
+                <div class="hub-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>International Job Board</h4>
+                    <p>Curated listings of job opportunities across the globe, focusing on sectors where the diaspora excels. Filter by location and industry.</p>
+                    <a href="#">View Job Listings <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="hub-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Business & Investment Network</h4>
+                    <p>Platform for entrepreneurs to connect with investors, find partners, and promote Bangladeshi businesses globally.</p>
+                    <a href="#">Explore Partnerships <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="hub-card">
+                    <i class="fas fa-scroll"></i>
+                    <h4>Scholarship & Grants Directory</h4>
+                    <p>A comprehensive, regularly updated directory of international scholarships, grants, and educational funding opportunities.</p>
+                    <a href="#">Find Scholarships <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="cultural" class="cultural-immersion">
+        <div class="container">
+            <h2>Cultural Immersion</h2>
+            <p class="section-subtitle">A dedicated space to celebrate and preserve the vibrant heritage and traditions of Bangladesh.</p>
+            <div class="cultural-grid">
+                <div class="cultural-item">
+                    <i class="fas fa-music"></i>
+                    <h4>Bangla Arts & Music</h4>
+                    <p>Access to traditional and contemporary Bangladeshi music, films, and art archives.</p>
+                </div>
+                <div class="cultural-item">
+                    <i class="fas fa-utensils"></i>
+                    <h4>Cuisine & Recipes</h4>
+                    <p>Explore authentic regional Bangladeshi recipes and culinary traditions from across the country.</p>
+                </div>
+                <div class="cultural-item">
+                    <i class="fas fa-landmark"></i>
+                    <h4>History & Geography</h4>
+                    <p>Educational content on the history of Bangladesh, its liberation war, and diverse geography.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
     <section class="founder" id="founder">
-        <h2>Meet Our Founder</h2>
-        <div class="founder-content">
-            <div class="founder-image">
-                <i class="fas fa-user-tie"></i>
-            </div>
-            <div class="founder-info">
-                <h3>Farabi Walid</h3>
-                <p class="title">Founder & CEO, Hello Bangladeshi Ltd</p>
-                <p>Farabi Walid is a visionary entrepreneur and community builder dedicated to connecting Bangladeshis worldwide. With a passion for technology, culture, and community development, Farabi founded Hello Bangladeshi Ltd to create a platform that celebrates Bangladeshi heritage while fostering global connections.</p>
-                <p>Through innovative digital solutions and a deep understanding of community needs, Farabi continues to lead Hello Bangladeshi Ltd in its mission to unite, educate, and empower the global Bangladeshi diaspora.</p>
-                <div class="founder-social">
-                    <a href="https://linkedin.com/in/farabiwalid/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/farabiwalid" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/muhammadwalidr" target="_blank" title="X/Twitter"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://facebook.com/farabiwalidofficial" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="https://instagram.com/farabiwalidofficial" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://youtube.com/@FarabiWalidOfficial" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://linktr.ee/FarabiWalid" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+        <div class="container">
+            <h2>Meet Our Founder</h2>
+            <div class="founder-content">
+                <div class="founder-image">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="founder-info">
+                    <h3>Farabi Walid</h3>
+                    <p class="title">Founder & CEO, Hello Bangladeshi Ltd</p>
+                    <p>Farabi Walid is a visionary entrepreneur and community leader dedicated to connecting Bangladeshis worldwide. With a background in technology and a deep cultural commitment, Farabi established Hello Bangladeshi Ltd to bridge geographical gaps.</p>
+                    <p>His leadership focuses on leveraging innovative digital strategies to ensure the global diaspora remains connected to its heritage while achieving professional excellence across the world.</p>
+                    <div class="founder-social">
+                        <a href="https://linkedin.com/in/farabiwalid/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/farabiwalid" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/muhammadwalidr" target="_blank" title="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://facebook.com/farabiwalidofficial" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/farabiwalidofficial" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@FarabiWalidOfficial" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://linktr.ee/FarabiWalid" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Media Section -->
     <section class="social-section" id="social">
-        <h2>Connect With Us</h2>
-        <p>Join our growing community across multiple platforms</p>
-        <div class="social-grid">
-            <div class="social-card">
-                <i class="fab fa-youtube"></i>
-                <h4>YouTube</h4>
-                <a href="https://youtube.com/@hellobangladeshiofficial" target="_blank">@hellobangladeshiofficial</a>
-            </div>
-            <div class="social-card">
-                <i class="fab fa-facebook"></i>
-                <h4>Facebook</h4>
-                <a href="https://facebook.com/hellobangladeshiofficial" target="_blank">hellobangladeshiofficial</a>
-            </div>
-            <div class="social-card">
-                <i class="fab fa-instagram"></i>
-                <h4>Instagram</h4>
-                <a href="https://instagram.com/hellobangladeshiofficial/" target="_blank">@hellobangladeshiofficial</a>
-            </div>
-            <div class="social-card">
-                <i class="fab fa-x-twitter"></i>
-                <h4>X (Twitter)</h4>
-                <a href="https://x.com/hellobdofficial" target="_blank">@hellobdofficial</a>
-            </div>
-            <div class="social-card">
-                <i class="fab fa-tiktok"></i>
-                <h4>TikTok</h4>
-                <a href="https://tiktok.com/@hellobangladeshiofficial" target="_blank">@hellobangladeshiofficial</a>
-            </div>
-            <div class="social-card">
-                <i class="fab fa-threads"></i>
-                <h4>Threads</h4>
-                <a href="https://threads.net/@hellobangladeshiofficial" target="_blank">@hellobangladeshiofficial</a>
-            </div>
-            <div class="social-card">
-                <i class="fab fa-linkedin"></i>
-                <h4>LinkedIn</h4>
-                <a href="https://linkedin.com/in/hellobangladeshi/" target="_blank">hellobangladeshi</a>
-            </div>
-            <div class="social-card">
-                <i class="fab fa-github"></i>
-                <h4>GitHub</h4>
-                <a href="https://github.com/hellobangladeshi" target="_blank">hellobangladeshi</a>
-            </div>
-            <div class="social-card">
-                <i class="fab fa-whatsapp"></i>
-                <h4>WhatsApp</h4>
-                <a href="https://whatsapp.com/channel/0029Vao5qD3HgZWWODlsiX3s" target="_blank">Join Channel</a>
-            </div>
-            <div class="social-card">
-                <i class="fab fa-telegram"></i>
-                <h4>Telegram</h4>
-                <a href="https://t.me/hellobangladeshiofficial" target="_blank">hellobangladeshiofficial</a>
-            </div>
-            <div class="social-card">
-                <i class="fab fa-pinterest"></i>
-                <h4>Pinterest</h4>
-                <a href="https://pinterest.com/hellobangladeshiofficial" target="_blank">hellobangladeshiofficial</a>
-            </div>
-            <div class="social-card">
-                <i class="fab fa-twitch"></i>
-                <h4>Twitch</h4>
-                <a href="https://twitch.tv/hellobangladeshiofficial" target="_blank">hellobangladeshiofficial</a>
-            </div>
-            <div class="social-card">
-                <i class="fas fa-blog"></i>
-                <h4>Blog</h4>
-                <a href="https://hellobangladeshiofficial.blogspot.com/" target="_blank">Official Blog</a>
-            </div>
-            <div class="social-card">
-                <i class="fas fa-globe"></i>
-                <h4>Google Sites</h4>
-                <a href="https://sites.google.com/view/hellobangladeshi" target="_blank">Visit Site</a>
-            </div>
-            <div class="social-card">
-                <i class="fas fa-user-circle"></i>
-                <h4>About.me</h4>
-                <a href="https://about.me/hellobangladeshi" target="_blank">hellobangladeshi</a>
-            </div>
-            <div class="social-card">
-                <i class="fas fa-book"></i>
-                <h4>Wiki</h4>
-                <a href="https://en.everybodywiki.com/Hello_Bangladeshi" target="_blank">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Get In Touch</h2>
-        <p>Have questions, suggestions, or want to collaborate? We'd love to hear from you!</p>
-        <form id="contactForm">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email Address" required>
-            <input type="text" placeholder="Subject">
-            <textarea rows="6" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Hello Bangladeshi Ltd</h3>
-                <p>Connecting Bangladeshis worldwide through culture, community, and innovation.</p>
-                <div class="footer-social">
-                    <a href="https://facebook.com/hellobangladeshiofficial" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://youtube.com/@hellobangladeshiofficial" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="https://instagram.com/hellobangladeshiofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://x.com/hellobdofficial" target="_blank"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://linkedin.com/in/hellobangladeshi/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <div class="container">
+            <h2>Connect With Us</h2>
+            <p class="section-subtitle">Join our growing community across multiple platforms and stay updated.</p>
+            <div class="social-grid">
+                <div class="social-card">
+                    <i class="fab fa-youtube"></i>
+                    <h4>YouTube</h4>
+                    <a href="https://youtube.com/@hellobangladeshiofficial" target="_blank">@hellobangladeshiofficial</a>
+                </div>
+                <div class="social-card">
+                    <i class="fab fa-facebook"></i>
+                    <h4>Facebook</h4>
+                    <a href="https://facebook.com/hellobangladeshiofficial" target="_blank">hellobangladeshiofficial</a>
+                </div>
+                <div class="social-card">
+                    <i class="fab fa-instagram"></i>
+                    <h4>Instagram</h4>
+                    <a href="https://instagram.com/hellobangladeshiofficial/" target="_blank">@hellobangladeshiofficial</a>
+                </div>
+                <div class="social-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h4>LinkedIn</h4>
+                    <a href="https://linkedin.com/in/hellobangladeshi/" target="_blank">hellobangladeshi</a>
+                </div>
+                <div class="social-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h4>WhatsApp</h4>
+                    <a href="https://whatsapp.com/channel/0029Vao5qD3HgZWWODlsiX3s" target="_blank">Join Channel</a>
+                </div>
+                <div class="social-card">
+                    <i class="fas fa-blog"></i>
+                    <h4>Official Blog</h4>
+                    <a href="https://hellobangladeshiofficial.blogspot.com/" target="_blank">Read Insights</a>
                 </div>
             </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="#about">About Us</a>
-                <a href="#features">Services</a>
-                <a href="#founder">Our Founder</a>
-                <a href="#social">Social Media</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <a href="https://hellobangladeshiofficial.blogspot.com/" target="_blank">Blog</a>
-                <a href="https://github.com/hellobangladeshi" target="_blank">GitHub</a>
-                <a href="https://sites.google.com/view/hellobangladeshi" target="_blank">Community</a>
-                <a href="https://en.everybodywiki.com/Hello_Bangladeshi" target="_blank">Wiki</a>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p><i class="fas fa-envelope"></i> 	info.hellobangladeshiltd@gmail.com</p>
-                <p><i class="fas fa-globe"></i> Sylhet, Bangladesh</p>
-                <p><i class="fas fa-clock"></i> 24/7 Support</p>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-subtitle">Have questions, suggestions, or want to explore collaboration? We'd love to hear from you!</p>
+            <div class="contact-form-container">
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Full Name" required>
+                    <input type="email" placeholder="Your Professional Email" required>
+                    <input type="text" placeholder="Subject of Inquiry" required>
+                    <textarea rows="6" placeholder="Your Detailed Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Hello Bangladeshi Ltd. All rights reserved. | Founded by Farabi Walid</p>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section adsense-footer-slot">
+                    <h3>Hello Bangladeshi Ltd</h3>
+                    <p>Connecting Bangladeshis worldwide through culture, community, and innovation.</p>
+                    <div class="ad-placeholder">
+                        <p style="margin: 0;">ADVERTISEMENT: Footer Native Ad Slot (e.g., 300x250)</p>
+                        </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="#about">About Us</a>
+                    <a href="#features">Services</a>
+                    <a href="#opportunities">Opportunity Hub</a>
+                    <a href="#cultural">Cultural Immersion</a>
+                    <a href="#founder">Our Leadership</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="https://hellobangladeshiofficial.blogspot.com/" target="_blank">Official Blog</a>
+                    <a href="https://github.com/hellobangladeshi" target="_blank">Developer Resources</a>
+                    <a href="https://sites.google.com/view/hellobangladeshi" target="_blank">Community Hub</a>
+                    <a href="https://en.everybodywiki.com/Hello_Bangladeshi" target="_blank">Wiki Information</a>
+                </div>
+                <div class="footer-section footer-contact-info">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> info.hellobangladeshiltd@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Sylhet, Bangladesh (Global Operations)</p>
+                    <p><i class="fas fa-clock"></i> 24/7 Global Support</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/hellobangladeshiofficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://youtube.com/@hellobangladeshiofficial" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://linkedin.com/in/hellobangladeshi/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/hellobdofficial" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hello Bangladeshi Ltd. All Rights Reserved. | Designed and Founded by Farabi Walid</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Lottie Animation Script -->
     <script>
         var animation = lottie.loadAnimation({
             container: document.getElementById('lottie-animation'),
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: 'https://assets7.lottiefiles.com/packages/lf20_p8bfn5to.json'
+            path: 'https://assets7.lottiefiles.com/packages/lf20_p8bfn5to.json' // Example Animation
         });
 
         // Form submission handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
+            alert('Thank you for your message! We will get back to you soon. (Note: This is a placeholder alert.)');
             this.reset();
         });
 
@@ -454,9 +551,12 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 }
             });
         });
