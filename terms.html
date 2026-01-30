@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সেবার শর্তাবলী (Terms & Conditions) | Hello Bangladeshi</title>
+    <meta name="description" content="Hello Bangladeshi অ্যাপ ও ওয়েবসাইটের জন্য সেবার শর্তাবলী">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #EF0479;
+            --secondary: #FFD93D;
+            --accent: #4F46E5;
+            --dark: #0a0e27;
+            --light: #f8fafc;
+            --gradient: linear-gradient(135deg, #EF0479, #FFD93D);
+            --gradient-alt: linear-gradient(135deg, #4F46E5, #8B5CF6);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0e27, #1a1d3a, #2d1b4e);
+            color: #fff;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 15px rgba(239, 4, 121, 0.4);
+        }
+        
+        .logo-text h3 {
+            font-size: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .back-btn:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(239, 4, 121, 0.4);
+        }
+        
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .lang-btn {
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .lang-btn.active {
+            background: var(--gradient);
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(239, 4, 121, 0.4);
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Terms Content */
+        .terms-section {
+            padding: 60px 0 80px;
+        }
+        
+        .terms-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .terms-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+        
+        .terms-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Terms Content Box */
+        .terms-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .language-content {
+            display: none;
+        }
+        
+        .language-content.active {
+            display: block;
+        }
+        
+        /* Common Styling for Both Languages */
+        .section-title {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 217, 61, 0.3);
+        }
+        
+        .section-title:first-child {
+            margin-top: 0;
+        }
+        
+        .subsection-title {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin: 30px 0 15px;
+        }
+        
+        .content-text {
+            margin-bottom: 20px;
+            opacity: 0.9;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        .content-list {
+            margin: 20px 0 25px 30px;
+        }
+        
+        .content-list li {
+            margin-bottom: 12px;
+            opacity: 0.9;
+            line-height: 1.7;
+            position: relative;
+        }
+        
+        .content-list li:before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            font-size: 1.2rem;
+        }
+        
+        .content-list ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+        
+        .content-list ol li:before {
+            content: none;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(239, 4, 121, 0.1), rgba(255, 217, 61, 0.1));
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.1), rgba(255, 193, 7, 0.1));
+            border-left: 4px solid #ff5722;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), rgba(0, 188, 212, 0.1));
+            border-left: 4px solid #2196f3;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+        
+        /* Table Styling */
+        .terms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .terms-table th {
+            background: rgba(239, 4, 121, 0.2);
+            padding: 15px;
+            text-align: left;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .terms-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .terms-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .terms-table tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .contact-section h3 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Update Date */
+        .update-date {
+            text-align: center;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-section p {
+            opacity: 0.8;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+        
+        .footer-bottom a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-bottom a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .terms-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .terms-content {
+                padding: 35px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .back-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .terms-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .subsection-title {
+                font-size: 1.3rem;
+            }
+            
+            .terms-content {
+                padding: 25px;
+            }
+            
+            .contact-section {
+                padding: 30px 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 25px;
+            }
+            
+            .lang-toggle {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .lang-btn {
+                width: 90%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .terms-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .content-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">HB</div>
+                <div class="logo-text">
+                    <h3>Hello Bangladeshi</h3>
+                </div>
+            </a>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> হোমে ফিরে যান
+            </a>
+        </div>
+    </header>
+
+    <!-- Terms Section -->
+    <section class="terms-section">
+        <div class="container">
+            <div class="terms-header">
+                <h1>সেবার শর্তাবলী</h1>
+                <p>Hello Bangladeshi অ্যাপ ও ওয়েবসাইট ব্যবহারের জন্য আমাদের শর্তাবলী</p>
+            </div>
+            
+            <!-- Language Toggle -->
+            <div class="lang-toggle">
+                <button id="btnBn" class="lang-btn active">
+                    <i class="fas fa-language"></i> বাংলা
+                </button>
+                <button id="btnEn" class="lang-btn">
+                    <i class="fas fa-globe"></i> English
+                </button>
+            </div>
+            
+            <div class="terms-content">
+                <!-- বাংলা ভার্সন -->
+                <div id="bn" class="language-content active">
+                    <h2 class="section-title">Hello Bangladeshi সেবার শর্তাবলী</h2>
+                    <p class="content-text">
+                        এই সেবার শর্তাবলী ("শর্তাবলী") Hello Bangladeshi মোবাইল অ্যাপ্লিকেশন এবং সংশ্লিষ্ট ওয়েবসাইট (একত্রে "সেবা") ব্যবহার করার নিয়ম ও শর্ত বর্ণনা করে। সেবা ব্যবহারের মাধ্যমে আপনি এই শর্তাবলীতে সম্মত হন। দয়া করে সাবধানে পড়ুন।
+                    </p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>গুরুত্বপূর্ণ:</strong> আপনি যদি এই শর্তাবলীর কোনো অংশের সাথে একমত না হন, তাহলে দয়া করে আমাদের সেবা ব্যবহার করবেন না।</p>
+                    </div>
+                    
+                    <h3 class="subsection-title">১. সেবার বর্ণনা</h3>
+                    <p class="content-text">
+                        Hello Bangladeshi হল একটি ডিজিটাল প্ল্যাটফর্ম যা বাংলাদেশী সম্প্রদায়ের মধ্যে সংযোগ স্থাপন, তথ্য শেয়ার এবং সামাজিক মিথস্ক্রিয়া সহজতর করার জন্য ডিজাইন করা হয়েছে। সেবায় নিম্নলিখিত বৈশিষ্ট্য থাকতে পারে:
+                    </p>
+                    <ul class="content-list">
+                        <li>ব্যক্তিগত প্রোফাইল তৈরি ও পরিচালনা</li>
+                        <li>কমিউনিটি গ্রুপ ও ফোরাম</li>
+                        <li>ইভেন্ট ও কার্যক্রমের ঘোষণা</li>
+                        <li>বিষয়বস্তু শেয়ারিং ও আলোচনা</li>
+                        <li>সংবাদ ও আপডেট প্রদান</li>
+                        <li>অন্যান্য ইন্টারেক্টিভ বৈশিষ্ট্য</li>
+                    </ul>
+                    
+                    <h3 class="subsection-title">২. ব্যবহারকারীর দায়িত্ব</h3>
+                    <p class="content-text">
+                        সেবা ব্যবহার করার সময় আপনার দায়িত্বগুলি নিম্নরূপ:
+                    </p>
+                    <ul class="content-list">
+                        <li>সঠিক, পূর্ণ এবং আপ-টু-ডেট তথ্য প্রদান করুন</li>
+                        <li>আপনার অ্যাকাউন্টের নিরাপত্তা বজায় রাখুন</li>
+                        <li>অন্যান্য ব্যবহারকারীদের প্রতি সম্মানজনক আচরণ করুন</li>
+                        <li>আইন-বিরোধী বা ক্ষতিকর কার্যক্রমে জড়িত হবেন না</li>
+                        <li>সেবার কার্যকারিতা বাধাগ্রস্ত করার চেষ্টা করবেন না</li>
+                    </ul>
+                    
+                    <div class="warning-box">
+                        <p><strong>নিষিদ্ধ কার্যক্রম:</strong> নিম্নলিখিত কার্যক্রম সম্পূর্ণ নিষিদ্ধ:</p>
+                        <ul class="content-list">
+                            <li>স্প্যামিং বা বাণিজ্যিক বিজ্ঞাপন প্রচার</li>
+                            <li>বিদ্বেষপূর্ণ বা আপত্তিকর ভাষা ব্যবহার</li>
+                            <li>অন্য ব্যবহারকারীর পরিচয় চুরি বা অনুকরণ</li>
+                            <li>ম্যালওয়্যার বা ক্ষতিকর কোড প্রচার</li>
+                            <li>কপিরাইট-সুরক্ষিত সামগ্রী শেয়ার</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="subsection-title">৩. অ্যাকাউন্ট ব্যবস্থাপনা</h3>
+                    <p class="content-text">
+                        আপনি যদি Hello Bangladeshi সেবাতে নিবন্ধন করেন, তাহলে আপনাকে একটি অ্যাকাউন্ট তৈরি করতে হবে। আপনার দায়িত্ব:
+                    </p>
+                    <ul class="content-list">
+                        <li>নির্ভুল তথ্য প্রদান</li>
+                        <li>পাসওয়ার্ড গোপন রাখা</li>
+                        <li>আপনার অ্যাকাউন্টের সকল কার্যক্রমের জন্য দায়িত্ব গ্রহণ</li>
+                        <li>যেকোনো অননুমোদিত অ্যাকাউন্ট ব্যবহারের সাথে সাথে আমাদের জানানো</li>
+                    </ul>
+                    
+                    <p class="content-text">
+                        আমরা যেকোনো সময়, যেকোনো কারণ দেখানো ছাড়াই আপনার অ্যাকাউন্ট স্থগিত বা বাতিল করার অধিকার রাখি, বিশেষ করে যদি আপনি এই শর্তাবলী লঙ্ঘন করেন।
+                    </p>
+                    
+                    <h3 class="subsection-title">৪. বিষয়বস্তুর অধিকার</h3>
+                    <p class="content-text">
+                        সেবাতে আপলোড করা বিষয়বস্তুর জন্য দায়িত্ব:
+                    </p>
+                    
+                    <table class="terms-table">
+                        <thead>
+                            <tr>
+                                <th>বিষয়বস্তুর ধরন</th>
+                                <th>দায়িত্ব</th>
+                                <th>অধিকার</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ব্যক্তিগত তথ্য</td>
+                                <td>ব্যবহারকারীর নিজস্ব</td>
+                                <td>প্রাইভেসি পলিসি অনুযায়ী</td>
+                            </tr>
+                            <tr>
+                                <td>শেয়ার করা ছবি/ভিডিও</td>
+                                <td>কপিরাইট মালিকের</td>
+                                <td>শেয়ারিং অধিকার মালিকের</td>
+                            </tr>
+                            <tr>
+                                <td>ব্যবহারকারী জেনারেটেড কন্টেন্ট</td>
+                                <td>পোস্টকারীর</td>
+                                <td>Hello Bangladeshi ডিসপ্লে করার অধিকার রাখে</td>
+                            </tr>
+                            <tr>
+                                <td>প্ল্যাটফর্ম কন্টেন্ট</td>
+                                <td>Hello Bangladeshi</td>
+                                <td>কপিরাইট সুরক্ষিত</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p class="content-text">
+                        আপনি Hello Bangladeshi-এ বিষয়বস্তু পোস্ট করার মাধ্যমে আমাদেরকে বিশ্বব্যাপী, অ-একচেটিয়া, রয়্যালটি-মুক্ত লাইসেন্স প্রদান করেন যা সেই বিষয়বস্তু প্রদর্শন, প্রজনন, পরিবর্তন, অভিযোজিত এবং বিতরণ করার জন্য প্রয়োজনীয়।
+                    </p>
+                    
+                    <h3 class="subsection-title">৫. গোপনীয়তা</h3>
+                    <p class="content-text">
+                        আপনার গোপনীয়তা আমাদের জন্য গুরুত্বপূর্ণ। আমরা আপনার ব্যক্তিগত তথ্য সংগ্রহ, ব্যবহার এবং সুরক্ষা সম্পর্কে আমাদের <a href="privacy-policy.html" style="color: var(--secondary);">গোপনীয়তা নীতি</a>তে বিস্তারিত বর্ণনা করেছি। সেবা ব্যবহারের মাধ্যমে আপনি আমাদের গোপনীয়তা নীতিতেও সম্মত হন।
+                    </p>
+                    
+                    <h3 class="subsection-title">৬. সেবা পরিবর্তন ও বন্ধ</h3>
+                    <p class="content-text">
+                        আমরা যে কোনো সময়, যেকোনো কারণে, পূর্ববর্তী নোটিশ ছাড়াই সেবা পরিবর্তন বা বন্ধ করার অধিকার রাখি। আমরা সেবার উপলব্ধতা বা কার্যকারিতার জন্য কোনো গ্যারান্টি দিই না।
+                    </p>
+                    
+                    <h3 class="subsection-title">৭. দায়বদ্ধতার সীমাবদ্ধতা</h3>
+                    <p class="content-text">
+                        Hello Bangladeshi বা এর কর্মচারীরা নিম্নলিখিত ক্ষেত্রে দায়বদ্ধ থাকবে না:
+                    </p>
+                    <ul class="content-list">
+                        <li>সেবার সাময়িক বা স্থায়ী বন্ধ হয়ে যাওয়া</li>
+                        <li>বিষয়বস্তুর পরিবর্তন, অপসারণ বা ব্যর্থ সংরক্ষণ</li>
+                        <li>তৃতীয় পক্ষের লিঙ্ক বা বিষয়বস্তু</li>
+                        <li>ব্যবহারকারীর কর্মকাণ্ডের ফলে কোনো ক্ষতি</li>
+                        <li>যেকোনো অপ্রত্যক্ষ, বিশেষ বা ফলস্বরূপ ক্ষতি</li>
+                    </ul>
+                    
+                    <h3 class="subsection-title">৮. শর্তাবলীর পরিবর্তন</h3>
+                    <p class="content-text">
+                        আমরা যে কোনো সময় এই শর্তাবলী পরিবর্তন করার অধিকার রাখি। পরিবর্তনগুলি কার্যকর হওয়ার পরে আমরা সেবার মাধ্যমে বা ইমেইলের মাধ্যমে আপনাকে জানাব। আপনি যদি পরিবর্তিত শর্তাবলীর সাথে একমত না হন, তাহলে সেবা ব্যবহার বন্ধ করুন। পরিবর্তন কার্যকর হওয়ার পরেও সেবা ব্যবহার চালিয়ে যাওয়া পরিবর্তিত শর্তাবলীতে সম্মতি হিসেবে গণ্য হবে।
+                    </p>
+                    
+                    <h3 class="subsection-title">৯. আইনগত ব্যাপার</h3>
+                    <p class="content-text">
+                        এই শর্তাবলী বাংলাদেশের আইন দ্বারা নিয়ন্ত্রিত হবে। সেবা ব্যবহারের ফলে সৃষ্ট কোনো বিরোধ বাংলাদেশের আদালতের এক্তিয়ারভুক্ত হবে।
+                    </p>
+                    
+                    <div class="info-box">
+                        <p><strong>বিচার বিভাগীয় এলাকা:</strong> এই শর্তাবলীর ব্যাখ্যা বা প্রয়োগ সম্পর্কিত কোনো বিরোধ বাংলাদেশের আইন অনুযায়ী সমাধান করা হবে এবং পক্ষগুলি বাংলাদেশের আদালতের এক্তিয়ারকে স্বীকৃতি দেয়।</p>
+                    </div>
+                    
+                    <!-- Contact Section -->
+                    <div class="contact-section">
+                        <h3>যোগাযোগ করুন</h3>
+                        <p class="content-text">
+                            এই সেবার শর্তাবলী সম্পর্কে আপনার যদি কোনো প্রশ্ন থাকে, তাহলে নির্দ্বিধায় আমাদের সাথে যোগাযোগ করুন:
+                        </p>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info.hellobangladeshi@gmail.com">info.hellobangladeshi@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+8801724238581">+880 1724-238581</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-user-tie"></i>
+                                <a href="developer.html">Farabi Walid</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="update-date">
+                        <i class="far fa-calendar-alt"></i> সর্বশেষ হালনাগাদ: ৩০ জানুয়ারি, ২০২৬
+                    </p>
+                </div>
+                
+                <!-- English Version -->
+                <div id="en" class="language-content">
+                    <h2 class="section-title">Terms & Conditions for Hello Bangladeshi</h2>
+                    <p class="content-text">
+                        These Terms of Service ("Terms") govern your use of the Hello Bangladeshi mobile application and related website (collectively, the "Service"). By using the Service, you agree to these Terms. Please read them carefully.
+                    </p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>Important:</strong> If you do not agree with any part of these Terms, please do not use our Service.</p>
+                    </div>
+                    
+                    <h3 class="subsection-title">1. Description of Service</h3>
+                    <p class="content-text">
+                        Hello Bangladeshi is a digital platform designed to facilitate connections, information sharing, and social interaction within the Bangladeshi community. The Service may include the following features:
+                    </p>
+                    <ul class="content-list">
+                        <li>Creation and management of personal profiles</li>
+                        <li>Community groups and forums</li>
+                        <li>Event and activity announcements</li>
+                        <li>Content sharing and discussion</li>
+                        <li>News and updates provision</li>
+                        <li>Other interactive features</li>
+                    </ul>
+                    
+                    <h3 class="subsection-title">2. User Responsibilities</h3>
+                    <p class="content-text">
+                        When using the Service, your responsibilities include:
+                    </p>
+                    <ul class="content-list">
+                        <li>Providing accurate, complete, and up-to-date information</li>
+                        <li>Maintaining the security of your account</li>
+                        <li>Treating other users with respect</li>
+                        <li>Not engaging in illegal or harmful activities</li>
+                        <li>Not attempting to disrupt the Service's functionality</li>
+                    </ul>
+                    
+                    <div class="warning-box">
+                        <p><strong>Prohibited Activities:</strong> The following activities are strictly prohibited:</p>
+                        <ul class="content-list">
+                            <li>Spamming or promoting commercial advertisements</li>
+                            <li>Using hateful or offensive language</li>
+                            <li>Impersonating or stealing another user's identity</li>
+                            <li>Promoting malware or harmful code</li>
+                            <li>Sharing copyright-protected content</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="subsection-title">3. Account Management</h3>
+                    <p class="content-text">
+                        If you register for the Hello Bangladeshi Service, you must create an account. Your responsibilities include:
+                    </p>
+                    <ul class="content-list">
+                        <li>Providing accurate information</li>
+                        <li>Keeping your password confidential</li>
+                        <li>Taking responsibility for all activities under your account</li>
+                        <li>Immediately notifying us of any unauthorized account use</li>
+                    </ul>
+                    
+                    <p class="content-text">
+                        We reserve the right to suspend or cancel your account at any time, for any reason, without notice, especially if you violate these Terms.
+                    </p>
+                    
+                    <h3 class="subsection-title">4. Content Rights</h3>
+                    <p class="content-text">
+                        Responsibility for content uploaded to the Service:
+                    </p>
+                    
+                    <table class="terms-table">
+                        <thead>
+                            <tr>
+                                <th>Content Type</th>
+                                <th>Responsibility</th>
+                                <th>Rights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Personal Information</td>
+                                <td>User's own</td>
+                                <td>According to Privacy Policy</td>
+                            </tr>
+                            <tr>
+                                <td>Shared Photos/Videos</td>
+                                <td>Copyright owner's</td>
+                                <td>Sharing rights belong to owner</td>
+                            </tr>
+                            <tr>
+                                <td>User-Generated Content</td>
+                                <td>Poster's</td>
+                                <td>Hello Bangladeshi retains display rights</td>
+                            </tr>
+                            <tr>
+                                <td>Platform Content</td>
+                                <td>Hello Bangladeshi</td>
+                                <td>Copyright protected</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p class="content-text">
+                        By posting content on Hello Bangladeshi, you grant us a worldwide, non-exclusive, royalty-free license necessary to display, reproduce, modify, adapt, and distribute that content.
+                    </p>
+                    
+                    <h3 class="subsection-title">5. Privacy</h3>
+                    <p class="content-text">
+                        Your privacy is important to us. We have detailed how we collect, use, and protect your personal information in our <a href="privacy-policy.html" style="color: var(--secondary);">Privacy Policy</a>. By using the Service, you also agree to our Privacy Policy.
+                    </p>
+                    
+                    <h3 class="subsection-title">6. Service Changes and Termination</h3>
+                    <p class="content-text">
+                        We reserve the right to modify or discontinue the Service at any time, for any reason, without prior notice. We do not guarantee the availability or functionality of the Service.
+                    </p>
+                    
+                    <h3 class="subsection-title">7. Limitation of Liability</h3>
+                    <p class="content-text">
+                        Hello Bangladeshi or its employees shall not be liable for:
+                    </p>
+                    <ul class="content-list">
+                        <li>Temporary or permanent discontinuation of the Service</li>
+                        <li>Modification, deletion, or failure to store content</li>
+                        <li>Third-party links or content</li>
+                        <li>Any damage resulting from user activities</li>
+                        <li>Any indirect, special, or consequential damages</li>
+                    </ul>
+                    
+                    <h3 class="subsection-title">8. Changes to Terms</h3>
+                    <p class="content-text">
+                        We reserve the right to modify these Terms at any time. We will notify you of changes via the Service or email after they become effective. If you do not agree with the modified Terms, discontinue use of the Service. Continued use after changes take effect constitutes acceptance of the modified Terms.
+                    </p>
+                    
+                    <h3 class="subsection-title">9. Legal Matters</h3>
+                    <p class="content-text">
+                        These Terms shall be governed by the laws of Bangladesh. Any disputes arising from use of the Service shall be subject to the jurisdiction of courts in Bangladesh.
+                    </p>
+                    
+                    <div class="info-box">
+                        <p><strong>Jurisdiction:</strong> Any dispute regarding the interpretation or application of these Terms shall be resolved according to Bangladeshi law, and the parties acknowledge the jurisdiction of Bangladeshi courts.</p>
+                    </div>
+                    
+                    <!-- Contact Section -->
+                    <div class="contact-section">
+                        <h3>Contact Us</h3>
+                        <p class="content-text">
+                            If you have any questions about these Terms of Service, please feel free to contact us:
+                        </p>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info.hellobangladeshi@gmail.com">info.hellobangladeshi@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+8801724238581">+880 1724-238581</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-user-tie"></i>
+                                <a href="developer.html">Farabi Walid</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="update-date">
+                        <i class="far fa-calendar-alt"></i> Last Updated: January 30, 2026
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Hello Bangladeshi</h4>
+                    <p>বাংলাদেশীদের জন্য একটি অনন্য প্ল্যাটফর্ম যেখানে আমরা একে অপরের সাথে সংযুক্ত হই, অভিজ্ঞতা শেয়ার করি এবং একসাথে উন্নতি করি।</p>
+                </div>
+                <div class="footer-section">
+                    <h4>দ্রুত লিঙ্ক</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> হোম</a></li>
+                        <li><a href="index.html#apps"><i class="fas fa-chevron-right"></i> আমাদের অ্যাপস</a></li>
+                        <li><a href="index.html#blog"><i class="fas fa-chevron-right"></i> ব্লগ</a></li>
+                        <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i> গোপনীয়তা নীতি</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>আইনি নথি</h4>
+                    <ul class="footer-links">
+                        <li><a href="terms.html" style="color: var(--secondary);"><i class="fas fa-chevron-right"></i> সেবার শর্তাবলী</a></li>
+                        <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i> গোপনীয়তা নীতি</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> রিফান্ড নীতি</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> কুকি নীতি</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> DMCA</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Hello Bangladeshi. All Rights Reserved. | Developed with ❤️ by <a href="developer.html">Farabi Walid</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnBn = document.getElementById('btnBn');
+            const btnEn = document.getElementById('btnEn');
+            const contentBn = document.getElementById('bn');
+            const contentEn = document.getElementById('en');
+            
+            function switchLanguage(lang) {
+                // Deactivate all buttons and content
+                [btnBn, btnEn].forEach(btn => btn.classList.remove('active'));
+                [contentBn, contentEn].forEach(content => content.classList.remove('active'));
+                
+                // Activate selected language
+                if (lang === 'bn') {
+                    btnBn.classList.add('active');
+                    contentBn.classList.add('active');
+                    document.title = 'সেবার শর্তাবলী | Hello Bangladeshi';
+                } else {
+                    btnEn.classList.add('active');
+                    contentEn.classList.add('active');
+                    document.title = 'Terms & Conditions | Hello Bangladeshi';
+                }
+            }
+            
+            btnBn.addEventListener('click', () => switchLanguage('bn'));
+            btnEn.addEventListener('click', () => switchLanguage('en'));
+            
+            // Auto-detect preferred language
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('bn')) {
+                switchLanguage('bn');
+            } else {
+                switchLanguage('en');
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Page load animation
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
