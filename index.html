@@ -578,12 +578,56 @@ header {
     overflow: hidden;
     transition: all 0.4s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    position: relative;
 }
 
 .blog-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary);
     box-shadow: 0 15px 30px rgba(239, 4, 121, 0.2);
+}
+
+/* Blog Tag Styling */
+.blog-tag {
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.blog-tag.coming-soon {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.blog-tag.new-feature {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+}
+
+.blog-tag.tutorial {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+}
+
+.blog-tag.announcement {
+    background: linear-gradient(135deg, #EF0479, #FFD93D);
+    color: white;
+}
+
+.blog-tag.tip {
+    background: linear-gradient(135deg, #30cfd0, #330867);
+    color: white;
+}
+
+.blog-tag.update {
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    color: #333;
 }
 
 .blog-image {
@@ -655,6 +699,10 @@ header {
 .read-more:hover {
     gap: 10px;
     color: var(--primary);
+}
+
+.section-padding {
+    padding: 100px 0;
 }
 
 /* Testimonials */
@@ -1521,49 +1569,52 @@ footer {
         </div>
         
         <div class="blog-grid">
-            <div class="blog-card reveal">
+            <div class="blog-card reveal" onclick="window.location.href='blog-details.html?blog=1'">
                 <div class="blog-image" style="background: linear-gradient(135deg, #667eea, #764ba2)">
                     <span class="blog-date"><i class="far fa-calendar"></i> ২০ জানুয়ারি ২০২৬</span>
                 </div>
                 <div class="blog-content">
+                    <div class="blog-tag coming-soon">শীঘ্রই আসছে</div>
                     <h3>Hello Bangladeshi ২.০ ভার্সন লঞ্চ</h3>
                     <p class="blog-excerpt">
-                        নতুন ইন্টারফেস, আরও দ্রুত পারফরম্যান্স এবং নতুন ফিচার সহ Hello Bangladeshi ২.০ ভার্সন এখন উপলব্ধ।
+                        নতুন ইন্টারফেস, আরও দ্রুত পারফরম্যান্স এবং নতুন ফিচার সহ Hello Bangladeshi ২.০ ভার্সন অতি শীঘ্রই পাবলিশ করা হবে।
                     </p>
                     <div class="blog-meta">
                         <div class="blog-author">
                             <div class="author-avatar"></div>
                             <span>Farabi Walid</span>
                         </div>
-                        <a href="#" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
+                        <a href="blog-details.html?blog=1" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
             
-            <div class="blog-card reveal">
+            <div class="blog-card reveal" onclick="window.location.href='blog-details.html?blog=2'">
                 <div class="blog-image" style="background: linear-gradient(135deg, #f093fb, #f5576c)">
                     <span class="blog-date"><i class="far fa-calendar"></i> ১৫ জানুয়ারি ২০২৬</span>
                 </div>
                 <div class="blog-content">
+                    <div class="blog-tag new-feature">নতুন ফিচার</div>
                     <h3>নতুন কমিউনিটি ফিচার</h3>
                     <p class="blog-excerpt">
-                        এখন গ্রুপ তৈরি করুন, ইভেন্ট আয়োজন করুন এবং নিজের কমিউনিটি গড়ে তুলুন। নতুন সোশ্যাল ফিচার যোগ করা হয়েছে।
+                        অ্যাপে গ্রুপ তৈরি, ইভেন্ট আয়োজন এবং নিজের কমিউনিটি গড়ে তোলার নতুন সোশ্যাল ফিচার যোগ করা হবে।
                     </p>
                     <div class="blog-meta">
                         <div class="blog-author">
                             <div class="author-avatar"></div>
                             <span>HB Team</span>
                         </div>
-                        <a href="#" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
+                        <a href="blog-details.html?blog=2" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
             
-            <div class="blog-card reveal">
+            <div class="blog-card reveal" onclick="window.location.href='blog-details.html?blog=3'">
                 <div class="blog-image" style="background: linear-gradient(135deg, #4facfe, #00f2fe)">
                     <span class="blog-date"><i class="far fa-calendar"></i> ১০ জানুয়ারি ২০২৬</span>
                 </div>
                 <div class="blog-content">
+                    <div class="blog-tag tutorial">টিউটোরিয়াল</div>
                     <h3>মোবাইল অ্যাপ ডেভেলপমেন্ট গাইড</h3>
                     <p class="blog-excerpt">
                         কিভাবে শুরু করবেন মোবাইল অ্যাপ ডেভেলপমেন্ট? সম্পূর্ণ বাংলায় ধাপে ধাপে গাইড।
@@ -1573,14 +1624,77 @@ footer {
                             <div class="author-avatar"></div>
                             <span>Dev Team</span>
                         </div>
-                        <a href="#" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
+                        <a href="blog-details.html?blog=3" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- নতুন পোস্ট ১ -->
+            <div class="blog-card reveal" onclick="window.location.href='blog-details.html?blog=4'">
+                <div class="blog-image" style="background: linear-gradient(135deg, #EF0479, #FFD93D)">
+                    <span class="blog-date"><i class="far fa-calendar"></i> ৫ জানুয়ারি ২০২৬</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-tag announcement">ঘোষণা</div>
+                    <h3>Hello Bangladeshi App উন্নয়ন চলছে</h3>
+                    <p class="blog-excerpt">
+                        Hello Bangladeshi অ্যাপটি উন্নয়নের শেষ পর্যায়ে রয়েছে। অতি শীঘ্রই গুগল প্লে স্টোরে পাবলিশ করা হবে।
+                    </p>
+                    <div class="blog-meta">
+                        <div class="blog-author">
+                            <div class="author-avatar"></div>
+                            <span>HB Team</span>
+                        </div>
+                        <a href="blog-details.html?blog=4" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- নতুন পোস্ট ২ -->
+            <div class="blog-card reveal" onclick="window.location.href='blog-details.html?blog=5'">
+                <div class="blog-image" style="background: linear-gradient(135deg, #30cfd0, #330867)">
+                    <span class="blog-date"><i class="far fa-calendar"></i> ২৮ ডিসেম্বর ২০২৫</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-tag tip">টিপস</div>
+                    <h3>মোবাইল অ্যাপ নিরাপত্তা টিপস</h3>
+                    <p class="blog-excerpt">
+                        আপনার মোবাইল ডিভাইস নিরাপদ রাখার সম্পূর্ণ গাইড। জানুন সেরা সিকিউরিটি প্র্যাকটিস।
+                    </p>
+                    <div class="blog-meta">
+                        <div class="blog-author">
+                            <div class="author-avatar"></div>
+                            <span>Security Team</span>
+                        </div>
+                        <a href="blog-details.html?blog=5" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- নতুন পোস্ট ৩ -->
+            <div class="blog-card reveal" onclick="window.location.href='blog-details.html?blog=6'">
+                <div class="blog-image" style="background: linear-gradient(135deg, #a8edea, #fed6e3)">
+                    <span class="blog-date"><i class="far fa-calendar"></i> ২০ ডিসেম্বর ২০২৫</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-tag update">আপডেট</div>
+                    <h3>আমাদের অন্যান্য অ্যাপস আপডেট</h3>
+                    <p class="blog-excerpt">
+                        Mind Match Pro, QR Scanner এবং Color Match Pro অ্যাপগুলোর নতুন আপডেট প্রকাশিত হবে।
+                    </p>
+                    <div class="blog-meta">
+                        <div class="blog-author">
+                            <div class="author-avatar"></div>
+                            <span>Farabi Walid</span>
+                        </div>
+                        <a href="blog-details.html?blog=6" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
+    
 <!-- Testimonials -->
 <section class="testimonials">
     <div class="container">
