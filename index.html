@@ -1359,176 +1359,327 @@ footer {
     </div>
 </section>
 
-<!-- Apps Section -->
-<section id="apps" class="apps section-padding">
-    <div class="container">
-        <div class="section-header reveal">
-            <h2>আমাদের অ্যাপ্লিকেশনসমূহ</h2>
-            <p>আমাদের তৈরি করা বিভিন্ন অ্যান্ড্রয়েড অ্যাপ্লিকেশন যা আপনার দৈনন্দিন জীবনকে সহজ করবে</p>
-        </div>
-        
-        <div class="apps-grid">
-            <!-- Hello Bangladeshi App -->
-            <div class="app-card reveal">
-                <div class="app-badge">ফ্ল্যাগশিপ</div>
-                <div class="app-image" style="background: linear-gradient(135deg, #EF0479, #FFD93D)">
-                    <i class="fas fa-flag"></i>
-                </div>
-                <div class="app-info">
-                    <div class="app-header">
-                        <h3 class="app-title">Hello Bangladeshi</h3>
-                        <div class="app-rating">
-                            <i class="fas fa-star"></i>
-                            <span>4.8</span>
-                        </div>
-                    </div>
-                    <p class="app-description">
-                        বাংলাদেশীদের জন্য একটি ইউনিক প্ল্যাটফর্ম – কানেক্ট, শেয়ার এবং সুযোগ খুঁজুন। বিশ্বব্যাপী বাংলাদেশী কমিউনিটির সাথে সংযুক্ত হোন।
-                    </p>
-                    <div class="app-actions">
-                        <a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.hellobangladeshi" 
-                           target="_blank" class="btn">
-                            <i class="fab fa-google-play"></i> ডাউনলোড
-                        </a>
-                        <a href="#features" class="btn btn-outline">
-                            <i class="fas fa-info-circle"></i> বিস্তারিত
-                        </a>
-                    </div>
-                </div>
-            </div>
+<section id="apps" class="apps">
+<div class="container">
+<div class="section-title reveal">
+<h2>আমাদের অ্যাপস</h2>
+<p>Play Store এ প্রকাশিত আমাদের অফিসিয়াল অ্যাপ্লিকেশনসমূহ</p>
+</div>
 
-            <!-- Hello Sylheti - নতুন অ্যাপ -->
-<div class="app-card reveal" data-category="entertainment">
-<div class="app-image" style="background:linear-gradient(135deg,#EE1D52,#C4123E)">
-<i class="fas fa-language"></i>
+<div class="apps-filter reveal">
+<button class="filter-btn active" data-filter="all">সব</button>
+<button class="filter-btn" data-filter="productivity">প্রোডাক্টিভিটি</button>
+<button class="filter-btn" data-filter="utility">ইউটিলিটি</button>
+<button class="filter-btn" data-filter="entertainment">বিনোদন</button>
 </div>
-<div class="app-info">
-<div class="app-header">
-<h3 class="app-title">Hello Sylheti</h3>
-<span class="app-category">কমিউনিটি</span>
-</div>
-<p class="app-description">
-সিলেটি ভাষা ও সংস্কৃতির অনন্য প্ল্যাটফর্ম। স্থানীয় তথ্য, সংযোগ ও সেবা একসাথে।
-</p>
-<div class="app-stats">
-<span><i class="fas fa-download"></i> ৫০০+ ডাউনলোড</span>
-<span><i class="fas fa-star"></i> ৪.৮ ★</span>
-</div>
-<div class="app-actions">
-<a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.hellosylheti"
-   target="_blank" class="btn btn-small">
-<i class="fab fa-google-play"></i> ডাউনলোড
-</a>
-<a href="https://bhappsstore.github.io/hello-sylheti-privacy.html"
-   target="_blank" class="btn btn-small btn-outline" style="background:transparent;border:1px solid #EF0479;">
-<i class="fas fa-shield-alt"></i> প্রাইভেসি
-</a>
+
+<div id="dynamicAppsGrid" class="apps-grid">
+    <div style="grid-column:1/-1; text-align:center; padding:50px;">
+        <i class="fas fa-spinner fa-pulse fa-3x"></i>
+        <p>অ্যাপস লোড হচ্ছে...</p>
+    </div>
 </div>
 </div>
-</div>
+</section>
+
+<script>
+// অ্যাপসের ডাটাবেস - এখানে শুধু তথ্য যোগ করুন
+const appsDatabase = [
+    {
+        packageName: "com.hellobangladeshiltd.mindmatchpro",
+        defaultName: "Mind Match Pro",
+        category: "entertainment",
+        defaultIcon: "fas fa-brain",
+        gradient: "linear-gradient(135deg,#667eea,#764ba2)",
+        description: "মজাদার ব্রেইন গেম যা আপনার স্মৃতি, মনোযোগ ও বুদ্ধিমত্তা উন্নত করতে সাহায্য করে।",
+        isPublished: true,
+        // প্লে স্টোরের আইকন URL (আমরা এটি ব্যবহার করব)
+        iconUrl: "https://play-lh.googleusercontent.com/MindMatchPro_Icon_Here" // আপাতত ডিফল্ট
+    },
+    {
+        packageName: "com.bhappsstore.qrcodescanner",
+        defaultName: "QR Scanner & Generator",
+        category: "utility",
+        defaultIcon: "fas fa-qrcode",
+        gradient: "linear-gradient(135deg,#30cfd0,#330867)",
+        description: "দ্রুত ও নিরাপদ QR ও Barcode স্ক্যানার। লাইটওয়েট এবং বিজ্ঞাপনমুক্ত অভিজ্ঞতা।",
+        isPublished: true
+    },
+    {
+        packageName: "com.hellobangladeshi.hellobangladeshi",
+        defaultName: "Hello Bangladeshi",
+        category: "productivity",
+        defaultIcon: "fas fa-flag",
+        gradient: "linear-gradient(135deg,#EF0479,#FFD93D)",
+        description: "বাংলাদেশিদের জন্য একটি ইউনিক প্ল্যাটফর্ম – কানেক্ট, শেয়ার এবং সুযোগ খুঁজুন।",
+        isPublished: true
+    },
+    {
+        packageName: "com.hellobangladeshi.hellosylheti",
+        defaultName: "Hello Sylheti",
+        category: "entertainment",
+        defaultIcon: "fas fa-language",
+        gradient: "linear-gradient(135deg,#EE1D52,#C4123E)",
+        description: "সিলেটি ভাষা ও সংস্কৃতির অনন্য প্ল্যাটফর্ম। স্থানীয় তথ্য, সংযোগ ও সেবা একসাথে।",
+        stats: { downloads: "৫০০+", rating: "৪.৮ ★" },
+        privacyLink: "https://bhappsstore.github.io/hello-sylheti-privacy.html",
+        isPublished: true
+    },
+    {
+        packageName: "com.hellobangladeshi.colormatchpro",
+        defaultName: "Color Match Pro",
+        category: "entertainment",
+        defaultIcon: "fas fa-palette",
+        gradient: "linear-gradient(135deg,#a8edea,#fed6e3)",
+        description: "রঙ চিনে ম্যাচ করুন! মজাদার গেম যা রিফ্লেক্স ও ফোকাস বাড়ায়।",
+        isPublished: true
+    },
+    {
+        packageName: "com.hellobangladeshi.educalc",
+        defaultName: "EduCalc",
+        category: "productivity",
+        defaultIcon: "fas fa-calculator",
+        gradient: "linear-gradient(135deg,#4facfe,#00f2fe)",
+        description: "শিক্ষার্থীদের জন্য স্মার্ট ক্যালকুলেটর – দ্রুত ও নির্ভুল হিসাব।",
+        isPublished: true
+    },
+    {
+        packageName: "com.yourcompany.futureapp1",
+        defaultName: "Task Manager Pro",
+        category: "productivity",
+        defaultIcon: "fas fa-tasks",
+        gradient: "linear-gradient(135deg,#f093fb,#f5576c)",
+        description: "শীঘ্রই আসছে! আপনার দৈনন্দিন কাজ পরিচালনার জন্য শক্তিশালী অ্যাপ।",
+        isPublished: false,
+        comingSoon: true
+    },
+    {
+        packageName: "com.yourcompany.futureapp2",
+        defaultName: "Photo Editor Plus",
+        category: "utility",
+        defaultIcon: "fas fa-crop-alt",
+        gradient: "linear-gradient(135deg,#4facfe,#00f2fe)",
+        description: "শীঘ্রই আসছে! প্রফেশনাল ফটো এডিটিং টুলস।",
+        isPublished: false,
+        comingSoon: true
+    }
+];
+
+// প্লে স্টোর থেকে অ্যাপ আইকন URL বের করার ফাংশন (গুগলের নিজস্ব CDN ব্যবহার করে)
+async function getAppIconUrl(packageName) {
+    // গুগল প্লে স্টোরের অ্যাপ আইকন সাধারণত এই ফরম্যাটে থাকে
+    // আমরা একটি প্রোক্সি ব্যবহার করব যা কাজ করে
+    const url = `https://play.google.com/store/apps/details?id=${packageName}`;
+    const proxyUrl = `https://cors-anywhere.herokuapp.com/${url}`;
+    
+    try {
+        // প্রথমে try করব fetch করার
+        const response = await fetch(proxyUrl, {
+            headers: {
+                'Origin': window.location.origin
+            }
+        });
+        
+        if (response.ok) {
+            const html = await response.text();
+            // আইকন URL খোঁজার জন্য regex
+            const iconMatch = html.match(/<img[^>]*class="T75of"[^>]*src="([^"]+)"/);
+            if (iconMatch && iconMatch[1]) {
+                return iconMatch[1];
+            }
             
-            <!-- Mind Match Pro -->
-            <div class="app-card reveal">
-                <div class="app-image" style="background: linear-gradient(135deg, #667eea, #764ba2)">
-                    <i class="fas fa-brain"></i>
-                </div>
-                <div class="app-info">
-                    <div class="app-header">
-                        <h3 class="app-title">Mind Match Pro</h3>
-                        <div class="app-rating">
-                            <i class="fas fa-star"></i>
-                            <span>4.5</span>
-                        </div>
-                    </div>
-                    <p class="app-description">
-                        মজাদার ব্রেইন গেম যা আপনার স্মৃতি, মনোযোগ ও বুদ্ধিমত্তা উন্নত করতে সাহায্য করে। প্রতিদিনের চ্যালেঞ্জ গ্রহণ করুন।
-                    </p>
-                    <div class="app-actions">
-                        <a href="https://play.google.com/store/apps/details?id=com.hellobangladeshiltd.mindmatchpro" 
-                           target="_blank" class="btn">
-                            <i class="fab fa-google-play"></i> ডাউনলোড
-                        </a>
-                    </div>
-                </div>
+            // আরেকটি প্যাটার্ন
+            const iconMatch2 = html.match(/<img[^>]*alt="[^"]*"[^>]*src="([^"]+)"[^>]*itemprop="image"/);
+            if (iconMatch2 && iconMatch2[1]) {
+                return iconMatch2[1];
+            }
+        }
+    } catch (error) {
+        console.log(`Could not fetch icon for ${packageName}:`, error);
+    }
+    
+    return null;
+}
+
+// ডিফল্ট আইকন জেনারেট করার ফাংশন (প্লে স্টোর থেকে না পেলে)
+function getDefaultIconUrl(packageName, iconClass) {
+    // আমরা একটি placeholder ইমেজ ব্যবহার করব যা ফন্টআসম আইকন দেখাবে
+    return null; // null মানে আমরা ফন্টআসম ব্যবহার করব
+}
+
+// অ্যাপ কার্ড তৈরি করার ফাংশন
+async function createAppCard(app) {
+    let iconHtml = '';
+    let iconUrl = null;
+    
+    // পাবলিশড অ্যাপের জন্য আইকন আনার চেষ্টা
+    if (app.isPublished && !app.comingSoon) {
+        try {
+            iconUrl = await getAppIconUrl(app.packageName);
+        } catch(e) {
+            console.log('Icon fetch failed for', app.packageName);
+        }
+    }
+    
+    if (iconUrl) {
+        iconHtml = `<img src="${iconUrl}" alt="${app.defaultName}" class="app-icon-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">`;
+        iconHtml += `<div style="display: none; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                        <i class="${app.defaultIcon}" style="font-size: 3rem;"></i>
+                     </div>`;
+    } else {
+        iconHtml = `<i class="${app.defaultIcon}" style="font-size: 3rem;"></i>`;
+    }
+    
+    const statsHtml = app.stats && !app.comingSoon ? `
+        <div class="app-stats">
+            <span><i class="fas fa-download"></i> ${app.stats.downloads}</span>
+            <span><i class="fas fa-star"></i> ${app.stats.rating}</span>
+        </div>
+    ` : (app.comingSoon ? `
+        <div class="app-stats">
+            <span><i class="fas fa-calendar-alt"></i> লঞ্চ শীঘ্রই</span>
+        </div>
+    ` : '<div class="app-stats"><span><i class="fas fa-check-circle"></i> প্লে স্টোরে উপলব্ধ</span></div>');
+    
+    const privacyButton = app.privacyLink && !app.comingSoon ? `
+        <a href="${app.privacyLink}" target="_blank" class="btn btn-small btn-outline" style="background:transparent;border:1px solid #EF0479;">
+            <i class="fas fa-shield-alt"></i> প্রাইভেসি
+        </a>
+    ` : '';
+    
+    const actionButton = !app.comingSoon ? `
+        <a href="https://play.google.com/store/apps/details?id=${app.packageName}" target="_blank" class="btn btn-small">
+            <i class="fab fa-google-play"></i> ডাউনলোড
+        </a>
+    ` : `
+        <button class="btn btn-small" disabled style="opacity:0.6; cursor:not-allowed;">
+            <i class="fas fa-hourglass-half"></i> শীঘ্রই আসছে
+        </button>
+    `;
+    
+    return `
+        <div class="app-card reveal" data-category="${app.category}">
+            <div class="app-image" style="background:${app.gradient}; display: flex; align-items: center; justify-content: center; position: relative;">
+                ${iconHtml}
             </div>
-            
-            <!-- QR Code Scanner -->
-            <div class="app-card reveal">
-                <div class="app-image" style="background: linear-gradient(135deg, #30cfd0, #330867)">
-                    <i class="fas fa-qrcode"></i>
+            <div class="app-info">
+                <div class="app-header">
+                    <h3 class="app-title">${app.defaultName}</h3>
+                    <span class="app-category">${app.category === 'productivity' ? 'প্রোডাক্টিভিটি' : (app.category === 'utility' ? 'ইউটিলিটি' : 'বিনোদন/কমিউনিটি')}</span>
                 </div>
-                <div class="app-info">
-                    <div class="app-header">
-                        <h3 class="app-title">QR Scanner & Generator</h3>
-                        <div class="app-rating">
-                            <i class="fas fa-star"></i>
-                            <span>4.7</span>
-                        </div>
-                    </div>
-                    <p class="app-description">
-                        দ্রুত ও নিরাপদ QR ও Barcode স্ক্যানার। লাইটওয়েট এবং বিজ্ঞাপনমুক্ত অভিজ্ঞতা। নিজের QR কোড তৈরি করুন সহজেই।
-                    </p>
-                    <div class="app-actions">
-                        <a href="https://play.google.com/store/apps/details?id=com.bhappsstore.qrcodescanner" 
-                           target="_blank" class="btn">
-                            <i class="fab fa-google-play"></i> ডাউনলোড
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Color Match Pro -->
-            <div class="app-card reveal">
-                <div class="app-image" style="background: linear-gradient(135deg, #a8edea, #fed6e3)">
-                    <i class="fas fa-palette"></i>
-                </div>
-                <div class="app-info">
-                    <div class="app-header">
-                        <h3 class="app-title">Color Match Pro</h3>
-                        <div class="app-rating">
-                            <i class="fas fa-star"></i>
-                            <span>4.3</span>
-                        </div>
-                    </div>
-                    <p class="app-description">
-                        রঙ চিনে ম্যাচ করুন! মজাদার গেম যা রিফ্লেক্স ও ফোকাস বাড়ায়। বিভিন্ন লেভেলের চ্যালেঞ্জ উপভোগ করুন।
-                    </p>
-                    <div class="app-actions">
-                        <a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.colormatchpro" 
-                           target="_blank" class="btn">
-                            <i class="fab fa-google-play"></i> ডাউনলোড
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- EduCalc -->
-            <div class="app-card reveal">
-                <div class="app-image" style="background: linear-gradient(135deg, #4facfe, #00f2fe)">
-                    <i class="fas fa-calculator"></i>
-                </div>
-                <div class="app-info">
-                    <div class="app-header">
-                        <h3 class="app-title">EduCalc</h3>
-                        <div class="app-rating">
-                            <i class="fas fa-star"></i>
-                            <span>4.6</span>
-                        </div>
-                    </div>
-                    <p class="app-description">
-                        শিক্ষার্থীদের জন্য স্মার্ট ক্যালকুলেটর – দ্রুত ও নির্ভুল হিসাব। গাণিতিক সমস্যা সমাধানে সহায়ক টুলস।
-                    </p>
-                    <div class="app-actions">
-                        <a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.educalc" 
-                           target="_blank" class="btn">
-                            <i class="fab fa-google-play"></i> ডাউনলোড
-                        </a>
-                    </div>
+                <p class="app-description">${app.description}</p>
+                ${statsHtml}
+                <div class="app-actions" style="display: flex; gap: 10px; margin-top: 15px;">
+                    ${actionButton}
+                    ${privacyButton}
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    `;
+}
+
+// সব অ্যাপ লোড করা
+async function loadAllApps() {
+    const container = document.getElementById('dynamicAppsGrid');
+    container.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:50px;"><i class="fas fa-spinner fa-pulse fa-3x"></i><p>অ্যাপস লোড হচ্ছে...</p></div>';
+    
+    let allCardsHtml = '';
+    
+    for (const app of appsDatabase) {
+        const cardHtml = await createAppCard(app);
+        allCardsHtml += cardHtml;
+    }
+    
+    container.innerHTML = allCardsHtml;
+    
+    // রিভিল এনিমেশন
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+    
+    // ফিল্টার সক্রিয় করা
+    initializeFilters();
+}
+
+// ফিল্টার সিস্টেম
+function initializeFilters() {
+    const filterBtns = document.querySelectorAll('.apps-filter .filter-btn');
+    const appCards = document.querySelectorAll('.app-card');
+    
+    filterBtns.forEach(btn => {
+        btn.removeEventListener('click', handleFilterClick);
+        btn.addEventListener('click', handleFilterClick);
+    });
+    
+    function handleFilterClick(e) {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        const filter = e.target.getAttribute('data-filter');
+        
+        appCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                card.style.display = 'block';
+                setTimeout(() => card.style.opacity = '1', 10);
+            } else {
+                card.style.opacity = '0';
+                setTimeout(() => card.style.display = 'none', 300);
+            }
+        });
+    }
+}
+
+// পেজ লোড হলে শুরু
+document.addEventListener('DOMContentLoaded', loadAllApps);
+</script>
+
+<style>
+    .app-icon-img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 18px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .app-card:hover .app-icon-img {
+        transform: scale(1.08);
+    }
+    .app-image {
+        position: relative;
+        min-height: 160px;
+    }
+    .app-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .btn-outline {
+        background: transparent;
+        border: 1px solid #EF0479;
+        box-shadow: none;
+    }
+    .btn-outline:hover {
+        background: #EF0479;
+        color: white;
+        transform: translateY(-3px);
+    }
+    .app-stats {
+        margin: 12px 0;
+        font-size: 0.85rem;
+        display: flex;
+        gap: 15px;
+        opacity: 0.8;
+    }
+    .app-card {
+        transition: all 0.3s ease;
+    }
+</style>
 
 <!-- Features Section -->
 <section id="features" class="features">
