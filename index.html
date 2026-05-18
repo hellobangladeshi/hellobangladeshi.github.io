@@ -2,11 +2,10 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hello Bangladeshi - Connect, Share & Grow Together</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Hello Bangladeshi - বিশ্বব্যাপী বাংলাদেশীদের প্ল্যাটফর্ম</title>
 <meta name="description" content="Hello Bangladeshi - বাংলাদেশীদের জন্য একটি অনন্য প্ল্যাটফর্ম যেখানে আমরা একে অপরের সাথে সংযুক্ত হই, অভিজ্ঞতা শেয়ার করি এবং একসাথে উন্নতি করি">
 <meta name="p:domain_verify" content="842236a1c749a576d8377a05af2989a3"/>
-<!-- Google Site Verification -->
 <meta name="google-site-verification" content="sLn6NtFMbKt0LIORzRaA_2C_LYxdLzvF0uU7DyiBQ3U" />
 
 <!-- Font Awesome -->
@@ -130,30 +129,23 @@ header {
 }
 
 .logo:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
+}
+
+/* অরিজিনাল লোগো ইমেজ ব্যবহার */
+.logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 12px;
 }
 
 .logo-icon {
-    width: 55px;
-    height: 55px;
-    border-radius: 15px;
-    background: var(--gradient);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1.5rem;
-    box-shadow: 0 8px 25px rgba(239, 4, 121, 0.4);
-    animation: pulse 3s infinite;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
+    display: none; /* আগের টেক্সট লোগো লুকানো */
 }
 
 .logo-text h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     background: var(--gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -163,7 +155,7 @@ header {
 }
 
 .logo-text span {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     opacity: 0.8;
     font-weight: 400;
 }
@@ -299,6 +291,12 @@ header {
     line-height: 1.8;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 .hero-stats {
     display: flex;
     gap: 40px;
@@ -333,12 +331,12 @@ header {
 
 .phone-mockup {
     position: relative;
-    width: 300px;
-    height: 600px;
+    width: 280px;
+    height: 550px;
     background: linear-gradient(145deg, #1a1f3a, #0f1329);
     border-radius: 40px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 
         0 30px 60px rgba(0, 0, 0, 0.4),
         inset 0 0 0 2px rgba(255, 255, 255, 0.1);
@@ -348,23 +346,32 @@ header {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 25px;
+    border-radius: 30px;
     overflow: hidden;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .screen-content {
-    padding: 30px;
-    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.screen-content img {
+    width: 80px;
+    margin-bottom: 20px;
+    border-radius: 18px;
 }
 
 .screen-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 10px;
 }
 
 .screen-content p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     opacity: 0.9;
 }
 
@@ -391,6 +398,39 @@ header {
     margin: 0 auto;
 }
 
+/* ফিল্টার বাটন - সঠিক স্টাইলিং */
+.apps-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.filter-btn:hover {
+    background: linear-gradient(135deg, #EF0479, #FFD93D);
+    border-color: transparent;
+    transform: translateY(-3px);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #EF0479, #FFD93D);
+    border-color: transparent;
+    box-shadow: 0 5px 15px rgba(239, 4, 121, 0.3);
+}
+
 .apps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -413,38 +453,26 @@ header {
     box-shadow: 0 20px 40px rgba(239, 4, 121, 0.2);
 }
 
-.app-badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: var(--gradient);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    z-index: 2;
-}
-
 .app-image {
     height: 180px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4rem;
     position: relative;
     overflow: hidden;
 }
 
-.app-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+.app-icon-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.app-card:hover .app-icon-img {
+    transform: scale(1.08);
 }
 
 .app-info {
@@ -456,6 +484,8 @@ header {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .app-title {
@@ -464,12 +494,13 @@ header {
     flex: 1;
 }
 
-.app-rating {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: var(--secondary);
-    font-size: 0.9rem;
+.app-category {
+    background: rgba(255, 217, 61, 0.2);
+    color: #FFD93D;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
 .app-description {
@@ -478,9 +509,19 @@ header {
     line-height: 1.6;
 }
 
+.app-stats {
+    margin: 12px 0;
+    font-size: 0.85rem;
+    display: flex;
+    gap: 15px;
+    opacity: 0.8;
+}
+
 .app-actions {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
 .btn {
@@ -497,6 +538,7 @@ header {
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
 }
 
 .btn:hover {
@@ -513,6 +555,11 @@ header {
 .btn-outline:hover {
     background: var(--secondary);
     color: var(--dark);
+}
+
+.btn-small {
+    padding: 8px 18px;
+    font-size: 0.85rem;
 }
 
 /* Features Section */
@@ -565,11 +612,14 @@ header {
 }
 
 /* Blog Section */
+.blog {
+    padding: 100px 0;
+}
+
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
-    padding: 20px 0;
 }
 
 .blog-card {
@@ -579,7 +629,6 @@ header {
     transition: all 0.4s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
-    position: relative;
 }
 
 .blog-card:hover {
@@ -588,51 +637,26 @@ header {
     box-shadow: 0 15px 30px rgba(239, 4, 121, 0.2);
 }
 
-/* Blog Tag Styling */
 .blog-tag {
     display: inline-block;
     padding: 6px 15px;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-.blog-tag.coming-soon {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-}
-
-.blog-tag.new-feature {
-    background: linear-gradient(135deg, #f093fb, #f5576c);
-    color: white;
-}
-
-.blog-tag.tutorial {
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-    color: white;
-}
-
-.blog-tag.announcement {
-    background: linear-gradient(135deg, #EF0479, #FFD93D);
-    color: white;
-}
-
-.blog-tag.tip {
-    background: linear-gradient(135deg, #30cfd0, #330867);
-    color: white;
-}
-
-.blog-tag.update {
-    background: linear-gradient(135deg, #a8edea, #fed6e3);
-    color: #333;
-}
+.blog-tag.coming-soon { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
+.blog-tag.new-feature { background: linear-gradient(135deg, #f093fb, #f5576c); color: white; }
+.blog-tag.tutorial { background: linear-gradient(135deg, #4facfe, #00f2fe); color: white; }
+.blog-tag.announcement { background: linear-gradient(135deg, #EF0479, #FFD93D); color: white; }
+.blog-tag.tip { background: linear-gradient(135deg, #30cfd0, #330867); color: white; }
+.blog-tag.update { background: linear-gradient(135deg, #a8edea, #fed6e3); color: #333; }
 
 .blog-image {
     height: 200px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
     position: relative;
     overflow: hidden;
 }
@@ -645,7 +669,7 @@ header {
     color: white;
     padding: 8px 15px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
 }
 
@@ -701,10 +725,6 @@ header {
     color: var(--primary);
 }
 
-.section-padding {
-    padding: 100px 0;
-}
-
 /* Testimonials */
 .testimonials {
     padding: 100px 0;
@@ -758,7 +778,7 @@ header {
 .rating {
     color: var(--secondary);
     margin-bottom: 15px;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .testimonial-text {
@@ -860,6 +880,10 @@ header {
 }
 
 /* Contact Section */
+.contact {
+    padding: 100px 0;
+}
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1043,14 +1067,11 @@ footer {
     gap: 20px;
 }
 
-.footer-social {
+.footer-social, .footer-copyright, .footer-legal {
     flex: 1;
-    display: flex;
-    justify-content: flex-start;
 }
 
 .footer-copyright {
-    flex: 2;
     text-align: center;
 }
 
@@ -1073,17 +1094,6 @@ footer {
     text-decoration: none;
     opacity: 0.8;
     font-size: 0.9rem;
-    transition: opacity 0.3s ease;
-}
-
-.footer-copyright-links a:hover {
-    opacity: 1;
-}
-
-.footer-legal {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
 }
 
 .developer-credit {
@@ -1128,7 +1138,6 @@ footer {
 
 .scroll-top:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(239, 4, 121, 0.6);
 }
 
 /* Notification Toast */
@@ -1168,15 +1177,24 @@ footer {
     .hero-stats {
         justify-content: center;
     }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 992px) {
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
     
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .section-header h2 {
+        font-size: 2.2rem;
     }
 }
 
@@ -1219,10 +1237,6 @@ footer {
         font-size: 2.5rem;
     }
     
-    .section-header h2 {
-        font-size: 2.2rem;
-    }
-    
     .apps-grid,
     .blog-grid,
     .features-grid,
@@ -1236,11 +1250,22 @@ footer {
         gap: 15px;
     }
     
-    .footer-social,
-    .footer-copyright,
-    .footer-legal {
+    .footer-social, .footer-copyright, .footer-legal {
         width: 100%;
         justify-content: center;
+    }
+    
+    .logo-text h3 {
+        font-size: 1.2rem;
+    }
+    
+    .logo-text span {
+        font-size: 0.7rem;
+    }
+    
+    .btn-download {
+        padding: 8px 15px;
+        font-size: 0.8rem;
     }
 }
 
@@ -1269,6 +1294,15 @@ footer {
     .newsletter-input {
         width: 100%;
     }
+    
+    .apps-filter {
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+    }
 }
 </style>
 </head>
@@ -1279,7 +1313,8 @@ footer {
     <div class="container">
         <div class="nav-container">
             <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <div class="logo-icon">HB</div>
+                <!-- অরিজিনাল লোগো ইমেজ -->
+                <img src="https://hellobangladeshi.github.io/hb_logo.png" alt="Hello Bangladeshi Logo" class="logo-img">
                 <div class="logo-text">
                     <h3>Hello Bangladeshi</h3>
                     <span>Connect, Share & Grow Together</span>
@@ -1349,6 +1384,7 @@ footer {
                 <div class="phone-mockup">
                     <div class="phone-screen">
                         <div class="screen-content">
+                            <img src="https://hellobangladeshi.github.io/hb_logo.png" alt="Hello Bangladeshi">
                             <h3>Hello Bangladeshi</h3>
                             <p>বাংলাদেশীদের জন্য বিশেষ প্ল্যাটফর্ম</p>
                         </div>
@@ -1359,32 +1395,32 @@ footer {
     </div>
 </section>
 
+<!-- Apps Section -->
 <section id="apps" class="apps">
-<div class="container">
-<div class="section-title reveal">
-<h2>আমাদের অ্যাপস</h2>
-<p>Play Store এ প্রকাশিত আমাদের অফিসিয়াল অ্যাপ্লিকেশনসমূহ</p>
-</div>
+    <div class="container">
+        <div class="section-header reveal">
+            <h2>আমাদের অ্যাপস</h2>
+            <p>Play Store এ প্রকাশিত আমাদের অফিসিয়াল অ্যাপ্লিকেশনসমূহ</p>
+        </div>
 
-<div class="apps-filter reveal">
-<button class="filter-btn active" data-filter="all">সব</button>
-<button class="filter-btn" data-filter="productivity">প্রোডাক্টিভিটি</button>
-<button class="filter-btn" data-filter="utility">ইউটিলিটি</button>
-<button class="filter-btn" data-filter="entertainment">বিনোদন</button>
-</div>
+        <div class="apps-filter reveal">
+            <button class="filter-btn active" data-filter="all">সব</button>
+            <button class="filter-btn" data-filter="productivity">প্রোডাক্টিভিটি</button>
+            <button class="filter-btn" data-filter="utility">ইউটিলিটি</button>
+            <button class="filter-btn" data-filter="entertainment">বিনোদন</button>
+        </div>
 
-<div class="apps-grid" id="dynamicAppsGrid">
-    <!-- কন্টেন্ট জাভাস্ক্রিপ্ট দ্বারা লোড হবে -->
-    <div style="grid-column:1/-1; text-align:center; padding:50px;">
-        <i class="fas fa-spinner fa-pulse fa-3x"></i>
-        <p>অ্যাপস লোড হচ্ছে...</p>
+        <div class="apps-grid" id="dynamicAppsGrid">
+            <div style="grid-column:1/-1; text-align:center; padding:50px;">
+                <i class="fas fa-spinner fa-pulse fa-3x"></i>
+                <p>অ্যাপস লোড হচ্ছে...</p>
+            </div>
+        </div>
     </div>
-</div>
-</div>
 </section>
 
 <script>
-// অ্যাপস ডাটাবেস - এখানে সব অ্যাপের তথ্য ও আইকন লিংক সংরক্ষিত
+// অ্যাপস ডাটাবেস
 const appsData = [
     {
         id: "mindmatchpro",
@@ -1480,7 +1516,6 @@ const appsData = [
     }
 ];
 
-// ক্যাটাগরির নাম বাংলায় অনুবাদ
 function getCategoryName(category) {
     const categories = {
         'productivity': 'প্রোডাক্টিভিটি',
@@ -1490,19 +1525,16 @@ function getCategoryName(category) {
     return categories[category] || category;
 }
 
-// অ্যাপ কার্ড তৈরির ফাংশন
 function createAppCard(app) {
-    // আইকন তৈরি (URL থাকলে ইমেজ, না থাকলে ফন্ট আইকন)
     let iconHtml = '';
     if (app.iconUrl && app.isPublished) {
-        iconHtml = `<img src="${app.iconUrl}" alt="${app.name}" class="app-icon-img" style="width:80px; height:80px; border-radius:18px; object-fit:cover;">`;
+        iconHtml = `<img src="${app.iconUrl}" alt="${app.name}" class="app-icon-img">`;
     } else if (app.defaultIcon) {
         iconHtml = `<i class="${app.defaultIcon}" style="font-size: 3rem;"></i>`;
     } else {
         iconHtml = `<i class="fas fa-mobile-alt" style="font-size: 3rem;"></i>`;
     }
 
-    // স্ট্যাটাস ও স্ট্যাটস HTML
     let statsHtml = '';
     if (app.comingSoon) {
         statsHtml = `<div class="app-stats"><span><i class="fas fa-calendar-alt"></i> লঞ্চ শীঘ্রই</span></div>`;
@@ -1515,14 +1547,12 @@ function createAppCard(app) {
         statsHtml = `<div class="app-stats"><span><i class="fas fa-check-circle"></i> প্লে স্টোরে উপলব্ধ</span></div>`;
     }
 
-    // প্রাইভেসি বাটন (শুধু হ্যালো সিলেটির জন্য)
     const privacyButton = app.privacyLink && !app.comingSoon ? `
-        <a href="${app.privacyLink}" target="_blank" class="btn btn-small btn-outline" style="background:transparent;border:1px solid #EF0479;">
+        <a href="${app.privacyLink}" target="_blank" class="btn btn-small btn-outline">
             <i class="fas fa-shield-alt"></i> প্রাইভেসি
         </a>
     ` : '';
 
-    // ডাউনলোড বা কামিং সুন বাটন
     const actionButton = !app.comingSoon ? `
         <a href="https://play.google.com/store/apps/details?id=${app.packageName}" target="_blank" class="btn btn-small">
             <i class="fab fa-google-play"></i> ডাউনলোড
@@ -1533,10 +1563,9 @@ function createAppCard(app) {
         </button>
     `;
 
-    // সম্পূর্ণ কার্ড রিটার্ন
     return `
         <div class="app-card reveal" data-category="${app.category}">
-            <div class="app-image" style="background:${app.gradient}; display: flex; align-items: center; justify-content: center; min-height:160px;">
+            <div class="app-image" style="background:${app.gradient};">
                 ${iconHtml}
             </div>
             <div class="app-info">
@@ -1546,7 +1575,7 @@ function createAppCard(app) {
                 </div>
                 <p class="app-description">${app.description}</p>
                 ${statsHtml}
-                <div class="app-actions" style="display: flex; gap: 10px; margin-top: 15px;">
+                <div class="app-actions">
                     ${actionButton}
                     ${privacyButton}
                 </div>
@@ -1555,7 +1584,6 @@ function createAppCard(app) {
     `;
 }
 
-// সব অ্যাপ লোড করে HTML দেখানো
 function loadApps() {
     const container = document.getElementById('dynamicAppsGrid');
     if (!container) return;
@@ -1566,7 +1594,6 @@ function loadApps() {
     }
     container.innerHTML = appsHtml;
 
-    // রিভিল এনিমেশন পুনরায় সক্রিয় করা
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -1577,11 +1604,9 @@ function loadApps() {
     }, { threshold: 0.15 });
     reveals.forEach(el => observer.observe(el));
 
-    // ফিল্টারিং সিস্টেম চালু করা
     initializeFilters();
 }
 
-// ফিল্টার বাটনগুলোর কাজ করা
 function initializeFilters() {
     const filterBtns = document.querySelectorAll('.apps-filter .filter-btn');
     const appCards = document.querySelectorAll('.app-card');
@@ -1610,47 +1635,8 @@ function initializeFilters() {
     });
 }
 
-// পেজ লোড হওয়ার পর অ্যাপ লোড করা
 document.addEventListener('DOMContentLoaded', loadApps);
 </script>
-
-<style>
-    /* অ্যাপ আইকন ইমেজের জন্য স্টাইল */
-    .app-icon-img {
-        transition: transform 0.3s ease;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .app-card:hover .app-icon-img {
-        transform: scale(1.08);
-    }
-    .app-image {
-        position: relative;
-        min-height: 160px;
-    }
-    .app-actions {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-    .btn-outline {
-        background: transparent;
-        border: 1px solid #EF0479;
-        box-shadow: none;
-    }
-    .btn-outline:hover {
-        background: #EF0479;
-        color: white;
-        transform: translateY(-3px);
-    }
-    .app-stats {
-        margin: 12px 0;
-        font-size: 0.85rem;
-        display: flex;
-        gap: 15px;
-        opacity: 0.8;
-    }
-</style>
-
 
 <!-- Features Section -->
 <section id="features" class="features">
@@ -1662,49 +1648,37 @@ document.addEventListener('DOMContentLoaded', loadApps);
         
         <div class="features-grid">
             <div class="feature-card reveal">
-                <div class="feature-icon">
-                    <i class="fas fa-users"></i>
-                </div>
+                <div class="feature-icon"><i class="fas fa-users"></i></div>
                 <h3>বাংলাদেশী কমিউনিটি</h3>
                 <p>বিশ্বব্যাপী ছড়িয়ে থাকা বাংলাদেশীদের সাথে সংযুক্ত হোন। শেয়ার করুন আপনার অভিজ্ঞতা এবং তৈরি করুন নতুন সম্পর্ক।</p>
             </div>
             
             <div class="feature-card reveal">
-                <div class="feature-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                 <h3>নিরাপত্তা</h3>
                 <p>আপনার ডেটা সম্পূর্ণ নিরাপদ আমাদের কাছে। এন্ড-টু-এন্ড এনক্রিপশন এবং গোপনীয়তা নিশ্চিত।</p>
             </div>
             
             <div class="feature-card reveal">
-                <div class="feature-icon">
-                    <i class="fas fa-bolt"></i>
-                </div>
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
                 <h3>দ্রুত গতি</h3>
                 <p>অত্যন্ত দ্রুত এবং হালকা ওজনের অ্যাপ। যেকোনো নেটওয়ার্কে স্মুথ এক্সপেরিয়েন্স।</p>
             </div>
             
             <div class="feature-card reveal">
-                <div class="feature-icon">
-                    <i class="fas fa-language"></i>
-                </div>
+                <div class="feature-icon"><i class="fas fa-language"></i></div>
                 <h3>বাংলা ভাষা</h3>
                 <p>সম্পূর্ণ বাংলা ভাষায় ইন্টারফেস। আমাদের সকল ফিচার ব্যবহার করুন বাংলায়।</p>
             </div>
             
             <div class="feature-card reveal">
-                <div class="feature-icon">
-                    <i class="fas fa-sync-alt"></i>
-                </div>
+                <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
                 <h3>নিয়মিত আপডেট</h3>
                 <p>নিয়মিত নতুন ফিচার এবং উন্নয়ন। আমরা আমাদের ইউজারদের ফিডব্যাক অনুযায়ী আপডেট করি।</p>
             </div>
             
             <div class="feature-card reveal">
-                <div class="feature-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
                 <h3>২৪/৭ সাপোর্ট</h3>
                 <p>যেকোনো সমস্যায় আমরা আছি আপনার পাশে। ইমেইল বা অ্যাপ内 সাপোর্ট সিস্টেম।</p>
             </div>
@@ -1713,7 +1687,7 @@ document.addEventListener('DOMContentLoaded', loadApps);
 </section>
 
 <!-- Blog Section -->
-<section id="blog" class="blog section-padding">
+<section id="blog" class="blog">
     <div class="container">
         <div class="section-header reveal">
             <h2>সর্বশেষ আপডেট</h2>
@@ -1728,14 +1702,9 @@ document.addEventListener('DOMContentLoaded', loadApps);
                 <div class="blog-content">
                     <div class="blog-tag coming-soon">শীঘ্রই আসছে</div>
                     <h3>Hello Bangladeshi ২.০ ভার্সন লঞ্চ</h3>
-                    <p class="blog-excerpt">
-                        নতুন ইন্টারফেস, আরও দ্রুত পারফরম্যান্স এবং নতুন ফিচার সহ Hello Bangladeshi ২.০ ভার্সন অতি শীঘ্রই পাবলিশ করা হবে।
-                    </p>
+                    <p class="blog-excerpt">নতুন ইন্টারফেস, আরও দ্রুত পারফরম্যান্স এবং নতুন ফিচার সহ Hello Bangladeshi ২.০ ভার্সন অতি শীঘ্রই পাবলিশ করা হবে।</p>
                     <div class="blog-meta">
-                        <div class="blog-author">
-                            <div class="author-avatar"></div>
-                            <span>Farabi Walid</span>
-                        </div>
+                        <div class="blog-author"><div class="author-avatar"></div><span>Farabi Walid</span></div>
                         <a href="blog-details.html?blog=1" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -1748,14 +1717,9 @@ document.addEventListener('DOMContentLoaded', loadApps);
                 <div class="blog-content">
                     <div class="blog-tag new-feature">নতুন ফিচার</div>
                     <h3>নতুন কমিউনিটি ফিচার</h3>
-                    <p class="blog-excerpt">
-                        অ্যাপে গ্রুপ তৈরি, ইভেন্ট আয়োজন এবং নিজের কমিউনিটি গড়ে তোলার নতুন সোশ্যাল ফিচার যোগ করা হবে।
-                    </p>
+                    <p class="blog-excerpt">অ্যাপে গ্রুপ তৈরি, ইভেন্ট আয়োজন এবং নিজের কমিউনিটি গড়ে তোলার নতুন সোশ্যাল ফিচার যোগ করা হবে।</p>
                     <div class="blog-meta">
-                        <div class="blog-author">
-                            <div class="author-avatar"></div>
-                            <span>HB Team</span>
-                        </div>
+                        <div class="blog-author"><div class="author-avatar"></div><span>HB Team</span></div>
                         <a href="blog-details.html?blog=2" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -1768,78 +1732,10 @@ document.addEventListener('DOMContentLoaded', loadApps);
                 <div class="blog-content">
                     <div class="blog-tag tutorial">টিউটোরিয়াল</div>
                     <h3>মোবাইল অ্যাপ ডেভেলপমেন্ট গাইড</h3>
-                    <p class="blog-excerpt">
-                        কিভাবে শুরু করবেন মোবাইল অ্যাপ ডেভেলপমেন্ট? সম্পূর্ণ বাংলায় ধাপে ধাপে গাইড।
-                    </p>
+                    <p class="blog-excerpt">কিভাবে শুরু করবেন মোবাইল অ্যাপ ডেভেলপমেন্ট? সম্পূর্ণ বাংলায় ধাপে ধাপে গাইড।</p>
                     <div class="blog-meta">
-                        <div class="blog-author">
-                            <div class="author-avatar"></div>
-                            <span>Dev Team</span>
-                        </div>
+                        <div class="blog-author"><div class="author-avatar"></div><span>Dev Team</span></div>
                         <a href="blog-details.html?blog=3" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- নতুন পোস্ট ১ -->
-            <div class="blog-card reveal" onclick="window.location.href='blog-details.html?blog=4'">
-                <div class="blog-image" style="background: linear-gradient(135deg, #EF0479, #FFD93D)">
-                    <span class="blog-date"><i class="far fa-calendar"></i> ৫ জানুয়ারি ২০২৬</span>
-                </div>
-                <div class="blog-content">
-                    <div class="blog-tag announcement">ঘোষণা</div>
-                    <h3>Hello Bangladeshi App উন্নয়ন চলছে</h3>
-                    <p class="blog-excerpt">
-                        Hello Bangladeshi অ্যাপটি উন্নয়নের শেষ পর্যায়ে রয়েছে। অতি শীঘ্রই গুগল প্লে স্টোরে পাবলিশ করা হবে।
-                    </p>
-                    <div class="blog-meta">
-                        <div class="blog-author">
-                            <div class="author-avatar"></div>
-                            <span>HB Team</span>
-                        </div>
-                        <a href="blog-details.html?blog=4" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- নতুন পোস্ট ২ -->
-            <div class="blog-card reveal" onclick="window.location.href='blog-details.html?blog=5'">
-                <div class="blog-image" style="background: linear-gradient(135deg, #30cfd0, #330867)">
-                    <span class="blog-date"><i class="far fa-calendar"></i> ২৮ ডিসেম্বর ২০২৫</span>
-                </div>
-                <div class="blog-content">
-                    <div class="blog-tag tip">টিপস</div>
-                    <h3>মোবাইল অ্যাপ নিরাপত্তা টিপস</h3>
-                    <p class="blog-excerpt">
-                        আপনার মোবাইল ডিভাইস নিরাপদ রাখার সম্পূর্ণ গাইড। জানুন সেরা সিকিউরিটি প্র্যাকটিস।
-                    </p>
-                    <div class="blog-meta">
-                        <div class="blog-author">
-                            <div class="author-avatar"></div>
-                            <span>Security Team</span>
-                        </div>
-                        <a href="blog-details.html?blog=5" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- নতুন পোস্ট ৩ -->
-            <div class="blog-card reveal" onclick="window.location.href='blog-details.html?blog=6'">
-                <div class="blog-image" style="background: linear-gradient(135deg, #a8edea, #fed6e3)">
-                    <span class="blog-date"><i class="far fa-calendar"></i> ২০ ডিসেম্বর ২০২৫</span>
-                </div>
-                <div class="blog-content">
-                    <div class="blog-tag update">আপডেট</div>
-                    <h3>আমাদের অন্যান্য অ্যাপস আপডেট</h3>
-                    <p class="blog-excerpt">
-                        Mind Match Pro, QR Scanner এবং Color Match Pro অ্যাপগুলোর নতুন আপডেট প্রকাশিত হবে।
-                    </p>
-                    <div class="blog-meta">
-                        <div class="blog-author">
-                            <div class="author-avatar"></div>
-                            <span>Farabi Walid</span>
-                        </div>
-                        <a href="blog-details.html?blog=6" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1864,16 +1760,8 @@ document.addEventListener('DOMContentLoaded', loadApps);
                         <p>নিউ ইয়র্ক, USA</p>
                     </div>
                 </div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    "বিদেশে বসে দেশের মানুষের সাথে কানেক্ট থাকা খুব কঠিন ছিল। Hello Bangladeshi অ্যাপটি আমার সেই সমস্যার সমাধান করে দিয়েছে।"
-                </p>
+                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="testimonial-text">"বিদেশে বসে দেশের মানুষের সাথে কানেক্ট থাকা খুব কঠিন ছিল। Hello Bangladeshi অ্যাপটি আমার সেই সমস্যার সমাধান করে দিয়েছে।"</p>
             </div>
             
             <div class="testimonial-card reveal">
@@ -1884,16 +1772,8 @@ document.addEventListener('DOMContentLoaded', loadApps);
                         <p>ঢাকা, বাংলাদেশ</p>
                     </div>
                 </div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <p class="testimonial-text">
-                    "অ্যাপটি খুবই ইউজার ফ্রেন্ডলি। বিশেষ করে বাঙালি নারীদের জন্য নিরাপদ পরিবেশ তৈরি করেছে যা খুবই প্রশংসনীয়।"
-                </p>
+                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                <p class="testimonial-text">"অ্যাপটি খুবই ইউজার ফ্রেন্ডলি। বিশেষ করে বাঙালি নারীদের জন্য নিরাপদ পরিবেশ তৈরি করেছে যা খুবই প্রশংসনীয়।"</p>
             </div>
             
             <div class="testimonial-card reveal">
@@ -1904,16 +1784,8 @@ document.addEventListener('DOMContentLoaded', loadApps);
                         <p>লন্ডন, UK</p>
                     </div>
                 </div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    "বাংলাদেশী ব্যবসায়ীদের জন্য দারুণ প্ল্যাটফর্ম। আমি আমার ব্যবসার জন্য অনেক নতুন ক্লায়েন্ট পেয়েছি এই অ্যাপের মাধ্যমে।"
-                </p>
+                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="testimonial-text">"বাংলাদেশী ব্যবসায়ীদের জন্য দারুণ প্ল্যাটফর্ম। আমি আমার ব্যবসার জন্য অনেক নতুন ক্লায়েন্ট পেয়েছি এই অ্যাপের মাধ্যমে।"</p>
             </div>
         </div>
     </div>
@@ -1943,16 +1815,14 @@ document.addEventListener('DOMContentLoaded', loadApps);
             <p>নতুন আপডেট, অফার এবং ইভেন্ট সম্পর্কে প্রথম জানুন</p>
             <form class="newsletter-form" id="newsletterForm">
                 <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="আপনার ইমেইল ঠিকানা" required>
-                <button type="submit" class="btn">
-                    <i class="fas fa-paper-plane"></i> সাবস্ক্রাইব
-                </button>
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> সাবস্ক্রাইব</button>
             </form>
         </div>
     </div>
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="contact section-padding">
+<section id="contact" class="contact">
     <div class="container">
         <div class="section-header reveal">
             <h2>যোগাযোগ করুন</h2>
@@ -1962,45 +1832,32 @@ document.addEventListener('DOMContentLoaded', loadApps);
         <div class="contact-grid">
             <div class="contact-info reveal">
                 <h3>যোগাযোগের তথ্য</h3>
-                
                 <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                     <div class="contact-details">
                         <h5>ইমেইল</h5>
                         <p>info.hellobangladeshi@gmail.com</p>
                     </div>
                 </div>
-                
                 <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
                     <div class="contact-details">
                         <h5>ফোন</h5>
                         <p>+880 1724-238581</p>
                     </div>
                 </div>
-                
                 <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div class="contact-details">
                         <h5>ঠিকানা</h5>
                         <p>সিলেট, বাংলাদেশ</p>
                     </div>
                 </div>
-                
                 <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
+                    <div class="contact-icon"><i class="fas fa-user-tie"></i></div>
                     <div class="contact-details">
                         <h5>ডেভেলপার</h5>
-                        <p><strong>Farabi Walid</strong></p>
-                        <p>Full Stack Developer & App Developer</p>
+                        <p><strong>Farabi Walid</strong><br>Full Stack Developer & App Developer</p>
                     </div>
                 </div>
             </div>
@@ -2008,28 +1865,22 @@ document.addEventListener('DOMContentLoaded', loadApps);
             <div class="contact-form reveal">
                 <form id="contactForm">
                     <div class="form-group">
-                        <label for="contactName">আপনার নাম *</label>
+                        <label>আপনার নাম *</label>
                         <input type="text" id="contactName" class="form-control" placeholder="নাম লিখুন" required>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="contactEmail">ইমেইল *</label>
+                        <label>ইমেইল *</label>
                         <input type="email" id="contactEmail" class="form-control" placeholder="ইমেইল লিখুন" required>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="contactSubject">বিষয় *</label>
+                        <label>বিষয় *</label>
                         <input type="text" id="contactSubject" class="form-control" placeholder="বিষয় লিখুন" required>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="contactMessage">মেসেজ *</label>
+                        <label>মেসেজ *</label>
                         <textarea id="contactMessage" class="form-control" placeholder="আপনার মেসেজ লিখুন" rows="5" required></textarea>
                     </div>
-                    
-                    <button type="submit" class="btn">
-                        <i class="fas fa-paper-plane"></i> মেসেজ পাঠান
-                    </button>
+                    <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> মেসেজ পাঠান</button>
                 </form>
             </div>
         </div>
@@ -2044,25 +1895,11 @@ document.addEventListener('DOMContentLoaded', loadApps);
                 <h4>Hello Bangladeshi</h4>
                 <p>বাংলাদেশীদের জন্য একটি অনন্য প্ল্যাটফর্ম যেখানে আমরা একে অপরের সাথে সংযুক্ত হই, অভিজ্ঞতা শেয়ার করি এবং একসাথে উন্নতি করি।</p>
                 <div class="social-links">
-                    <!-- Updated with Hello Bangladeshi social media links -->
-                    <a href="https://www.facebook.com/hellobangladeshiofficial" target="_blank" class="social-link">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://x.com/hellobdofficial" target="_blank" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://www.instagram.com/hellobangladeshiofficial/" target="_blank" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@hellobangladeshitv" target="_blank" class="social-link">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/hellobangladeshiofficial" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@hellobangladeshiofficial" target="_blank" class="social-link">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             
@@ -2080,16 +1917,10 @@ document.addEventListener('DOMContentLoaded', loadApps);
             <div class="footer-section">
                 <h4>আমাদের অ্যাপস</h4>
                 <ul class="footer-links">
-                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.hellobangladeshi" target="_blank">
-                        <i class="fas fa-chevron-right"></i> Hello Bangladeshi</a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshiltd.mindmatchpro" target="_blank">
-                        <i class="fas fa-chevron-right"></i> Mind Match Pro</a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.bhappsstore.qrcodescanner" target="_blank">
-                        <i class="fas fa-chevron-right"></i> QR Scanner</a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.colormatchpro" target="_blank">
-                        <i class="fas fa-chevron-right"></i> Color Match Pro</a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.educalc" target="_blank">
-                        <i class="fas fa-chevron-right"></i> EduCalc</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.hellobangladeshi" target="_blank"><i class="fas fa-chevron-right"></i> Hello Bangladeshi</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshiltd.mindmatchpro" target="_blank"><i class="fas fa-chevron-right"></i> Mind Match Pro</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.bhappsstore.qrcodescanner" target="_blank"><i class="fas fa-chevron-right"></i> QR Scanner</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.colormatchpro" target="_blank"><i class="fas fa-chevron-right"></i> Color Match Pro</a></li>
                 </ul>
             </div>
             
@@ -2100,41 +1931,20 @@ document.addEventListener('DOMContentLoaded', loadApps);
                     <li><a href="terms.html"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
                     <li><a href="#"><i class="fas fa-chevron-right"></i> Refund Policy</a></li>
                     <li><a href="#"><i class="fas fa-chevron-right"></i> Cookie Policy</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> DMCA</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <div class="footer-social">
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/hellobangladeshiofficial" target="_blank" class="social-link">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.instagram.com/hellobangladeshiofficial/" target="_blank" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@hellobangladeshitv" target="_blank" class="social-link">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-                
                 <div class="footer-copyright">
                     <p>© 2026 Hello Bangladeshi. All Rights Reserved.</p>
                     <div class="footer-copyright-links">
                         <a href="privacy-policy.html">Privacy Policy</a> | 
-                        <a href="terms.html">Terms & Conditions</a> | 
-                        <a href="#">Sitemap</a>
+                        <a href="terms.html">Terms & Conditions</a>
                     </div>
                 </div>
-                
-                <div class="footer-legal">
-                    <p>All trademarks are property of their respective owners.</p>
-                </div>
             </div>
-            
             <div class="developer-credit">
                 Developed with <i class="fas fa-heart" style="color: #EF0479;"></i> by <strong>Farabi Walid</strong>
             </div>
@@ -2163,7 +1973,6 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
@@ -2171,162 +1980,72 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Scroll to Top Button
+// Scroll to Top
 const scrollTopBtn = document.getElementById('scrollTop');
-
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollTopBtn.classList.add('active');
-    } else {
-        scrollTopBtn.classList.remove('active');
-    }
+    scrollTopBtn.classList.toggle('active', window.scrollY > 300);
 });
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Scroll Reveal Animation
+// Scroll Reveal
 const reveals = document.querySelectorAll('.reveal');
-
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('active');
     });
-}, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-});
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+reveals.forEach(reveal => revealObserver.observe(reveal));
 
-reveals.forEach(reveal => {
-    revealObserver.observe(reveal);
-});
-
-// Smooth Scrolling for Anchor Links
+// Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
     });
 });
 
-// Notification Toast Function
+// Notification Function
 function showNotification(message, isError = false) {
     const toast = document.getElementById('notificationToast');
     const toastMessage = document.getElementById('toastMessage');
-    
     toastMessage.textContent = message;
-    
-    if (isError) {
-        toast.classList.add('error');
-    } else {
-        toast.classList.remove('error');
-    }
-    
+    if (isError) toast.classList.add('error');
+    else toast.classList.remove('error');
     toast.classList.add('show');
-    
-    setTimeout(() => {
-        toast.classList.remove('show');
-    }, 3000);
+    setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
-// Newsletter Form Handler
-const newsletterForm = document.getElementById('newsletterForm');
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const email = document.getElementById('newsletterEmail').value.trim();
-        
-        if (!email) {
-            showNotification('দয়া করে ইমেইল ঠিকানা লিখুন', true);
-            return;
-        }
-        
-        // Validate email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            showNotification('দয়া করে সঠিক ইমেইল ঠিকানা লিখুন', true);
-            return;
-        }
-        
-        // Show success message
-        showNotification('ধন্যবাদ! নিউজলেটার সাবস্ক্রিপশন সফল হয়েছে');
-        
-        // Reset form
-        newsletterForm.reset();
-    });
-}
+// Newsletter Form
+document.getElementById('newsletterForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('newsletterEmail').value.trim();
+    if (!email) return showNotification('দয়া করে ইমেইল ঠিকানা লিখুন', true);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showNotification('সঠিক ইমেইল লিখুন', true);
+    showNotification('ধন্যবাদ! নিউজলেটার সাবস্ক্রিপশন সফল হয়েছে');
+    this.reset();
+});
 
-// Contact Form Handler
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('contactName').value.trim();
-        const email = document.getElementById('contactEmail').value.trim();
-        const subject = document.getElementById('contactSubject').value.trim();
-        const message = document.getElementById('contactMessage').value.trim();
-        
-        // Validation
-        if (!name || !email || !subject || !message) {
-            showNotification('দয়া করে সবগুলো তথ্য পূরণ করুন', true);
-            return;
-        }
-        
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            showNotification('দয়া করে সঠিক ইমেইল ঠিকানা লিখুন', true);
-            return;
-        }
-        
-        // Show success message
-        showNotification('ধন্যবাদ! আপনার মেসেজটি পাঠানো হয়েছে। আমরা শীঘ্রই যোগাযোগ করব।');
-        
-        // Reset form
-        contactForm.reset();
-    });
-}
+// Contact Form
+document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    if (!name || !email) return showNotification('দয়া করে নাম ও ইমেইল লিখুন', true);
+    showNotification('ধন্যবাদ! আপনার মেসেজ পাঠানো হয়েছে');
+    this.reset();
+});
 
-// Blog card click event
-document.querySelectorAll('.blog-card').forEach((card, index) => {
+// Blog Card Click
+document.querySelectorAll('.blog-card').forEach(card => {
     card.addEventListener('click', function(e) {
-        // Prevent navigation if clicking on read more link (it has its own handler)
-        if (e.target.closest('.read-more') || e.target.classList.contains('read-more')) {
-            return;
-        }
-        
-        // For demo purposes, just show a notification
-        showNotification('ব্লগ পোস্ট শীঘ্রই আসছে!');
+        if (e.target.closest('.read-more')) return;
+        showNotification('ব্লগ পোড শীঘ্রই আসছে!');
     });
 });
 
-// Initialize animations on page load
-document.addEventListener('DOMContentLoaded', function() {
-    // Add loaded class to body for any CSS transitions
-    document.body.classList.add('loaded');
-    
-    // Show a welcome notification after 1 second
-    setTimeout(() => {
-        showNotification('Hello Bangladeshi এ স্বাগতম!');
-    }, 1000);
-});
+// Welcome Notification
+setTimeout(() => showNotification('Hello Bangladeshi এ স্বাগতম!'), 1000);
 </script>
 </body>
 </html>
