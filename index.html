@@ -1373,7 +1373,8 @@ footer {
 <button class="filter-btn" data-filter="entertainment">বিনোদন</button>
 </div>
 
-<div id="dynamicAppsGrid" class="apps-grid">
+<div class="apps-grid" id="dynamicAppsGrid">
+    <!-- কন্টেন্ট জাভাস্ক্রিপ্ট দ্বারা লোড হবে -->
     <div style="grid-column:1/-1; text-align:center; padding:50px;">
         <i class="fas fa-spinner fa-pulse fa-3x"></i>
         <p>অ্যাপস লোড হচ্ছে...</p>
@@ -1383,41 +1384,47 @@ footer {
 </section>
 
 <script>
-// অ্যাপসের ডাটাবেস - এখানে শুধু তথ্য যোগ করুন
-const appsDatabase = [
+// অ্যাপস ডাটাবেস - এখানে সব অ্যাপের তথ্য ও আইকন লিংক সংরক্ষিত
+const appsData = [
     {
+        id: "mindmatchpro",
         packageName: "com.hellobangladeshiltd.mindmatchpro",
-        defaultName: "Mind Match Pro",
+        name: "Mind Match Pro",
         category: "entertainment",
+        iconUrl: "https://play-lh.googleusercontent.com/n3_uiw9muo3QBkyCRYOO5dQYkzMc31NJsUcFYWLSgQBq461_jO4SRVnCJC8XD-CYfisRr-4FrHEsPhm3pXZkCw=s48-rw",
         defaultIcon: "fas fa-brain",
         gradient: "linear-gradient(135deg,#667eea,#764ba2)",
         description: "মজাদার ব্রেইন গেম যা আপনার স্মৃতি, মনোযোগ ও বুদ্ধিমত্তা উন্নত করতে সাহায্য করে।",
-        isPublished: true,
-        // প্লে স্টোরের আইকন URL (আমরা এটি ব্যবহার করব)
-        iconUrl: "https://play-lh.googleusercontent.com/MindMatchPro_Icon_Here" // আপাতত ডিফল্ট
+        isPublished: true
     },
     {
+        id: "qrscanner",
         packageName: "com.bhappsstore.qrcodescanner",
-        defaultName: "QR Scanner & Generator",
+        name: "QR Scanner & Generator",
         category: "utility",
+        iconUrl: "https://play-lh.googleusercontent.com/7gRctAbqtSbveRRfLUE64Djg84IChnj18RjTTJssRZEB7ufhIB4I_diNdplHupazzGpkedgUpbM2yk1fCQ2XFw=s64-rw",
         defaultIcon: "fas fa-qrcode",
         gradient: "linear-gradient(135deg,#30cfd0,#330867)",
         description: "দ্রুত ও নিরাপদ QR ও Barcode স্ক্যানার। লাইটওয়েট এবং বিজ্ঞাপনমুক্ত অভিজ্ঞতা।",
         isPublished: true
     },
     {
+        id: "hellobangladeshi",
         packageName: "com.hellobangladeshi.hellobangladeshi",
-        defaultName: "Hello Bangladeshi",
+        name: "Hello Bangladeshi",
         category: "productivity",
+        iconUrl: null,
         defaultIcon: "fas fa-flag",
         gradient: "linear-gradient(135deg,#EF0479,#FFD93D)",
         description: "বাংলাদেশিদের জন্য একটি ইউনিক প্ল্যাটফর্ম – কানেক্ট, শেয়ার এবং সুযোগ খুঁজুন।",
         isPublished: true
     },
     {
+        id: "hellosylheti",
         packageName: "com.hellobangladeshi.hellosylheti",
-        defaultName: "Hello Sylheti",
+        name: "Hello Sylheti",
         category: "entertainment",
+        iconUrl: null,
         defaultIcon: "fas fa-language",
         gradient: "linear-gradient(135deg,#EE1D52,#C4123E)",
         description: "সিলেটি ভাষা ও সংস্কৃতির অনন্য প্ল্যাটফর্ম। স্থানীয় তথ্য, সংযোগ ও সেবা একসাথে।",
@@ -1426,27 +1433,33 @@ const appsDatabase = [
         isPublished: true
     },
     {
+        id: "colormatchpro",
         packageName: "com.hellobangladeshi.colormatchpro",
-        defaultName: "Color Match Pro",
+        name: "Color Match Pro",
         category: "entertainment",
+        iconUrl: null,
         defaultIcon: "fas fa-palette",
         gradient: "linear-gradient(135deg,#a8edea,#fed6e3)",
         description: "রঙ চিনে ম্যাচ করুন! মজাদার গেম যা রিফ্লেক্স ও ফোকাস বাড়ায়।",
         isPublished: true
     },
     {
+        id: "educalc",
         packageName: "com.hellobangladeshi.educalc",
-        defaultName: "EduCalc",
+        name: "EduCalc",
         category: "productivity",
+        iconUrl: null,
         defaultIcon: "fas fa-calculator",
         gradient: "linear-gradient(135deg,#4facfe,#00f2fe)",
         description: "শিক্ষার্থীদের জন্য স্মার্ট ক্যালকুলেটর – দ্রুত ও নির্ভুল হিসাব।",
         isPublished: true
     },
     {
-        packageName: "com.yourcompany.futureapp1",
-        defaultName: "Task Manager Pro",
+        id: "futuretaskmanager",
+        packageName: "com.yourcompany.futuretaskmanager",
+        name: "Task Manager Pro",
         category: "productivity",
+        iconUrl: null,
         defaultIcon: "fas fa-tasks",
         gradient: "linear-gradient(135deg,#f093fb,#f5576c)",
         description: "শীঘ্রই আসছে! আপনার দৈনন্দিন কাজ পরিচালনার জন্য শক্তিশালী অ্যাপ।",
@@ -1454,9 +1467,11 @@ const appsDatabase = [
         comingSoon: true
     },
     {
-        packageName: "com.yourcompany.futureapp2",
-        defaultName: "Photo Editor Plus",
+        id: "futurephotoeditor",
+        packageName: "com.yourcompany.futurephotoeditor",
+        name: "Photo Editor Plus",
         category: "utility",
+        iconUrl: null,
         defaultIcon: "fas fa-crop-alt",
         gradient: "linear-gradient(135deg,#4facfe,#00f2fe)",
         description: "শীঘ্রই আসছে! প্রফেশনাল ফটো এডিটিং টুলস।",
@@ -1465,88 +1480,49 @@ const appsDatabase = [
     }
 ];
 
-// প্লে স্টোর থেকে অ্যাপ আইকন URL বের করার ফাংশন (গুগলের নিজস্ব CDN ব্যবহার করে)
-async function getAppIconUrl(packageName) {
-    // গুগল প্লে স্টোরের অ্যাপ আইকন সাধারণত এই ফরম্যাটে থাকে
-    // আমরা একটি প্রোক্সি ব্যবহার করব যা কাজ করে
-    const url = `https://play.google.com/store/apps/details?id=${packageName}`;
-    const proxyUrl = `https://cors-anywhere.herokuapp.com/${url}`;
-    
-    try {
-        // প্রথমে try করব fetch করার
-        const response = await fetch(proxyUrl, {
-            headers: {
-                'Origin': window.location.origin
-            }
-        });
-        
-        if (response.ok) {
-            const html = await response.text();
-            // আইকন URL খোঁজার জন্য regex
-            const iconMatch = html.match(/<img[^>]*class="T75of"[^>]*src="([^"]+)"/);
-            if (iconMatch && iconMatch[1]) {
-                return iconMatch[1];
-            }
-            
-            // আরেকটি প্যাটার্ন
-            const iconMatch2 = html.match(/<img[^>]*alt="[^"]*"[^>]*src="([^"]+)"[^>]*itemprop="image"/);
-            if (iconMatch2 && iconMatch2[1]) {
-                return iconMatch2[1];
-            }
-        }
-    } catch (error) {
-        console.log(`Could not fetch icon for ${packageName}:`, error);
-    }
-    
-    return null;
+// ক্যাটাগরির নাম বাংলায় অনুবাদ
+function getCategoryName(category) {
+    const categories = {
+        'productivity': 'প্রোডাক্টিভিটি',
+        'utility': 'ইউটিলিটি',
+        'entertainment': 'বিনোদন'
+    };
+    return categories[category] || category;
 }
 
-// ডিফল্ট আইকন জেনারেট করার ফাংশন (প্লে স্টোর থেকে না পেলে)
-function getDefaultIconUrl(packageName, iconClass) {
-    // আমরা একটি placeholder ইমেজ ব্যবহার করব যা ফন্টআসম আইকন দেখাবে
-    return null; // null মানে আমরা ফন্টআসম ব্যবহার করব
-}
-
-// অ্যাপ কার্ড তৈরি করার ফাংশন
-async function createAppCard(app) {
+// অ্যাপ কার্ড তৈরির ফাংশন
+function createAppCard(app) {
+    // আইকন তৈরি (URL থাকলে ইমেজ, না থাকলে ফন্ট আইকন)
     let iconHtml = '';
-    let iconUrl = null;
-    
-    // পাবলিশড অ্যাপের জন্য আইকন আনার চেষ্টা
-    if (app.isPublished && !app.comingSoon) {
-        try {
-            iconUrl = await getAppIconUrl(app.packageName);
-        } catch(e) {
-            console.log('Icon fetch failed for', app.packageName);
-        }
-    }
-    
-    if (iconUrl) {
-        iconHtml = `<img src="${iconUrl}" alt="${app.defaultName}" class="app-icon-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">`;
-        iconHtml += `<div style="display: none; align-items: center; justify-content: center; width: 100%; height: 100%;">
-                        <i class="${app.defaultIcon}" style="font-size: 3rem;"></i>
-                     </div>`;
-    } else {
+    if (app.iconUrl && app.isPublished) {
+        iconHtml = `<img src="${app.iconUrl}" alt="${app.name}" class="app-icon-img" style="width:80px; height:80px; border-radius:18px; object-fit:cover;">`;
+    } else if (app.defaultIcon) {
         iconHtml = `<i class="${app.defaultIcon}" style="font-size: 3rem;"></i>`;
+    } else {
+        iconHtml = `<i class="fas fa-mobile-alt" style="font-size: 3rem;"></i>`;
     }
-    
-    const statsHtml = app.stats && !app.comingSoon ? `
-        <div class="app-stats">
+
+    // স্ট্যাটাস ও স্ট্যাটস HTML
+    let statsHtml = '';
+    if (app.comingSoon) {
+        statsHtml = `<div class="app-stats"><span><i class="fas fa-calendar-alt"></i> লঞ্চ শীঘ্রই</span></div>`;
+    } else if (app.stats) {
+        statsHtml = `<div class="app-stats">
             <span><i class="fas fa-download"></i> ${app.stats.downloads}</span>
             <span><i class="fas fa-star"></i> ${app.stats.rating}</span>
-        </div>
-    ` : (app.comingSoon ? `
-        <div class="app-stats">
-            <span><i class="fas fa-calendar-alt"></i> লঞ্চ শীঘ্রই</span>
-        </div>
-    ` : '<div class="app-stats"><span><i class="fas fa-check-circle"></i> প্লে স্টোরে উপলব্ধ</span></div>');
-    
+        </div>`;
+    } else if (app.isPublished) {
+        statsHtml = `<div class="app-stats"><span><i class="fas fa-check-circle"></i> প্লে স্টোরে উপলব্ধ</span></div>`;
+    }
+
+    // প্রাইভেসি বাটন (শুধু হ্যালো সিলেটির জন্য)
     const privacyButton = app.privacyLink && !app.comingSoon ? `
         <a href="${app.privacyLink}" target="_blank" class="btn btn-small btn-outline" style="background:transparent;border:1px solid #EF0479;">
             <i class="fas fa-shield-alt"></i> প্রাইভেসি
         </a>
     ` : '';
-    
+
+    // ডাউনলোড বা কামিং সুন বাটন
     const actionButton = !app.comingSoon ? `
         <a href="https://play.google.com/store/apps/details?id=${app.packageName}" target="_blank" class="btn btn-small">
             <i class="fab fa-google-play"></i> ডাউনলোড
@@ -1556,16 +1532,17 @@ async function createAppCard(app) {
             <i class="fas fa-hourglass-half"></i> শীঘ্রই আসছে
         </button>
     `;
-    
+
+    // সম্পূর্ণ কার্ড রিটার্ন
     return `
         <div class="app-card reveal" data-category="${app.category}">
-            <div class="app-image" style="background:${app.gradient}; display: flex; align-items: center; justify-content: center; position: relative;">
+            <div class="app-image" style="background:${app.gradient}; display: flex; align-items: center; justify-content: center; min-height:160px;">
                 ${iconHtml}
             </div>
             <div class="app-info">
                 <div class="app-header">
-                    <h3 class="app-title">${app.defaultName}</h3>
-                    <span class="app-category">${app.category === 'productivity' ? 'প্রোডাক্টিভিটি' : (app.category === 'utility' ? 'ইউটিলিটি' : 'বিনোদন/কমিউনিটি')}</span>
+                    <h3 class="app-title">${app.name}</h3>
+                    <span class="app-category">${getCategoryName(app.category)}</span>
                 </div>
                 <p class="app-description">${app.description}</p>
                 ${statsHtml}
@@ -1578,21 +1555,18 @@ async function createAppCard(app) {
     `;
 }
 
-// সব অ্যাপ লোড করা
-async function loadAllApps() {
+// সব অ্যাপ লোড করে HTML দেখানো
+function loadApps() {
     const container = document.getElementById('dynamicAppsGrid');
-    container.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:50px;"><i class="fas fa-spinner fa-pulse fa-3x"></i><p>অ্যাপস লোড হচ্ছে...</p></div>';
-    
-    let allCardsHtml = '';
-    
-    for (const app of appsDatabase) {
-        const cardHtml = await createAppCard(app);
-        allCardsHtml += cardHtml;
+    if (!container) return;
+
+    let appsHtml = '';
+    for (const app of appsData) {
+        appsHtml += createAppCard(app);
     }
-    
-    container.innerHTML = allCardsHtml;
-    
-    // রিভিল এনিমেশন
+    container.innerHTML = appsHtml;
+
+    // রিভিল এনিমেশন পুনরায় সক্রিয় করা
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -1602,28 +1576,25 @@ async function loadAllApps() {
         });
     }, { threshold: 0.15 });
     reveals.forEach(el => observer.observe(el));
-    
-    // ফিল্টার সক্রিয় করা
+
+    // ফিল্টারিং সিস্টেম চালু করা
     initializeFilters();
 }
 
-// ফিল্টার সিস্টেম
+// ফিল্টার বাটনগুলোর কাজ করা
 function initializeFilters() {
     const filterBtns = document.querySelectorAll('.apps-filter .filter-btn');
     const appCards = document.querySelectorAll('.app-card');
-    
-    filterBtns.forEach(btn => {
-        btn.removeEventListener('click', handleFilterClick);
-        btn.addEventListener('click', handleFilterClick);
-    });
-    
+
+    if (!filterBtns.length) return;
+
     function handleFilterClick(e) {
-        filterBtns.forEach(b => b.classList.remove('active'));
+        filterBtns.forEach(btn => btn.classList.remove('active'));
         e.target.classList.add('active');
-        const filter = e.target.getAttribute('data-filter');
-        
+        const filterValue = e.target.getAttribute('data-filter');
+
         appCards.forEach(card => {
-            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
                 card.style.display = 'block';
                 setTimeout(() => card.style.opacity = '1', 10);
             } else {
@@ -1632,18 +1603,20 @@ function initializeFilters() {
             }
         });
     }
+
+    filterBtns.forEach(btn => {
+        btn.removeEventListener('click', handleFilterClick);
+        btn.addEventListener('click', handleFilterClick);
+    });
 }
 
-// পেজ লোড হলে শুরু
-document.addEventListener('DOMContentLoaded', loadAllApps);
+// পেজ লোড হওয়ার পর অ্যাপ লোড করা
+document.addEventListener('DOMContentLoaded', loadApps);
 </script>
 
 <style>
+    /* অ্যাপ আইকন ইমেজের জন্য স্টাইল */
     .app-icon-img {
-        width: 80px;
-        height: 80px;
-        object-fit: cover;
-        border-radius: 18px;
         transition: transform 0.3s ease;
         box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
@@ -1675,9 +1648,6 @@ document.addEventListener('DOMContentLoaded', loadAllApps);
         display: flex;
         gap: 15px;
         opacity: 0.8;
-    }
-    .app-card {
-        transition: all 0.3s ease;
     }
 </style>
 
