@@ -723,6 +723,9 @@ header.scrolled {
 .blog-tag.coming-soon { background: linear-gradient(135deg, #667eea, #764ba2); }
 .blog-tag.new-feature { background: linear-gradient(135deg, #f093fb, #f5576c); }
 .blog-tag.tutorial { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+.blog-tag.announcement { background: linear-gradient(135deg, #EF0479, #FFD93D); }
+.blog-tag.tip { background: linear-gradient(135deg, #30cfd0, #330867); }
+.blog-tag.update { background: linear-gradient(135deg, #a8edea, #fed6e3); color: #333; }
 
 .blog-date {
     position: absolute;
@@ -918,6 +921,13 @@ header.scrolled {
     margin-bottom: 20px;
 }
 
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
 .form-control {
     width: 100%;
     padding: 14px 20px;
@@ -927,11 +937,18 @@ header.scrolled {
     color: white;
     font-size: 0.9rem;
     transition: var(--tr);
+    font-family: 'Poppins', sans-serif;
 }
 
 .form-control:focus {
     outline: none;
     border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
 }
 
 /* Footer */
@@ -983,6 +1000,7 @@ footer {
     display: flex;
     gap: 12px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .social-link {
@@ -1004,20 +1022,66 @@ footer {
     transform: translateY(-3px);
 }
 
+.social-link.fb:hover { background: #1877F2; }
+.social-link.yt:hover { background: #FF0000; }
+.social-link.ig:hover { background: #E4405F; }
+.social-link.tw:hover { background: #1DA1F2; }
+
 .footer-bottom {
     text-align: center;
     padding-top: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-copyright p {
+    margin: 5px 0;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+.footer-copyright-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.footer-copyright-links a {
+    color: var(--secondary);
+    text-decoration: none;
+    opacity: 0.8;
+    font-size: 0.85rem;
+    transition: var(--tr);
+}
+
+.footer-copyright-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
 .developer-credit {
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 0.8rem;
     opacity: 0.7;
 }
 
 .developer-credit strong {
     color: var(--secondary);
+    cursor: pointer;
+    transition: var(--tr);
+}
+
+.developer-credit strong:hover {
+    text-decoration: underline;
 }
 
 /* Scroll to Top */
@@ -1039,6 +1103,7 @@ footer {
     transition: var(--tr);
     z-index: 999;
     border: none;
+    box-shadow: 0 5px 15px rgba(239, 4, 121, 0.4);
 }
 
 .scroll-top.active {
@@ -1065,7 +1130,7 @@ footer {
     align-items: center;
     gap: 12px;
     transform: translateX(150%);
-    transition: transform 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     border-left: 4px solid var(--primary);
 }
 
@@ -1073,8 +1138,12 @@ footer {
     transform: translateX(0);
 }
 
+.notification-toast.error {
+    border-left-color: #f44336;
+}
+
 /* Responsive */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1083,14 +1152,22 @@ footer {
     .hero-stats, .hero-buttons {
         justify-content: center;
     }
+}
+
+@media (max-width: 992px) {
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
     .contact-grid {
         grid-template-columns: 1fr;
     }
     .section-header h2 {
         font-size: 2.5rem;
+    }
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
@@ -1126,7 +1203,7 @@ footer {
     .hero-text h1 {
         font-size: 2.5rem;
     }
-    .apps-grid, .blog-grid, .features-grid {
+    .apps-grid, .blog-grid, .features-grid, .testimonials-grid {
         grid-template-columns: 1fr;
     }
     .footer-content {
@@ -1134,6 +1211,9 @@ footer {
         text-align: center;
     }
     .social-links {
+        justify-content: center;
+    }
+    .footer-links a {
         justify-content: center;
     }
 }
@@ -1156,6 +1236,22 @@ footer {
     .phone-mockup {
         width: 260px;
         height: 520px;
+    }
+    .apps-filter {
+        gap: 10px;
+    }
+    .filter-btn {
+        padding: 8px 18px;
+        font-size: 0.8rem;
+    }
+    .contact-form {
+        padding: 25px;
+    }
+    .newsletter-form {
+        flex-direction: column;
+    }
+    .newsletter-input {
+        width: 100%;
     }
 }
 </style>
@@ -1197,7 +1293,7 @@ footer {
         <div class="nav-actions">
             <a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.hellobangladeshi" 
                target="_blank" class="btn-download">
-                <i class="fab fa-google-play"></i> ডাউনলোড
+                <i class="fab fa-google-play"></i> ডাউনলোড করুন
             </a>
             <button class="menu-toggle" id="menuToggle">
                 <span></span>
@@ -1358,7 +1454,7 @@ footer {
         </div>
         
         <div class="blog-grid">
-            <div class="blog-card reveal" data-aos="fade-up" data-aos-delay="100" onclick="showNotification('ব্লগ পোড শীঘ্রই আসছে!')">
+            <div class="blog-card reveal" data-aos="fade-up" data-aos-delay="100" onclick="window.location.href='blog-details.html?blog=1'">
                 <div class="blog-image" style="background: linear-gradient(135deg, #667eea, #764ba2)">
                     <span class="blog-tag coming-soon">শীঘ্রই আসছে</span>
                     <span class="blog-date"><i class="far fa-calendar"></i> ২০ জানুয়ারি ২০২৬</span>
@@ -1367,13 +1463,15 @@ footer {
                     <h3>Hello Bangladeshi ২.০ ভার্সন লঞ্চ</h3>
                     <p class="blog-excerpt">নতুন ইন্টারফেস, আরও দ্রুত পারফরম্যান্স এবং নতুন ফিচার সহ Hello Bangladeshi ২.০ ভার্সন অতি শীঘ্রই পাবলিশ করা হবে।</p>
                     <div class="blog-meta">
-                        <div><i class="fas fa-user"></i> Farabi Walid</div>
-                        <a href="#" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
+                        <div class="blog-author">
+                            <i class="fas fa-user"></i> Farabi Walid
+                        </div>
+                        <a href="blog-details.html?blog=1" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
             
-            <div class="blog-card reveal" data-aos="fade-up" data-aos-delay="200" onclick="showNotification('ব্লগ পোড শীঘ্রই আসছে!')">
+            <div class="blog-card reveal" data-aos="fade-up" data-aos-delay="200" onclick="window.location.href='blog-details.html?blog=2'">
                 <div class="blog-image" style="background: linear-gradient(135deg, #f093fb, #f5576c)">
                     <span class="blog-tag new-feature">নতুন ফিচার</span>
                     <span class="blog-date"><i class="far fa-calendar"></i> ১৫ জানুয়ারি ২০২৬</span>
@@ -1382,13 +1480,15 @@ footer {
                     <h3>নতুন কমিউনিটি ফিচার</h3>
                     <p class="blog-excerpt">অ্যাপে গ্রুপ তৈরি, ইভেন্ট আয়োজন এবং নিজের কমিউনিটি গড়ে তোলার নতুন সোশ্যাল ফিচার যোগ করা হবে।</p>
                     <div class="blog-meta">
-                        <div><i class="fas fa-user"></i> HB Team</div>
-                        <a href="#" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
+                        <div class="blog-author">
+                            <i class="fas fa-user"></i> HB Team
+                        </div>
+                        <a href="blog-details.html?blog=2" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
             
-            <div class="blog-card reveal" data-aos="fade-up" data-aos-delay="300" onclick="showNotification('ব্লগ পোড শীঘ্রই আসছে!')">
+            <div class="blog-card reveal" data-aos="fade-up" data-aos-delay="300" onclick="window.location.href='blog-details.html?blog=3'">
                 <div class="blog-image" style="background: linear-gradient(135deg, #4facfe, #00f2fe)">
                     <span class="blog-tag tutorial">টিউটোরিয়াল</span>
                     <span class="blog-date"><i class="far fa-calendar"></i> ১০ জানুয়ারি ২০২৬</span>
@@ -1397,8 +1497,10 @@ footer {
                     <h3>মোবাইল অ্যাপ ডেভেলপমেন্ট গাইড</h3>
                     <p class="blog-excerpt">কিভাবে শুরু করবেন মোবাইল অ্যাপ ডেভেলপমেন্ট? সম্পূর্ণ বাংলায় ধাপে ধাপে গাইড।</p>
                     <div class="blog-meta">
-                        <div><i class="fas fa-user"></i> Dev Team</div>
-                        <a href="#" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
+                        <div class="blog-author">
+                            <i class="fas fa-user"></i> Dev Team
+                        </div>
+                        <a href="blog-details.html?blog=3" class="read-more">বিস্তারিত <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1423,9 +1525,9 @@ footer {
             <div class="testimonial-card reveal" data-aos="fade-up" data-aos-delay="100">
                 <div class="testimonial-header">
                     <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
-                    <div>
+                    <div class="testimonial-info">
                         <h4>আহমেদ হোসেন</h4>
-                        <p style="opacity:0.7; font-size:0.8rem;">নিউ ইয়র্ক, USA</p>
+                        <p>নিউ ইয়র্ক, USA</p>
                     </div>
                 </div>
                 <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -1435,9 +1537,9 @@ footer {
             <div class="testimonial-card reveal" data-aos="fade-up" data-aos-delay="150">
                 <div class="testimonial-header">
                     <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
-                    <div>
+                    <div class="testimonial-info">
                         <h4>সাদিয়া আক্তার</h4>
-                        <p style="opacity:0.7; font-size:0.8rem;">ঢাকা, বাংলাদেশ</p>
+                        <p>ঢাকা, বাংলাদেশ</p>
                     </div>
                 </div>
                 <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
@@ -1447,9 +1549,9 @@ footer {
             <div class="testimonial-card reveal" data-aos="fade-up" data-aos-delay="200">
                 <div class="testimonial-header">
                     <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
-                    <div>
+                    <div class="testimonial-info">
                         <h4>রফিকুল ইসলাম</h4>
-                        <p style="opacity:0.7; font-size:0.8rem;">লন্ডন, UK</p>
+                        <p>লন্ডন, UK</p>
                     </div>
                 </div>
                 <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -1508,30 +1610,30 @@ footer {
             <div class="contact-info reveal" data-aos="fade-right" data-aos-delay="100">
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <div>
-                        <h4>ইমেইল</h4>
+                    <div class="contact-details">
+                        <h5>ইমেইল</h5>
                         <p>info.hellobangladeshi@gmail.com</p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                    <div>
-                        <h4>ফোন</h4>
+                    <div class="contact-details">
+                        <h5>ফোন</h5>
                         <p>+880 1724-238581</p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div>
-                        <h4>ঠিকানা</h4>
+                    <div class="contact-details">
+                        <h5>ঠিকানা</h5>
                         <p>সিলেট, বাংলাদেশ</p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-user-tie"></i></div>
-                    <div>
-                        <h4>ডেভেলপার</h4>
-                        <p><strong>Farabi Walid</strong><br>Full Stack Developer</p>
+                    <div class="contact-details">
+                        <h5>ডেভেলপার</h5>
+                        <p><strong>Farabi Walid</strong><br>Full Stack Developer & App Developer</p>
                     </div>
                 </div>
             </div>
@@ -1567,12 +1669,13 @@ footer {
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Hello Bangladeshi</h4>
-                <p style="opacity:0.7;">বাংলাদেশীদের জন্য একটি অনন্য প্ল্যাটফর্ম যেখানে আমরা একে অপরের সাথে সংযুক্ত হই, অভিজ্ঞতা শেয়ার করি এবং একসাথে উন্নতি করি।</p>
+                <p>বাংলাদেশীদের জন্য একটি অনন্য প্ল্যাটফর্ম যেখানে আমরা একে অপরের সাথে সংযুক্ত হই, অভিজ্ঞতা শেয়ার করি এবং একসাথে উন্নতি করি।</p>
                 <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link fb"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link tw"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link ig"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link yt"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             
@@ -1593,23 +1696,33 @@ footer {
                     <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.hellobangladeshi" target="_blank"><i class="fas fa-chevron-right"></i> Hello Bangladeshi</a></li>
                     <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshiltd.mindmatchpro" target="_blank"><i class="fas fa-chevron-right"></i> Mind Match Pro</a></li>
                     <li><a href="https://play.google.com/store/apps/details?id=com.bhappsstore.qrcodescanner" target="_blank"><i class="fas fa-chevron-right"></i> QR Scanner</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.colormatchpro" target="_blank"><i class="fas fa-chevron-right"></i> Color Match Pro</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h4>আইনি</h4>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
+                    <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                    <li><a href="terms.html"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
                     <li><a href="#"><i class="fas fa-chevron-right"></i> Refund Policy</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Cookie Policy</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>© 2026 Hello Bangladeshi. All Rights Reserved.</p>
+            <div class="footer-bottom-content">
+                <div class="footer-copyright">
+                    <p>© 2026 Hello Bangladeshi. All Rights Reserved.</p>
+                    <div class="footer-copyright-links">
+                        <a href="privacy-policy.html">Privacy Policy</a> | 
+                        <a href="terms.html">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
             <div class="developer-credit">
-                Developed with <i class="fas fa-heart" style="color: var(--primary);"></i> by <strong>Farabi Walid</strong>
+                Developed with <i class="fas fa-heart" style="color: var(--primary);"></i> by <strong onclick="window.location.href='developer.html'">Farabi Walid</strong>
             </div>
         </div>
     </div>
@@ -1685,7 +1798,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 function showNotification(message, isError = false) {
     const toast = document.getElementById('notificationToast');
     const toastMessage = document.getElementById('toastMessage');
+    const toastIcon = toast.querySelector('i');
+    
     toastMessage.textContent = message;
+    if (isError) {
+        toast.classList.add('error');
+        if (toastIcon) toastIcon.style.color = '#f44336';
+    } else {
+        toast.classList.remove('error');
+        if (toastIcon) toastIcon.style.color = 'var(--secondary)';
+    }
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 3000);
 }
@@ -1714,16 +1836,35 @@ document.getElementById('contactForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
     const name = document.getElementById('contactName').value.trim();
     const email = document.getElementById('contactEmail').value.trim();
-    if (!name || !email) {
-        showNotification('দয়া করে নাম ও ইমেইল লিখুন', true);
+    const subject = document.getElementById('contactSubject').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+    
+    if (!name || !email || !subject || !message) {
+        showNotification('দয়া করে সব ঘর পূরণ করুন', true);
+        return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showNotification('সঠিক ইমেইল লিখুন', true);
         return;
     }
     showNotification('ধন্যবাদ! আপনার মেসেজ পাঠানো হয়েছে');
     this.reset();
 });
 
-// Apps Data
+// Apps Data - Complete with all original apps
 const appsData = [
+    {
+        id: "hellobangladeshi",
+        packageName: "com.hellobangladeshi.hellobangladeshi",
+        name: "Hello Bangladeshi",
+        category: "productivity",
+        iconUrl: null,
+        gradient: "linear-gradient(135deg,#EF0479,#FFD93D)",
+        description: "বাংলাদেশিদের জন্য একটি ইউনিক প্ল্যাটফর্ম – কানেক্ট, শেয়ার এবং সুযোগ খুঁজুন।",
+        stats: { downloads: "১০K+", rating: "৪.৮ ★" },
+        privacyLink: "privacy-policy.html",
+        isPublished: true
+    },
     {
         id: "mindmatchpro",
         packageName: "com.hellobangladeshiltd.mindmatchpro",
@@ -1732,6 +1873,7 @@ const appsData = [
         iconUrl: "https://play-lh.googleusercontent.com/n3_uiw9muo3QBkyCRYOO5dQYkzMc31NJsUcFYWLSgQBq461_jO4SRVnCJC8XD-CYfisRr-4FrHEsPhm3pXZkCw=s48-rw",
         gradient: "linear-gradient(135deg,#667eea,#764ba2)",
         description: "মজাদার ব্রেইন গেম যা আপনার স্মৃতি, মনোযোগ ও বুদ্ধিমত্তা উন্নত করতে সাহায্য করে।",
+        stats: { downloads: "৫K+", rating: "৪.৫ ★" },
         isPublished: true
     },
     {
@@ -1742,16 +1884,7 @@ const appsData = [
         iconUrl: "https://play-lh.googleusercontent.com/7gRctAbqtSbveRRfLUE64Djg84IChnj18RjTTJssRZEB7ufhIB4I_diNdplHupazzGpkedgUpbM2yk1fCQ2XFw=s64-rw",
         gradient: "linear-gradient(135deg,#30cfd0,#330867)",
         description: "দ্রুত ও নিরাপদ QR ও Barcode স্ক্যানার। লাইটওয়েট এবং বিজ্ঞাপনমুক্ত অভিজ্ঞতা।",
-        isPublished: true
-    },
-    {
-        id: "hellobangladeshi",
-        packageName: "com.hellobangladeshi.hellobangladeshi",
-        name: "Hello Bangladeshi",
-        category: "productivity",
-        iconUrl: null,
-        gradient: "linear-gradient(135deg,#EF0479,#FFD93D)",
-        description: "বাংলাদেশিদের জন্য একটি ইউনিক প্ল্যাটফর্ম – কানেক্ট, শেয়ার এবং সুযোগ খুঁজুন।",
+        stats: { downloads: "৮K+", rating: "৪.৭ ★" },
         isPublished: true
     },
     {
@@ -1762,6 +1895,8 @@ const appsData = [
         iconUrl: null,
         gradient: "linear-gradient(135deg,#EE1D52,#C4123E)",
         description: "সিলেটি ভাষা ও সংস্কৃতির অনন্য প্ল্যাটফর্ম। স্থানীয় তথ্য, সংযোগ ও সেবা একসাথে।",
+        stats: { downloads: "৫০০+", rating: "৪.৮ ★" },
+        privacyLink: "https://bhappsstore.github.io/hello-sylheti-privacy.html",
         isPublished: true
     },
     {
@@ -1772,6 +1907,7 @@ const appsData = [
         iconUrl: null,
         gradient: "linear-gradient(135deg,#a8edea,#fed6e3)",
         description: "রঙ চিনে ম্যাচ করুন! মজাদার গেম যা রিফ্লেক্স ও ফোকাস বাড়ায়।",
+        stats: { downloads: "২K+", rating: "৪.৬ ★" },
         isPublished: true
     },
     {
@@ -1782,6 +1918,7 @@ const appsData = [
         iconUrl: null,
         gradient: "linear-gradient(135deg,#4facfe,#00f2fe)",
         description: "শিক্ষার্থীদের জন্য স্মার্ট ক্যালকুলেটর – দ্রুত ও নির্ভুল হিসাব।",
+        stats: { downloads: "১K+", rating: "৪.৪ ★" },
         isPublished: true
     }
 ];
@@ -1797,7 +1934,7 @@ function getCategoryName(category) {
 
 function createAppCard(app) {
     let iconHtml = '';
-    if (app.iconUrl) {
+    if (app.iconUrl && app.isPublished) {
         iconHtml = `<img src="${app.iconUrl}" alt="${app.name}" class="app-icon-img">`;
     } else {
         const iconMap = {
@@ -1808,6 +1945,22 @@ function createAppCard(app) {
         };
         iconHtml = `<div style="font-size: 3rem;">${iconMap[app.name] || '📱'}</div>`;
     }
+
+    let statsHtml = '';
+    if (app.stats) {
+        statsHtml = `<div class="app-stats">
+            <span><i class="fas fa-download"></i> ${app.stats.downloads}</span>
+            <span><i class="fas fa-star"></i> ${app.stats.rating}</span>
+        </div>`;
+    } else if (app.isPublished) {
+        statsHtml = `<div class="app-stats"><span><i class="fas fa-check-circle"></i> প্লে স্টোরে উপলব্ধ</span></div>`;
+    }
+
+    const privacyButton = app.privacyLink && app.isPublished ? `
+        <a href="${app.privacyLink}" target="_blank" class="btn btn-small btn-outline">
+            <i class="fas fa-shield-alt"></i> প্রাইভেসি
+        </a>
+    ` : '';
 
     return `
         <div class="app-card reveal" data-category="${app.category}" data-aos="fade-up" data-aos-delay="100">
@@ -1820,13 +1973,12 @@ function createAppCard(app) {
                     <span class="app-category">${getCategoryName(app.category)}</span>
                 </div>
                 <p class="app-description">${app.description}</p>
-                <div class="app-stats">
-                    <span><i class="fas fa-check-circle"></i> প্লে স্টোরে উপলব্ধ</span>
-                </div>
+                ${statsHtml}
                 <div class="app-actions">
                     <a href="https://play.google.com/store/apps/details?id=${app.packageName}" target="_blank" class="btn btn-small btn-primary">
                         <i class="fab fa-google-play"></i> ডাউনলোড
                     </a>
+                    ${privacyButton}
                 </div>
             </div>
         </div>
