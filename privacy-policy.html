@@ -2,188 +2,628 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>গোপনীয়তা নীতি (Privacy Policy) | Hello Bangladeshi</title>
-    <meta name="description" content="Hello Bangladeshi অ্যাপ ও ওয়েবসাইটের জন্য গোপনীয়তা নীতি।">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>গোপনীয়তা নীতি | Hello Bangladeshi</title>
+    <meta name="description" content="Hello Bangladeshi অ্যাপ ও ওয়েবসাইটের জন্য গোপনীয়তা নীতি। আপনার তথ্যের নিরাপত্তা ও গোপনীয়তা আমাদের কাছে সর্বোচ্চ গুরুত্বপূর্ণ।">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
     <style>
         :root {
             --primary: #EF0479;
+            --primary-dark: #c00363;
             --secondary: #FFD93D;
+            --accent: #4F46E5;
+            --accent-cyan: #25F4EE;
             --dark: #0a0e27;
-            --light: #f8fafc;
-            --gradient: linear-gradient(135deg, #EF0479, #FFD93D);
+            --dark-card: #111117;
+            --dark-card2: #16161f;
+            --gradient-primary: linear-gradient(135deg, #EF0479, #FFD93D);
+            --gradient-accent: linear-gradient(135deg, #4F46E5, #8B5CF6);
+            --gradient-cyan: linear-gradient(135deg, #25F4EE, #00adaa);
+            --gp: 0 0 22px rgba(239, 4, 121, 0.5);
+            --gc: 0 0 22px rgba(37, 244, 238, 0.5);
+            --gdual: -5px 0 22px rgba(239, 4, 121, 0.3), 5px 0 22px rgba(37, 244, 238, 0.3);
+            --r: 16px;
+            --tr: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Hind Siliguri', 'Poppins', sans-serif;
-            background-color: #f5f7fa;
-            color: #333;
+            background: linear-gradient(135deg, #0a0e27, #1a1d3a, #2d1b4e);
+            color: #fff;
             line-height: 1.7;
-            padding: 20px;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
+        
         .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(10, 14, 39, 0.08);
-            overflow: hidden;
-            border: 1px solid #eaeaea;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--dark); }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 3px; }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes borderGlow {
+            0%, 100% { border-color: rgba(239, 4, 121, 0.3); box-shadow: 0 0 0 0 rgba(239, 4, 121, 0.2); }
+            50% { border-color: rgba(255, 217, 61, 0.6); box-shadow: 0 0 20px 5px rgba(239, 4, 121, 0.3); }
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
+        
+        /* Badge Style */
+        .bdg {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(239, 4, 121, 0.3);
+            background: rgba(239, 4, 121, 0.1);
+            color: var(--secondary);
+            padding: 5px 18px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+        
+        .bdg .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--secondary);
+            animation: blink 1.8s infinite;
+        }
+        
+        /* Header */
         header {
-            background: var(--gradient);
-            color: white;
-            padding: 50px 40px;
-            text-align: center;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(239, 4, 121, 0.3);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--tr);
         }
-        header h1 {
-            font-size: 2.8rem;
+        
+        header.scrolled {
+            background: rgba(10, 14, 39, 0.98);
+            border-bottom-color: var(--primary);
+            box-shadow: 0 4px 30px rgba(239, 4, 121, 0.15);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.02);
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 2px;
+        }
+        
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+        
+        .logo-text h3 {
+            font-size: 1.4rem;
             font-weight: 800;
-            margin-bottom: 10px;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
         }
-        header p { font-size: 1.1rem; opacity: 0.95; }
-        .lang-toggle {
-            text-align: center;
-            padding: 20px;
-            background: #f0f4f8;
-            border-bottom: 1px solid #ddd;
+        
+        .logo-text h3 span {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .lang-toggle button {
-            padding: 12px 30px;
-            margin: 0 10px;
-            border: 2px solid var(--primary);
-            background: white;
-            color: var(--primary);
+        
+        .logo-text p {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 2px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--tr);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .back-btn:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(239, 4, 121, 0.4);
+        }
+        
+        /* Privacy Section */
+        .privacy-section {
+            padding: 80px 0 60px;
+        }
+        
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .privacy-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        .privacy-header h1 span {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .privacy-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .divider {
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            margin: 20px auto 0;
+            border-radius: 3px;
+        }
+        
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .lang-btn {
+            padding: 12px 35px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Hind Siliguri', sans-serif;
+            font-weight: 600;
+            transition: var(--tr);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+        }
+        
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(239, 4, 121, 0.4);
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Privacy Content Box */
+        .privacy-content {
+            background: var(--dark-card);
+            border-radius: 30px;
+            padding: 50px;
+            border: 1px solid rgba(239, 4, 121, 0.2);
+            backdrop-filter: blur(10px);
+            transition: var(--tr);
+        }
+        
+        .privacy-content:hover {
+            border-color: rgba(239, 4, 121, 0.4);
+            box-shadow: 0 10px 30px rgba(239, 4, 121, 0.1);
+        }
+        
+        .language-content {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        
+        .language-content.active {
+            display: block;
+        }
+        
+        /* Content Styling */
+        .section-title {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 217, 61, 0.3);
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .section-title:first-child {
+            margin-top: 0;
+        }
+        
+        .subsection-title {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin: 30px 0 15px;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        
+        .content-text {
+            margin-bottom: 20px;
+            opacity: 0.9;
+            line-height: 1.8;
             font-size: 1rem;
         }
-        .lang-toggle button.active {
-            background: var(--gradient);
-            color: white;
-            border-color: transparent;
+        
+        .content-list {
+            margin: 20px 0 25px 30px;
         }
-        .lang-toggle button:hover:not(.active) {
-            background: #fce4ee;
-        }
-        .policy-content {
-            padding: 40px 50px 60px;
-        }
-        .language { display: none; }
-        .language.active { display: block; }
-        .language h2 {
-            color: var(--primary);
-            margin: 35px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
-            font-size: 1.8rem;
-        }
-        .language h3 {
-            color: var(--dark);
-            margin: 25px 0 15px;
-            font-size: 1.4rem;
-        }
-        .language p, .language ul {
-            margin-bottom: 18px;
-            color: #444;
-            font-size: 1.05rem;
-        }
-        .language ul {
-            padding-left: 25px;
-        }
-        .language li {
-            margin-bottom: 10px;
+        
+        .content-list li {
+            margin-bottom: 12px;
+            opacity: 0.9;
+            line-height: 1.7;
             position: relative;
         }
-        .language li:before {
+        
+        .content-list li::before {
             content: "•";
-            color: var(--primary);
+            color: var(--secondary);
             font-weight: bold;
             display: inline-block;
             width: 1em;
             margin-left: -1em;
             font-size: 1.2rem;
         }
-        .contact-box {
-            background: linear-gradient(135deg, #f8f9ff, #f0f4ff);
-            border-left: 5px solid var(--secondary);
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(239, 4, 121, 0.1), rgba(255, 217, 61, 0.05));
+            border-left: 4px solid var(--primary);
             padding: 25px;
-            border-radius: 10px;
-            margin: 30px 0;
+            border-radius: 15px;
+            margin: 25px 0;
         }
-        .contact-box h4 {
-            color: var(--dark);
-            margin-bottom: 10px;
+        
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.1), rgba(255, 193, 7, 0.05));
+            border-left: 4px solid #ff5722;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), rgba(0, 188, 212, 0.05));
+            border-left: 4px solid #2196f3;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+        
+        /* Contact Box inside privacy */
+        .contact-box {
+            background: var(--dark-card2);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0 30px;
+            border: 1px solid rgba(239, 4, 121, 0.2);
+            text-align: center;
+        }
+        
+        .contact-box h3 {
+            color: var(--secondary);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        
+        .contact-info {
             display: flex;
-            align-items: center;
-            gap: 10px;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 25px;
         }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: var(--tr);
+        }
+        
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+        
         .update-date {
             text-align: center;
-            font-style: italic;
-            color: #666;
+            opacity: 0.6;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px dashed #ccc;
-            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem;
         }
+        
+        /* Footer */
         footer {
-            text-align: center;
-            padding: 25px;
-            background: var(--dark);
-            color: #aaa;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 60px 0 25px;
+            border-top: 1px solid rgba(239, 4, 121, 0.2);
+            margin-top: 40px;
         }
-        footer a {
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .footer-section p {
+            opacity: 0.7;
+            line-height: 1.8;
+            font-size: 0.85rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--tr);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.7;
+            font-size: 0.85rem;
+        }
+        
+        .footer-bottom a {
             color: var(--secondary);
             text-decoration: none;
+            transition: var(--tr);
         }
+        
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--tr);
+            z-index: 999;
+            border: none;
+            box-shadow: 0 5px 15px rgba(239, 4, 121, 0.4);
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .privacy-header h1 { font-size: 2.5rem; }
+            .privacy-content { padding: 35px; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+        }
+        
         @media (max-width: 768px) {
-            .container { margin: 10px; border-radius: 15px; }
-            header { padding: 40px 25px; }
-            header h1 { font-size: 2.2rem; }
-            .policy-content { padding: 30px 25px 40px; }
-            .language h2 { font-size: 1.6rem; }
-            .lang-toggle button { display: block; width: 90%; margin: 10px auto; }
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .back-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .privacy-header h1 { font-size: 2rem; }
+            .section-title { font-size: 1.6rem; }
+            .subsection-title { font-size: 1.3rem; }
+            .privacy-content { padding: 25px; }
+            .contact-box { padding: 25px 20px; }
+            .contact-info { flex-direction: column; gap: 20px; }
+            .lang-toggle { flex-direction: column; align-items: center; }
+            .lang-btn { width: 80%; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .footer-links a { justify-content: center; }
+        }
+        
+        @media (max-width: 480px) {
+            .privacy-header h1 { font-size: 1.8rem; }
+            .privacy-content { padding: 20px; }
+            .lang-btn { width: 100%; }
         }
     </style>
 </head>
 <body>
+
+<!-- Header -->
+<header id="header">
     <div class="container">
-        <header>
-            <h1><i class="fas fa-user-shield"></i> গোপনীয়তা নীতি</h1>
-            <p>Hello Bangladeshi - Connect, Share & Grow Together</p>
-        </header>
-
-        <div class="lang-toggle">
-            <button id="btnBn" class="active"><i class="fas fa-language"></i> বাংলা</button>
-            <button id="btnEn"><i class="fas fa-globe"></i> English</button>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-img">
+                    <img src="https://hellobangladeshi.github.io/hb_logo.png" alt="Hello Bangladeshi Logo" onerror="this.src='https://placehold.co/50x50/EF0479/FFFFFF?text=HB'">
+                </div>
+                <div class="logo-text">
+                    <h3>Hello <span>Bangladeshi</span></h3>
+                    <p>Connect, Share & Grow Together</p>
+                </div>
+            </a>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> হোমে ফিরে যান
+            </a>
         </div>
+    </div>
+</header>
 
-        <div class="policy-content">
+<!-- Privacy Section -->
+<section class="privacy-section">
+    <div class="container">
+        <div class="privacy-header" data-aos="fade-up">
+            <div class="bdg" style="margin: 0 auto;">
+                <span class="dot"></span>
+                <span>Privacy & Security</span>
+            </div>
+            <h1><span>গোপনীয়তা নীতি</span></h1>
+            <div class="divider"></div>
+            <p>Hello Bangladeshi অ্যাপ ও ওয়েবসাইটের জন্য গোপনীয়তা নীতি</p>
+        </div>
+        
+        <!-- Language Toggle -->
+        <div class="lang-toggle" data-aos="fade-up" data-aos-delay="100">
+            <button id="btnBn" class="lang-btn active">
+                <i class="fas fa-language"></i> বাংলা
+            </button>
+            <button id="btnEn" class="lang-btn">
+                <i class="fas fa-globe"></i> English
+            </button>
+        </div>
+        
+        <div class="privacy-content" data-aos="fade-up" data-aos-delay="150">
             <!-- বাংলা ভার্সন -->
-            <div id="bn" class="language active">
-                <h2>Hello Bangladeshi গোপনীয়তা নীতি</h2>
-                <p>এই গোপনীয়তা নীতিটি ("নীতি") Hello Bangladeshi মোবাইল অ্যাপ্লিকেশন এবং এর সংশ্লিষ্ট ওয়েবসাইট (একত্রে "সেবা") এর মাধ্যমে আপনার তথ্য সংগ্রহ, ব্যবহার এবং প্রকাশের ব্যাখ্যা করে। সেবা ব্যবহারের মাধ্যমে আপনি এই নীতির শর্তাবলীতে সম্মত হন।</p>
+            <div id="bn" class="language-content active">
+                <h2 class="section-title"><i class="fas fa-shield-alt"></i> Hello Bangladeshi গোপনীয়তা নীতি</h2>
+                <p class="content-text">
+                    এই গোপনীয়তা নীতিটি ("নীতি") Hello Bangladeshi মোবাইল অ্যাপ্লিকেশন এবং এর সংশ্লিষ্ট ওয়েবসাইট (একত্রে "সেবা") এর মাধ্যমে আপনার তথ্য সংগ্রহ, ব্যবহার এবং প্রকাশের ব্যাখ্যা করে। সেবা ব্যবহারের মাধ্যমে আপনি এই নীতির শর্তাবলীতে সম্মত হন।
+                </p>
 
-                <h3>১. আমরা কোন তথ্য সংগ্রহ করি?</h3>
-                <p>সেবার কার্যকারিতা উন্নত করতে এবং আপনার ব্যক্তিগত অভিজ্ঞতা প্রদান করতে আমরা নিম্নলিখিত ধরনের তথ্য সংগ্রহ করতে পারি:</p>
-                <ul>
+                <div class="highlight-box">
+                    <p><strong><i class="fas fa-info-circle"></i> আমাদের প্রতিশ্রুতি:</strong> আপনার গোপনীয়তা আমাদের কাছে সর্বোচ্চ গুরুত্বপূর্ণ। আমরা আপনার ব্যক্তিগত তথ্যের নিরাপত্তা নিশ্চিত করতে সর্বোচ্চ চেষ্টা করি।</p>
+                </div>
+
+                <h3 class="subsection-title"><i class="fas fa-database"></i> ১. আমরা কোন তথ্য সংগ্রহ করি?</h3>
+                <p class="content-text">সেবার কার্যকারিতা উন্নত করতে এবং আপনার ব্যক্তিগত অভিজ্ঞতা প্রদান করতে আমরা নিম্নলিখিত ধরনের তথ্য সংগ্রহ করতে পারি:</p>
+                <ul class="content-list">
                     <li><strong>ব্যক্তিগত তথ্য:</strong> আপনি স্বেচ্ছায় প্রদান করেন এমন নাম, ইমেল ঠিকানা, ফোন নম্বর, প্রোফাইল ছবি এবং জীবনবৃত্তান্ত।</li>
                     <li><strong>ব্যবহার সংক্রান্ত তথ্য:</strong> অ্যাপে আপনি কতক্ষণ অবস্থান করেন, কোন বৈশিষ্ট্যগুলো ব্যবহার করেন, পছন্দ, শেয়ার এবং ইন-অ্যাপ ক্রিয়াকলাপ সম্পর্কিত তথ্য।</li>
                     <li><strong>ডিভাইস তথ্য:</strong> আপনার ডিভাইসের মডেল, অপারেটিং সিস্টেম সংস্করণ, অনন্য ডিভাইস আইডেন্টিফায়ার (যেমন Advertising ID), এবং নেটওয়ার্ক তথ্য।</li>
                     <li><strong>লোকেশন ডেটা (ঐচ্ছিক):</strong> আপনি অনুমতি দিলে, আমরা কমিউনিটি বা ইভেন্ট-ভিত্তিক বৈশিষ্ট্যগুলোর জন্য আপনার স্থানীয় অবস্থানের ডেটা সংগ্রহ করতে পারি।</li>
                 </ul>
 
-                <h3>২. আমরা কীভাবে আপনার তথ্য ব্যবহার করি?</h3>
-                <ul>
+                <h3 class="subsection-title"><i class="fas fa-cogs"></i> ২. আমরা কীভাবে আপনার তথ্য ব্যবহার করি?</h3>
+                <ul class="content-list">
                     <li>সেবা প্রদান, পরিচালনা ও উন্নত করা।</li>
                     <li>ব্যক্তিগতকৃত ব্যবহারকারী অভিজ্ঞতা তৈরি করা।</li>
                     <li>আপনার সাথে যোগাযোগ করা (আপডেট, নিরাপত্তা সতর্কতা, কাস্টমার সাপোর্ট)।</li>
@@ -191,20 +631,24 @@
                     <li>সেবার নিরাপত্তা নিশ্চিত করা এবং জালিয়াতি রোধ করা।</li>
                 </ul>
 
-                <h3>৩. তথ্য শেয়ারিং</h3>
-                <p>আমরা আপনার ব্যক্তিগত তথ্য নিচের অবস্থা ছাড়া কখনোই তৃতীয় পক্ষের সাথে বিক্রি বা ভাগ করি না:</p>
-                <ul>
+                <h3 class="subsection-title"><i class="fas fa-share-alt"></i> ৩. তথ্য শেয়ারিং</h3>
+                <p class="content-text">আমরা আপনার ব্যক্তিগত তথ্য নিচের অবস্থা ছাড়া কখনোই তৃতীয় পক্ষের সাথে বিক্রি বা ভাগ করি না:</p>
+                <ul class="content-list">
                     <li><strong>আপনার সম্মতিতে:</strong> আপনি যখন কোনো বৈশিষ্ট্যের মাধ্যমে অন্য ব্যবহারকারীর সাথে তথ্য শেয়ার করতে সম্মত হন।</li>
                     <li><strong>সেবা প্রদানকারীদের সাথে:</strong> ডেটা হোস্টিং, বিশ্লেষণ, কাস্টমার সাপোর্ট বা পেমেন্ট প্রসেসিং-এর মতো সেবা প্রদানকারী প্রতিষ্ঠান, যারা গোপনীয়তার কঠোর চুক্তির আওতায় কাজ করে।</li>
                     <li><strong>আইনী প্রয়োজন:</strong> যদি আইন, আদালতের নির্দেশ বা সরকারি অনুরোধে তথ্য দেওয়া বাধ্যতামূলক হয়।</li>
                 </ul>
 
-                <h3>৪. তথ্যের নিরাপত্তা</h3>
-                <p>আমরা আপনার তথ্যকে অননুমোদিত প্রবেশ, পরিবর্তন, প্রকাশ বা ধ্বংস থেকে রক্ষা করার জন্য প্রশাসনিক, কারিগরি এবং শারীরিক নিরাপত্তা ব্যবস্থা প্রয়োগ করি। তবে, কোনো ইন্টারনেট ট্রান্সমিশন বা ইলেকট্রনিক স্টোরেজ পদ্ধতি ১০০% নিরাপদ নয় বলে আমরা পরম নিরাপত্তা গ্যারান্টি দিতে পারি না।</p>
+                <div class="info-box">
+                    <p><strong><i class="fas fa-lock"></i> তৃতীয় পক্ষের সাথে ভাগ করা হয় না:</strong> আমরা আপনার ব্যক্তিগত তথ্য কখনোই বিজ্ঞাপন বা মার্কেটিং উদ্দেশ্যে তৃতীয় পক্ষের সাথে ভাগ করি না।</p>
+                </div>
 
-                <h3>৫. আপনার অধিকার ও নিয়ন্ত্রণ</h3>
-                <p>আপনার ডেটা সম্পর্কে আপনার অধিকার রয়েছে:</p>
-                <ul>
+                <h3 class="subsection-title"><i class="fas fa-shield-virus"></i> ৪. তথ্যের নিরাপত্তা</h3>
+                <p class="content-text">আমরা আপনার তথ্যকে অননুমোদিত প্রবেশ, পরিবর্তন, প্রকাশ বা ধ্বংস থেকে রক্ষা করার জন্য প্রশাসনিক, কারিগরি এবং শারীরিক নিরাপত্তা ব্যবস্থা প্রয়োগ করি। তবে, কোনো ইন্টারনেট ট্রান্সমিশন বা ইলেকট্রনিক স্টোরেজ পদ্ধতি ১০০% নিরাপদ নয় বলে আমরা পরম নিরাপত্তা গ্যারান্টি দিতে পারি না।</p>
+
+                <h3 class="subsection-title"><i class="fas fa-user-check"></i> ৫. আপনার অধিকার ও নিয়ন্ত্রণ</h3>
+                <p class="content-text">আপনার ডেটা সম্পর্কে আপনার অধিকার রয়েছে:</p>
+                <ul class="content-list">
                     <li>আমাদের সংগ্রহ করা আপনার ব্যক্তিগত ডেটা অ্যাক্সেস, দেখতে এবং কপি করার অধিকার।</li>
                     <li>ভুল বা অসম্পূর্ণ ডেটা সংশোধন করার অধিকার।</li>
                     <li>আপনার ডেটা মুছে ফেলার অনুরোধ করার অধিকার ("ভুলে যাওয়ার অধিকার")।</li>
@@ -212,41 +656,63 @@
                     <li>অধিকাংশ ক্ষেত্রে, অ্যাপের সেটিংসের মাধ্যমে সরাসরি আপনার প্রোফাইল তথ্য আপডেট বা মুছে ফেলতে পারবেন।</li>
                 </ul>
 
-                <h3>৬. তৃতীয় পক্ষের লিঙ্ক</h3>
-                <p>আমাদের সেবায় অন্যান্য সাইটের লিঙ্ক থাকতে পারে যা আমরা নিয়ন্ত্রণ করি না। আপনি অন্য কোনো ওয়েবসাইটে যাওয়ার পর তাদের গোপনীয়তা নীতি প্রযোজ্য হবে। আমরা তৃতীয় পক্ষের সামগ্রী বা গোপনীয়তা অনুশীলনের জন্য দায়ী নই।</p>
+                <h3 class="subsection-title"><i class="fas fa-link"></i> ৬. তৃতীয় পক্ষের লিঙ্ক</h3>
+                <p class="content-text">আমাদের সেবায় অন্যান্য সাইটের লিঙ্ক থাকতে পারে যা আমরা নিয়ন্ত্রণ করি না। আপনি অন্য কোনো ওয়েবসাইটে যাওয়ার পর তাদের গোপনীয়তা নীতি প্রযোজ্য হবে। আমরা তৃতীয় পক্ষের সামগ্রী বা গোপনীয়তা অনুশীলনের জন্য দায়ী নই।</p>
 
-                <h3>৭. শিশুদের গোপনীয়তা</h3>
-                <p>আমাদের সেবা ১৩ বছরের কম বয়সী ব্যক্তিদের জন্য নয়। আমরা জানতে পারলে ১৩ বছরের কম বয়সী কারো কাছ থেকে সংগ্রহ করা কোনো তথ্য立刻 মুছে ফেলব।</p>
+                <h3 class="subsection-title"><i class="fas fa-child"></i> ৭. শিশুদের গোপনীয়তা</h3>
+                <p class="content-text">আমাদের সেবা ১৩ বছরের কম বয়সী ব্যক্তিদের জন্য নয়। আমরা জানতে পারলে ১৩ বছরের কম বয়সী কারো কাছ থেকে সংগ্রহ করা কোনো তথ্য立刻 মুছে ফেলব।</p>
 
-                <h3>৮. নীতির পরিবর্তন</h3>
-                <p>আমরা সময়ে সময়ে এই গোপনীয়তা নীতিটি হালনাগাদ করতে পারি। কোনো গুরুত্বপূর্ণ পরিবর্তন করা হলে আমরা সেবার মাধ্যমে বা ইমেইলের মাধ্যমে আপনাকে জানাব। পরিবর্তন পোস্ট করার পর আপনি যদি সেবা ব্যবহার চালিয়ে যান তবে সংশোধিত নীতিতে আপনার সম্মতি হিসেবে বিবেচিত হবে।</p>
+                <h3 class="subsection-title"><i class="fas fa-edit"></i> ৮. নীতির পরিবর্তন</h3>
+                <p class="content-text">আমরা সময়ে সময়ে এই গোপনীয়তা নীতিটি হালনাগাদ করতে পারি। কোনো গুরুত্বপূর্ণ পরিবর্তন করা হলে আমরা সেবার মাধ্যমে বা ইমেইলের মাধ্যমে আপনাকে জানাব। পরিবর্তন পোস্ট করার পর আপনি যদি সেবা ব্যবহার চালিয়ে যান তবে সংশোধিত নীতিতে আপনার সম্মতি হিসেবে বিবেচিত হবে।</p>
 
+                <!-- Contact Box -->
                 <div class="contact-box">
-                    <h4><i class="fas fa-envelope"></i> যোগাযোগ করুন</h4>
-                    <p>এই গোপনীয়তা নীতি সম্পর্কে আপনার যদি কোনো প্রশ্ন থাকে, তাহলে নির্দ্বিধায় আমাদের সাথে যোগাযোগ করুন:</p>
-                    <p><strong>ইমেইল:</strong> info.hellobangladeshi@gmail.com</p>
-                    <p><strong>ডেভেলপার:</strong> ফারাবি ওয়ালিদ</p>
+                    <h3><i class="fas fa-headset"></i> যোগাযোগ করুন</h3>
+                    <p class="content-text">এই গোপনীয়তা নীতি সম্পর্কে আপনার যদি কোনো প্রশ্ন থাকে, তাহলে নির্দ্বিধায় আমাদের সাথে যোগাযোগ করুন:</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info.hellobangladeshi@gmail.com">info.hellobangladeshi@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+8801724238581">+880 1724-238581</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-user-tie"></i>
+                            <a href="developer.html">ফারাবি ওয়ালিদ</a>
+                        </div>
+                    </div>
                 </div>
 
-                <p class="update-date"><i class="far fa-calendar-alt"></i> সর্বশেষ হালনাগাদ: ৩০ জানুয়ারি, ২০২৬</p>
+                <p class="update-date">
+                    <i class="far fa-calendar-alt"></i> সর্বশেষ হালনাগাদ: ৩০ জানুয়ারি, ২০২৬
+                </p>
             </div>
 
             <!-- English Version -->
-            <div id="en" class="language">
-                <h2>Privacy Policy for Hello Bangladeshi</h2>
-                <p>This Privacy Policy ("Policy") explains how information is collected, used, and disclosed by the Hello Bangladeshi mobile application and its related website (collectively, the "Service"). By using the Service, you agree to the terms of this Policy.</p>
+            <div id="en" class="language-content">
+                <h2 class="section-title"><i class="fas fa-shield-alt"></i> Privacy Policy for Hello Bangladeshi</h2>
+                <p class="content-text">
+                    This Privacy Policy ("Policy") explains how information is collected, used, and disclosed by the Hello Bangladeshi mobile application and its related website (collectively, the "Service"). By using the Service, you agree to the terms of this Policy.
+                </p>
 
-                <h3>1. Information We Collect</h3>
-                <p>To provide and improve the Service and your personalized experience, we may collect the following types of information:</p>
-                <ul>
+                <div class="highlight-box">
+                    <p><strong><i class="fas fa-info-circle"></i> Our Commitment:</strong> Your privacy is our top priority. We strive to ensure the security of your personal information.</p>
+                </div>
+
+                <h3 class="subsection-title"><i class="fas fa-database"></i> 1. Information We Collect</h3>
+                <p class="content-text">To provide and improve the Service and your personalized experience, we may collect the following types of information:</p>
+                <ul class="content-list">
                     <li><strong>Personal Information:</strong> Information you voluntarily provide, such as name, email address, phone number, profile picture, and bio.</li>
                     <li><strong>Usage Information:</strong> Details about your interaction with the app, including time spent, features used, likes, shares, and in-app activities.</li>
                     <li><strong>Device Information:</strong> Your device model, operating system version, unique device identifiers (like Advertising ID), and network information.</li>
                     <li><strong>Location Data (Optional):</strong> With your permission, we may collect your approximate location data for community or event-based features.</li>
                 </ul>
 
-                <h3>2. How We Use Your Information</h3>
-                <ul>
+                <h3 class="subsection-title"><i class="fas fa-cogs"></i> 2. How We Use Your Information</h3>
+                <ul class="content-list">
                     <li>To provide, operate, maintain, and improve the Service.</li>
                     <li>To personalize your user experience.</li>
                     <li>To communicate with you (updates, security alerts, customer support).</li>
@@ -254,20 +720,24 @@
                     <li>To ensure the security of the Service and prevent fraud.</li>
                 </ul>
 
-                <h3>3. Information Sharing</h3>
-                <p>We do not sell or rent your personal information to third parties. We may share it only in the following situations:</p>
-                <ul>
+                <h3 class="subsection-title"><i class="fas fa-share-alt"></i> 3. Information Sharing</h3>
+                <p class="content-text">We do not sell or rent your personal information to third parties. We may share it only in the following situations:</p>
+                <ul class="content-list">
                     <li><strong>With Your Consent:</strong> When you agree to share information with another user through a feature.</li>
                     <li><strong>With Service Providers:</strong> Trusted companies that provide services like data hosting, analytics, customer support, or payment processing, under strict confidentiality agreements.</li>
                     <li><strong>For Legal Reasons:</strong> If required by law, court order, or governmental request.</li>
                 </ul>
 
-                <h3>4. Data Security</h3>
-                <p>We implement administrative, technical, and physical security measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of internet transmission or electronic storage is 100% secure, so we cannot guarantee absolute security.</p>
+                <div class="info-box">
+                    <p><strong><i class="fas fa-lock"></i> No Third-Party Sharing:</strong> We never share your personal information with third parties for advertising or marketing purposes.</p>
+                </div>
 
-                <h3>5. Your Rights and Controls</h3>
-                <p>You have rights regarding your data, including:</p>
-                <ul>
+                <h3 class="subsection-title"><i class="fas fa-shield-virus"></i> 4. Data Security</h3>
+                <p class="content-text">We implement administrative, technical, and physical security measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of internet transmission or electronic storage is 100% secure, so we cannot guarantee absolute security.</p>
+
+                <h3 class="subsection-title"><i class="fas fa-user-check"></i> 5. Your Rights and Controls</h3>
+                <p class="content-text">You have rights regarding your data, including:</p>
+                <ul class="content-list">
                     <li>The right to access, view, and obtain a copy of your personal data.</li>
                     <li>The right to correct inaccurate or incomplete data.</li>
                     <li>The right to request deletion of your data ("right to be forgotten").</li>
@@ -275,67 +745,152 @@
                     <li>In most cases, you can update or delete your profile information directly via the app settings.</li>
                 </ul>
 
-                <h3>6. Third-Party Links</h3>
-                <p>Our Service may contain links to other sites not operated by us. Their privacy policies apply once you leave our Service. We are not responsible for third-party content or privacy practices.</p>
+                <h3 class="subsection-title"><i class="fas fa-link"></i> 6. Third-Party Links</h3>
+                <p class="content-text">Our Service may contain links to other sites not operated by us. Their privacy policies apply once you leave our Service. We are not responsible for third-party content or privacy practices.</p>
 
-                <h3>7. Children's Privacy</h3>
-                <p>Our Service is not intended for individuals under the age of 13. If we learn we have collected information from a child under 13, we will delete it promptly.</p>
+                <h3 class="subsection-title"><i class="fas fa-child"></i> 7. Children's Privacy</h3>
+                <p class="content-text">Our Service is not intended for individuals under the age of 13. If we learn we have collected information from a child under 13, we will delete it promptly.</p>
 
-                <h3>8. Changes to This Policy</h3>
-                <p>We may update this Privacy Policy periodically. We will notify you of any significant changes via the Service or email. Your continued use after changes are posted constitutes acceptance of the revised policy.</p>
+                <h3 class="subsection-title"><i class="fas fa-edit"></i> 8. Changes to This Policy</h3>
+                <p class="content-text">We may update this Privacy Policy periodically. We will notify you of any significant changes via the Service or email. Your continued use after changes are posted constitutes acceptance of the revised policy.</p>
 
+                <!-- Contact Box -->
                 <div class="contact-box">
-                    <h4><i class="fas fa-envelope"></i> Contact Us</h4>
-                    <p>If you have any questions about this Privacy Policy, please feel free to contact us:</p>
-                    <p><strong>Email:</strong> info.hellobangladeshi@gmail.com</p>
-                    <p><strong>Developer:</strong> Farabi Walid</p>
+                    <h3><i class="fas fa-headset"></i> Contact Us</h3>
+                    <p class="content-text">If you have any questions about this Privacy Policy, please feel free to contact us:</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info.hellobangladeshi@gmail.com">info.hellobangladeshi@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+8801724238581">+880 1724-238581</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-user-tie"></i>
+                            <a href="developer.html">Farabi Walid</a>
+                        </div>
+                    </div>
                 </div>
 
-                <p class="update-date"><i class="far fa-calendar-alt"></i> Last Updated: January 30, 2026</p>
+                <p class="update-date">
+                    <i class="far fa-calendar-alt"></i> Last Updated: January 30, 2026
+                </p>
             </div>
         </div>
-
-        <footer>
-            <p>© 2026 Hello Bangladeshi. All Rights Reserved. | <a href="https://hellobangladeshi.github.io/">Visit Main Website</a></p>
-            <p>Developed with <i class="fas fa-heart" style="color: var(--primary);"></i> by Farabi Walid</p>
-        </footer>
     </div>
+</section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const btnBn = document.getElementById('btnBn');
-            const btnEn = document.getElementById('btnEn');
-            const contentBn = document.getElementById('bn');
-            const contentEn = document.getElementById('en');
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Hello Bangladeshi</h4>
+                <p>বাংলাদেশীদের জন্য একটি অনন্য প্ল্যাটফর্ম যেখানে আমরা একে অপরের সাথে সংযুক্ত হই, অভিজ্ঞতা শেয়ার করি এবং একসাথে উন্নতি করি।</p>
+            </div>
+            <div class="footer-section">
+                <h4>দ্রুত লিঙ্ক</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> হোম</a></li>
+                    <li><a href="index.html#apps"><i class="fas fa-chevron-right"></i> আমাদের অ্যাপস</a></li>
+                    <li><a href="index.html#blog"><i class="fas fa-chevron-right"></i> ব্লগ</a></li>
+                    <li><a href="terms.html"><i class="fas fa-chevron-right"></i> সেবার শর্তাবলী</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>আইনি নথি</h4>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html" style="color: var(--secondary);"><i class="fas fa-chevron-right"></i> গোপনীয়তা নীতি</a></li>
+                    <li><a href="terms.html"><i class="fas fa-chevron-right"></i> সেবার শর্তাবলী</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> রিফান্ড নীতি</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> কুকি নীতি</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Hello Bangladeshi. All Rights Reserved. | Developed with <i class="fas fa-heart" style="color: var(--primary);"></i> by <a href="developer.html">Farabi Walid</a></p>
+        </div>
+    </div>
+</footer>
 
-            function switchLanguage(lang) {
-                // Deactivate all buttons and content
-                [btnBn, btnEn].forEach(btn => btn.classList.remove('active'));
-                [contentBn, contentEn].forEach(content => content.classList.remove('active'));
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTop">
+    <i class="fas fa-arrow-up"></i>
+</button>
 
-                // Activate selected language
-                if (lang === 'bn') {
-                    btnBn.classList.add('active');
-                    contentBn.classList.add('active');
-                } else {
-                    btnEn.classList.add('active');
-                    contentEn.classList.add('active');
-                }
-                // Update page title for language
-                document.title = lang === 'bn' ? 'গোপনীয়তা নীতি | Hello Bangladeshi' : 'Privacy Policy | Hello Bangladeshi';
-            }
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
 
-            btnBn.addEventListener('click', () => switchLanguage('bn'));
-            btnEn.addEventListener('click', () => switchLanguage('en'));
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 
-            // Optional: Auto-detect preferred language (falls back to Bengali)
-            const userLang = navigator.language || navigator.userLanguage;
-            if (userLang.startsWith('bn')) {
-                switchLanguage('bn');
-            } else {
-                switchLanguage('en'); // Default to English for non-Bengali
+    // Scroll to Top
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+        scrollTopBtn.classList.toggle('active', window.scrollY > 300);
+    });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Language Toggle Functionality
+    const btnBn = document.getElementById('btnBn');
+    const btnEn = document.getElementById('btnEn');
+    const contentBn = document.getElementById('bn');
+    const contentEn = document.getElementById('en');
+
+    function switchLanguage(lang) {
+        btnBn.classList.remove('active');
+        btnEn.classList.remove('active');
+        contentBn.classList.remove('active');
+        contentEn.classList.remove('active');
+        
+        if (lang === 'bn') {
+            btnBn.classList.add('active');
+            contentBn.classList.add('active');
+            document.title = 'গোপনীয়তা নীতি | Hello Bangladeshi';
+        } else {
+            btnEn.classList.add('active');
+            contentEn.classList.add('active');
+            document.title = 'Privacy Policy | Hello Bangladeshi';
+        }
+    }
+    
+    btnBn.addEventListener('click', () => switchLanguage('bn'));
+    btnEn.addEventListener('click', () => switchLanguage('en'));
+    
+    // Auto-detect preferred language
+    const userLang = navigator.language || navigator.userLanguage;
+    if (userLang && userLang.startsWith('bn')) {
+        switchLanguage('bn');
+    }
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
-    </script>
+    });
+</script>
 </body>
 </html>
