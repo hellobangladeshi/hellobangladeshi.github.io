@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Privacy Policy - Earthquake Alert Pro</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+            line-height: 1.7;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, #E53935 0%, #C62828 100%);
+            color: #fff;
+            padding: 50px 24px 40px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .header .app-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 6px;
+        }
+
+        .header .last-updated {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* ===== CARD ===== */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            padding: 32px 28px;
+            margin-bottom: 28px;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #E53935;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #343a40;
+            margin-top: 22px;
+            margin-bottom: 10px;
+        }
+
+        .card p, .card li {
+            color: #495057;
+            margin-bottom: 12px;
+        }
+
+        .card ul, .card ol {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        .card li {
+            margin-bottom: 6px;
+        }
+
+        .card a {
+            color: #E53935;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .card a:hover {
+            border-bottom-color: #E53935;
+        }
+
+        /* ===== BADGE ===== */
+        .badge {
+            display: inline-block;
+            background: #E53935;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 6px;
+        }
+
+        .badge-green {
+            background: #28a745;
+        }
+
+        /* ===== TABLE ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 16px 0 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        table th {
+            background: #f1f3f5;
+            text-align: left;
+            padding: 12px 14px;
+            font-weight: 600;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 30px 20px 20px;
+            color: #868e96;
+            font-size: 0.85rem;
+            border-top: 1px solid #e9ecef;
+            margin-top: 20px;
+        }
+
+        .footer a {
+            color: #E53935;
+            text-decoration: none;
+        }
+
+        .footer .heart {
+            color: #E53935;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .container {
+                padding: 20px 14px;
+            }
+            .header {
+                padding: 36px 16px 30px;
+            }
+            .header h1 {
+                font-size: 1.7rem;
+            }
+            .card {
+                padding: 22px 16px;
+            }
+            .card h2 {
+                font-size: 1.25rem;
+            }
+            table th, table td {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media print {
+            .header { background: #E53935 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .card { box-shadow: none !important; border: 1px solid #ddd; }
+            body { background: #fff; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🔴 Privacy Policy</h1>
+    <div class="app-badge">Earthquake Alert Pro</div>
+    <div class="last-updated"><strong>Last Updated:</strong> June 24, 2026</div>
+</div>
+
+<div class="container">
+
+    <!-- ===== SECTION 1 ===== -->
+    <div class="card">
+        <h2>1. Introduction</h2>
+        <p>Welcome to <strong>Earthquake Alert Pro</strong> ("we," "our," or "us"). We are committed to protecting your privacy and ensuring you have a safe experience while using our mobile application. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our application.</p>
+        <p>Earthquake Alert Pro is developed and maintained by <strong>Hello Bangladeshi</strong> (<a href="https://hellobangladeshi.github.io" target="_blank">hellobangladeshi.github.io</a>), a platform dedicated to connecting Bangladeshis worldwide through innovative technology solutions.</p>
+    </div>
+
+    <!-- ===== SECTION 2 ===== -->
+    <div class="card">
+        <h2>2. Information We Collect</h2>
+
+        <h3>2.1 Information You Provide</h3>
+        <ul>
+            <li><strong>Device Information:</strong> Unique device identifiers, Android ID, and device model</li>
+            <li><strong>Location Data:</strong> Precise or approximate location information when you grant permission</li>
+            <li><strong>User Preferences:</strong> Your alert settings, filter preferences, and app configurations</li>
+            <li><strong>Family Member Information:</strong> Names and phone numbers you voluntarily add for safety alerts</li>
+        </ul>
+
+        <h3>2.2 Information Automatically Collected</h3>
+        <ul>
+            <li><strong>Usage Data:</strong> How you interact with the app, features used, and time spent</li>
+            <li><strong>Earthquake Data:</strong> Information about earthquakes you view or interact with</li>
+            <li><strong>Crash Reports:</strong> Anonymous crash data to improve app stability (via Firebase Crashlytics)</li>
+            <li><strong>Performance Data:</strong> App performance metrics to optimize user experience</li>
+        </ul>
+
+        <h3>2.3 Information from Third Parties</h3>
+        <ul>
+            <li><strong>USGS Earthquake Data:</strong> Real-time earthquake information from the U.S. Geological Survey</li>
+            <li><strong>Google Play Services:</strong> For location services, maps, and push notifications</li>
+        </ul>
+    </div>
+
+    <!-- ===== SECTION 3 ===== -->
+    <div class="card">
+        <h2>3. How We Use Your Information</h2>
+
+        <h3>3.1 Primary Purposes</h3>
+        <ul>
+            <li><strong>Deliver Earthquake Alerts:</strong> Send you timely notifications about earthquakes near your location</li>
+            <li><strong>Personalize Experience:</strong> Customize alerts based on your magnitude and distance preferences</li>
+            <li><strong>Family Safety Features:</strong> Send "I am Safe" messages to your selected family members</li>
+            <li><strong>Improve Services:</strong> Analyze usage patterns to enhance app functionality and user experience</li>
+        </ul>
+
+        <h3>3.2 Secondary Purposes</h3>
+        <ul>
+            <li><strong>Premium Features Management:</strong> Track your premium subscriptions and unlocked features</li>
+            <li><strong>Coin System:</strong> Manage your in-app coins for unlocking premium features</li>
+            <li><strong>Analytics:</strong> Understand user behavior to make data-driven improvements</li>
+            <li><strong>Communication:</strong> Send important notifications about app updates and safety information</li>
+        </ul>
+    </div>
+
+    <!-- ===== SECTION 4 ===== -->
+    <div class="card">
+        <h2>4. Data Storage and Security</h2>
+
+        <h3>4.1 Where We Store Data</h3>
+        <ul>
+            <li><strong>Local Storage:</strong> Your preferences, settings, and cached earthquake data are stored locally on your device</li>
+            <li><strong>Firebase Cloud:</strong> Premium features, coin balances, and family member information are stored securely in Firebase Firestore</li>
+            <li><strong>Google Cloud:</strong> Analytics and crash data are stored on Google's secure servers</li>
+        </ul>
+
+        <h3>4.2 Security Measures</h3>
+        <ul>
+            <li><strong>Encryption:</strong> All data transmitted between your device and our servers is encrypted</li>
+            <li><strong>Access Control:</strong> Only authorized personnel have access to user data</li>
+            <li><strong>Secure Authentication:</strong> Device-based authentication ensures only you can access your data</li>
+            <li><strong>Regular Audits:</strong> We regularly review our security practices to protect your information</li>
+        </ul>
+
+        <h3>4.3 Data Retention</h3>
+        <ul>
+            <li><strong>Local Data:</strong> Remains on your device until you uninstall the app or clear app data</li>
+            <li><strong>Cloud Data:</strong> Retained as long as you use the app or until you request deletion</li>
+            <li><strong>Analytics Data:</strong> Aggregated and anonymized after 12 months</li>
+        </ul>
+    </div>
+
+    <!-- ===== SECTION 5 ===== -->
+    <div class="card">
+        <h2>5. Permissions We Request</h2>
+
+        <h3>5.1 Required Permissions</h3>
+        <ul>
+            <li><strong>Location (Fine/Coarse):</strong> To show earthquakes near your location and provide accurate distance information</li>
+            <li><strong>Notifications:</strong> To send you earthquake alerts and safety notifications</li>
+            <li><strong>Internet:</strong> To fetch earthquake data from USGS servers and sync with Firebase</li>
+        </ul>
+
+        <h3>5.2 Optional Permissions</h3>
+        <ul>
+            <li><strong>Background Location:</strong> To monitor for earthquakes when the app is not actively in use (can be disabled)</li>
+            <li><strong>SMS:</strong> To send "I am Safe" messages to family members (only with your explicit permission)</li>
+            <li><strong>Vibration:</strong> To provide haptic feedback during earthquake alerts</li>
+            <li><strong>Flashlight:</strong> To use flashlight as a visual alert during emergencies</li>
+        </ul>
+    </div>
+
+    <!-- ===== SECTION 6 ===== -->
+    <div class="card">
+        <h2>6. Your Rights and Choices</h2>
+
+        <h3>6.1 Privacy Controls</h3>
+        <ul>
+            <li><strong>Location Settings:</strong> You can enable/disable location access anytime in your device settings</li>
+            <li><strong>Notification Preferences:</strong> Customize which alerts you receive in the app settings</li>
+            <li><strong>Data Deletion:</strong> You can delete all locally stored data by clearing app data in device settings</li>
+            <li><strong>Family Members:</strong> You have full control to add, edit, or delete family member information</li>
+        </ul>
+
+        <h3>6.2 Data Access</h3>
+        <ul>
+            <li><strong>View Your Data:</strong> You can view your preferences and settings in the app</li>
+            <li><strong>Export Data:</strong> Premium users can export earthquake history as PDF</li>
+            <li><strong>Cloud Data:</strong> Contact us to request deletion of your cloud-stored data</li>
+        </ul>
+    </div>
+
+    <!-- ===== SECTION 7 ===== -->
+    <div class="card">
+        <h2>7. Children's Privacy</h2>
+        <p>Earthquake Alert Pro is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.</p>
+    </div>
+
+    <!-- ===== SECTION 8 ===== -->
+    <div class="card">
+        <h2>8. Third-Party Services</h2>
+
+        <h3>8.1 Services We Use</h3>
+        <ul>
+            <li><strong>Google Play Services:</strong> For location, maps, and billing</li>
+            <li><strong>Firebase:</strong> For cloud storage, analytics, and crash reporting</li>
+            <li><strong>USGS API:</strong> For earthquake data</li>
+            <li><strong>AdMob:</strong> For displaying advertisements (in free version)</li>
+            <li><strong>Google Billing:</strong> For processing premium subscriptions</li>
+        </ul>
+
+        <h3>8.2 Third-Party Privacy Policies</h3>
+        <p>We encourage you to review the privacy policies of these third-party services:</p>
+        <ul>
+            <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+            <li><a href="https://www.usgs.gov/privacy-policy" target="_blank">USGS Privacy Policy</a></li>
+        </ul>
+    </div>
+
+    <!-- ===== SECTION 9 ===== -->
+    <div class="card">
+        <h2>9. Data Sharing</h2>
+
+        <h3>9.1 When We Share Data</h3>
+        <ul>
+            <li><strong>With Your Consent:</strong> We share data when you explicitly grant permission (e.g., SMS)</li>
+            <li><strong>For Safety:</strong> To send emergency messages to your designated family members</li>
+            <li><strong>Legal Requirements:</strong> If required by law or to protect rights and safety</li>
+            <li><strong>Service Providers:</strong> With trusted third parties who assist in app operations</li>
+        </ul>
+
+        <h3>9.2 What We Never Share</h3>
+        <ul>
+            <li>We never sell your personal information</li>
+            <li>We never share your location data with advertisers</li>
+            <li>We never share your family member information without your explicit consent</li>
+        </ul>
+    </div>
+
+    <!-- ===== SECTION 10 ===== -->
+    <div class="card">
+        <h2>10. International Data Transfers</h2>
+        <p>Your information may be transferred to and processed in countries where our service providers operate. We ensure appropriate safeguards are in place for international data transfers in compliance with applicable laws.</p>
+    </div>
+
+    <!-- ===== SECTION 11 ===== -->
+    <div class="card">
+        <h2>11. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
+        <ul>
+            <li>Posting the new Privacy Policy in the app</li>
+            <li>Sending a notification (if you have enabled notifications)</li>
+            <li>Updating the "Last Updated" date at the top of this policy</li>
+        </ul>
+    </div>
+
+    <!-- ===== SECTION 12 ===== -->
+    <div class="card">
+        <h2>12. Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy:</p>
+
+        <h3>Contact Information</h3>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:info.hellobangladeshi@gmail.com">info.hellobangladeshi@gmail.com</a></li>
+            <li><strong>Website:</strong> <a href="https://hellobangladeshi.github.io" target="_blank">hellobangladeshi.github.io</a></li>
+            <li><strong>Developer:</strong> Farabi Walid</li>
+            <li><strong>Company:</strong> Hello Bangladeshi</li>
+            <li><strong>Address:</strong> Sylhet, Bangladesh</li>
+        </ul>
+
+        <h3>Response Time</h3>
+        <p>We typically respond to privacy-related inquiries within 48 hours during business days.</p>
+    </div>
+
+    <!-- ===== SECTION 13 ===== -->
+    <div class="card">
+        <h2>13. Regulatory Compliance</h2>
+
+        <h3>13.1 For Users in the European Union (GDPR)</h3>
+        <ul>
+            <li>You have the right to access, rectify, or erase your data</li>
+            <li>You can withdraw consent at any time</li>
+            <li>You have the right to data portability</li>
+        </ul>
+
+        <h3>13.2 For Users in the United States (CCPA)</h3>
+        <ul>
+            <li>You have the right to know what personal information we collect</li>
+            <li>You have the right to delete your personal information</li>
+            <li>You have the right to opt-out of the sale of your information (we do not sell data)</li>
+        </ul>
+    </div>
+
+    <!-- ===== SECTION 14 ===== -->
+    <div class="card">
+        <h2>14. Specific Features Privacy</h2>
+
+        <h3>14.1 Earthquake Alerts</h3>
+        <ul>
+            <li>Alerts are based on your location and preferences</li>
+            <li>No permanent recording of your location history</li>
+            <li>Distance calculations are performed locally on your device</li>
+        </ul>
+
+        <h3>14.2 Family Safety Features</h3>
+        <ul>
+            <li>Phone numbers are stored securely and encrypted</li>
+            <li>SMS messages are sent only with your explicit permission</li>
+            <li>You control which members receive safety messages</li>
+        </ul>
+
+        <h3>14.3 Shake Detection (Offline Mode)</h3>
+        <ul>
+            <li>Uses device sensors only</li>
+            <li>No data is transmitted externally</li>
+            <li>All processing happens locally on your device</li>
+        </ul>
+
+        <h3>14.4 Emergency Kit</h3>
+        <ul>
+            <li>Items and checklists are stored locally</li>
+            <li>No external transmission of your preparedness status</li>
+        </ul>
+    </div>
+
+    <!-- ===== SECTION 15 ===== -->
+    <div class="card">
+        <h2>15. Consent</h2>
+        <p>By using Earthquake Alert Pro, you consent to this Privacy Policy and agree to its terms. If you do not agree with our policies and practices, please do not use our application.</p>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footer">
+        <p>
+            <strong>Hello Bangladeshi</strong> &mdash; Connecting Bangladeshis Worldwide
+            <br><br>
+            &copy; 2026 Hello Bangladeshi. All rights reserved.
+            <br>
+            Made with <span class="heart">❤</span> in Bangladesh
+            <br><br>
+            <a href="https://hellobangladeshi.github.io" target="_blank">Visit Our Website</a>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
