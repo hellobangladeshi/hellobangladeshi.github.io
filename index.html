@@ -1697,6 +1697,7 @@ footer {
                     <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshiltd.mindmatchpro" target="_blank"><i class="fas fa-chevron-right"></i> Mind Match Pro</a></li>
                     <li><a href="https://play.google.com/store/apps/details?id=com.bhappsstore.qrcodescanner" target="_blank"><i class="fas fa-chevron-right"></i> QR Scanner</a></li>
                     <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.colormatchpro" target="_blank"><i class="fas fa-chevron-right"></i> Color Match Pro</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.earthquakealertpro" target="_blank"><i class="fas fa-chevron-right"></i> Earthquake Alert Pro</a></li>
                 </ul>
             </div>
             
@@ -1851,7 +1852,7 @@ document.getElementById('contactForm')?.addEventListener('submit', function(e) {
     this.reset();
 });
 
-// Apps Data - Complete with all original apps
+// Apps Data - Complete with Earthquake Alert Pro
 const appsData = [
     {
         id: "hellobangladeshi",
@@ -1920,6 +1921,18 @@ const appsData = [
         description: "শিক্ষার্থীদের জন্য স্মার্ট ক্যালকুলেটর – দ্রুত ও নির্ভুল হিসাব।",
         stats: { downloads: "১K+", rating: "৪.৪ ★" },
         isPublished: true
+    },
+    {
+        id: "earthquakealertpro",
+        packageName: "com.hellobangladeshi.earthquakealertpro",
+        name: "Earthquake Alert Pro",
+        category: "utility",
+        iconUrl: null,
+        gradient: "linear-gradient(135deg,#E53935,#C62828)",
+        description: "ভূমিকম্পের আগাম সতর্কতা, রিয়েল-টাইম আপডেট এবং নিরাপত্তা টিপস সহ একটি শক্তিশালী অ্যাপ।",
+        stats: { downloads: "৫০০+", rating: "৪.৯ ★" },
+        privacyLink: "earthquake-alert-privacy.html",
+        isPublished: true
     }
 ];
 
@@ -1941,7 +1954,8 @@ function createAppCard(app) {
             'Hello Bangladeshi': '🇧🇩',
             'Hello Sylheti': '🗣️',
             'Color Match Pro': '🎨',
-            'EduCalc': '📐'
+            'EduCalc': '📐',
+            'Earthquake Alert Pro': '🔴'
         };
         iconHtml = `<div style="font-size: 3rem;">${iconMap[app.name] || '📱'}</div>`;
     }
