@@ -3,29 +3,36 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-    <title>Privacy Policy - Earthquake Alert Pro | Hello Bangladeshi</title>
-    <meta name="description" content="Earthquake Alert Pro - Privacy Policy. Learn how we collect, use, and protect your data." />
-    
+    <title>Privacy Policy | Earthquake Alert Pro</title>
+    <meta name="description" content="Earthquake Alert Pro Privacy Policy - Learn how we protect your data and privacy." />
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
     <style>
+        /* ===== CSS VARIABLES ===== */
         :root {
-            --primary: #EF0479;
-            --primary-dark: #c00363;
-            --secondary: #FFD93D;
-            --accent: #4F46E5;
-            --dark: #0a0e27;
-            --dark-card: #111117;
-            --dark-card2: #16161f;
-            --light: #f8fafc;
-            --gradient-primary: linear-gradient(135deg, #EF0479, #FFD93D);
-            --r: 16px;
-            --tr: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --primary: #E53935;
+            --primary-dark: #B71C1C;
+            --primary-light: #FF8A80;
+            --secondary: #FFD54F;
+            --accent: #4FC3F7;
+            --dark-bg: #0D0D1A;
+            --dark-card: #14142B;
+            --dark-card-hover: #1C1C3A;
+            --text-light: #F5F5F5;
+            --text-muted: #B0B0C8;
+            --border-color: rgba(229, 57, 53, 0.25);
+            --glow-primary: 0 0 30px rgba(229, 57, 53, 0.15);
+            --radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* ===== RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
@@ -33,56 +40,45 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0a0e27, #1a1d3a, #2d1b4e);
-            color: #fff;
-            min-height: 100vh;
-            padding: 40px 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-light);
             line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 30px 20px;
         }
 
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--dark-bg); }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        /* ===== CONTAINER ===== */
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        /* ===== BACK BUTTON ===== */
-        .back-nav {
-            margin-bottom: 30px;
-        }
-
-        .back-nav a {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: var(--tr);
-            padding: 10px 20px;
-            border-radius: 50px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .back-nav a:hover {
-            color: var(--secondary);
-            background: rgba(255,217,61,0.1);
-            border-color: rgba(255,217,61,0.3);
-            transform: translateX(-5px);
-        }
-
-        /* ===== HEADER CARD ===== */
+        /* ===== HEADER ===== */
         .header-card {
             background: var(--dark-card);
-            border-radius: var(--r);
+            border-radius: var(--radius);
             padding: 45px 40px 35px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(239, 4, 121, 0.2);
+            margin-bottom: 35px;
+            border: 1px solid var(--border-color);
             position: relative;
             overflow: hidden;
             text-align: center;
+            transition: var(--transition);
+        }
+
+        .header-card:hover {
+            border-color: rgba(229, 57, 53, 0.5);
+            box-shadow: var(--glow-primary);
         }
 
         .header-card::before {
@@ -92,101 +88,147 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #E53935, #C62828);
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+            background-size: 200% 100%;
+            animation: shimmerBar 3s ease-in-out infinite;
         }
 
-        .header-card .app-icon {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            display: block;
+        @keyframes shimmerBar {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+        }
+
+        .header-card .app-icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(229, 57, 53, 0.15), rgba(255, 213, 79, 0.08));
+            border: 2px solid var(--border-color);
+            margin-bottom: 16px;
+            font-size: 2.8rem;
+            transition: var(--transition);
+        }
+
+        .header-card:hover .app-icon-wrap {
+            transform: scale(1.05);
+            border-color: var(--secondary);
         }
 
         .header-card h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
+            font-size: 2.6rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 4px;
         }
 
         .header-card h1 span {
-            background: linear-gradient(135deg, #E53935, #C62828);
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .header-card .app-badge {
             display: inline-block;
-            background: rgba(229, 57, 53, 0.2);
-            color: #E53935;
-            padding: 6px 22px;
+            background: rgba(229, 57, 53, 0.15);
+            color: var(--secondary);
+            padding: 6px 24px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            margin-top: 5px;
-            border: 1px solid rgba(229, 57, 53, 0.3);
+            border: 1px solid var(--border-color);
+            letter-spacing: 0.5px;
+            margin-top: 6px;
         }
 
         .header-card .last-updated {
-            margin-top: 15px;
+            margin-top: 16px;
             font-size: 0.85rem;
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
         .header-card .last-updated i {
             margin-right: 8px;
         }
 
+        /* ===== BACK BUTTON ===== */
+        .back-nav {
+            margin-bottom: 25px;
+        }
+
+        .back-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            padding: 10px 22px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .back-nav a:hover {
+            color: var(--secondary);
+            background: rgba(255,213,79,0.08);
+            border-color: rgba(255,213,79,0.25);
+            transform: translateX(-5px);
+        }
+
+        .back-nav a i {
+            font-size: 0.8rem;
+        }
+
         /* ===== POLICY CARDS ===== */
         .policy-card {
             background: var(--dark-card);
-            border-radius: var(--r);
-            padding: 32px 35px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255,255,255,0.06);
-            transition: var(--tr);
+            border-radius: var(--radius);
+            padding: 32px 38px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
         }
 
         .policy-card:hover {
-            border-color: rgba(229, 57, 53, 0.3);
-            box-shadow: 0 8px 30px rgba(229, 57, 53, 0.05);
+            border-color: var(--border-color);
+            box-shadow: var(--glow-primary);
         }
 
         .policy-card h2 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 1px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
             margin-bottom: 18px;
             padding-bottom: 12px;
             border-bottom: 2px solid rgba(229, 57, 53, 0.2);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
 
         .policy-card h2 .badge-icon {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #E53935, #C62828);
-            border-radius: 10px;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 12px;
             font-size: 0.9rem;
             color: #fff;
             flex-shrink: 0;
         }
 
-        .policy-card h2 .badge-icon i {
-            font-size: 0.9rem;
-        }
-
         .policy-card h3 {
             font-size: 1.05rem;
-            font-weight: 600;
-            color: #E53935;
-            margin-top: 20px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-top: 22px;
             margin-bottom: 10px;
         }
 
@@ -198,7 +240,7 @@
 
         .policy-card ul, .policy-card ol {
             padding-left: 25px;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         .policy-card li {
@@ -208,33 +250,64 @@
         }
 
         .policy-card li strong {
-            color: #E53935;
+            color: var(--secondary);
             opacity: 1;
         }
 
         .policy-card a {
-            color: #E53935;
+            color: var(--secondary);
             text-decoration: none;
             font-weight: 500;
-            transition: var(--tr);
+            transition: var(--transition);
             border-bottom: 1px solid transparent;
         }
 
         .policy-card a:hover {
-            border-bottom-color: #E53935;
-            color: #ff6b6b;
+            border-bottom-color: var(--secondary);
+            opacity: 0.8;
         }
 
+        /* ===== HIGHLIGHT BOXES ===== */
         .highlight-box {
             background: rgba(229, 57, 53, 0.08);
-            border-left: 4px solid #E53935;
+            border-left: 4px solid var(--primary);
             padding: 16px 22px;
             border-radius: 0 12px 12px 0;
             margin: 16px 0;
         }
 
         .highlight-box i {
-            color: #E53935;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        .highlight-box strong {
+            color: var(--secondary);
+        }
+
+        .info-box {
+            background: rgba(79, 195, 247, 0.06);
+            border-left: 4px solid var(--accent);
+            padding: 16px 22px;
+            border-radius: 0 12px 12px 0;
+            margin: 16px 0;
+        }
+
+        .info-box i {
+            color: var(--accent);
+            margin-right: 10px;
+        }
+
+        .warning-box {
+            background: rgba(255, 87, 34, 0.06);
+            border-left: 4px solid #FF5722;
+            padding: 16px 22px;
+            border-radius: 0 12px 12px 0;
+            margin: 16px 0;
+        }
+
+        .warning-box i {
+            color: #FF5722;
             margin-right: 10px;
         }
 
@@ -251,17 +324,20 @@
         }
 
         table th {
-            background: rgba(229, 57, 53, 0.15);
+            background: rgba(229, 57, 53, 0.12);
             text-align: left;
             padding: 12px 16px;
-            font-weight: 600;
-            color: #E53935;
-            border-bottom: 2px solid rgba(229, 57, 53, 0.2);
+            font-weight: 700;
+            color: var(--secondary);
+            border-bottom: 2px solid var(--border-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         table td {
             padding: 11px 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
             opacity: 0.85;
         }
 
@@ -269,10 +345,14 @@
             border-bottom: none;
         }
 
+        table tr:hover td {
+            background: rgba(255,255,255,0.02);
+        }
+
         /* ===== TAG ===== */
         .tag {
             display: inline-block;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 700;
             padding: 2px 12px;
             border-radius: 20px;
@@ -282,7 +362,7 @@
 
         .tag-red {
             background: rgba(229, 57, 53, 0.2);
-            color: #E53935;
+            color: var(--primary);
         }
 
         .tag-green {
@@ -290,18 +370,23 @@
             color: #2ed573;
         }
 
+        .tag-yellow {
+            background: rgba(255, 213, 79, 0.2);
+            color: var(--secondary);
+        }
+
         /* ===== FOOTER ===== */
         .footer-section {
             text-align: center;
-            padding: 35px 20px 20px;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            margin-top: 10px;
+            padding: 40px 20px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 20px;
         }
 
         .footer-section .footer-logo {
-            font-size: 1.5rem;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 1px;
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
         }
 
         .footer-section .footer-logo span {
@@ -313,78 +398,87 @@
         .footer-section p {
             opacity: 0.5;
             font-size: 0.85rem;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         .footer-section .heart {
-            color: #E53935;
+            color: var(--primary);
+            display: inline-block;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
         }
 
         .footer-section a {
             color: var(--secondary);
             text-decoration: none;
             font-weight: 500;
-            transition: var(--tr);
+            transition: var(--transition);
         }
 
         .footer-section a:hover {
             opacity: 0.8;
         }
 
-        .footer-section .social-links {
+        .footer-links {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 18px;
+            gap: 20px;
             flex-wrap: wrap;
+            margin-top: 14px;
         }
 
-        .footer-section .social-link {
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            background: rgba(255,255,255,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255,255,255,0.6);
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 500;
             text-decoration: none;
-            transition: var(--tr);
-            border: 1px solid rgba(255,255,255,0.06);
-            font-size: 1.1rem;
+            transition: var(--transition);
         }
 
-        .footer-section .social-link:hover {
-            background: linear-gradient(135deg, #E53935, #C62828);
-            color: #fff;
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(229, 57, 53, 0.3);
+        .footer-links a:hover {
+            color: var(--secondary);
         }
-
-        .footer-section .social-link.fb:hover { background: #1877F2; border-color: #1877F2; }
-        .footer-section .social-link.yt:hover { background: #FF0000; border-color: #FF0000; }
-        .footer-section .social-link.ig:hover { background: #E4405F; border-color: #E4405F; }
-        .footer-section .social-link.tw:hover { background: #000000; border-color: #000000; }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 640px) {
-            body { padding: 20px 12px; }
+        @media (max-width: 768px) {
+            body { padding: 16px 12px; }
             .header-card { padding: 30px 20px; }
-            .header-card h1 { font-size: 1.6rem; }
+            .header-card h1 { font-size: 2rem; }
+            .header-card .app-icon-wrap { width: 60px; height: 60px; font-size: 2rem; }
             .policy-card { padding: 22px 18px; }
-            .policy-card h2 { font-size: 1.15rem; }
-            table th, table td { padding: 8px 10px; font-size: 0.8rem; }
+            .policy-card h2 { font-size: 1.2rem; }
+            table th, table td { padding: 8px 10px; font-size: 0.78rem; }
             .back-nav a { font-size: 0.8rem; padding: 8px 16px; }
-            .footer-section .social-link { width: 38px; height: 38px; font-size: 1rem; }
+            .footer-links { gap: 12px; }
+        }
+
+        @media (max-width: 480px) {
+            .header-card h1 { font-size: 1.6rem; }
+            .policy-card h2 { font-size: 1rem; flex-wrap: wrap; }
+            .policy-card h2 .badge-icon { width: 28px; height: 28px; font-size: 0.75rem; }
+            .highlight-box, .info-box, .warning-box { padding: 12px 16px; }
         }
 
         @media print {
             .back-nav { display: none; }
-            body { background: #fff; color: #212529; }
+            body { background: #fff; color: #212529; padding: 20px; }
             .header-card { background: #f8f9fa; border: 1px solid #ddd; }
             .header-card::before { display: none; }
             .policy-card { background: #fff; border: 1px solid #eee; }
             .policy-card:hover { box-shadow: none; }
+            .footer-section { border-top: 1px solid #ddd; }
+        }
+
+        /* ===== AOS Override ===== */
+        [data-aos] {
+            pointer-events: none;
+        }
+        [data-aos].aos-animate {
+            pointer-events: auto;
         }
     </style>
 </head>
@@ -393,63 +487,70 @@
 <div class="container">
 
     <!-- ===== BACK NAV ===== -->
-    <div class="back-nav">
-        <a href="index.html#apps">
-            <i class="fas fa-arrow-left"></i> Back to Apps
+    <div class="back-nav" data-aos="fade-right" data-aos-duration="400">
+        <a href="https://hellobangladeshi.github.io">
+            <i class="fas fa-arrow-left"></i> Back to Hello Bangladeshi
         </a>
     </div>
 
     <!-- ===== HEADER ===== -->
-    <div class="header-card">
-        <span class="app-icon">🔴</span>
+    <div class="header-card" data-aos="fade-up" data-aos-duration="600">
+        <div class="app-icon-wrap">
+            <i class="fas fa-shield-alt"></i>
+        </div>
         <h1>Privacy <span>Policy</span></h1>
-        <div class="app-badge">Earthquake Alert Pro</div>
+        <div class="app-badge">
+            <i class="fas fa-mobile-alt"></i> Earthquake Alert Pro
+        </div>
         <div class="last-updated">
-            <i class="far fa-calendar-alt"></i> Last Updated: June 27, 2026
+            <i class="far fa-calendar-alt"></i> Last Updated: June 29, 2026
         </div>
     </div>
 
     <!-- ===== SECTION 1: INTRODUCTION ===== -->
-    <div class="policy-card">
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="100">
         <h2><span class="badge-icon"><i class="fas fa-info-circle"></i></span> 1. Introduction</h2>
-        <p><strong>Earthquake Alert Pro</strong> ("we," "our," or "us") is committed to protecting your privacy and ensuring you have a safe experience while using our mobile application. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our application.</p>
-        <p>Earthquake Alert Pro is developed and maintained by <strong>Hello Bangladeshi</strong> (<a href="https://hellobangladeshi.github.io" target="_blank">hellobangladeshi.github.io</a>), a technology initiative focused on creating innovative digital solutions. This Privacy Policy applies solely to the Earthquake Alert Pro mobile application and not to any other products or services of Hello Bangladeshi.</p>
+        <p><strong>Earthquake Alert Pro</strong> ("we," "our," or "us") is committed to protecting your privacy and ensuring a safe experience while using our mobile application. This Privacy Policy explains how we collect, use, disclose, and safeguard your information.</p>
+        <p>The app is developed and maintained by <strong>Hello Bangladeshi</strong>, a technology initiative focused on creating innovative digital solutions for safety and community well-being.</p>
+        <p><strong>By using Earthquake Alert Pro, you agree to the practices described in this Privacy Policy.</strong> If you do not agree, please do not use the app.</p>
     </div>
 
     <!-- ===== SECTION 2: INFORMATION WE COLLECT ===== -->
-    <div class="policy-card">
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="150">
         <h2><span class="badge-icon"><i class="fas fa-database"></i></span> 2. Information We Collect</h2>
 
         <h3>2.1 Information You Provide</h3>
         <ul>
-            <li><strong>Device Information:</strong> Unique device identifiers, Android ID, and device model</li>
-            <li><strong>Location Data:</strong> Precise or approximate location information when you grant permission</li>
-            <li><strong>User Preferences:</strong> Your alert settings, filter preferences, and app configurations</li>
-            <li><strong>Family Member Information:</strong> Names and phone numbers you voluntarily add for safety alerts</li>
+            <li><strong>Device Information:</strong> Unique device identifiers, Android ID, and device model (for cloud sync and personalized features)</li>
+            <li><strong>Location Data:</strong> Precise or approximate location when you grant permission (for earthquake detection and distance calculations)</li>
+            <li><strong>User Preferences:</strong> Alert settings, filter preferences, and app configurations (stored locally and synced to cloud)</li>
+            <li><strong>Family Member Information:</strong> Names and phone numbers you voluntarily add for safety alerts (encrypted and stored securely)</li>
+            <li><strong>In-App Purchases:</strong> Premium subscription status and coin balance (stored securely via Google Play Billing)</li>
         </ul>
 
         <h3>2.2 Information Automatically Collected</h3>
         <ul>
-            <li><strong>Usage Data:</strong> How you interact with the app, features used, and time spent</li>
-            <li><strong>Earthquake Data:</strong> Information about earthquakes you view or interact with</li>
-            <li><strong>Crash Reports:</strong> Anonymous crash data to improve app stability (via Firebase Crashlytics)</li>
+            <li><strong>Usage Data:</strong> How you interact with the app, features used, and time spent (to improve user experience)</li>
+            <li><strong>Earthquake Data:</strong> Information about earthquakes you view or interact with (for analytics and feature improvement)</li>
+            <li><strong>Crash Reports:</strong> Anonymous crash data via Firebase Crashlytics to improve app stability</li>
             <li><strong>Performance Data:</strong> App performance metrics to optimize user experience</li>
         </ul>
 
         <h3>2.3 Information from Third Parties</h3>
         <ul>
-            <li><strong>USGS Earthquake Data:</strong> Real-time earthquake information from the U.S. Geological Survey</li>
-            <li><strong>Google Play Services:</strong> For location services, maps, and push notifications</li>
+            <li><strong>USGS Earthquake Data:</strong> Real-time earthquake information from the U.S. Geological Survey (public data)</li>
+            <li><strong>Google Play Services:</strong> For location services, maps, push notifications, and billing</li>
+            <li><strong>Firebase:</strong> For cloud storage, analytics, and crash reporting</li>
         </ul>
     </div>
 
     <!-- ===== SECTION 3: HOW WE USE YOUR INFORMATION ===== -->
-    <div class="policy-card">
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="200">
         <h2><span class="badge-icon"><i class="fas fa-chart-line"></i></span> 3. How We Use Your Information</h2>
 
         <h3>3.1 Primary Purposes</h3>
         <ul>
-            <li><strong>Deliver Earthquake Alerts:</strong> Send you timely notifications about earthquakes near your location</li>
+            <li><strong>Deliver Earthquake Alerts:</strong> Send timely notifications about earthquakes near your location</li>
             <li><strong>Personalize Experience:</strong> Customize alerts based on your magnitude and distance preferences</li>
             <li><strong>Family Safety Features:</strong> Send "I am Safe" messages to your selected family members</li>
             <li><strong>Improve Services:</strong> Analyze usage patterns to enhance app functionality and user experience</li>
@@ -457,30 +558,35 @@
 
         <h3>3.2 Secondary Purposes</h3>
         <ul>
-            <li><strong>Premium Features Management:</strong> Track your premium subscriptions and unlocked features</li>
-            <li><strong>Coin System:</strong> Manage your in-app coins for unlocking premium features</li>
+            <li><strong>Premium Features Management:</strong> Track subscriptions and unlocked features (via Firebase and Google Play)</li>
+            <li><strong>Coin System:</strong> Manage in-app coins for unlocking premium features</li>
             <li><strong>Analytics:</strong> Understand user behavior to make data-driven improvements</li>
             <li><strong>Communication:</strong> Send important notifications about app updates and safety information</li>
         </ul>
+
+        <div class="info-box">
+            <i class="fas fa-info-circle"></i> <strong>Note on Location Data:</strong> Your location is used <strong>only</strong> for earthquake detection and distance calculations. It is never shared with advertisers or third parties. All location processing is done locally on your device.
+        </div>
     </div>
 
     <!-- ===== SECTION 4: DATA STORAGE AND SECURITY ===== -->
-    <div class="policy-card">
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="250">
         <h2><span class="badge-icon"><i class="fas fa-shield-alt"></i></span> 4. Data Storage and Security</h2>
 
         <h3>4.1 Where We Store Data</h3>
         <ul>
-            <li><strong>Local Storage:</strong> Your preferences, settings, and cached earthquake data are stored locally on your device</li>
-            <li><strong>Firebase Cloud:</strong> Premium features, coin balances, and family member information are stored securely in Firebase Firestore</li>
-            <li><strong>Google Cloud:</strong> Analytics and crash data are stored on Google's secure servers</li>
+            <li><strong>Local Storage:</strong> Preferences, settings, and cached earthquake data are stored locally on your device (encrypted using Android's built-in security)</li>
+            <li><strong>Firebase Cloud:</strong> Premium features, coin balances, and family member information are stored securely in Firebase Firestore (encrypted at rest and in transit)</li>
+            <li><strong>Google Cloud:</strong> Analytics and crash data are stored on Google's secure servers (anonymized)</li>
         </ul>
 
         <h3>4.2 Security Measures</h3>
         <ul>
-            <li><strong>Encryption:</strong> All data transmitted between your device and our servers is encrypted</li>
-            <li><strong>Access Control:</strong> Only authorized personnel have access to user data</li>
+            <li><strong>Encryption:</strong> All data transmitted between your device and our servers is encrypted using TLS/SSL</li>
+            <li><strong>Access Control:</strong> Only authorized personnel have access to user data (strictly controlled)</li>
             <li><strong>Secure Authentication:</strong> Device-based authentication ensures only you can access your data</li>
             <li><strong>Regular Audits:</strong> We regularly review our security practices to protect your information</li>
+            <li><strong>Data Minimization:</strong> We only collect data that is necessary for app functionality</li>
         </ul>
 
         <h3>4.3 Data Retention</h3>
@@ -488,73 +594,95 @@
             <li><strong>Local Data:</strong> Remains on your device until you uninstall the app or clear app data</li>
             <li><strong>Cloud Data:</strong> Retained as long as you use the app or until you request deletion</li>
             <li><strong>Analytics Data:</strong> Aggregated and anonymized after 12 months</li>
+            <li><strong>Family Member Info:</strong> Stored until you delete it or request deletion</li>
         </ul>
     </div>
 
-    <!-- ===== SECTION 5: PERMISSIONS WE REQUEST ===== -->
-    <div class="policy-card">
+    <!-- ===== SECTION 5: PERMISSIONS ===== -->
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="300">
         <h2><span class="badge-icon"><i class="fas fa-lock"></i></span> 5. Permissions We Request</h2>
 
         <h3>5.1 Required Permissions</h3>
         <ul>
             <li><strong>Location (Fine/Coarse):</strong> To show earthquakes near your location and provide accurate distance information</li>
-            <li><strong>Notifications:</strong> To send you earthquake alerts and safety notifications</li>
-            <li><strong>Internet:</strong> To fetch earthquake data from USGS servers and sync with Firebase</li>
+            <li><strong>Notifications:</strong> To send earthquake alerts and safety notifications</li>
+            <li><strong>Internet:</strong> To fetch earthquake data from USGS and sync with Firebase</li>
+            <li><strong>Foreground Service:</strong> To continue monitoring for earthquakes while the app is in the background</li>
+            <li><strong>Vibrate:</strong> To provide haptic feedback during earthquake alerts</li>
         </ul>
 
         <h3>5.2 Optional Permissions</h3>
         <ul>
-            <li><strong>Background Location:</strong> To monitor for earthquakes when the app is not actively in use (can be disabled)</li>
-            <li><strong>SMS:</strong> To send "I am Safe" messages to family members (only with your explicit permission)</li>
-            <li><strong>Vibration:</strong> To provide haptic feedback during earthquake alerts</li>
-            <li><strong>Flashlight:</strong> To use flashlight as a visual alert during emergencies</li>
+            <li><strong>Background Location:</strong> For monitoring when the app is not actively in use (can be disabled without losing core functionality)</li>
+            <li><strong>SMS:</strong> Exclusively for sending "I am Safe" messages to family members (only with your explicit permission)</li>
+            <li><strong>Camera (Flashlight):</strong> To use flashlight as a visual alert during emergencies</li>
+            <li><strong>POST_NOTIFICATIONS (Android 13+):</strong> Required to show notification alerts</li>
         </ul>
 
         <div class="highlight-box">
-            <i class="fas fa-exclamation-triangle"></i> <strong>Important Note on SMS Permission:</strong> We only request SMS permission exclusively for the "I am Safe" feature. Messages are only sent to family members you have pre-approved in the app. <strong>We do not read, store, access your SMS inbox, or send any promotional messages.</strong> This feature is entirely optional and requires your explicit consent.
+            <i class="fas fa-exclamation-triangle"></i> <strong>Important Note on SMS Permission:</strong>
+            We only request SMS permission exclusively for the "I am Safe" feature. Messages are only sent to family members you have pre-approved in the app.
+            <strong>We never read, store, or access your SMS inbox, and we never send promotional messages.</strong>
+            This feature is entirely optional and requires your explicit consent.
         </div>
 
         <div class="highlight-box">
-            <i class="fas fa-exclamation-triangle"></i> <strong>Important Note on Background Location:</strong> This permission is only used to detect earthquakes even when the app is in the background. You can disable this in your device settings at any time without losing core functionality.
+            <i class="fas fa-exclamation-triangle"></i> <strong>Background Location:</strong>
+            This permission is only used to detect earthquakes even when the app is in the background.
+            You can disable this in your device settings at any time without losing core functionality.
+            We do not track your location history.
         </div>
     </div>
 
-    <!-- ===== SECTION 6: YOUR RIGHTS AND CHOICES ===== -->
-    <div class="policy-card">
+    <!-- ===== SECTION 6: YOUR RIGHTS ===== -->
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="350">
         <h2><span class="badge-icon"><i class="fas fa-user-cog"></i></span> 6. Your Rights and Choices</h2>
 
-        <h3>6.1 Privacy Controls</h3>
+        <h3>6.1 Privacy Controls in the App</h3>
         <ul>
-            <li><strong>Location Settings:</strong> You can enable/disable location access anytime in your device settings</li>
+            <li><strong>Location Settings:</strong> Enable/disable location access anytime in your device settings</li>
             <li><strong>Notification Preferences:</strong> Customize which alerts you receive in the app settings</li>
-            <li><strong>Data Deletion:</strong> You can delete all locally stored data by clearing app data in device settings</li>
-            <li><strong>Family Members:</strong> You have full control to add, edit, or delete family member information</li>
+            <li><strong>Sound & Vibration:</strong> Control alert sounds and vibration in settings</li>
+            <li><strong>Family Members:</strong> Full control to add, edit, or delete family member information</li>
+            <li><strong>Shake Detection:</strong> Enable/disable offline shake detection</li>
         </ul>
 
         <h3>6.2 Data Access and Deletion</h3>
         <ul>
             <li><strong>View Your Data:</strong> You can view your preferences and settings in the app</li>
             <li><strong>Export Data:</strong> Premium users can export earthquake history as PDF</li>
-            <li><strong>Request Cloud Data Deletion:</strong> To request deletion of your cloud-stored data, please contact us at <a href="mailto:info.hellobangladeshi@gmail.com">info.hellobangladeshi@gmail.com</a> with your Device ID (found in the app settings). We will process your request within 30 days.</li>
+            <li><strong>Clear Local Data:</strong> Clear all locally stored data via device settings (Settings → Apps → Earthquake Alert Pro → Clear Data)</li>
+            <li><strong>Request Cloud Data Deletion:</strong> Contact us at <a href="mailto:info.hellobangladeshi@gmail.com">info.hellobangladeshi@gmail.com</a> with your Device ID (found in app settings). We will process your request within 30 days.</li>
+        </ul>
+
+        <h3>6.3 Your Rights Under GDPR / CCPA</h3>
+        <ul>
+            <li><strong>Right to Access:</strong> Request a copy of your personal data</li>
+            <li><strong>Right to Rectification:</strong> Correct inaccurate data</li>
+            <li><strong>Right to Erasure:</strong> Request deletion of your data</li>
+            <li><strong>Right to Withdraw Consent:</strong> Withdraw consent at any time</li>
+            <li><strong>Right to Data Portability:</strong> Request data in a structured format</li>
+            <li><strong>Right to Opt-Out:</strong> Opt-out of data collection (we do not sell data)</li>
         </ul>
     </div>
 
     <!-- ===== SECTION 7: CHILDREN'S PRIVACY ===== -->
-    <div class="policy-card">
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="400">
         <h2><span class="badge-icon"><i class="fas fa-child"></i></span> 7. Children's Privacy</h2>
-        <p>Earthquake Alert Pro is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately. If we discover that we have collected personal information from a child under 13, we will delete that information promptly.</p>
+        <p>Earthquake Alert Pro is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.</p>
+        <p>If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately. If we discover that we have collected personal information from a child under 13, we will delete that information promptly.</p>
     </div>
 
     <!-- ===== SECTION 8: THIRD-PARTY SERVICES ===== -->
-    <div class="policy-card">
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="450">
         <h2><span class="badge-icon"><i class="fas fa-plug"></i></span> 8. Third-Party Services</h2>
 
         <h3>8.1 Services We Use</h3>
         <ul>
-            <li><strong>Google Play Services:</strong> For location, maps, and billing</li>
-            <li><strong>Firebase:</strong> For cloud storage, analytics, and crash reporting</li>
-            <li><strong>USGS API:</strong> For earthquake data</li>
-            <li><strong>AdMob:</strong> For displaying advertisements (in free version)</li>
+            <li><strong>Google Play Services:</strong> For location, maps, push notifications, and billing</li>
+            <li><strong>Firebase:</strong> For cloud storage (Firestore), analytics, and crash reporting (Crashlytics)</li>
+            <li><strong>USGS API:</strong> For earthquake data (publicly available)</li>
+            <li><strong>Google AdMob:</strong> For displaying advertisements (in the free version)</li>
             <li><strong>Google Billing:</strong> For processing premium subscriptions</li>
         </ul>
 
@@ -567,49 +695,54 @@
     </div>
 
     <!-- ===== SECTION 9: DATA SHARING ===== -->
-    <div class="policy-card">
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="500">
         <h2><span class="badge-icon"><i class="fas fa-share-alt"></i></span> 9. Data Sharing</h2>
 
         <h3>9.1 When We Share Data</h3>
         <ul>
-            <li><strong>With Your Consent:</strong> We share data when you explicitly grant permission (e.g., SMS)</li>
-            <li><strong>For Safety:</strong> To send emergency messages to your designated family members</li>
-            <li><strong>Legal Requirements:</strong> If required by law or to protect rights and safety</li>
-            <li><strong>Service Providers:</strong> With trusted third parties who assist in app operations</li>
+            <li><strong>With Your Consent:</strong> When you explicitly grant permission (e.g., SMS for family safety)</li>
+            <li><strong>For Safety:</strong> To send emergency messages to your designated family members (only at your request)</li>
+            <li><strong>Legal Requirements:</strong> If required by law, regulation, or to protect rights and safety</li>
+            <li><strong>Service Providers:</strong> With trusted third parties who assist in app operations (under strict confidentiality agreements)</li>
         </ul>
 
         <h3>9.2 What We Never Share</h3>
         <ul>
-            <li>We never sell your personal information</li>
-            <li>We never share your location data with advertisers</li>
-            <li>We never share your family member information without your explicit consent</li>
+            <li><strong>We never sell your personal information</strong></li>
+            <li><strong>We never share your location data with advertisers</strong></li>
+            <li><strong>We never share your family member information without your explicit consent</strong></li>
+            <li><strong>We never share your device ID with third parties for marketing purposes</strong></li>
         </ul>
 
         <div class="highlight-box">
-            <i class="fas fa-ad"></i> <strong>AdMob Data Sharing:</strong> We use Google AdMob to display ads. AdMob may collect anonymized data for ad personalization using your device's advertising ID. You can opt-out of ad personalization in your Google account settings or reset your advertising ID anytime. We do not share your location or personal data with AdMob.
+            <i class="fas fa-ad"></i> <strong>AdMob Data Sharing:</strong>
+            We use Google AdMob to display ads. AdMob may collect anonymized data for ad personalization using your device's advertising ID.
+            You can opt-out of ad personalization in your Google account settings or reset your advertising ID anytime.
+            <strong>We do not share your location or personal data with AdMob.</strong>
         </div>
     </div>
 
-    <!-- ===== SECTION 10: INTERNATIONAL DATA TRANSFERS ===== -->
-    <div class="policy-card">
+    <!-- ===== SECTION 10: INTERNATIONAL TRANSFERS ===== -->
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="550">
         <h2><span class="badge-icon"><i class="fas fa-globe"></i></span> 10. International Data Transfers</h2>
         <p>Your information may be transferred to and processed in countries where our service providers operate. We ensure appropriate safeguards are in place for international data transfers in compliance with applicable laws, including standard contractual clauses where required.</p>
+        <p>Data is primarily stored on Google Cloud servers in the United States and Europe, ensuring compliance with GDPR and other international privacy standards.</p>
     </div>
 
-    <!-- ===== SECTION 11: CHANGES TO THIS PRIVACY POLICY ===== -->
-    <div class="policy-card">
+    <!-- ===== SECTION 11: CHANGES TO THIS POLICY ===== -->
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="600">
         <h2><span class="badge-icon"><i class="fas fa-sync-alt"></i></span> 11. Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any changes by:</p>
         <ul>
             <li>Posting the new Privacy Policy in the app</li>
             <li>Sending a notification (if you have enabled notifications)</li>
             <li>Updating the "Last Updated" date at the top of this policy</li>
         </ul>
-        <p>We encourage you to review this Privacy Policy periodically for any changes. Your continued use of the app after changes are posted constitutes your acceptance of the updated policy.</p>
+        <p>We encourage you to review this Privacy Policy periodically. Your continued use of the app after changes are posted constitutes your acceptance of the updated policy.</p>
     </div>
 
     <!-- ===== SECTION 12: CONTACT US ===== -->
-    <div class="policy-card">
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="650">
         <h2><span class="badge-icon"><i class="fas fa-envelope"></i></span> 12. Contact Us</h2>
         <p>If you have any questions, concerns, or requests regarding this Privacy Policy, or if you wish to exercise your data rights, please contact us:</p>
 
@@ -619,77 +752,16 @@
             <li><strong>Website:</strong> <a href="https://hellobangladeshi.github.io" target="_blank">hellobangladeshi.github.io</a></li>
             <li><strong>Developer:</strong> Farabi Walid</li>
             <li><strong>Company:</strong> Hello Bangladeshi</li>
-            <li><strong>Address:</strong> Sylhet, Bangladesh</li>
+            <li><strong>Location:</strong> Bangladesh</li>
         </ul>
 
         <h3>Response Time</h3>
-        <p>We typically respond to privacy-related inquiries within 48 hours during business days (Monday to Friday, 9 AM - 6 PM BST).</p>
+        <p>We typically respond to privacy-related inquiries within <strong>48 hours</strong> during business days (Monday to Friday, 9 AM - 6 PM BST).</p>
     </div>
 
-    <!-- ===== SECTION 13: REGULATORY COMPLIANCE ===== -->
-    <div class="policy-card">
-        <h2><span class="badge-icon"><i class="fas fa-gavel"></i></span> 13. Regulatory Compliance</h2>
-
-        <h3>13.1 For Users in the European Union (GDPR)</h3>
-        <ul>
-            <li><strong>Right to Access:</strong> You can request a copy of your personal data</li>
-            <li><strong>Right to Rectification:</strong> You can correct inaccurate data</li>
-            <li><strong>Right to Erasure:</strong> You can request deletion of your data</li>
-            <li><strong>Right to Withdraw Consent:</strong> You can withdraw consent at any time</li>
-            <li><strong>Right to Data Portability:</strong> You can request your data in a structured format</li>
-        </ul>
-        <p>For GDPR-related requests, please contact us at <a href="mailto:info.hellobangladeshi@gmail.com">info.hellobangladeshi@gmail.com</a> with the subject line "GDPR Request".</p>
-
-        <h3>13.2 For Users in the United States (CCPA)</h3>
-        <ul>
-            <li><strong>Right to Know:</strong> You can request what personal information we collect</li>
-            <li><strong>Right to Delete:</strong> You can request deletion of your personal information</li>
-            <li><strong>Right to Opt-Out:</strong> You can opt-out of the sale of your information (we do not sell data)</li>
-            <li><strong>Non-Discrimination:</strong> Exercising your rights will not affect service quality</li>
-        </ul>
-    </div>
-
-    <!-- ===== SECTION 14: SPECIFIC FEATURES PRIVACY ===== -->
-    <div class="policy-card">
-        <h2><span class="badge-icon"><i class="fas fa-cogs"></i></span> 14. Specific Features Privacy</h2>
-
-        <h3>14.1 Earthquake Alerts</h3>
-        <ul>
-            <li>Alerts are based on your location and preferences</li>
-            <li>No permanent recording of your location history</li>
-            <li>Distance calculations are performed locally on your device</li>
-        </ul>
-
-        <h3>14.2 Family Safety Features</h3>
-        <ul>
-            <li>Phone numbers are stored securely and encrypted</li>
-            <li>SMS messages are sent only with your explicit permission</li>
-            <li>You control which members receive safety messages</li>
-        </ul>
-
-        <h3>14.3 Shake Detection (Offline Mode)</h3>
-        <ul>
-            <li>Uses device sensors only</li>
-            <li>No data is transmitted externally</li>
-            <li>All processing happens locally on your device</li>
-        </ul>
-
-        <h3>14.4 Emergency Kit</h3>
-        <ul>
-            <li>Items and checklists are stored locally</li>
-            <li>No external transmission of your preparedness status</li>
-        </ul>
-    </div>
-
-    <!-- ===== SECTION 15: CONSENT ===== -->
-    <div class="policy-card">
-        <h2><span class="badge-icon"><i class="fas fa-check-circle"></i></span> 15. Consent</h2>
-        <p>By using Earthquake Alert Pro, you consent to this Privacy Policy and agree to its terms. If you do not agree with our policies and practices, please do not use our application. You can withdraw your consent at any time by uninstalling the app or contacting us.</p>
-    </div>
-
-    <!-- ===== SECTION 16: DATA SAFETY SUMMARY FOR PLAY STORE ===== -->
-    <div class="policy-card">
-        <h2><span class="badge-icon"><i class="fas fa-shield-virus"></i></span> 16. Data Safety Summary</h2>
+    <!-- ===== SECTION 13: DATA SAFETY SUMMARY ===== -->
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="700">
+        <h2><span class="badge-icon"><i class="fas fa-shield-virus"></i></span> 13. Data Safety Summary</h2>
         <div class="table-wrap">
             <table>
                 <thead>
@@ -703,69 +775,132 @@
                     <tr>
                         <td><strong>Location</strong></td>
                         <td>Earthquake alerts, distance calculations</td>
-                        <td>No (only locally processed)</td>
+                        <td><span class="tag tag-green">No</span> (locally processed)</td>
                     </tr>
                     <tr>
                         <td><strong>Device ID</strong></td>
                         <td>Cloud sync, premium features</td>
-                        <td>Firebase (encrypted)</td>
+                        <td><span class="tag tag-yellow">Firebase (encrypted)</span></td>
                     </tr>
                     <tr>
                         <td><strong>Family Member Info</strong></td>
                         <td>Safety alerts, auto-SMS</td>
-                        <td>Firebase (encrypted, with your consent)</td>
+                        <td><span class="tag tag-yellow">Firebase (encrypted, with consent)</span></td>
                     </tr>
                     <tr>
                         <td><strong>Usage Data</strong></td>
                         <td>Analytics, feature improvement</td>
-                        <td>Firebase Analytics (anonymized)</td>
+                        <td><span class="tag tag-yellow">Firebase Analytics (anonymized)</span></td>
                     </tr>
                     <tr>
                         <td><strong>Crash Data</strong></td>
                         <td>App stability</td>
-                        <td>Firebase Crashlytics (anonymized)</td>
+                        <td><span class="tag tag-yellow">Firebase Crashlytics (anonymized)</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>In-App Purchases</strong></td>
+                        <td>Premium subscriptions</td>
+                        <td><span class="tag tag-yellow">Google Play Billing</span></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <p style="margin-top:10px; opacity:0.7; font-size:0.85rem;"><i class="fas fa-info-circle"></i> For complete details, please refer to the sections above.</p>
+        <p style="margin-top:10px; opacity:0.6; font-size:0.85rem;"><i class="fas fa-info-circle"></i> For complete details, please refer to the sections above.</p>
+    </div>
+
+    <!-- ===== SECTION 14: GDPR & CCPA COMPLIANCE ===== -->
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="750">
+        <h2><span class="badge-icon"><i class="fas fa-gavel"></i></span> 14. GDPR &amp; CCPA Compliance</h2>
+
+        <h3>14.1 For Users in the European Union (GDPR)</h3>
+        <ul>
+            <li><strong>Right to Access:</strong> Request a copy of your personal data</li>
+            <li><strong>Right to Rectification:</strong> Correct inaccurate or incomplete data</li>
+            <li><strong>Right to Erasure ("Right to be Forgotten"):</strong> Request deletion of your data</li>
+            <li><strong>Right to Restrict Processing:</strong> Limit how we use your data</li>
+            <li><strong>Right to Data Portability:</strong> Receive your data in a structured format</li>
+            <li><strong>Right to Object:</strong> Object to data processing for marketing or analytics</li>
+            <li><strong>Right to Withdraw Consent:</strong> Withdraw consent at any time</li>
+        </ul>
+        <p>For GDPR-related requests, contact us at <a href="mailto:info.hellobangladeshi@gmail.com">info.hellobangladeshi@gmail.com</a> with the subject line "GDPR Request".</p>
+
+        <h3>14.2 For Users in California (CCPA)</h3>
+        <ul>
+            <li><strong>Right to Know:</strong> Request what personal information we collect, use, and share</li>
+            <li><strong>Right to Delete:</strong> Request deletion of your personal information</li>
+            <li><strong>Right to Opt-Out:</strong> Opt-out of the sale of your information (we do not sell data)</li>
+            <li><strong>Right to Non-Discrimination:</strong> Exercising your rights will not affect service quality</li>
+            <li><strong>Right to Correct:</strong> Request correction of inaccurate information</li>
+        </ul>
+    </div>
+
+    <!-- ===== SECTION 15: CONSENT ===== -->
+    <div class="policy-card" data-aos="fade-up" data-aos-delay="800">
+        <h2><span class="badge-icon"><i class="fas fa-check-circle"></i></span> 15. Consent</h2>
+        <p>By using Earthquake Alert Pro, you consent to this Privacy Policy and agree to its terms. You can withdraw your consent at any time by:</p>
+        <ul>
+            <li>Uninstalling the app</li>
+            <li>Disabling permissions in your device settings</li>
+            <li>Contacting us to request data deletion</li>
+        </ul>
+        <p>If you do not agree with our policies and practices, please do not use our application.</p>
     </div>
 
     <!-- ===== FOOTER ===== -->
-    <div class="footer-section">
+    <div class="footer-section" data-aos="fade-up" data-aos-delay="850">
         <div class="footer-logo">Hello <span>Bangladeshi</span></div>
-        <p style="opacity:0.7; font-size:0.9rem; margin-top:5px;">Connecting Bangladeshis Worldwide</p>
-        
-        <div class="social-links">
-            <a href="https://www.youtube.com/@hellobangladeshitv" target="_blank" class="social-link yt" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.facebook.com/hellobangladeshiofficial" target="_blank" class="social-link fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://x.com/hellobdofficial" target="_blank" class="social-link tw" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://www.threads.net/@hellobangladeshiofficial" target="_blank" class="social-link" title="Threads"><i class="fab fa-threads"></i></a>
-            <a href="https://www.instagram.com/hellobangladeshiofficial/" target="_blank" class="social-link ig" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@hellobangladeshiofficial" target="_blank" class="social-link" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://whatsapp.com/channel/0029Vao5qD3HgZWWODlsiX3s" target="_blank" class="social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://t.me/hellobangladeshiofficial" target="_blank" class="social-link" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
-            <a href="https://hellobangladeshiofficial.blogspot.com/" target="_blank" class="social-link" title="Blogspot"><i class="fab fa-blogger-b"></i></a>
-            <a href="https://github.com/hellobangladeshi" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/hellobangladeshi/" target="_blank" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.pinterest.com/hellobangladeshiofficial" target="_blank" class="social-link" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-            <a href="https://www.twitch.tv/hellobangladeshiofficial" target="_blank" class="social-link" title="Twitch"><i class="fab fa-twitch"></i></a>
-            <a href="https://about.me/hellobangladeshi" target="_blank" class="social-link" title="About.me"><i class="fas fa-user-circle"></i></a>
-            <a href="https://sites.google.com/view/hellobangladeshi" target="_blank" class="social-link" title="Google Sites"><i class="fab fa-google"></i></a>
-            <a href="https://en.everybodywiki.com/Hello_Bangladeshi" target="_blank" class="social-link" title="EverybodyWiki"><i class="fas fa-wikipedia-w"></i></a>
-            <a href="https://f6s.com/hellobangladeshi" target="_blank" class="social-link" title="F6S"><i class="fas fa-building"></i></a>
+        <p style="opacity:0.6; font-size:0.9rem; margin-top:4px;">Connecting Communities Through Technology</p>
+
+        <div class="footer-links">
+            <a href="https://hellobangladeshi.github.io">Home</a>
+            <a href="https://hellobangladeshi.github.io/earthquake-alert-terms.html">Terms of Service</a>
+            <a href="mailto:info.hellobangladeshi@gmail.com">Contact</a>
         </div>
-        
-        <p style="margin-top:20px; opacity:0.5; font-size:0.8rem;">
+
+        <p style="margin-top:20px; opacity:0.4; font-size:0.8rem;">
             &copy; 2026 Hello Bangladeshi. All rights reserved.
             <br>
             Made with <span class="heart">❤</span> in Bangladesh
-            <br><br>
-            <a href="https://hellobangladeshi.github.io" target="_blank" style="color:var(--secondary);">Visit Our Website</a>
         </p>
     </div>
 
 </div>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js">
+</script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 600,
+        once: true,
+        offset: 60,
+        easing: 'ease-out-cubic'
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Add hover effect on cards for better interaction
+    document.querySelectorAll('.policy-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+</script>
 
 </body>
 </html>
