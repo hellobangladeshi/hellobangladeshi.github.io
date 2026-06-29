@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Earthquake Alert Pro - সেবার শর্তাবলী</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>Terms of Service | Earthquake Alert Pro</title>
+    <meta name="description" content="Terms of Service for Earthquake Alert Pro app - Real-time earthquake monitoring and alert system." />
+
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
     <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary: #E53935;
+            --primary-dark: #B71C1C;
+            --primary-light: #FF8A80;
+            --secondary: #FFD54F;
+            --accent: #4FC3F7;
+            --dark-bg: #0D0D1A;
+            --dark-card: #14142B;
+            --dark-card-hover: #1C1C3A;
+            --text-light: #F5F5F5;
+            --text-muted: #B0B0C8;
+            --border-color: rgba(229, 57, 53, 0.25);
+            --glow-primary: 0 0 30px rgba(229, 57, 53, 0.15);
+            --radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
@@ -12,724 +40,1016 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f5f5;
-            color: #212121;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-light);
             line-height: 1.7;
-            padding: 20px;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--dark-bg); }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        /* ===== CONTAINER ===== */
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
-            padding: 40px 45px;
-            position: relative;
-            overflow: hidden;
+            padding: 0 24px;
         }
 
-        /* Header dengan warna merah khas Earthquake Alert Pro */
-        .header {
-            background: linear-gradient(135deg, #E53935, #B71C1C);
-            margin: -40px -45px 30px -45px;
-            padding: 30px 45px 25px 45px;
-            border-radius: 16px 16px 0 0;
-            color: #ffffff;
+        /* ===== HEADER / NAVBAR ===== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(13, 13, 26, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 0;
+            transition: var(--transition);
         }
 
-        .header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+        header.scrolled {
+            background: rgba(13, 13, 26, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .logo:hover { transform: scale(1.02); }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 900;
+            color: #fff;
+            flex-shrink: 0;
         }
 
-        .header .subtitle {
-            font-size: 14px;
-            opacity: 0.85;
-            margin-top: 6px;
-            font-weight: 300;
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-text .app-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff 60%, var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo-text .tagline {
+            font-size: 0.7rem;
+            opacity: 0.6;
+            letter-spacing: 0.3px;
+            margin-top: -2px;
         }
 
-        .header .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 24px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .back-btn:hover {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(229, 57, 53, 0.35);
+        }
+
+        /* ===== LANGUAGE TOGGLE ===== */
+        .lang-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin: 32px 0 28px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            padding: 12px 34px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: var(--text-muted);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .lang-btn i { margin-right: 8px; }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-color: transparent;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 24px rgba(229, 57, 53, 0.35);
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-2px);
+        }
+
+        /* ===== TERMS SECTION ===== */
+        .terms-section {
+            padding: 40px 0 60px;
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .terms-header .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(229, 57, 53, 0.12);
+            border: 1px solid var(--border-color);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--secondary);
+            margin-bottom: 16px;
+        }
+
+        .badge .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--secondary);
+            animation: blink 1.8s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
+
+        .terms-header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .terms-header h1 span {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .terms-header .sub {
+            font-size: 1.1rem;
+            opacity: 0.7;
             margin-top: 8px;
         }
 
-        .last-updated {
-            background: #f0f0f0;
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-size: 13px;
-            color: #555;
-            margin-bottom: 25px;
-            border-left: 4px solid #E53935;
+        .divider {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            margin: 18px auto 0;
+            border-radius: 4px;
         }
 
-        h2 {
-            color: #E53935;
-            font-size: 20px;
-            margin-top: 28px;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #f0f0f0;
+        /* ===== TERMS CONTENT ===== */
+        .terms-content {
+            background: var(--dark-card);
+            border-radius: var(--radius);
+            padding: 48px 52px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(8px);
+            transition: var(--transition);
         }
 
-        h3 {
-            color: #333;
-            font-size: 17px;
-            margin-top: 20px;
-            margin-bottom: 8px;
+        .terms-content:hover {
+            border-color: rgba(229, 57, 53, 0.45);
+            box-shadow: var(--glow-primary);
         }
 
-        p {
-            margin-bottom: 14px;
-            color: #444;
+        .lang-content {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        .lang-content.active { display: block; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        ul, ol {
-            margin: 12px 0 18px 22px;
-            color: #444;
+        /* ===== TYPOGRAPHY ===== */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin: 44px 0 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(255, 213, 79, 0.2);
+            letter-spacing: -0.5px;
+        }
+        .section-title:first-child { margin-top: 0; }
+
+        .sub-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin: 28px 0 14px;
         }
 
-        li {
-            margin-bottom: 6px;
+        .content-text {
+            margin-bottom: 18px;
+            opacity: 0.9;
+            line-height: 1.8;
         }
 
+        .content-list {
+            margin: 16px 0 22px 28px;
+        }
+        .content-list li {
+            margin-bottom: 10px;
+            opacity: 0.9;
+            position: relative;
+            padding-left: 4px;
+        }
+        .content-list li::before {
+            content: "▸";
+            color: var(--secondary);
+            font-weight: 700;
+            display: inline-block;
+            width: 1.2em;
+            margin-left: -1.2em;
+        }
+
+        /* ===== BOXES ===== */
         .highlight-box {
-            background: #FFF3E0;
-            border-left: 4px solid #FF6F00;
-            padding: 16px 20px;
-            border-radius: 8px;
-            margin: 18px 0;
+            background: linear-gradient(135deg, rgba(229, 57, 53, 0.08), rgba(255, 213, 79, 0.04));
+            border-left: 4px solid var(--primary);
+            padding: 22px 28px;
+            border-radius: 14px;
+            margin: 24px 0;
         }
 
-        .highlight-box strong {
-            color: #E53935;
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.08), rgba(255, 193, 7, 0.04));
+            border-left: 4px solid #FF5722;
+            padding: 22px 28px;
+            border-radius: 14px;
+            margin: 24px 0;
         }
 
-        table {
+        .info-box {
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.08), rgba(0, 188, 212, 0.04));
+            border-left: 4px solid var(--accent);
+            padding: 22px 28px;
+            border-radius: 14px;
+            margin: 24px 0;
+        }
+
+        .highlight-box strong,
+        .warning-box strong,
+        .info-box strong { color: var(--secondary); }
+        .highlight-box i,
+        .warning-box i,
+        .info-box i { margin-right: 8px; }
+
+        /* ===== TABLE ===== */
+        .terms-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 16px 0 20px 0;
-            font-size: 14px;
+            margin: 24px 0;
+            background: rgba(255,255,255,0.02);
+            border-radius: 14px;
+            overflow: hidden;
+            font-size: 0.95rem;
         }
 
-        table th {
-            background: #E53935;
-            color: #ffffff;
-            padding: 10px 14px;
+        .terms-table th {
+            background: rgba(229, 57, 53, 0.12);
+            padding: 14px 18px;
             text-align: left;
-            font-weight: 600;
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        table td {
-            padding: 10px 14px;
-            border-bottom: 1px solid #e0e0e0;
+        .terms-table td {
+            padding: 14px 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        table tr:nth-child(even) {
-            background: #fafafa;
-        }
+        .terms-table tr:last-child td { border-bottom: none; }
+        .terms-table tr:hover td { background: rgba(255,255,255,0.02); }
 
-        .contact-box {
-            background: #f5f5f5;
-            padding: 18px 22px;
-            border-radius: 10px;
-            margin: 20px 0 10px 0;
-        }
-
-        .contact-box p {
-            margin-bottom: 4px;
-        }
-
-        .footer {
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            background: rgba(255,255,255,0.02);
+            border-radius: 18px;
+            padding: 40px 36px;
+            margin: 50px 0 20px;
+            border: 1px solid rgba(255,255,255,0.06);
             text-align: center;
-            padding-top: 25px;
-            margin-top: 30px;
-            border-top: 2px solid #f0f0f0;
-            font-size: 13px;
-            color: #999;
         }
 
-        .footer a {
-            color: #E53935;
+        .contact-section h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 16px;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 8px;
+            display: block;
+        }
+        .contact-item a {
+            color: var(--text-light);
             text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        .language-toggle {
-            text-align: right;
-            margin-bottom: 15px;
-        }
-
-        .language-toggle a {
-            color: #E53935;
-            text-decoration: none;
+            transition: var(--transition);
             font-weight: 500;
-            font-size: 14px;
-            padding: 4px 12px;
-            border-radius: 20px;
-            border: 1px solid #E53935;
-            transition: all 0.3s;
+        }
+        .contact-item a:hover { color: var(--secondary); }
+
+        .update-date {
+            text-align: center;
+            opacity: 0.5;
+            margin-top: 36px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+        }
+        .update-date i { margin-right: 6px; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: rgba(0,0,0,0.4);
+            padding: 50px 0 24px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
         }
 
-        .language-toggle a:hover {
-            background: #E53935;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col p {
+            opacity: 0.6;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+        .footer-bottom a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        .footer-bottom a:hover { text-decoration: underline; }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: #fff;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 6px 24px rgba(229, 57, 53, 0.4);
+        }
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .scroll-top:hover { transform: translateY(-4px) scale(1.05); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .terms-header h1 { font-size: 2.4rem; }
+            .terms-content { padding: 36px 32px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
-        .bn-text {
-            font-family: 'Noto Sans Bengali', 'Segoe UI', sans-serif;
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; align-items: stretch; }
+            .back-btn { justify-content: center; }
+            .terms-header h1 { font-size: 2rem; }
+            .section-title { font-size: 1.6rem; }
+            .sub-title { font-size: 1.2rem; }
+            .terms-content { padding: 24px 20px; }
+            .contact-section { padding: 28px 18px; }
+            .contact-grid { flex-direction: column; gap: 18px; }
+            .lang-toggle { flex-direction: column; align-items: center; }
+            .lang-btn { width: 80%; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-links a { justify-content: center; }
+            .terms-table { font-size: 0.8rem; }
+            .terms-table th, .terms-table td { padding: 10px 12px; }
         }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-            .container {
-                padding: 20px 18px;
-                border-radius: 12px;
-            }
-            .header {
-                margin: -20px -18px 20px -18px;
-                padding: 20px 18px 18px 18px;
-                border-radius: 12px 12px 0 0;
-            }
-            .header h1 {
-                font-size: 22px;
-                flex-wrap: wrap;
-            }
-            table {
-                font-size: 12px;
-            }
-            table th, table td {
-                padding: 6px 8px;
-            }
-            .language-toggle {
-                text-align: center;
-                margin-bottom: 12px;
-            }
-        }
-
-        @media print {
-            body {
-                background: #fff;
-                padding: 0;
-            }
-            .container {
-                box-shadow: none;
-                border-radius: 0;
-                padding: 20px;
-            }
-            .header {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
+        @media (max-width: 480px) {
+            .terms-header h1 { font-size: 1.6rem; }
+            .terms-content { padding: 18px 14px; }
+            .lang-btn { width: 100%; }
+            .logo-text .app-name { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
 
+<!-- ===== HEADER ===== -->
+<header id="header">
+    <div class="container">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="app-name">Earthquake Alert Pro</span>
+                    <span class="tagline">Stay Safe • Stay Alert</span>
+                </div>
+            </a>
+            <a href="https://hellobangladeshi.github.io" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- ===== TERMS SECTION ===== -->
+<section class="terms-section">
     <div class="container">
 
-        <!-- ============================================================ -->
-        <!-- HEADER -->
-        <!-- ============================================================ -->
-        <div class="header">
-            <h1>
-                <span>🌍 Earthquake Alert Pro</span>
-            </h1>
-            <div class="subtitle">সেবার শর্তাবলী &bull; Terms of Service</div>
-            <div class="badge">📱 সংস্করণ 1.0.0</div>
+        <!-- Header -->
+        <div class="terms-header" data-aos="fade-up">
+            <div class="badge">
+                <span class="dot"></span> Legal Document
+            </div>
+            <h1><span>Terms of Service</span></h1>
+            <div class="divider"></div>
+            <p class="sub">Earthquake Alert Pro — Real-time Earthquake Monitoring &amp; Alert System</p>
         </div>
 
-        <div class="last-updated">
-            📅 সর্বশেষ হালনাগাদ: <strong>২৯ জুন, ২০২৬</strong> &bull; Last Updated: <strong>June 29, 2026</strong>
+        <!-- Language Toggle -->
+        <div class="lang-toggle" data-aos="fade-up" data-aos-delay="100">
+            <button id="btnEn" class="lang-btn active">
+                <i class="fas fa-globe"></i> English
+            </button>
+            <button id="btnBn" class="lang-btn">
+                <i class="fas fa-language"></i> বাংলা
+            </button>
         </div>
 
-        <!-- ============================================================ -->
-        <!-- বাংলা ভার্সন -->
-        <!-- ============================================================ -->
+        <!-- Content -->
+        <div class="terms-content" data-aos="fade-up" data-aos-delay="150">
 
-        <div class="bn-text">
+            <!-- ===== ENGLISH VERSION (Default) ===== -->
+            <div id="en" class="lang-content active">
 
-            <h2>📋 ভূমিকা</h2>
-            <p>
-                <strong>Earthquake Alert Pro</strong> (যা "আমরা", "আমাদের", বা "অ্যাপ" নামে উল্লেখিত) একটি মোবাইল অ্যাপ্লিকেশন যা
-                ভূমিকম্পের রিয়েল-টাইম সতর্কতা, ইন্টারেক্টিভ ম্যাপ, শেক ডিটেকশন, ফ্যামিলি সেফটি সিস্টেম এবং সারভাইভাল গাইড
-                সরবরাহ করে। এই সেবার শর্তাবলী ("শর্তাবলী") অ্যাপ ব্যবহারের নিয়ম ও শর্ত বর্ণনা করে।
-            </p>
-            <p>
-                <strong>অ্যাপ ব্যবহারের মাধ্যমে আপনি এই শর্তাবলীতে সম্পূর্ণ সম্মত হন।</strong> যদি আপনি কোনো অংশের সাথে
-                একমত না হন, তাহলে দয়া করে অ্যাপ ব্যবহার করবেন না।
-            </p>
+                <h2 class="section-title">Terms &amp; Conditions</h2>
 
-            <div class="highlight-box">
-                <strong>🚨 গুরুত্বপূর্ণ:</strong> এই অ্যাপটি জরুরি পরিস্থিতিতে সহায়তা করার জন্য ডিজাইন করা হয়েছে, কিন্তু
-                এটি পেশাদার জরুরি সেবার বিকল্প নয়। সর্বদা স্থানীয় কর্তৃপক্ষের নির্দেশনা অনুসরণ করুন।
+                <p class="content-text">
+                    These Terms of Service ("Terms") govern your use of the <strong>Earthquake Alert Pro</strong> mobile application
+                    (the "App"). By downloading, installing, or using the App, you agree to be bound by these Terms.
+                    Please read them carefully.
+                </p>
+
+                <div class="highlight-box">
+                    <p><strong><i class="fas fa-exclamation-triangle"></i> Important:</strong>
+                    If you do not agree with any part of these Terms, you must not use the App.</p>
+                </div>
+
+                <!-- 1. Description -->
+                <h3 class="sub-title">1. Description of Service</h3>
+                <p class="content-text">
+                    <strong>Earthquake Alert Pro</strong> is a mobile application that provides:
+                </p>
+                <ul class="content-list">
+                    <li><strong>Real-Time Alerts:</strong> Instant notifications for earthquakes using USGS data.</li>
+                    <li><strong>Interactive Map:</strong> Visualize earthquake locations, magnitudes, and impact zones.</li>
+                    <li><strong>Shake Detection:</strong> Offline detection using your device's accelerometer.</li>
+                    <li><strong>Family Safety:</strong> Auto-SMS "I am Safe" messages to your selected contacts.</li>
+                    <li><strong>Survival Guide:</strong> Instructions for before, during, and after an earthquake.</li>
+                    <li><strong>Emergency Kit:</strong> Checklist of essential supplies.</li>
+                    <li><strong>Premium Features:</strong> Faster refresh, heatmap, PDF export, premium sirens, and ad-free experience.</li>
+                </ul>
+
+                <!-- 2. User Responsibilities -->
+                <h3 class="sub-title">2. User Responsibilities</h3>
+                <p class="content-text">By using the App, you agree to:</p>
+                <ul class="content-list">
+                    <li>Provide accurate and up-to-date information when using Family Safety features.</li>
+                    <li>Maintain the security of your device and account.</li>
+                    <li>Take alerts seriously and follow local emergency authority instructions.</li>
+                    <li>Not misuse the App for illegal, harmful, or fraudulent activities.</li>
+                    <li>Not attempt to reverse-engineer, modify, or disrupt the App's functionality.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong><i class="fas fa-ban"></i> Prohibited Activities:</strong></p>
+                    <ul class="content-list">
+                        <li>Creating false alerts or abusing the notification system.</li>
+                        <li>Harassing or harming other users.</li>
+                        <li>Using the App to distribute malware or harmful content.</li>
+                        <li>Violating any applicable laws or regulations.</li>
+                    </ul>
+                </div>
+
+                <!-- 3. Permissions & Data -->
+                <h3 class="sub-title">3. Permissions &amp; Data Collection</h3>
+                <p class="content-text">
+                    The App requires certain permissions to function properly. You can manage these permissions
+                    in your device settings.
+                </p>
+
+                <table class="terms-table">
+                    <thead>
+                        <tr><th>Permission</th><th>Usage</th><th>Required</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>📍 Location (Fine/Coarse)</td><td>Detect earthquakes near you</td><td>Essential</td></tr>
+                        <tr><td>🔔 Notifications</td><td>Send earthquake alerts</td><td>Essential</td></tr>
+                        <tr><td>📳 Vibration</td><td>Vibrate device during alerts</td><td>Optional</td></tr>
+                        <tr><td>📱 Foreground Service</td><td>Background monitoring</td><td>Essential</td></tr>
+                        <tr><td>📷 Camera (Flashlight)</td><td>Flash during shake detection</td><td>Optional</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <p><strong><i class="fas fa-shield-alt"></i> Privacy:</strong>
+                    Your location data is used <strong>only</strong> for earthquake detection and is never shared with third parties.
+                    See our <a href="https://hellobangladeshi.github.io/earthquake-alert-privacy.html" style="color: var(--secondary);">Privacy Policy</a> for details.</p>
+                </div>
+
+                <!-- 4. Family Safety & SMS -->
+                <h3 class="sub-title">4. Family Safety &amp; SMS</h3>
+                <ul class="content-list">
+                    <li><strong>Auto-SMS:</strong> When you use the "I am Safe" feature, the App sends an SMS to your selected contacts using your device's SMS app.</li>
+                    <li><strong>Panic Button:</strong> Send SOS messages to all family members in emergencies.</li>
+                    <li><strong>Responsibility:</strong> You confirm that you have obtained consent from the contacts you add. The App only sends SMS at your request.</li>
+                </ul>
+
+                <!-- 5. Premium Subscription -->
+                <h3 class="sub-title">5. Premium Subscription</h3>
+                <p class="content-text">Premium features include:</p>
+                <ul class="content-list">
+                    <li>⚡ 3-Second Early Warning</li>
+                    <li>📡 5-Second Refresh Rate (Free: 30 seconds)</li>
+                    <li>🔔 Priority Notifications</li>
+                    <li>🚫 Ad-Free Experience</li>
+                    <li>🗺️ Heatmap View</li>
+                    <li>📄 PDF Export</li>
+                    <li>🎵 Premium Sirens (3 Exclusive)</li>
+                    <li>🌍 Worldwide Alerts</li>
+                </ul>
+                <p class="content-text">
+                    Subscriptions are managed via <strong>Google Play Billing</strong>. They auto-renew unless cancelled.
+                    One-time purchases (Lifetime) do not require renewal. Subscription fees are non-refundable.
+                </p>
+
+                <!-- 6. Limitation of Liability -->
+                <h3 class="sub-title">6. Limitation of Liability</h3>
+                <p class="content-text">
+                    <strong>Earthquake Alert Pro</strong> and its developers shall not be liable for:
+                </p>
+                <ul class="content-list">
+                    <li>Any delay or failure in providing earthquake alerts.</li>
+                    <li>Temporary or permanent discontinuation of the App.</li>
+                    <li>Network or internet connectivity issues.</li>
+                    <li>Issues with third-party data sources (e.g., USGS).</li>
+                    <li>Any direct, indirect, or consequential damages arising from App use.</li>
+                    <li>Damage to your device or data.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong><i class="fas fa-exclamation-circle"></i> Warning:</strong>
+                    This App is an <strong>alerting tool</strong> only. It is not a substitute for professional
+                    earthquake warning systems or emergency services. Always follow official guidance from local authorities.</p>
+                </div>
+
+                <!-- 7. Copyright -->
+                <h3 class="sub-title">7. Copyright &amp; Trademarks</h3>
+                <ul class="content-list">
+                    <li>All content, logos, design, code, and text are the property of <strong>Hello Bangladeshi</strong>.</li>
+                    <li>Earthquake data is provided by <strong>USGS</strong> (United States Geological Survey) and used under their terms.</li>
+                    <li>"Earthquake Alert Pro" name and logo are trademarks of Hello Bangladeshi.</li>
+                    <li>No part may be copied, modified, or redistributed without permission.</li>
+                </ul>
+
+                <!-- 8. Changes to Terms -->
+                <h3 class="sub-title">8. Changes to Terms</h3>
+                <p class="content-text">
+                    We reserve the right to update these Terms at any time. Changes will be notified via the App or website.
+                    Continued use after changes take effect constitutes acceptance of the modified Terms.
+                </p>
+
+                <!-- 9. Governing Law -->
+                <h3 class="sub-title">9. Governing Law &amp; Jurisdiction</h3>
+                <p class="content-text">
+                    These Terms shall be governed by the <strong>laws of Bangladesh</strong>. Any disputes shall be subject
+                    to the exclusive jurisdiction of the courts in Bangladesh.
+                </p>
+
+                <!-- 10. Contact -->
+                <h3 class="sub-title">10. Contact Us</h3>
+                <div class="contact-section">
+                    <h3><i class="fas fa-headset"></i> Get in Touch</h3>
+                    <p class="content-text">
+                        If you have any questions about these Terms, please contact us:
+                    </p>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info.hellobangladeshi@gmail.com">info.hellobangladeshi@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+8801924449132">+880 1924-449132</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <a href="https://hellobangladeshi.com" target="_blank">hellobangladeshi.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="update-date">
+                    <i class="far fa-calendar-alt"></i> Last Updated: June 29, 2026
+                </p>
             </div>
+            <!-- ===== END ENGLISH ===== -->
 
-            <!-- ============================================================ -->
-            <!-- SECTION 1 -->
-            <!-- ============================================================ -->
+            <!-- ===== BENGALI VERSION ===== -->
+            <div id="bn" class="lang-content">
 
-            <h2>১. সেবার বর্ণনা</h2>
-            <p>
-                <strong>Earthquake Alert Pro</strong> নিম্নলিখিত বৈশিষ্ট্যসমূহ সরবরাহ করে:
-            </p>
-            <ul>
-                <li><strong>রিয়েল-টাইম অ্যালার্ট:</strong> ইউএসজিএস (USGS) API থেকে ভূমিকম্পের ডেটা সংগ্রহ করে তাৎক্ষণিক সতর্কতা প্রদান</li>
-                <li><strong>ইন্টারেক্টিভ ম্যাপ:</strong> ভূমিকম্পের অবস্থান, ম্যাগনিটিউড এবং প্রভাব এলাকা দেখানো</li>
-                <li><strong>শেক ডিটেকশন:</strong> অফলাইনে ডিভাইসের সেন্সর ব্যবহার করে ভূমিকম্প শনাক্তকরণ</li>
-                <li><strong>ফ্যামিলি সেফটি:</strong> "আমি নিরাপদ" এসএমএস স্বয়ংক্রিয়ভাবে পরিবারের সদস্যদের পাঠানো</li>
-                <li><strong>সারভাইভাল গাইড:</strong> ভূমিকম্পের আগে, চলাকালীন এবং পরে করণীয় নির্দেশনা</li>
-                <li><strong>ইমার্জেন্সি কিট:</strong> প্রয়োজনীয় জিনিসপত্রের চেকলিস্ট</li>
-                <li><strong>প্রিমিয়াম ফিচার:</strong> দ্রুত রিফ্রেশ, হিটম্যাপ ভিউ, পিডিএফ এক্সপোর্ট, প্রিমিয়াম সাইরেন এবং বিজ্ঞাপন মুক্ত অভিজ্ঞতা</li>
-            </ul>
+                <h2 class="section-title">সেবার শর্তাবলী</h2>
 
-            <!-- ============================================================ -->
-            <!-- SECTION 2 -->
-            <!-- ============================================================ -->
+                <p class="content-text">
+                    এই সেবার শর্তাবলী ("শর্তাবলী") <strong>Earthquake Alert Pro</strong> মোবাইল অ্যাপ্লিকেশন ("অ্যাপ")
+                    ব্যবহারের নিয়ম ও শর্ত বর্ণনা করে। অ্যাপ ডাউনলোড, ইনস্টল বা ব্যবহারের মাধ্যমে আপনি এই শর্তাবলীতে সম্মত হন।
+                    দয়া করে সাবধানে পড়ুন।
+                </p>
 
-            <h2>২. ব্যবহারকারীর দায়িত্ব</h2>
-            <p>অ্যাপ ব্যবহার করার সময় আপনার দায়িত্বগুলি নিম্নরূপ:</p>
+                <div class="highlight-box">
+                    <p><strong><i class="fas fa-exclamation-triangle"></i> গুরুত্বপূর্ণ:</strong>
+                    আপনি যদি এই শর্তাবলীর কোনো অংশের সাথে একমত না হন, তাহলে অ্যাপ ব্যবহার করবেন না।</p>
+                </div>
 
-            <h3>✅ করণীয়:</h3>
-            <ul>
-                <li>সঠিক এবং আপ-টু-ডেট তথ্য প্রদান করুন (বিশেষ করে ফ্যামিলি সেফটি ফিচারের জন্য)</li>
-                <li>আপনার ডিভাইসের নিরাপত্তা বজায় রাখুন</li>
-                <li>অ্যাপের সতর্কতা গুরুত্ব সহকারে নিন এবং প্রয়োজনীয় পদক্ষেপ নিন</li>
-                <li>স্থানীয় জরুরি কর্তৃপক্ষের নির্দেশনা অনুসরণ করুন</li>
-                <li>অ্যাপের ফিচারসমূহ সঠিকভাবে ব্যবহার করুন</li>
-            </ul>
+                <h3 class="sub-title">১. সেবার বর্ণনা</h3>
+                <p class="content-text">
+                    <strong>Earthquake Alert Pro</strong> একটি মোবাইল অ্যাপ্লিকেশন যা সরবরাহ করে:
+                </p>
+                <ul class="content-list">
+                    <li><strong>রিয়েল-টাইম অ্যালার্ট:</strong> USGS ডেটা ব্যবহার করে তাৎক্ষণিক ভূমিকম্পের সতর্কতা।</li>
+                    <li><strong>ইন্টারেক্টিভ ম্যাপ:</strong> ভূমিকম্পের অবস্থান, ম্যাগনিটিউড এবং প্রভাব এলাকা দেখানো।</li>
+                    <li><strong>শেক ডিটেকশন:</strong> ডিভাইসের সেন্সর ব্যবহার করে অফলাইনে ভূমিকম্প শনাক্তকরণ।</li>
+                    <li><strong>ফ্যামিলি সেফটি:</strong> "আমি নিরাপদ" এসএমএস স্বয়ংক্রিয়ভাবে পরিবারের সদস্যদের পাঠানো।</li>
+                    <li><strong>সারভাইভাল গাইড:</strong> ভূমিকম্পের আগে, চলাকালীন এবং পরে করণীয় নির্দেশনা।</li>
+                    <li><strong>ইমার্জেন্সি কিট:</strong> প্রয়োজনীয় জিনিসপত্রের চেকলিস্ট।</li>
+                    <li><strong>প্রিমিয়াম ফিচার:</strong> দ্রুত রিফ্রেশ, হিটম্যাপ, পিডিএফ এক্সপোর্ট, প্রিমিয়াম সাইরেন এবং বিজ্ঞাপন মুক্ত অভিজ্ঞতা।</li>
+                </ul>
 
-            <h3>🚫 নিষিদ্ধ কার্যক্রম:</h3>
-            <ul>
-                <li>অ্যাপের কার্যকারিতা বাধাগ্রস্ত বা ক্ষতিগ্রস্ত করার চেষ্টা করা</li>
-                <li>অ্যাপের কোড বা কন্টেন্ট অনুলিপি, পরিবর্তন বা পুনঃবিতরণ করা</li>
-                <li>ভুয়া অ্যালার্ট তৈরি বা অ্যাপের সতর্কতা সিস্টেমের অপব্যবহার করা</li>
-                <li>অ্যাপ ব্যবহার করে কোনো আইন-বিরোধী কার্যক্রম পরিচালনা করা</li>
-                <li>অন্য ব্যবহারকারীদের হয়রানি বা ক্ষতি করা</li>
-            </ul>
+                <h3 class="sub-title">২. ব্যবহারকারীর দায়িত্ব</h3>
+                <p class="content-text">অ্যাপ ব্যবহার করার সময় আপনি সম্মত হন:</p>
+                <ul class="content-list">
+                    <li>ফ্যামিলি সেফটি ফিচার ব্যবহারের সময় সঠিক তথ্য প্রদান করুন।</li>
+                    <li>আপনার ডিভাইসের নিরাপত্তা বজায় রাখুন।</li>
+                    <li>অ্যালার্ট গুরুত্ব সহকারে নিন এবং স্থানীয় কর্তৃপক্ষের নির্দেশনা অনুসরণ করুন।</li>
+                    <li>অ্যাপ ব্যবহার করে কোনো আইন-বিরোধী, ক্ষতিকর বা প্রতারণামূলক কার্যক্রম করবেন না।</li>
+                    <li>অ্যাপের কোড পরিবর্তন, বিপরীত প্রকৌশল বা কার্যকারিতা বাধাগ্রস্ত করার চেষ্টা করবেন না।</li>
+                </ul>
 
-            <!-- ============================================================ -->
-            <!-- SECTION 3 -->
-            <!-- ============================================================ -->
+                <div class="warning-box">
+                    <p><strong><i class="fas fa-ban"></i> নিষিদ্ধ কার্যক্রম:</strong></p>
+                    <ul class="content-list">
+                        <li>ভুয়া অ্যালার্ট তৈরি বা নোটিফিকেশন সিস্টেমের অপব্যবহার।</li>
+                        <li>অন্যান্য ব্যবহারকারীদের হয়রানি বা ক্ষতি করা।</li>
+                        <li>অ্যাপ ব্যবহার করে ম্যালওয়্যার বা ক্ষতিকর কন্টেন্ট বিতরণ।</li>
+                        <li>প্রযোজ্য আইন বা বিধি লঙ্ঘন।</li>
+                    </ul>
+                </div>
 
-            <h2>৩. অনুমতি ও ডেটা সংগ্রহ</h2>
-            <p>
-                অ্যাপটি সঠিকভাবে কাজ করার জন্য কিছু অনুমতি এবং ডেটা প্রয়োজন। আপনার ডিভাইসের অনুমতি ব্যবস্থাপনার মাধ্যমে
-                আপনি এই অনুমতিগুলো নিয়ন্ত্রণ করতে পারেন।
-            </p>
+                <h3 class="sub-title">৩. অনুমতি ও ডেটা সংগ্রহ</h3>
+                <p class="content-text">
+                    অ্যাপটি সঠিকভাবে কাজ করার জন্য কিছু অনুমতি প্রয়োজন। আপনি আপনার ডিভাইসের সেটিংস থেকে এগুলো নিয়ন্ত্রণ করতে পারেন।
+                </p>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>অনুমতি</th>
-                        <th>ব্যবহার</th>
-                        <th>প্রয়োজনীয়তা</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>📍 লোকেশন (Fine/Coarse)</td>
-                        <td>আপনার নিকটবর্তী ভূমিকম্প শনাক্ত করতে</td>
-                        <td>অত্যাবশ্যক</td>
-                    </tr>
-                    <tr>
-                        <td>🔔 নোটিফিকেশন</td>
-                        <td>ভূমিকম্পের সতর্কতা পাঠাতে</td>
-                        <td>অত্যাবশ্যক</td>
-                    </tr>
-                    <tr>
-                        <td>📳 ভাইব্রেশন</td>
-                        <td>ভূমিকম্পের সময় ডিভাইস কম্পাতে</td>
-                        <td>ঐচ্ছিক</td>
-                    </tr>
-                    <tr>
-                        <td>📱 ফোরগ্রাউন্ড সার্ভিস</td>
-                        <td>ব্যাকগ্রাউন্ডে মনিটরিং চালাতে</td>
-                        <td>অত্যাবশ্যক</td>
-                    </tr>
-                    <tr>
-                        <td>📷 ক্যামেরা (ফ্ল্যাশলাইট)</td>
-                        <td>শেক ডিটেকশনের সময় আলো জ্বালাতে</td>
-                        <td>ঐচ্ছিক</td>
-                    </tr>
-                </tbody>
-            </table>
+                <table class="terms-table">
+                    <thead>
+                        <tr><th>অনুমতি</th><th>ব্যবহার</th><th>প্রয়োজনীয়তা</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>📍 লোকেশন (Fine/Coarse)</td><td>আপনার নিকটবর্তী ভূমিকম্প শনাক্ত করতে</td><td>অত্যাবশ্যক</td></tr>
+                        <tr><td>🔔 নোটিফিকেশন</td><td>ভূমিকম্পের সতর্কতা পাঠাতে</td><td>অত্যাবশ্যক</td></tr>
+                        <tr><td>📳 ভাইব্রেশন</td><td>অ্যালার্টের সময় ডিভাইস কম্পাতে</td><td>ঐচ্ছিক</td></tr>
+                        <tr><td>📱 ফোরগ্রাউন্ড সার্ভিস</td><td>ব্যাকগ্রাউন্ডে মনিটরিং চালাতে</td><td>অত্যাবশ্যক</td></tr>
+                        <tr><td>📷 ক্যামেরা (ফ্ল্যাশলাইট)</td><td>শেক ডিটেকশনের সময় আলো জ্বালাতে</td><td>ঐচ্ছিক</td></tr>
+                    </tbody>
+                </table>
 
-            <div class="highlight-box">
-                <strong>🔒 গোপনীয়তা:</strong> আপনার লোকেশন ডেটা শুধুমাত্র ভূমিকম্প শনাক্তকরণের জন্য ব্যবহার করা হয়।
-                এটি কখনো তৃতীয় পক্ষের সাথে শেয়ার করা হয় না। বিস্তারিত জানতে আমাদের
-                <a href="https://hellobangladeshi.github.io/earthquake-alert-privacy.html" target="_blank">গোপনীয়তা নীতি</a>
-                দেখুন।
+                <div class="info-box">
+                    <p><strong><i class="fas fa-shield-alt"></i> গোপনীয়তা:</strong>
+                    আপনার লোকেশন ডেটা শুধুমাত্র ভূমিকম্প শনাক্তকরণের জন্য ব্যবহার করা হয় এবং তৃতীয় পক্ষের সাথে কখনো শেয়ার করা হয় না।
+                    বিস্তারিত জানতে আমাদের <a href="https://hellobangladeshi.github.io/earthquake-alert-privacy.html" style="color: var(--secondary);">গোপনীয়তা নীতি</a> দেখুন।</p>
+                </div>
+
+                <h3 class="sub-title">৪. ফ্যামিলি সেফটি ও এসএমএস</h3>
+                <ul class="content-list">
+                    <li><strong>অটো এসএমএস:</strong> "আমি নিরাপদ" ফিচার ব্যবহার করলে অ্যাপটি আপনার নির্বাচিত কন্টাক্টদের এসএমএস পাঠায় আপনার ডিভাইসের এসএমএস অ্যাপ ব্যবহার করে।</li>
+                    <li><strong>প্যানিক বাটন:</strong> জরুরি পরিস্থিতিতে সমস্ত পরিবারের সদস্যদের এসওএস বার্তা পাঠানোর সুবিধা।</li>
+                    <li><strong>দায়িত্ব:</strong> আপনি নিশ্চিত করুন যে আপনি যাদের নম্বর যোগ করছেন তাদের সম্মতি নিয়েছেন। অ্যাপটি শুধুমাত্র আপনার অনুরোধে এসএমএস পাঠায়।</li>
+                </ul>
+
+                <h3 class="sub-title">৫. প্রিমিয়াম সাবস্ক্রিপশন</h3>
+                <p class="content-text">প্রিমিয়াম ফিচারসমূহ:</p>
+                <ul class="content-list">
+                    <li>⚡ ৩-সেকেন্ড আগে সতর্কতা</li>
+                    <li>📡 ৫-সেকেন্ড রিফ্রেশ রেট (ফ্রি: ৩০ সেকেন্ড)</li>
+                    <li>🔔 প্রায়োরিটি নোটিফিকেশন</li>
+                    <li>🚫 বিজ্ঞাপন মুক্ত অভিজ্ঞতা</li>
+                    <li>🗺️ হিটম্যাপ ভিউ</li>
+                    <li>📄 পিডিএফ এক্সপোর্ট</li>
+                    <li>🎵 প্রিমিয়াম সাইরেন (৩টি এক্সক্লুসিভ)</li>
+                    <li>🌍 ওয়ার্ল্ডওয়াইড অ্যালার্ট</li>
+                </ul>
+                <p class="content-text">
+                    সাবস্ক্রিপশন <strong>Google Play Billing</strong> এর মাধ্যমে পরিচালিত হয়। এটি স্বয়ংক্রিয়ভাবে রিনিউ হয়
+                    যদি না বাতিল করা হয়। এক-বারের ক্রয় (লাইফটাইম) রিনিউয়ের প্রয়োজন হয় না। সাবস্ক্রিপশন ফি ফেরতযোগ্য নয়।
+                </p>
+
+                <h3 class="sub-title">৬. দায়বদ্ধতার সীমাবদ্ধতা</h3>
+                <p class="content-text">
+                    <strong>Earthquake Alert Pro</strong> এবং এর ডেভেলপাররা নিম্নলিখিত ক্ষেত্রে দায়বদ্ধ থাকবেন না:
+                </p>
+                <ul class="content-list">
+                    <li>ভূমিকম্পের সতর্কতা প্রদানে কোনো বিলম্ব বা ব্যর্থতা।</li>
+                    <li>অ্যাপের অস্থায়ী বা স্থায়ী বন্ধ হওয়া।</li>
+                    <li>নেটওয়ার্ক বা ইন্টারনেট সংযোগজনিত সমস্যা।</li>
+                    <li>তৃতীয় পক্ষের ডেটা উৎস (যেমন USGS) সংক্রান্ত সমস্যা।</li>
+                    <li>অ্যাপ ব্যবহারের ফলে সরাসরি বা পরোক্ষ কোনো ক্ষতি।</li>
+                    <li>আপনার ডিভাইস বা ডেটার কোনো ক্ষতি।</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong><i class="fas fa-exclamation-circle"></i> সতর্কতা:</strong>
+                    এই অ্যাপটি একটি <strong>সতর্কীকরণ সরঞ্জাম</strong> মাত্র। এটি পেশাদার ভূমিকম্প সতর্কীকরণ সিস্টেম বা
+                    জরুরি সেবার বিকল্প নয়। সর্বদা সরকারি নির্দেশনা এবং স্থানীয় কর্তৃপক্ষের ঘোষণা অনুসরণ করুন।</p>
+                </div>
+
+                <h3 class="sub-title">৭. কপিরাইট ও ট্রেডমার্ক</h3>
+                <ul class="content-list">
+                    <li>অ্যাপের সকল কন্টেন্ট, লোগো, ডিজাইন, কোড এবং টেক্সট <strong>Hello Bangladeshi</strong> এর সম্পত্তি।</li>
+                    <li>ভূমিকম্পের ডেটা <strong>USGS</strong> (United States Geological Survey) দ্বারা সরবরাহকৃত এবং তাদের শর্তাবলী অনুযায়ী ব্যবহৃত।</li>
+                    <li>"Earthquake Alert Pro" নাম এবং লোগো Hello Bangladeshi এর ট্রেডমার্ক।</li>
+                    <li>অনুমতি ছাড়া কোনো অংশ ব্যবহার, কপি বা পুনঃবিতরণ করা যাবে না।</li>
+                </ul>
+
+                <h3 class="sub-title">৮. শর্তাবলীর পরিবর্তন</h3>
+                <p class="content-text">
+                    আমরা যে কোনো সময় এই শর্তাবলী আপডেট করার অধিকার রাখি। পরিবর্তনগুলি অ্যাপ বা ওয়েবসাইটের মাধ্যমে জানানো হবে।
+                    পরিবর্তন কার্যকর হওয়ার পরেও অ্যাপ ব্যবহার চালিয়ে যাওয়া পরিবর্তিত শর্তাবলীতে সম্মতি হিসেবে গণ্য হবে।
+                </p>
+
+                <h3 class="sub-title">৯. প্রযোজ্য আইন ও এখতিয়ার</h3>
+                <p class="content-text">
+                    এই শর্তাবলী <strong>বাংলাদেশের আইন</strong> দ্বারা নিয়ন্ত্রিত হবে। কোনো বিরোধ বাংলাদেশের আদালতের এক্তিয়ারভুক্ত হবে।
+                </p>
+
+                <h3 class="sub-title">১০. যোগাযোগ</h3>
+                <div class="contact-section">
+                    <h3><i class="fas fa-headset"></i> যোগাযোগ করুন</h3>
+                    <p class="content-text">
+                        এই শর্তাবলী সম্পর্কে আপনার কোনো প্রশ্ন থাকলে আমাদের সাথে যোগাযোগ করুন:
+                    </p>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info.hellobangladeshi@gmail.com">info.hellobangladeshi@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+8801924449132">+880 1924-449132</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <a href="https://hellobangladeshi.com" target="_blank">hellobangladeshi.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="update-date">
+                    <i class="far fa-calendar-alt"></i> সর্বশেষ হালনাগাদ: ২৯ জুন, ২০২৬
+                </p>
             </div>
-
-            <!-- ============================================================ -->
-            <!-- SECTION 4 -->
-            <!-- ============================================================ -->
-
-            <h2>৪. ফ্যামিলি সেফটি ও এসএমএস</h2>
-            <p>
-                অ্যাপের ফ্যামিলি সেফটি ফিচারটি আপনাকে আপনার পরিবারের সদস্যদের সাথে যোগাযোগ রাখতে সাহায্য করে।
-            </p>
-            <ul>
-                <li>
-                    <strong>অটো এসএমএস:</strong> যখন আপনি "আমি নিরাপদ" বাটনে ক্লিক করেন, অ্যাপটি আপনার নির্বাচিত
-                    পরিবারের সদস্যদের একটি এসএমএস পাঠায়। এই এসএমএসটি আপনার ডিভাইসের এসএমএস অ্যাপ ব্যবহার করে পাঠানো হয়।
-                </li>
-                <li>
-                    <strong>প্যানিক বাটন:</strong> জরুরি পরিস্থিতিতে সমস্ত পরিবারের সদস্যদের এসওএস বার্তা পাঠানোর সুবিধা।
-                </li>
-                <li>
-                    <strong>দায়িত্ব:</strong> আপনি নিশ্চিত করুন যে আপনি যাদের নম্বর যোগ করছেন তাদের সম্মতি নিয়েছেন।
-                    অ্যাপটি শুধুমাত্র আপনার অনুরোধে এসএমএস পাঠায়।
-                </li>
-            </ul>
-
-            <!-- ============================================================ -->
-            <!-- SECTION 5 -->
-            <!-- ============================================================ -->
-
-            <h2>৫. প্রিমিয়াম সাবস্ক্রিপশন</h2>
-            <p>
-                অ্যাপটি কিছু প্রিমিয়াম ফিচার সরবরাহ করে যা সাবস্ক্রিপশন বা এক-বারের ক্রয়ের মাধ্যমে আনলক করা যায়।
-            </p>
-
-            <h3>প্রিমিয়াম ফিচারসমূহ:</h3>
-            <ul>
-                <li>⚡ ৩-সেকেন্ড আগে সতর্কতা</li>
-                <li>📡 ৫-সেকেন্ড রিফ্রেশ রেট (ফ্রি ভার্সনে ৩০ সেকেন্ড)</li>
-                <li>🔔 প্রায়োরিটি নোটিফিকেশন</li>
-                <li>🚫 সব বিজ্ঞাপন মুক্ত</li>
-                <li>🗺️ হিটম্যাপ ভিউ</li>
-                <li>📄 পিডিএফ এক্সপোর্ট</li>
-                <li>🎵 প্রিমিয়াম সাইরেন (৩টি এক্সক্লুসিভ)</li>
-                <li>🌍 ওয়ার্ল্ডওয়াইড অ্যালার্ট</li>
-            </ul>
-
-            <h3>পেমেন্ট ও বাতিলকরণ:</h3>
-            <ul>
-                <li>সাবস্ক্রিপশন Google Play Billing এর মাধ্যমে পরিচালিত হয়</li>
-                <li>সাবস্ক্রিপশন স্বয়ংক্রিয়ভাবে রিনিউ হয়, তবে আপনি যেকোনো সময় Google Play সেটিংস থেকে বাতিল করতে পারেন</li>
-                <li>এক-বারের ক্রয় (লাইফটাইম) কোনো রিনিউয়ের প্রয়োজন নেই</li>
-                <li>সাবস্ক্রিপশন ফি ফেরতযোগ্য নয়</li>
-            </ul>
-
-            <!-- ============================================================ -->
-            <!-- SECTION 6 -->
-            <!-- ============================================================ -->
-
-            <h2>৬. দায়বদ্ধতার সীমাবদ্ধতা</h2>
-            <p>
-                <strong>Earthquake Alert Pro</strong> বা এর ডেভেলপাররা নিম্নলিখিত ক্ষেত্রে দায়বদ্ধ থাকবেন না:
-            </p>
-            <ul>
-                <li>ভূমিকম্পের সতর্কতা প্রদানে কোনো বিলম্ব বা ব্যর্থতার জন্য</li>
-                <li>অ্যাপের অস্থায়ী বা স্থায়ী বন্ধ হওয়ার জন্য</li>
-                <li>ইন্টারনেট বা নেটওয়ার্ক সংযোগজনিত সমস্যার জন্য</li>
-                <li>তৃতীয় পক্ষের API (যেমন USGS) থেকে ডেটা প্রাপ্তিতে কোনো সমস্যার জন্য</li>
-                <li>অ্যাপ ব্যবহারের ফলে সরাসরি বা পরোক্ষ কোনো ক্ষতির জন্য</li>
-                <li>আপনার ডিভাইস বা ডেটার কোনো ক্ষতির জন্য</li>
-            </ul>
-
-            <div class="highlight-box">
-                <strong>⚠️ সতর্কতা:</strong> এই অ্যাপটি একটি <strong>সতর্কীকরণ সরঞ্জাম</strong> মাত্র। এটি পেশাদার
-                ভূমিকম্প সতর্কীকরণ সিস্টেম বা জরুরি সেবার বিকল্প নয়। সর্বদা সরকারি নির্দেশনা এবং স্থানীয় কর্তৃপক্ষের
-                ঘোষণা অনুসরণ করুন।
-            </div>
-
-            <!-- ============================================================ -->
-            <!-- SECTION 7 -->
-            <!-- ============================================================ -->
-
-            <h2>৭. কপিরাইট ও ট্রেডমার্ক</h2>
-            <ul>
-                <li>অ্যাপের সকল কন্টেন্ট, লোগো, ডিজাইন, কোড এবং টেক্সট <strong>Hello Bangladeshi</strong> এর কপিরাইট-সুরক্ষিত সম্পত্তি</li>
-                <li>ভূমিকম্পের ডেটা <strong>USGS</strong> (United States Geological Survey) দ্বারা সরবরাহকৃত এবং তাদের শর্তাবলী অনুযায়ী ব্যবহৃত</li>
-                <li>অ্যাপের নাম "Earthquake Alert Pro" এবং লোগো Hello Bangladeshi এর ট্রেডমার্ক</li>
-                <li>অনুমতি ছাড়া কোনো অংশ ব্যবহার, কপি বা পুনঃবিতরণ করা যাবে না</li>
-            </ul>
-
-            <!-- ============================================================ -->
-            <!-- SECTION 8 -->
-            <!-- ============================================================ -->
-
-            <h2>৮. শর্তাবলীর পরিবর্তন</h2>
-            <p>
-                আমরা যে কোনো সময় এই শর্তাবলী পরিবর্তন করার অধিকার রাখি। পরিবর্তনগুলি কার্যকর হওয়ার পরে আমরা অ্যাপের
-                মাধ্যমে বা ওয়েবসাইটে বিজ্ঞপ্তি দেব। পরিবর্তন কার্যকর হওয়ার পরেও অ্যাপ ব্যবহার চালিয়ে যাওয়া
-                পরিবর্তিত শর্তাবলীতে সম্মতি হিসেবে গণ্য হবে।
-            </p>
-            <p>
-                সর্বশেষ হালনাগাদের তারিখটি এই পৃষ্ঠার শীর্ষে উল্লেখ আছে। নিয়মিত এই পৃষ্ঠা পরিদর্শন করার পরামর্শ দেওয়া হয়।
-            </p>
-
-            <!-- ============================================================ -->
-            <!-- SECTION 9 -->
-            <!-- ============================================================ -->
-
-            <h2>৯. প্রযোজ্য আইন ও এখতিয়ার</h2>
-            <p>
-                এই শর্তাবলী <strong>বাংলাদেশের আইন</strong> দ্বারা নিয়ন্ত্রিত হবে। অ্যাপ ব্যবহারের ফলে সৃষ্ট কোনো বিরোধ
-                বাংলাদেশের আদালতের এক্তিয়ারভুক্ত হবে।
-            </p>
-
-            <!-- ============================================================ -->
-            <!-- SECTION 10 -->
-            <!-- ============================================================ -->
-
-            <h2>১০. যোগাযোগ</h2>
-            <p>
-                এই সেবার শর্তাবলী সম্পর্কে আপনার যদি কোনো প্রশ্ন থাকে, তাহলে নির্দ্বিধায় আমাদের সাথে যোগাযোগ করুন:
-            </p>
-
-            <div class="contact-box">
-                <p><strong>📧 ইমেইল:</strong> <a href="mailto:info.hellobangladeshi@gmail.com">info.hellobangladeshi@gmail.com</a></p>
-                <p><strong>🌐 ওয়েবসাইট:</strong> <a href="https://hellobangladeshi.com" target="_blank">hellobangladeshi.com</a></p>
-                <p><strong>📱 ফোন:</strong> +880-1924449132</p>
-                <p><strong>📍 ঠিকানা:</strong> Hello Bangladeshi, Dhaka, Bangladesh</p>
-            </div>
-
-            <p style="margin-top: 10px; font-size: 14px;">
-                <strong>গোপনীয়তা নীতি:</strong>
-                <a href="https://hellobangladeshi.github.io/earthquake-alert-privacy.html" target="_blank">
-                    https://hellobangladeshi.github.io/earthquake-alert-privacy.html
-                </a>
-            </p>
+            <!-- ===== END BENGALI ===== -->
 
         </div>
-        <!-- ====== বাংলা অংশ শেষ ====== -->
+        <!-- end terms-content -->
+    </div>
+</section>
 
-        <hr style="margin: 30px 0; border: 1px solid #eee;" />
-
-        <!-- ============================================================ -->
-        <!-- ENGLISH VERSION -->
-        <!-- ============================================================ -->
-
-        <div style="margin-top: 10px;">
-
-            <h2>📋 Introduction</h2>
-            <p>
-                <strong>Earthquake Alert Pro</strong> (referred to as "we", "us", or "the App") is a mobile application
-                that provides real-time earthquake alerts, interactive maps, shake detection, family safety system,
-                and survival guide. These Terms of Service ("Terms") govern your use of the App.
-            </p>
-            <p>
-                <strong>By using the App, you agree to these Terms in full.</strong> If you do not agree with any part,
-                please do not use the App.
-            </p>
-
-            <div class="highlight-box">
-                <strong>🚨 Important:</strong> This App is designed to assist in emergency situations but is
-                <strong>not a substitute</strong> for professional emergency services. Always follow local authorities' instructions.
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Earthquake Alert Pro</h4>
+                <p>
+                    Real-time earthquake monitoring and alert system.
+                    Stay informed, stay safe with advanced earthquake detection technology.
+                </p>
             </div>
-
-            <h2>1. Description of Service</h2>
-            <p>
-                <strong>Earthquake Alert Pro</strong> provides the following features:
-            </p>
-            <ul>
-                <li><strong>Real-Time Alerts:</strong> Fetches earthquake data from USGS API and provides instant notifications</li>
-                <li><strong>Interactive Map:</strong> Shows earthquake locations, magnitudes, and impact areas</li>
-                <li><strong>Shake Detection:</strong> Offline detection using device sensors</li>
-                <li><strong>Family Safety:</strong> Auto-SMS "I am Safe" messages to family members</li>
-                <li><strong>Survival Guide:</strong> Instructions before, during, and after an earthquake</li>
-                <li><strong>Emergency Kit:</strong> Checklist of essential supplies</li>
-                <li><strong>Premium Features:</strong> Faster refresh, heatmap view, PDF export, premium sirens, and ad-free experience</li>
-            </ul>
-
-            <h2>2. User Responsibilities</h2>
-            <h3>✅ Do's:</h3>
-            <ul>
-                <li>Provide accurate and up-to-date information</li>
-                <li>Maintain your device's security</li>
-                <li>Take alerts seriously and follow necessary actions</li>
-                <li>Follow local emergency authority instructions</li>
-                <li>Use the App's features correctly</li>
-            </ul>
-
-            <h3>🚫 Don'ts:</h3>
-            <ul>
-                <li>Attempt to disrupt or damage the App's functionality</li>
-                <li>Copy, modify, or redistribute the App's code or content</li>
-                <li>Create false alerts or misuse the alert system</li>
-                <li>Engage in any illegal activities using the App</li>
-                <li>Harass or harm other users</li>
-            </ul>
-
-            <h2>3. Permissions & Data Collection</h2>
-            <p>
-                The App requires certain permissions to function properly. You can control these permissions through your device settings.
-            </p>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Permission</th>
-                        <th>Usage</th>
-                        <th>Required</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>📍 Location (Fine/Coarse)</td>
-                        <td>Detect earthquakes near you</td>
-                        <td>Essential</td>
-                    </tr>
-                    <tr>
-                        <td>🔔 Notifications</td>
-                        <td>Send earthquake alerts</td>
-                        <td>Essential</td>
-                    </tr>
-                    <tr>
-                        <td>📳 Vibration</td>
-                        <td>Vibrate device during earthquakes</td>
-                        <td>Optional</td>
-                    </tr>
-                    <tr>
-                        <td>📱 Foreground Service</td>
-                        <td>Run monitoring in background</td>
-                        <td>Essential</td>
-                    </tr>
-                    <tr>
-                        <td>📷 Camera (Flashlight)</td>
-                        <td>Flash during shake detection</td>
-                        <td>Optional</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="highlight-box">
-                <strong>🔒 Privacy:</strong> Your location data is used <strong>only</strong> for earthquake detection.
-                It is never shared with third parties. See our
-                <a href="https://hellobangladeshi.github.io/earthquake-alert-privacy.html" target="_blank">Privacy Policy</a>
-                for details.
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="https://hellobangladeshi.github.io"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="https://hellobangladeshi.github.io/earthquake-alert-privacy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                    <li><a href="#" style="color: var(--secondary);"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                </ul>
             </div>
-
-            <h2>4. Family Safety & SMS</h2>
-            <ul>
-                <li>
-                    <strong>Auto-SMS:</strong> When you click "I am Safe", the App sends an SMS to your selected family members
-                    using your device's SMS app.
-                </li>
-                <li>
-                    <strong>Panic Button:</strong> Send SOS messages to all family members in emergency situations.
-                </li>
-                <li>
-                    <strong>Responsibility:</strong> You confirm that you have consent from the contacts you add.
-                    The App only sends SMS at your request.
-                </li>
-            </ul>
-
-            <h2>5. Premium Subscription</h2>
-            <h3>Premium Features:</h3>
-            <ul>
-                <li>⚡ 3-Second Early Warning</li>
-                <li>📡 5-Second Refresh Rate (Free: 30 seconds)</li>
-                <li>🔔 Priority Notifications</li>
-                <li>🚫 Ad-Free Experience</li>
-                <li>🗺️ Heatmap View</li>
-                <li>📄 PDF Export</li>
-                <li>🎵 Premium Sirens (3 Exclusive)</li>
-                <li>🌍 Worldwide Alerts</li>
-            </ul>
-
-            <h3>Payment & Cancellation:</h3>
-            <ul>
-                <li>Subscriptions are managed via Google Play Billing</li>
-                <li>Subscriptions auto-renew, but you can cancel anytime via Google Play Settings</li>
-                <li>One-time purchases (Lifetime) do not require renewal</li>
-                <li>Subscription fees are non-refundable</li>
-            </ul>
-
-            <h2>6. Limitation of Liability</h2>
-            <p>
-                <strong>Earthquake Alert Pro</strong> or its developers shall not be liable for:
-            </p>
-            <ul>
-                <li>Any delay or failure in providing earthquake alerts</li>
-                <li>Temporary or permanent discontinuation of the App</li>
-                <li>Internet or network connectivity issues</li>
-                <li>Issues with third-party APIs (e.g., USGS)</li>
-                <li>Any direct or indirect damages from using the App</li>
-                <li>Any damage to your device or data</li>
-            </ul>
-
-            <div class="highlight-box">
-                <strong>⚠️ Warning:</strong> This App is an <strong>alerting tool</strong> only. It is not a substitute
-                for professional earthquake warning systems or emergency services. Always follow official guidance and local authorities.
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:info.hellobangladeshi@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+                    <li><a href="https://hellobangladeshi.com" target="_blank"><i class="fas fa-globe"></i> Website</a></li>
+                </ul>
             </div>
-
-            <h2>7. Copyright & Trademarks</h2>
-            <ul>
-                <li>All content, logos, design, code, and text are copyright-protected property of <strong>Hello Bangladeshi</strong></li>
-                <li>Earthquake data is provided by <strong>USGS</strong> (United States Geological Survey) and used under their terms</li>
-                <li>"Earthquake Alert Pro" name and logo are trademarks of Hello Bangladeshi</li>
-                <li>No part may be used, copied, or redistributed without permission</li>
-            </ul>
-
-            <h2>8. Changes to Terms</h2>
-            <p>
-                We reserve the right to modify these Terms at any time. Changes will be notified via the App or website.
-                Continued use after changes take effect constitutes acceptance of the modified Terms.
-            </p>
-
-            <h2>9. Governing Law & Jurisdiction</h2>
-            <p>
-                These Terms shall be governed by the <strong>laws of Bangladesh</strong>. Any disputes shall be subject to
-                the jurisdiction of courts in Bangladesh.
-            </p>
-
-            <h2>10. Contact Us</h2>
-            <div class="contact-box">
-                <p><strong>📧 Email:</strong> <a href="mailto:info.hellobangladeshi@gmail.com">info.hellobangladeshi@gmail.com</a></p>
-                <p><strong>🌐 Website:</strong> <a href="https://hellobangladeshi.com" target="_blank">hellobangladeshi.com</a></p>
-                <p><strong>📱 Phone:</strong> +880-1924449132</p>
-                <p><strong>📍 Address:</strong> Hello Bangladeshi, Dhaka, Bangladesh</p>
-            </div>
-
-            <p style="margin-top: 10px; font-size: 14px;">
-                <strong>Privacy Policy:</strong>
-                <a href="https://hellobangladeshi.github.io/earthquake-alert-privacy.html" target="_blank">
-                    https://hellobangladeshi.github.io/earthquake-alert-privacy.html
-                </a>
-            </p>
-
         </div>
-        <!-- ====== English অংশ শেষ ====== -->
-
-        <!-- ============================================================ -->
-        <!-- FOOTER -->
-        <!-- ============================================================ -->
-        <div class="footer">
+        <div class="footer-bottom">
             <p>
                 &copy; 2026 <strong>Hello Bangladeshi</strong>. All Rights Reserved.
-            </p>
-            <p style="margin-top: 4px;">
-                <a href="https://hellobangladeshi.github.io/earthquake-alert-privacy.html">Privacy Policy</a> &bull;
-                <a href="https://hellobangladeshi.github.io/terms.html">Terms of Service</a>
-            </p>
-            <p style="margin-top: 6px; font-size: 11px; color: #bbb;">
-                Earthquake Alert Pro v1.0.0
+                &bull; Developed with <i class="fas fa-heart" style="color: var(--primary);"></i> by
+                <a href="https://hellobangladeshi.com" target="_blank">Hello Bangladeshi</a>
             </p>
         </div>
-
     </div>
+</footer>
+
+<!-- ===== SCROLL TO TOP ===== -->
+<button class="scroll-top" id="scrollTop">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js">
+</script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 700,
+        once: true,
+        offset: 80
+    });
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Scroll to Top
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+        scrollBtn.classList.toggle('active', window.scrollY > 300);
+    });
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Language Toggle
+    const btnEn = document.getElementById('btnEn');
+    const btnBn = document.getElementById('btnBn');
+    const contentEn = document.getElementById('en');
+    const contentBn = document.getElementById('bn');
+
+    function switchLang(lang) {
+        btnEn.classList.remove('active');
+        btnBn.classList.remove('active');
+        contentEn.classList.remove('active');
+        contentBn.classList.remove('active');
+
+        if (lang === 'en') {
+            btnEn.classList.add('active');
+            contentEn.classList.add('active');
+            document.title = 'Terms of Service | Earthquake Alert Pro';
+        } else {
+            btnBn.classList.add('active');
+            contentBn.classList.add('active');
+            document.title = 'সেবার শর্তাবলী | Earthquake Alert Pro';
+        }
+    }
+
+    btnEn.addEventListener('click', () => switchLang('en'));
+    btnBn.addEventListener('click', () => switchLang('bn'));
+
+    // Auto-detect language (default English)
+    const userLang = navigator.language || navigator.userLanguage;
+    if (userLang && userLang.startsWith('bn')) {
+        switchLang('bn');
+    }
+</script>
 
 </body>
 </html>
