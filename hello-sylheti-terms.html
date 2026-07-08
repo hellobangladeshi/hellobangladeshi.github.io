@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>শর্তাবলী - Hello Sylheti | Hello Bangladeshi</title>
+    <meta name="description" content="Hello Sylheti অ্যাপ ব্যবহারের শর্তাবলী - দায়িত্ব ও ব্যবহারের নিয়মাবলী।">
+    
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+            background: linear-gradient(145deg, #0a0e27, #1a1d3a, #2d1b4e);
+            color: #fff;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+
+        /* ========== Terms Card ========== */
+        .terms-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ========== Header ========== */
+        .terms-header {
+            background: linear-gradient(135deg, rgba(238, 29, 82, 0.20), rgba(255, 184, 0, 0.10));
+            padding: 40px 32px 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+
+        .terms-header .icon-scale {
+            font-size: 3.2rem;
+            background: linear-gradient(135deg, #EE1D52, #FFB800);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .terms-header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #EE1D52, #FFB800);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .terms-header .subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .badge-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 184, 0, 0.15);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #FFB800;
+            margin-top: 10px;
+        }
+
+        /* ========== Content ========== */
+        .content-inner {
+            padding: 32px 32px 20px;
+        }
+
+        /* ========== Terms Sections ========== */
+        .terms-section {
+            margin-bottom: 32px;
+            padding-left: 20px;
+            border-left: 3px solid #EE1D52;
+            transition: all 0.2s;
+        }
+
+        .terms-section:hover {
+            border-left-color: #FFB800;
+        }
+
+        .terms-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #FFB800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .terms-section h2 i {
+            color: #EE1D52;
+        }
+
+        .terms-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 18px 0 10px 0;
+            color: #69C9D0;
+        }
+
+        .terms-section p {
+            opacity: 0.9;
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+        }
+
+        .terms-section ul, .terms-section ol {
+            margin: 10px 0 14px 24px;
+            opacity: 0.88;
+        }
+
+        .terms-section li {
+            margin-bottom: 6px;
+            font-size: 0.96rem;
+        }
+
+        .terms-section li strong {
+            color: #69C9D0;
+        }
+
+        /* ========== Highlight Box ========== */
+        .highlight-box {
+            background: rgba(238, 29, 82, 0.08);
+            border-radius: 16px;
+            padding: 18px 22px;
+            margin: 18px 0;
+            border: 1px solid rgba(238, 29, 82, 0.20);
+        }
+
+        .highlight-box i {
+            color: #FFB800;
+            margin-right: 8px;
+        }
+
+        .warning-box {
+            background: rgba(255, 184, 0, 0.08);
+            border-radius: 16px;
+            padding: 18px 22px;
+            margin: 18px 0;
+            border: 1px solid rgba(255, 184, 0, 0.20);
+        }
+
+        .warning-box i {
+            color: #FFB800;
+            margin-right: 8px;
+        }
+
+        /* ========== App Badge ========== */
+        .app-badge {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 16px;
+            padding: 18px 22px;
+            font-size: 0.88rem;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            line-height: 1.8;
+        }
+
+        .app-badge i {
+            color: #69C9D0;
+            width: 24px;
+        }
+
+        .app-badge .label {
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+
+        /* ========== Footer ========== */
+        .footer-note {
+            text-align: center;
+            padding-top: 28px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.82rem;
+            opacity: 0.6;
+        }
+
+        .footer-note a {
+            color: #69C9D0;
+            text-decoration: none;
+        }
+
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========== Scroll to Top ========== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #EE1D52, #FFB800);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 999;
+            box-shadow: 0 6px 24px rgba(238, 29, 82, 0.4);
+            border: none;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-4px) scale(1.05);
+        }
+
+        .scroll-top i {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        /* ========== Responsive ========== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px 12px 40px;
+            }
+            .terms-header {
+                padding: 28px 18px 20px;
+            }
+            .terms-header h1 {
+                font-size: 1.7rem;
+            }
+            .content-inner {
+                padding: 20px 16px 12px;
+            }
+            .terms-section {
+                padding-left: 12px;
+                margin-bottom: 24px;
+            }
+            .terms-section h2 {
+                font-size: 1.25rem;
+            }
+            .terms-section ul, .terms-section ol {
+                margin-left: 16px;
+            }
+            .app-badge {
+                font-size: 0.82rem;
+                padding: 14px 16px;
+            }
+            .scroll-top {
+                width: 44px;
+                height: 44px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terms-header h1 {
+                font-size: 1.4rem;
+            }
+            .terms-section h2 {
+                font-size: 1.1rem;
+            }
+            .terms-section p, .terms-section li {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="terms-card">
+        <!-- ==================== HEADER ==================== -->
+        <div class="terms-header">
+            <div class="icon-scale"><i class="fas fa-scale-balanced"></i></div>
+            <h1>শর্তাবলী</h1>
+            <p class="subtitle">Hello Sylheti — ব্যবহারের শর্ত ও দায়িত্ব</p>
+            <span class="badge-date"><i class="far fa-calendar-alt"></i> সর্বশেষ আপডেট: ০৯ জুলাই, ২০২৬</span>
+        </div>
+
+        <!-- ==================== CONTENT ==================== -->
+        <div class="content-inner">
+
+            <!-- Section 1: Acceptance -->
+            <div class="terms-section">
+                <h2><i class="fas fa-check-circle"></i> ১. শর্তাবলীতে সম্মতি</h2>
+                <p><strong>হ্যালো সিলেটি (Hello Sylheti)</strong> অ্যাপ (“আমরা”, “আমাদের”, “অ্যাপ”) ব্যবহার করে আপনি নিচের সব শর্তাবলীতে সম্মত হয়েছেন বলে গণ্য হবেন। এই শর্তাবলী আপনার এবং আমাদের মধ্যে একটি আইনি চুক্তি।</p>
+                <p>আপনি যদি এই শর্তাবলীর কোনো অংশে সম্মত না হন, তাহলে অনুগ্রহ করে অ্যাপ ব্যবহার করবেন না। অ্যাপ ব্যবহার চালিয়ে গেলে তা আপনার সম্মতি হিসেবে বিবেচিত হবে।</p>
+            </div>
+
+            <!-- Section 2: Eligibility -->
+            <div class="terms-section">
+                <h2><i class="fas fa-user-check"></i> ২. ব্যবহারের যোগ্যতা</h2>
+                <ul>
+                    <li>অ্যাপ ব্যবহারের জন্য আপনার বয়স কমপক্ষে <strong>১৩ বছর</strong> হতে হবে।</li>
+                    <li>আপনি একটি বৈধ ফোন নম্বর বা ইমেইল ঠিকানা দিয়ে অ্যাকাউন্ট তৈরি করবেন।</li>
+                    <li>আপনি যে তথ্য দেবেন তা সঠিক ও সম্পূর্ণ হতে হবে।</li>
+                    <li>আপনি আইনত এই চুক্তি করতে সক্ষম হতে হবে।</li>
+                </ul>
+            </div>
+
+            <!-- Section 3: Account Registration -->
+            <div class="terms-section">
+                <h2><i class="fas fa-user-plus"></i> ৩. অ্যাকাউন্ট তৈরি ও দায়িত্ব</h2>
+                <ul>
+                    <li>আপনার অ্যাকাউন্টের তথ্য (ইমেইল/পাসওয়ার্ড) গোপন রাখা আপনার দায়িত্ব।</li>
+                    <li>আপনার অ্যাকাউন্ট ব্যবহার করে করা সব কার্যকলাপের জন্য আপনি দায়ী।</li>
+                    <li>আপনি কোনো তৃতীয় পক্ষকে আপনার অ্যাকাউন্ট ব্যবহার করতে দিতে পারবেন না।</li>
+                    <li>আপনি যদি মনে করেন আপনার অ্যাকাউন্ট হ্যাক হয়েছে, তাহলে সঙ্গে সঙ্গে আমাদের জানান।</li>
+                    <li>আপনি যেকোনো সময় Settings → Delete Account দিয়ে অ্যাকাউন্ট ডিলিট করতে পারেন।</li>
+                </ul>
+            </div>
+
+            <!-- Section 4: User Content -->
+            <div class="terms-section">
+                <h2><i class="fas fa-pen"></i> ৪. ইউজার কন্টেন্ট ও আচরণ</h2>
+                
+                <h3>📝 আপনি যা পোস্ট করতে পারেন:</h3>
+                <ul>
+                    <li>পোস্ট, কমেন্ট, সেবা তথ্য, প্রোফাইল তথ্য — যা অ্যাপের উদ্দেশ্য অনুযায়ী।</li>
+                    <li>আপনার এলাকা, পেশা ও আগ্রহ সম্পর্কিত তথ্য।</li>
+                </ul>
+
+                <h3>🚫 যা পোস্ট করা যাবে না:</h3>
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-triangle"></i> <strong>নিষিদ্ধ কন্টেন্ট:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>❌ অন্যকে আঘাত করে বা অপমান করে এমন ভাষা।</li>
+                        <li>❌ ঘৃণামূলক, বর্ণবাদী বা বৈষম্যমূলক বক্তব্য।</li>
+                        <li>❌ উগ্রবাদ, সন্ত্রাস বা সহিংসতাকে উৎসাহিত করে এমন কন্টেন্ট।</li>
+                        <li>❌ মিথ্যা, বিভ্রান্তিকর বা প্রতারণামূলক তথ্য।</li>
+                        <li>❌ অন্যের কপিরাইট বা বুদ্ধিবৃত্তিক সম্পত্তি লঙ্ঘন করে এমন কন্টেন্ট।</li>
+                        <li>❌ যেকোনো ধরনের স্প্যাম বা অপ্রয়োজনীয় বার্তা।</li>
+                        <li>❌ ব্যক্তিগত যোগাযোগের তথ্য (ফোন/ইমেইল) অনুমতি ছাড়া পোস্ট করা।</li>
+                        <li>❌ অবৈধ কার্যকলাপ বা ড্রাগ/অ্যালকোহল সম্পর্কিত কন্টেন্ট।</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <i class="fas fa-flag"></i> <strong>কন্টেন্ট রিপোর্টিং:</strong><br>
+                    আপনি যদি কোনো আপত্তিকর কন্টেন্ট দেখেন, তাহলে আমাদের রিপোর্ট করুন। আমরা দ্রুত ব্যবস্থা নেব।
+                </div>
+            </div>
+
+            <!-- Section 5: Content Ownership -->
+            <div class="terms-section">
+                <h2><i class="fas fa-copyright"></i> ৫. কন্টেন্টের মালিকানা</h2>
+                <ul>
+                    <li>আপনার তৈরি করা কন্টেন্টের মালিকানা আপনার কাছে থাকে।</li>
+                    <li>অ্যাপের মধ্যে কন্টেন্ট শেয়ার করার মাধ্যমে আপনি আমাদেরকে সেই কন্টেন্ট অ্যাপের মধ্যে ব্যবহার, প্রদর্শন ও বিতরণ করার অনুমতি দিচ্ছেন।</li>
+                    <li>আপনি যেকোনো সময় আপনার কন্টেন্ট ডিলিট করতে পারেন।</li>
+                    <li>অ্যাপের লোগো, ডিজাইন, ট্রেডমার্ক ও কন্টেন্ট আমাদের সম্পত্তি।</li>
+                </ul>
+            </div>
+
+            <!-- Section 6: Premium & Coin System -->
+            <div class="terms-section">
+                <h2><i class="fas fa-coins"></i> ৬. প্রিমিয়াম ও কয়েন সিস্টেম</h2>
+                <ul>
+                    <li>আপনি বিজ্ঞাপন দেখে, দৈনিক রিওয়ার্ড নিয়ে বা রেফারেল করে কয়েন সংগ্রহ করতে পারেন।</li>
+                    <li>কয়েন দিয়ে আপনি প্রিমিয়াম ফিচার, ভেরিফিকেশন, অ্যাড-ফ্রি প্যাকেজ ইত্যাদি কিনতে পারেন।</li>
+                    <li>প্রিমিয়াম প্যাকেজ কেনার মাধ্যমে আপনি নির্দিষ্ট সময়ের জন্য সীমাহীন পোস্ট, অ্যাড-ফ্রি অভিজ্ঞতা ও নীল টিক ভেরিফিকেশন পাবেন।</li>
+                    <li>প্রিমিয়াম বা কয়েন কেনা হলে তা <strong>অ-ফেরতযোগ্য</strong> (Non-refundable)।</li>
+                    <li>অ্যাপ বন্ধ হয়ে গেলে বা অ্যাকাউন্ট ডিলিট করলে কয়েন ফেরত দেওয়া হবে না।</li>
+                </ul>
+            </div>
+
+            <!-- Section 7: Prohibited Activities -->
+            <div class="terms-section">
+                <h2><i class="fas fa-ban"></i> ৭. নিষিদ্ধ কার্যকলাপ</h2>
+                <ul>
+                    <li>❌ অ্যাপের সার্ভারে অতিরিক্ত লোড ফেলার চেষ্টা করা।</li>
+                    <li>❌ অ্যাপের কোড বা ডাটাবেসে অননুমোদিত প্রবেশ।</li>
+                    <li>❌ অন্য ইউজারের অ্যাকাউন্ট হ্যাক বা ইম্পারসোনেট করা।</li>
+                    <li>❌ অ্যাপকে পুনরায় ডিস্ট্রিবিউট করা বা বিক্রি করা।</li>
+                    <li>❌ অ্যাপের ফিচার বা কার্যকারিতা পরিবর্তন বা ডিকম্পাইল করার চেষ্টা করা।</li>
+                    <li>❌ কোনো ধরনের অটোমেটেড স্ক্রিপ্ট বা বট ব্যবহার করা।</li>
+                </ul>
+            </div>
+
+            <!-- Section 8: Termination -->
+            <div class="terms-section">
+                <h2><i class="fas fa-trash-alt"></i> ৮. অ্যাকাউন্ট বাতিল বা সাসপেন্ড</h2>
+                <ul>
+                    <li>আপনি যেকোনো সময় Settings → Delete Account দিয়ে অ্যাকাউন্ট ডিলিট করতে পারেন।</li>
+                    <li>আমরা আপনার অ্যাকাউন্ট সাসপেন্ড বা বাতিল করতে পারি যদি:</li>
+                    <ul>
+                        <li>আপনি এই শর্তাবলী লঙ্ঘন করেন।</li>
+                        <li>অ্যাপের নিরাপত্তা বা অখণ্ডতার জন্য হুমকি সৃষ্টি করেন।</li>
+                        <li>আইনি প্রয়োজন বা আদালতের আদেশে।</li>
+                    </ul>
+                    <li>অ্যাকাউন্ট সাসপেন্ড হলে আপনার সব কন্টেন্ট মুছে যেতে পারে।</li>
+                </ul>
+            </div>
+
+            <!-- Section 9: Privacy -->
+            <div class="terms-section">
+                <h2><i class="fas fa-shield-alt"></i> ৯. গোপনীয়তা</h2>
+                <p>আমরা আপনার গোপনীয়তাকে গুরুত্ব দিই। কীভাবে আমরা আপনার তথ্য সংগ্রহ, ব্যবহার ও সুরক্ষিত রাখি তা জানতে আমাদের <a href="hello-sylheti-privacy.html" style="color:#69C9D0; text-decoration:underline;">গোপনীয়তা নীতি</a> দেখুন।</p>
+            </div>
+
+            <!-- Section 10: Disclaimer -->
+            <div class="terms-section">
+                <h2><i class="fas fa-exclamation-triangle"></i> ১০. দায়িত্ব অস্বীকার</h2>
+                <ul>
+                    <li>অ্যাপের কন্টেন্ট শুধুমাত্র তথ্যের উদ্দেশ্যে। আমরা কন্টেন্টের নির্ভুলতার গ্যারান্টি দিই না।</li>
+                    <li>অ্যাপ ব্যবহারের ফলে কোনো ডেটা লস, ডিভাইসের সমস্যা বা অন্য কোনো ক্ষতির জন্য আমরা দায়ী নই।</li>
+                    <li>অ্যাপ "যেমন আছে" (as-is) ভিত্তিতে প্রদান করা হয়।</li>
+                    <li>তৃতীয় পক্ষের লিংকের জন্য আমরা দায়ী নই।</li>
+                </ul>
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-circle"></i> <strong>জরুরি সেবা:</strong> অ্যাপে থাকা হাসপাতাল, পুলিশ, ফায়ার সার্ভিস ইত্যাদির তথ্য শুধুমাত্র তথ্যের জন্য। জরুরি অবস্থায় সরাসরি সংশ্লিষ্ট নম্বরে যোগাযোগ করুন।
+                </div>
+            </div>
+
+            <!-- Section 11: Limitation of Liability -->
+            <div class="terms-section">
+                <h2><i class="fas fa-gavel"></i> ১১. দায়বদ্ধতার সীমাবদ্ধতা</h2>
+                <p>আইন অনুযায়ী সর্বোচ্চ সীমা পর্যন্ত, আমরা অ্যাপ ব্যবহারের ফলে সরাসরি বা পরোক্ষভাবে কোনো ক্ষতির জন্য দায়ী থাকব না। এর মধ্যে রয়েছে লাভের ক্ষতি, ডেটা লস বা ব্যবসায়িক ক্ষতি।</p>
+            </div>
+
+            <!-- Section 12: Indemnification -->
+            <div class="terms-section">
+                <h2><i class="fas fa-handshake"></i> ১২. ক্ষতিপূরণ</h2>
+                <p>আপনি সম্মত হন যে, আপনি যদি এই শর্তাবলী লঙ্ঘন করেন বা অ্যাপ ব্যবহারের ফলে অন্য কোনো পক্ষের বিরুদ্ধে দাবি আসে, তাহলে আপনি আমাদের সেই দাবি থেকে মুক্ত রাখবেন এবং আমাদের পক্ষে আইনি লড়াই করবেন।</p>
+            </div>
+
+            <!-- Section 13: Governing Law -->
+            <div class="terms-section">
+                <h2><i class="fas fa-balance-scale"></i> ১৩. প্রযোজ্য আইন</h2>
+                <p>এই শর্তাবলী <strong>বাংলাদেশ</strong>-এর আইন অনুযায়ী পরিচালিত হবে। কোনো বিরোধের ক্ষেত্রে <strong>মৌলভীবাজার</strong> জেলার আদালতের এখতিয়ার থাকবে।</p>
+            </div>
+
+            <!-- Section 14: Changes -->
+            <div class="terms-section">
+                <h2><i class="fas fa-sync-alt"></i> ১৪. শর্তাবলীর পরিবর্তন</h2>
+                <p>আমরা সময়ের সাথে এই শর্তাবলী আপডেট করতে পারি। বড় ধরনের পরিবর্তন হলে অ্যাপের নোটিফিকেশন বা ইমেইলের মাধ্যমে অবহিত করব। সর্বশেষ সংস্করণ সবসময় এই পৃষ্ঠায় প্রকাশিত থাকবে।</p>
+            </div>
+
+            <!-- Section 15: Contact -->
+            <div class="terms-section">
+                <h2><i class="fas fa-envelope"></i> ১৫. যোগাযোগ</h2>
+                <p>শর্তাবলী বা অ্যাপ সংক্রান্ত যেকোনো প্রশ্নে আমাদের সাথে যোগাযোগ করুন:</p>
+                <ul>
+                    <li><strong>📧 ইমেইল:</strong> support.hellobangladeshi@gmail.com</li>
+                    <li><strong>📱 ফোন/WhatsApp:</strong> +8801603297187</li>
+                    <li><strong>🌐 ওয়েবসাইট:</strong> <a href="https://hellobangladeshi.github.io/" target="_blank" style="color:#69C9D0;">https://hellobangladeshi.github.io/</a></li>
+                </ul>
+            </div>
+
+            <!-- ========== APP INFO BADGE ========== -->
+            <div class="app-badge">
+                <i class="fas fa-mobile-alt"></i> <strong>📱 অ্যাপ তথ্য</strong><br>
+                <span class="label">অ্যাপের নাম:</span> হ্যালো সিলেটি (Hello Sylheti)<br>
+                <span class="label">প্যাকেজ নাম:</span> com.hellobangladeshi.hellosylhetiapp<br>
+                <span class="label">ডেভেলপার:</span> <strong>ফারাবী ওয়ালিদ (Farabi Walid)</strong><br>
+                <span class="label">অফারড বাই (Offered by):</span> <strong>Hello Bangladeshi</strong><br>
+                <span class="label">ক্যাটাগরি:</span> কমিউনিটি / সোশ্যাল নেটওয়ার্কিং / লোকাল সার্ভিস
+            </div>
+
+            <!-- ========== FOOTER ========== -->
+            <div class="footer-note">
+                <p><i class="far fa-copyright"></i> ২০২৬ Hello Bangladeshi — সর্বস্বত্ব সংরক্ষিত।</p>
+                <p>শর্তাবলী Google Play Store-এর নীতি ও বাংলাদেশের আইন মেনে প্রণীত।</p>
+                <p style="margin-top: 6px;">
+                    <a href="https://hellobangladeshi.github.io/" target="_blank"><i class="fas fa-arrow-left"></i> মূল সাইটে ফিরুন</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ========== Scroll to Top Button ========== -->
+<div class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<script>
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollBtn.classList.add('active');
+        } else {
+            scrollBtn.classList.remove('active');
+        }
+    });
+    
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
+</body>
+</html>
