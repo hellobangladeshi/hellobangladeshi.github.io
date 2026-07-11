@@ -199,15 +199,19 @@ header.scrolled {
     font-family: 'Bebas Neue', sans-serif;
 }
 
-.logo-text h3 span {
-    background: linear-gradient(135deg, var(--secondary), var(--primary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.logo-text h3 .hello-text {
+    color: #25F4EE;
 }
 
-.logo-text span {
+.logo-text h3 .bangladeshi-text {
+    color: #EF0479;
+}
+
+.logo-text .sub-text {
     font-size: 0.75rem;
     opacity: 0.7;
+    display: block;
+    margin-top: -2px;
 }
 
 .nav-links {
@@ -1279,8 +1283,8 @@ footer {
                 <img src="https://hellobangladeshi.github.io/hb_logo.png" alt="Hello Bangladeshi Logo" onerror="this.src='https://placehold.co/55x55/EF0479/FFFFFF?text=HB'">
             </div>
             <div class="logo-text">
-                <h3>Hello <span>Bangladeshi</span></h3>
-                <span>Connect, Share & Grow Together</span>
+                <h3><span class="hello-text">Hello</span> <span class="bangladeshi-text">Bangladeshi</span></h3>
+                <span class="sub-text">Connect, Share & Grow Together</span>
             </div>
         </div>
         
@@ -1614,14 +1618,14 @@ footer {
                     <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                     <div class="contact-details">
                         <h5>ইমেইল</h5>
-                        <p>info.hellobangladeshi@gmail.com</p>
+                        <p>support.hellobangladeshi@gmail.com</p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-phone"></i></div>
                     <div class="contact-details">
                         <h5>ফোন</h5>
-                        <p>+880 1724-238581</p>
+                        <p>+8801603297187</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1707,11 +1711,12 @@ footer {
             <div class="footer-section">
                 <h4>আমাদের অ্যাপস</h4>
                 <ul class="footer-links">
-                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.hellobangladeshi" target="_blank"><i class="fas fa-chevron-right"></i> Hello Bangladeshi</a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshiltd.mindmatchpro" target="_blank"><i class="fas fa-chevron-right"></i> Mind Match Pro</a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.bhappsstore.qrcodescanner" target="_blank"><i class="fas fa-chevron-right"></i> QR Scanner</a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.colormatchpro" target="_blank"><i class="fas fa-chevron-right"></i> Color Match Pro</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.hellosylheti" target="_blank"><i class="fas fa-chevron-right"></i> Hello Sylheti</a></li>
                     <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.earthquakealertpro" target="_blank"><i class="fas fa-chevron-right"></i> Earthquake Alert Pro</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.bhappsstore.qrcodescanner" target="_blank"><i class="fas fa-chevron-right"></i> QR Scanner & Generator</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.hellobangladeshi" target="_blank"><i class="fas fa-chevron-right"></i> Hello Bangladeshi</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.colormatchpro" target="_blank"><i class="fas fa-chevron-right"></i> Color Match Pro</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.educalc" target="_blank"><i class="fas fa-chevron-right"></i> EduCalc</a></li>
                 </ul>
             </div>
             
@@ -1866,29 +1871,30 @@ document.getElementById('contactForm')?.addEventListener('submit', function(e) {
     this.reset();
 });
 
-// Apps Data - Complete with Earthquake Alert Pro
+// Apps Data - Updated Order with correct privacy links
 const appsData = [
     {
-        id: "hellobangladeshi",
-        packageName: "com.hellobangladeshi.hellobangladeshi",
-        name: "Hello Bangladeshi",
-        category: "productivity",
+        id: "hellosylheti",
+        packageName: "com.hellobangladeshi.hellosylheti",
+        name: "Hello Sylheti",
+        category: "entertainment",
         iconUrl: null,
-        gradient: "linear-gradient(135deg,#EF0479,#FFD93D)",
-        description: "বাংলাদেশিদের জন্য একটি ইউনিক প্ল্যাটফর্ম – কানেক্ট, শেয়ার এবং সুযোগ খুঁজুন।",
-        stats: { downloads: "১০K+", rating: "৪.৮ ★" },
-        privacyLink: "privacy-policy.html",
+        gradient: "linear-gradient(135deg,#EE1D52,#C4123E)",
+        description: "সিলেটি ভাষা ও সংস্কৃতির অনন্য প্ল্যাটফর্ম। স্থানীয় তথ্য, সংযোগ ও সেবা একসাথে।",
+        stats: { downloads: "৫০০+", rating: "৪.৮ ★" },
+        privacyLink: "https://bhappsstore.github.io/hello-sylheti-privacy.html",
         isPublished: true
     },
     {
-        id: "mindmatchpro",
-        packageName: "com.hellobangladeshiltd.mindmatchpro",
-        name: "Mind Match Pro",
-        category: "entertainment",
-        iconUrl: "https://play-lh.googleusercontent.com/n3_uiw9muo3QBkyCRYOO5dQYkzMc31NJsUcFYWLSgQBq461_jO4SRVnCJC8XD-CYfisRr-4FrHEsPhm3pXZkCw=s48-rw",
-        gradient: "linear-gradient(135deg,#667eea,#764ba2)",
-        description: "মজাদার ব্রেইন গেম যা আপনার স্মৃতি, মনোযোগ ও বুদ্ধিমত্তা উন্নত করতে সাহায্য করে।",
-        stats: { downloads: "৫K+", rating: "৪.৫ ★" },
+        id: "earthquakealertpro",
+        packageName: "com.hellobangladeshi.earthquakealertpro",
+        name: "Earthquake Alert Pro",
+        category: "utility",
+        iconUrl: null,
+        gradient: "linear-gradient(135deg,#E53935,#C62828)",
+        description: "ভূমিকম্পের আগাম সতর্কতা, রিয়েল-টাইম আপডেট এবং নিরাপত্তা টিপস সহ একটি শক্তিশালী অ্যাপ।",
+        stats: { downloads: "৫০০+", rating: "৪.৯ ★" },
+        privacyLink: "earthquake-alert-privacy.html",
         isPublished: true
     },
     {
@@ -1900,18 +1906,19 @@ const appsData = [
         gradient: "linear-gradient(135deg,#30cfd0,#330867)",
         description: "দ্রুত ও নিরাপদ QR ও Barcode স্ক্যানার। লাইটওয়েট এবং বিজ্ঞাপনমুক্ত অভিজ্ঞতা।",
         stats: { downloads: "৮K+", rating: "৪.৭ ★" },
+        privacyLink: "qr-scanner-privacy.html",
         isPublished: true
     },
     {
-        id: "hellosylheti",
-        packageName: "com.hellobangladeshi.hellosylheti",
-        name: "Hello Sylheti",
-        category: "entertainment",
+        id: "hellobangladeshi",
+        packageName: "com.hellobangladeshi.hellobangladeshi",
+        name: "Hello Bangladeshi",
+        category: "productivity",
         iconUrl: null,
-        gradient: "linear-gradient(135deg,#EE1D52,#C4123E)",
-        description: "সিলেটি ভাষা ও সংস্কৃতির অনন্য প্ল্যাটফর্ম। স্থানীয় তথ্য, সংযোগ ও সেবা একসাথে।",
-        stats: { downloads: "৫০০+", rating: "৪.৮ ★" },
-        privacyLink: "https://bhappsstore.github.io/hello-sylheti-privacy.html",
+        gradient: "linear-gradient(135deg,#EF0479,#FFD93D)",
+        description: "বাংলাদেশিদের জন্য একটি ইউনিক প্ল্যাটফর্ম – কানেক্ট, শেয়ার এবং সুযোগ খুঁজুন।",
+        stats: { downloads: "১০K+", rating: "৪.৮ ★" },
+        privacyLink: "privacy-policy.html",
         isPublished: true
     },
     {
@@ -1934,18 +1941,6 @@ const appsData = [
         gradient: "linear-gradient(135deg,#4facfe,#00f2fe)",
         description: "শিক্ষার্থীদের জন্য স্মার্ট ক্যালকুলেটর – দ্রুত ও নির্ভুল হিসাব।",
         stats: { downloads: "১K+", rating: "৪.৪ ★" },
-        isPublished: true
-    },
-    {
-        id: "earthquakealertpro",
-        packageName: "com.hellobangladeshi.earthquakealertpro",
-        name: "Earthquake Alert Pro",
-        category: "utility",
-        iconUrl: null,
-        gradient: "linear-gradient(135deg,#E53935,#C62828)",
-        description: "ভূমিকম্পের আগাম সতর্কতা, রিয়েল-টাইম আপডেট এবং নিরাপত্তা টিপস সহ একটি শক্তিশালী অ্যাপ।",
-        stats: { downloads: "৫০০+", rating: "৪.৯ ★" },
-        privacyLink: "earthquake-alert-privacy.html",
         isPublished: true
     }
 ];
