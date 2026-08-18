@@ -1,207 +1,799 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>Privacy Policy - Learn Sylheti</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Learn Sylheti app privacy policy - your data security is our priority." />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
     <style>
-        :root {
-            --primary-color: #e8b931;
-            --secondary-color: #1a1a2e;
-            --text-color: #2d4059;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --accent-blue: #4a6fa5;
+        /* ===== BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Inter', 'Noto Sans Bengali', sans-serif;
-            background: var(--bg-color);
-            color: var(--secondary-color);
-            line-height: 1.8;
-            padding: 20px;
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+            min-height: 100vh;
+            padding: 0;
+            overflow-x: hidden;
+            transition: background 0.6s ease, color 0.4s ease;
         }
+
+        /* ===== THEME: GREEN (Default) ===== */
+        body.theme-green {
+            background: linear-gradient(145deg, #0a1a0a, #1a3a1a, #0d2b0d);
+            color: #d4edda;
+        }
+        body.theme-green .privacy-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(76, 175, 80, 0.25);
+        }
+        body.theme-green .privacy-header {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.20), rgba(0, 230, 118, 0.08));
+        }
+        body.theme-green .privacy-header h1,
+        body.theme-green .icon-shield {
+            background: linear-gradient(135deg, #4CAF50, #00E676);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        body.theme-green .badge-date {
+            background: rgba(76, 175, 80, 0.15);
+            color: #81C784;
+        }
+        body.theme-green .policy-section {
+            border-left-color: #4CAF50;
+        }
+        body.theme-green .policy-section:hover {
+            border-left-color: #00E676;
+        }
+        body.theme-green .policy-section h2 {
+            color: #81C784;
+        }
+        body.theme-green .policy-section h2 i {
+            color: #4CAF50;
+        }
+        body.theme-green .policy-section h3 {
+            color: #FFD93D;
+        }
+        body.theme-green .policy-section li strong {
+            color: #81C784;
+        }
+        body.theme-green .highlight-box {
+            background: rgba(76, 175, 80, 0.08);
+            border: 1px solid rgba(76, 175, 80, 0.20);
+        }
+        body.theme-green .highlight-box i {
+            color: #81C784;
+        }
+        body.theme-green .app-badge {
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        body.theme-green .app-badge i {
+            color: #81C784;
+        }
+        body.theme-green .footer-note a {
+            color: #81C784;
+        }
+        body.theme-green .scroll-top {
+            background: linear-gradient(135deg, #4CAF50, #00E676);
+        }
+        body.theme-green .scroll-top:hover {
+            background: linear-gradient(135deg, #388E3C, #00C853);
+        }
+
+        /* ===== THEME: PINK ===== */
+        body.theme-pink {
+            background: linear-gradient(145deg, #2a0a1a, #4a1a2a, #3a0d1d);
+            color: #f8d4e0;
+        }
+        body.theme-pink .privacy-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(233, 30, 99, 0.25);
+        }
+        body.theme-pink .privacy-header {
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.20), rgba(255, 64, 129, 0.08));
+        }
+        body.theme-pink .privacy-header h1,
+        body.theme-pink .icon-shield {
+            background: linear-gradient(135deg, #E91E63, #FF4081);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        body.theme-pink .badge-date {
+            background: rgba(233, 30, 99, 0.15);
+            color: #F06292;
+        }
+        body.theme-pink .policy-section {
+            border-left-color: #E91E63;
+        }
+        body.theme-pink .policy-section:hover {
+            border-left-color: #FF4081;
+        }
+        body.theme-pink .policy-section h2 {
+            color: #F06292;
+        }
+        body.theme-pink .policy-section h2 i {
+            color: #E91E63;
+        }
+        body.theme-pink .policy-section h3 {
+            color: #FFD93D;
+        }
+        body.theme-pink .policy-section li strong {
+            color: #F06292;
+        }
+        body.theme-pink .highlight-box {
+            background: rgba(233, 30, 99, 0.08);
+            border: 1px solid rgba(233, 30, 99, 0.20);
+        }
+        body.theme-pink .highlight-box i {
+            color: #F06292;
+        }
+        body.theme-pink .app-badge {
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        body.theme-pink .app-badge i {
+            color: #F06292;
+        }
+        body.theme-pink .footer-note a {
+            color: #F06292;
+        }
+        body.theme-pink .scroll-top {
+            background: linear-gradient(135deg, #E91E63, #FF4081);
+        }
+        body.theme-pink .scroll-top:hover {
+            background: linear-gradient(135deg, #C2185B, #F50057);
+        }
+
+        /* ===== COMMON STYLES ===== */
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 50px 40px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            padding: 30px 20px 60px;
         }
-        .lang-toggle {
-            position: sticky;
-            top: 0;
+
+        .privacy-card {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .privacy-header {
+            padding: 40px 32px 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+
+        .icon-shield {
+            font-size: 3.2rem;
+            margin-bottom: 8px;
+        }
+
+        .privacy-header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .privacy-header .subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .badge-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        .content-inner {
+            padding: 32px 32px 20px;
+        }
+
+        .policy-section {
+            margin-bottom: 32px;
+            padding-left: 20px;
+            border-left: 3px solid;
+            transition: all 0.3s ease;
+        }
+
+        .policy-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 14px;
             display: flex;
-            gap: 12px;
-            justify-content: flex-end;
-            margin-bottom: 30px;
-            background: rgba(255,255,255,0.9);
-            padding: 10px 0;
-            z-index: 100;
+            align-items: center;
+            gap: 10px;
         }
+
+        .policy-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 18px 0 10px 0;
+        }
+
+        .policy-section p {
+            opacity: 0.9;
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+        }
+
+        .policy-section ul,
+        .policy-section ol {
+            margin: 10px 0 14px 24px;
+            opacity: 0.88;
+        }
+
+        .policy-section li {
+            margin-bottom: 6px;
+            font-size: 0.96rem;
+        }
+
+        .highlight-box {
+            border-radius: 16px;
+            padding: 18px 22px;
+            margin: 18px 0;
+        }
+
+        .highlight-box i {
+            margin-right: 8px;
+        }
+
+        .app-badge {
+            border-radius: 16px;
+            padding: 18px 22px;
+            font-size: 0.88rem;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .app-badge i {
+            width: 24px;
+        }
+
+        .app-badge .label {
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding-top: 28px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.82rem;
+            opacity: 0.6;
+        }
+
+        .footer-note a {
+            text-decoration: none;
+        }
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== LANGUAGE TOGGLE ===== */
+        .lang-toggle {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
         .lang-toggle button {
-            padding: 8px 24px;
-            border: 2px solid var(--primary-color);
+            padding: 6px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.25);
             background: transparent;
             border-radius: 30px;
             font-weight: 600;
+            font-size: 0.8rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            color: rgba(255, 255, 255, 0.6);
         }
-        .lang-toggle button.active { background: var(--primary-color); }
-        
-        h1 { font-size: 32px; border-bottom: 4px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 30px; }
-        h2 { font-size: 22px; margin-top: 35px; margin-bottom: 15px; color: var(--accent-blue); display: flex; align-items: center; gap: 10px; }
-        h2::before { content: ""; width: 5px; height: 25px; background: var(--primary-color); display: inline-block; border-radius: 10px; }
-        h3 { font-size: 18px; margin-top: 20px; color: #444; }
-        p { margin-bottom: 15px; font-size: 16px; text-align: justify; }
-        ul { margin: 15px 0 20px 25px; }
-        li { margin-bottom: 10px; }
 
-        .warning-box {
-            background: #fff5f5;
-            border-left: 5px solid #ff4d4d;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 25px 0;
+        .lang-toggle button.active {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.5);
+            color: #fff;
         }
-        .security-badge {
-            display: inline-block;
-            background: #e1ffed;
-            color: #1b5e20;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            text-align: center;
-            font-size: 14px;
-            color: #888;
-        }
-        a { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
-        a:hover { text-decoration: underline; }
 
-        @media (max-width: 600px) {
-            .container { padding: 30px 20px; }
-            h1 { font-size: 24px; }
+        .lang-toggle button:hover {
+            border-color: rgba(255, 255, 255, 0.5);
+            color: #fff;
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 999;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+            border: none;
+            color: #fff;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-4px) scale(1.05);
+        }
+
+        .scroll-top i {
+            font-size: 1.2rem;
+        }
+
+        /* ===== HIDE LANGUAGE SECTIONS ===== */
+        .lang-section {
+            display: none;
+        }
+        .lang-section.active {
+            display: block;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px 12px 40px;
+            }
+            .privacy-header {
+                padding: 28px 18px 20px;
+            }
+            .privacy-header h1 {
+                font-size: 1.7rem;
+            }
+            .content-inner {
+                padding: 20px 16px 12px;
+            }
+            .policy-section {
+                padding-left: 12px;
+                margin-bottom: 24px;
+            }
+            .policy-section h2 {
+                font-size: 1.25rem;
+            }
+            .policy-section ul,
+            .policy-section ol {
+                margin-left: 16px;
+            }
+            .app-badge {
+                font-size: 0.82rem;
+                padding: 14px 16px;
+            }
+            .scroll-top {
+                width: 44px;
+                height: 44px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .lang-toggle {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-header h1 {
+                font-size: 1.4rem;
+            }
+            .policy-section h2 {
+                font-size: 1.1rem;
+            }
+            .policy-section p,
+            .policy-section li {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="lang-toggle">
-        <button class="active" onclick="toggleLang('en')">English</button>
-        <button onclick="toggleLang('bn')">বাংলা</button>
-    </div>
+    <div class="container">
+        <div class="privacy-card">
 
-    <!-- ENGLISH SECTION -->
-    <div id="en-content">
-        <h1>Privacy Policy for Learn Sylheti</h1>
-        <p><strong>Effective Date:</strong> August 18, 2026</p>
-        <p>Welcome to <strong>Learn Sylheti</strong>, developed by <strong>Hello Bangladeshi</strong>. Your privacy is our top priority. This policy outlines how we handle data related to our app, including the Sylheti Keyboard, Audio Recording, and In-App Purchases.</p>
+            <!-- ===== LANGUAGE TOGGLE ===== -->
+            <div class="lang-toggle" style="padding: 20px 32px 0;">
+                <button id="langBn" class="active" onclick="setLanguage('bn')">বাংলা</button>
+                <button id="langEn" onclick="setLanguage('en')">English</button>
+            </div>
 
-        <h2>1. Sylheti Keyboard (IME Service)</h2>
-        <div class="warning-box">
-            <div class="security-badge">🔒 ZERO DATA COLLECTION</div>
-            <p>Our <strong>Sylheti Custom Keyboard</strong> (Input Method Editor) is designed with privacy at its core. We <strong>DO NOT</strong> collect, store, or transmit any text you type. All keystrokes are processed locally on your device only. We do not have access to your passwords, credit card numbers, or private messages.</p>
+            <!-- ===== HEADER (Bangla) ===== -->
+            <div class="privacy-header lang-section active" data-lang="bn">
+                <div class="icon-shield"><i class="fas fa-shield-alt"></i></div>
+                <h1>গোপনীয়তা নীতি</h1>
+                <p class="subtitle">লার্ন সিলেটি — আপনার তথ্যের নিরাপত্তাই আমাদের অঙ্গীকার</p>
+                <span class="badge-date"><i class="far fa-calendar-alt"></i> সর্বশেষ আপডেট: ১৮ আগস্ট, ২০২৬</span>
+            </div>
+
+            <!-- ===== HEADER (English) ===== -->
+            <div class="privacy-header lang-section" data-lang="en">
+                <div class="icon-shield"><i class="fas fa-shield-alt"></i></div>
+                <h1>Privacy Policy</h1>
+                <p class="subtitle">Learn Sylheti — Your data security is our commitment</p>
+                <span class="badge-date"><i class="far fa-calendar-alt"></i> Last Updated: 18 August, 2026</span>
+            </div>
+
+            <!-- ===== CONTENT ===== -->
+            <div class="content-inner">
+
+                <!-- ===== 1. Introduction ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-info-circle"></i> ১. ভূমিকা</h2>
+                    <p><strong>লার্ন সিলেটি (Learn Sylheti)</strong> (“আমরা”, “আমাদের”, “অ্যাপ”) একটি ভাষা শিক্ষা অ্যাপ যা সিলেটি ভাষা, সিলেটি নাগরী লিপি ও সিলেটের সংস্কৃতি শেখার জন্য তৈরি। এই অ্যাপটি <strong>হ্যালো বাংলাদেশী (Hello Bangladeshi)</strong>-এর একটি উদ্যোগ।</p>
+                    <p>আপনার গোপনীয়তা রক্ষা করা আমাদের কাছে সর্বোচ্চ অগ্রাধিকার। এই গোপনীয়তা নীতি ব্যাখ্যা করে আমরা কীভাবে আপনার তথ্য সংগ্রহ করি, ব্যবহার করি এবং সুরক্ষিত রাখি। এই অ্যাপ ব্যবহার করলে আপনি এই নীতির শর্তাবলীতে সম্মত হয়েছেন বলে গণ্য হবে।</p>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-info-circle"></i> 1. Introduction</h2>
+                    <p><strong>Learn Sylheti</strong> ("we", "our", "app") is a language learning app designed to teach Sylheti language, Sylheti Nagri script, and Sylheti culture. This app is an initiative of <strong>Hello Bangladeshi</strong>.</p>
+                    <p>Protecting your privacy is our highest priority. This Privacy Policy explains how we collect, use, and safeguard your information. By using this app, you agree to the terms of this policy.</p>
+                </div>
+
+                <!-- ===== 2. What We Collect ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-database"></i> ২. আমরা কী কী তথ্য সংগ্রহ করি</h2>
+                    <h3>📝 আপনি যেসব তথ্য সরাসরি দেন:</h3>
+                    <ul>
+                        <li><strong>নাম</strong> — আপনার প্রোফাইলে দেখানোর জন্য (ঐচ্ছিক)।</li>
+                        <li><strong>প্রোফাইল ইমোজি/আইকন</strong> — আপনার প্রোফাইল কাস্টমাইজ করতে (ঐচ্ছিক)।</li>
+                        <li><strong>শেখার পছন্দ</strong> — দৈনিক লক্ষ্য, ভাষার পছন্দ, থিম সেটিংস।</li>
+                        <li><strong>ফেভারিট ও বুকমার্ক</strong> — আপনার পছন্দের শব্দ, বাক্যাংশ ও অধ্যায় সংরক্ষণ করতে।</li>
+                    </ul>
+                    <h3>📱 স্বয়ংক্রিয়ভাবে সংগৃহীত তথ্য:</h3>
+                    <ul>
+                        <li><strong>ডিভাইস তথ্য</strong> — মডেল, OS সংস্করণ, স্ক্রিন সাইজ, ভাষা সেটিংস।</li>
+                        <li><strong>অ্যাপ ব্যবহার সংক্রান্ত তথ্য</strong> — কোন পাঠ সম্পূর্ণ হয়েছে, কুইজ স্কোর, স্ট্রিক ডেটা, শেখার সময়, শেখা শব্দভাণ্ডার।</li>
+                        <li><strong>ক্র্যাশ ও পারফরম্যান্স ডেটা</strong> — অ্যাপের স্থিতিশীলতা উন্নত করতে বেনামী ক্র্যাশ লগ।</li>
+                        <li><strong>বিজ্ঞাপন আইডি</strong> — Google AdMob-এর মাধ্যমে প্রাসঙ্গিক বিজ্ঞাপন দেখানোর জন্য।</li>
+                    </ul>
+                    <h3>📊 ডেটাস্টোর ও রুম ডেটাবেস:</h3>
+                    <ul>
+                        <li><strong>স্থানীয় স্টোরেজ:</strong> আপনার শেখার অগ্রগতি, স্ট্রিক, কয়েন, থিম সেটিংস — সব কিছু আপনার ডিভাইসে <strong>DataStore</strong> ও <strong>Room Database</strong>-এ সংরক্ষিত থাকে।</li>
+                        <li><strong>কোনো রিমোট সার্ভার নেই:</strong> আমরা আপনার ব্যক্তিগত শেখার ডেটা কোনো রিমোট সার্ভারে পাঠাই <strong>না</strong>।</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-database"></i> 2. What Information We Collect</h2>
+                    <h3>📝 Information you provide directly:</h3>
+                    <ul>
+                        <li><strong>Name</strong> — to display on your profile (optional).</li>
+                        <li><strong>Profile emoji/icon</strong> — to customize your profile (optional).</li>
+                        <li><strong>Learning preferences</strong> — daily goal, language preference, theme settings.</li>
+                        <li><strong>Favorites &amp; Bookmarks</strong> — to save your favorite words, phrases, and chapters.</li>
+                    </ul>
+                    <h3>📱 Automatically collected information:</h3>
+                    <ul>
+                        <li><strong>Device information</strong> — model, OS version, screen size, language settings.</li>
+                        <li><strong>App usage data</strong> — completed lessons, quiz scores, streak data, learning time, vocabulary learned.</li>
+                        <li><strong>Crash &amp; performance data</strong> — anonymous crash logs to improve app stability.</li>
+                        <li><strong>Advertising ID</strong> — used to serve relevant ads via Google AdMob.</li>
+                    </ul>
+                    <h3>📊 DataStore &amp; Room Database:</h3>
+                    <ul>
+                        <li><strong>Local Storage:</strong> Your learning progress, streak, coins, theme settings — all stored locally on your device using <strong>DataStore</strong> and <strong>Room Database</strong>.</li>
+                        <li><strong>No Remote Server:</strong> We do <strong>not</strong> send your personal learning data to any remote server.</li>
+                    </ul>
+                </div>
+
+                <!-- ===== 3. Why We Use Your Data ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-bullseye"></i> ৩. কেন আমরা আপনার তথ্য ব্যবহার করি</h2>
+                    <ul>
+                        <li>🎯 আপনার শেখার অভিজ্ঞতা ব্যক্তিগতকৃত করতে।</li>
+                        <li>📊 আপনার অগ্রগতি ট্র্যাক করতে, স্ট্রিক বজায় রাখতে এবং অর্জন পুরস্কৃত করতে।</li>
+                        <li>🔧 অ্যাপ উন্নত করতে, বাগ ফিক্স করতে এবং পারফরম্যান্স অপটিমাইজ করতে।</li>
+                        <li>📢 প্রাসঙ্গিক বিজ্ঞাপন দেখাতে (AdMob ব্যবহার করে)।</li>
+                        <li>📱 ইন-অ্যাপ সাপোর্ট প্রদান করতে এবং আপনার প্রশ্নের উত্তর দিতে।</li>
+                        <li>📈 ব্যবহারের প্রবণতা বিশ্লেষণ করতে এবং আমাদের কন্টেন্ট উন্নত করতে।</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-bullseye"></i> 3. Why We Use Your Information</h2>
+                    <ul>
+                        <li>🎯 To personalize your learning experience.</li>
+                        <li>📊 To track your progress, maintain streaks, and award achievements.</li>
+                        <li>🔧 To improve the app, fix bugs, and optimize performance.</li>
+                        <li>📢 To show relevant advertisements (using AdMob).</li>
+                        <li>📱 To provide in-app support and respond to your queries.</li>
+                        <li>📈 To analyze usage trends and improve our content.</li>
+                    </ul>
+                </div>
+
+                <!-- ===== 4. Data Sharing ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-share-alt"></i> ৪. তথ্য শেয়ারিং</h2>
+                    <p>আমরা আপনার ব্যক্তিগত তথ্য <strong>কখনোই বিক্রি করি না</strong> বা বাণিজ্যিক উদ্দেশ্যে তৃতীয় পক্ষের কাছে হস্তান্তর করি না। তবে নিম্নলিখিত ক্ষেত্রে তথ্য শেয়ার হতে পারে:</p>
+                    <ul>
+                        <li><strong>আইনগত প্রয়োজন:</strong> আদালতের আদেশ, আইন প্রয়োগকারী সংস্থার বৈধ অনুরোধ।</li>
+                        <li><strong>সেবা প্রদানকারী:</strong> Google AdMob, Firebase — যাদের নিজস্ব গোপনীয়তা নীতি রয়েছে।</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <i class="fas fa-server"></i> <strong>থার্ড-পার্টি সার্ভিস:</strong><br />
+                        • <strong>Google AdMob</strong> — ব্যানার ও ইন্টারস্টিশিয়াল বিজ্ঞাপন।<br />
+                        • <strong>Firebase</strong> — বিশ্লেষণ, ক্র্যাশ রিপোর্টিং ও রিমোট কনফিগারেশন।<br />
+                        • <strong>Google Play Services</strong> — ইন-অ্যাপ কেনাকাটা ও আপডেটের জন্য।
+                    </div>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-share-alt"></i> 4. Data Sharing</h2>
+                    <p>We <strong>never</strong> sell your personal information or transfer it to third parties for commercial purposes. However, data may be shared in the following cases:</p>
+                    <ul>
+                        <li><strong>Legal requirement:</strong> Court orders, valid requests from law enforcement.</li>
+                        <li><strong>Service providers:</strong> Google AdMob, Firebase — which have their own privacy policies.</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <i class="fas fa-server"></i> <strong>Third-Party Services:</strong><br />
+                        • <strong>Google AdMob</strong> — banner &amp; interstitial ads.<br />
+                        • <strong>Firebase</strong> — analytics, crash reporting &amp; remote configuration.<br />
+                        • <strong>Google Play Services</strong> — in-app purchases &amp; updates.
+                    </div>
+                </div>
+
+                <!-- ===== 5. Security ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-lock"></i> ৫. তথ্য নিরাপত্তা</h2>
+                    <p>আমরা আপনার তথ্য সুরক্ষিত রাখতে নিচের ব্যবস্থা গ্রহণ করি:</p>
+                    <ul>
+                        <li>🔐 <strong>স্থানীয় স্টোরেজ:</strong> আপনার শেখার ডেটা আপনার ডিভাইসেই থাকে, আমাদের কাছে নয়।</li>
+                        <li>🔐 <strong>এনক্রিপশন:</strong> সংবেদনশীল তথ্য এনক্রিপ্টেড ফর্মেটে সংরক্ষিত।</li>
+                        <li>🔐 <strong>Firebase Security Rules:</strong> কঠোর অ্যাক্সেস নিয়ন্ত্রণ।</li>
+                        <li>🔐 <strong>নিয়মিত অডিট ও আপডেট:</strong> নিরাপত্তা ঝুঁকি কমানোর জন্য নিয়মিত পর্যালোচনা।</li>
+                    </ul>
+                    <p>⚠️ তবে অনুগ্রহ করে মনে রাখবেন, ইন্টারনেটের মাধ্যমে সম্পূর্ণ ১০০% নিরাপত্তা নিশ্চিত করা সম্ভব নয়। আমরা সর্বোচ্চ চেষ্টা চালিয়ে যাচ্ছি।</p>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-lock"></i> 5. Data Security</h2>
+                    <p>We take the following measures to protect your information:</p>
+                    <ul>
+                        <li>🔐 <strong>Local Storage:</strong> Your learning data stays on your device, not with us.</li>
+                        <li>🔐 <strong>Encryption:</strong> Sensitive information is stored in encrypted format.</li>
+                        <li>🔐 <strong>Firebase Security Rules:</strong> Strict access control.</li>
+                        <li>🔐 <strong>Regular Audits &amp; Updates:</strong> Regular reviews to minimize security risks.</li>
+                    </ul>
+                    <p>⚠️ Please note that 100% security over the internet cannot be guaranteed. We strive our best.</p>
+                </div>
+
+                <!-- ===== 6. Children ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-child"></i> ৬. শিশুদের তথ্য</h2>
+                    <p>আমাদের অ্যাপ <strong>১৩ বছর বা তার কম বয়সী শিশুদের</strong> ব্যবহারের জন্য নয়। আমরা ইচ্ছাকৃতভাবে শিশুদের ব্যক্তিগত তথ্য সংগ্রহ করি না। যদি কোনো অভিভাবক জানান যে তাঁর সন্তান আমাদের তথ্য দিয়েছে, তাহলে আমাদের সাথে যোগাযোগ করলে সেটি দ্রুত মুছে ফেলা হবে।</p>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-child"></i> 6. Children's Privacy</h2>
+                    <p>Our app is <strong>not intended for children under 13</strong>. We do not knowingly collect personal information from children. If a parent or guardian believes their child has provided us with information, please contact us and we will delete it promptly.</p>
+                </div>
+
+                <!-- ===== 7. Your Rights ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-user-check"></i> ৭. আপনার অধিকার</h2>
+                    <p>আপনি যেকোনো সময় নিচের অধিকারগুলো ব্যবহার করতে পারেন:</p>
+                    <ul>
+                        <li>✅ আপনার তথ্য অ্যাক্সেস ও কপি পাওয়ার অধিকার।</li>
+                        <li>✅ প্রোফাইল তথ্য সংশোধন করার অধিকার।</li>
+                        <li>✅ <strong>অগ্রগতি রিসেট:</strong> সেটিংস পৃষ্ঠা থেকে সমস্ত শেখার ডেটা রিসেট করতে পারেন।</li>
+                        <li>✅ <strong>ফেভারিট মুছুন:</strong> সেটিংস থেকে সমস্ত ফেভারিট মুছে ফেলতে পারেন।</li>
+                        <li>✅ <strong>অ্যাপ আনইন্সটল:</strong> অ্যাপ আনইন্সটল করলে সমস্ত স্থানীয়ভাবে সংরক্ষিত ডেটা মুছে যায়।</li>
+                        <li>✅ <strong>বিজ্ঞাপন অপ্ট-আউট:</strong> ডিভাইস সেটিংসে অ্যাডভারটাইজিং আইডি রিসেট করতে পারেন।</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <i class="fas fa-trash-alt"></i> <strong>ডেটা মুছে ফেলা:</strong> আপনি আমাদের সাথে যোগাযোগ করে আপনার সমস্ত ডেটা মুছে ফেলার অনুরোধ করতে পারেন।
+                    </div>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-user-check"></i> 7. Your Rights</h2>
+                    <p>You can exercise the following rights at any time:</p>
+                    <ul>
+                        <li>✅ Right to access and copy your information.</li>
+                        <li>✅ Right to correct profile information.</li>
+                        <li>✅ <strong>Reset Progress:</strong> Reset all learning data from Settings.</li>
+                        <li>✅ <strong>Clear Favorites:</strong> Remove all favorites from Settings.</li>
+                        <li>✅ <strong>Uninstall:</strong> Uninstalling removes all locally stored data.</li>
+                        <li>✅ <strong>Opt-out of Ads:</strong> Reset your advertising ID in device settings.</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <i class="fas fa-trash-alt"></i> <strong>Data Deletion:</strong> You can contact us to request deletion of all your data.
+                    </div>
+                </div>
+
+                <!-- ===== 8. Permissions ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-permissions"></i> ৮. আমরা যে পারমিশন ব্যবহার করি</h2>
+                    <ul>
+                        <li><strong>🎤 RECORD_AUDIO</strong> — স্পিকিং প্র্যাকটিস ও ভয়েস ইনপুট ফিচারের জন্য। অডিও স্থানীয়ভাবে প্রক্রিয়াকৃত হয় এবং সংরক্ষিত বা প্রেরণ করা হয় না।</li>
+                        <li><strong>🌐 INTERNET</strong> — বিজ্ঞাপন লোড করা, রিমোট কনফিগ এবং ওয়েব কন্টেন্ট (ইউটিউব চ্যানেল) প্রদর্শনের জন্য।</li>
+                        <li><i class="fas fa-info-circle" style="color: #69C9D0;"></i> কোনো পারমিশন ট্র্যাকিং বা প্রোফাইলিংয়ের জন্য ব্যবহার করা হয় না।</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-permissions"></i> 8. Permissions We Use</h2>
+                    <ul>
+                        <li><strong>🎤 RECORD_AUDIO</strong> — For speaking practice and voice input features. Audio is processed locally and not stored or transmitted.</li>
+                        <li><strong>🌐 INTERNET</strong> — For loading ads, remote config, and displaying web content (YouTube channel).</li>
+                        <li><i class="fas fa-info-circle" style="color: #69C9D0;"></i> No permission is used for tracking or profiling.</li>
+                    </ul>
+                </div>
+
+                <!-- ===== 9. Advertisements ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-ad"></i> ৯. বিজ্ঞাপন (Google AdMob)</h2>
+                    <p>আমরা অ্যাপ বিনামূল্যে রাখতে AdMob বিজ্ঞাপন দেখাই। AdMob আপনার অ্যাপের কার্যকলাপ ও ডিভাইস তথ্যের ভিত্তিতে ব্যক্তিগতকৃত বিজ্ঞাপন দেখাতে পারে। যদি ব্যক্তিগতকৃত বিজ্ঞাপন পছন্দ না করেন, তাহলে আপনার ডিভাইসের Google Ad Settings বা অ্যাপের মাধ্যমে অপ্ট-আউট করতে পারেন (Android: Settings → Google → Ads → Opt out of Ads Personalization)।</p>
+                    <p>বিজ্ঞাপন মুক্ত অভিজ্ঞতার জন্য প্রিমিয়াম সাবস্ক্রিপশন কেনা যেতে পারে।</p>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-ad"></i> 9. Advertisements (Google AdMob)</h2>
+                    <p>We show AdMob ads to keep the app free. AdMob may show personalized ads based on your app activity and device information. If you prefer not to see personalized ads, you can opt-out via your device's Google Ad Settings (Android: Settings → Google → Ads → Opt out of Ads Personalization).</p>
+                    <p>A premium subscription is available for an ad-free experience.</p>
+                </div>
+
+                <!-- ===== 10. Data Retention ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-clock"></i> ১০. ডাটা রিটেনশন</h2>
+                    <p>আপনার শেখার ডেটা ততদিন সংরক্ষিত থাকে যতদিন অ্যাপটি আপনার ডিভাইসে ইনস্টল থাকে। অ্যাপ আনইন্সটল করলে সব স্থানীয় ডেটা মুছে যায়। আপনি সেটিংস থেকে অগ্রগতি রিসেট করলেও ডেটা মুছে যায়।</p>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-clock"></i> 10. Data Retention</h2>
+                    <p>Your learning data remains stored as long as the app is installed on your device. Uninstalling the app removes all local data. Resetting progress from Settings also deletes the data.</p>
+                </div>
+
+                <!-- ===== 11. Contact ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-envelope"></i> ১১. যোগাযোগ ও অভিযোগ</h2>
+                    <p>গোপনীয়তা সংক্রান্ত যেকোনো প্রশ্ন বা অভিযোগ জানাতে পারেন:</p>
+                    <ul>
+                        <li><strong>📧 ইমেইল:</strong> support.hellobangladeshi@gmail.com</li>
+                        <li><strong>📱 ফোন/WhatsApp:</strong> +8801751861453</li>
+                        <li><strong>🌐 ওয়েবসাইট:</strong> <a href="https://hellobangladeshi.github.io/" target="_blank" style="color: #69C9D0;">https://hellobangladeshi.github.io/</a></li>
+                    </ul>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-envelope"></i> 11. Contact &amp; Complaints</h2>
+                    <p>For any privacy-related questions or complaints, please contact us:</p>
+                    <ul>
+                        <li><strong>📧 Email:</strong> support.hellobangladeshi@gmail.com</li>
+                        <li><strong>📱 Phone/WhatsApp:</strong> +8801603297187</li>
+                        <li><strong>🌐 Website:</strong> <a href="https://hellobangladeshi.github.io/" target="_blank" style="color: #69C9D0;">https://hellobangladeshi.github.io/</a></li>
+                    </ul>
+                </div>
+
+                <!-- ===== 12. Policy Changes ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-sync-alt"></i> ১২. এই নীতির পরিবর্তন</h2>
+                    <p>আমরা সময়ের সাথে এই গোপনীয়তা নীতি আপডেট করতে পারি। বড় ধরনের পরিবর্তন হলে অ্যাপের নোটিফিকেশন বা ইমেইলের মাধ্যমে অবহিত করব। সর্বশেষ সংস্করণ সবসময় এই পৃষ্ঠায় প্রকাশিত থাকবে।</p>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-sync-alt"></i> 12. Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy from time to time. For significant changes, we will notify you via app notification or email. The latest version will always be available on this page.</p>
+                </div>
+
+                <!-- ===== APP BADGE ===== -->
+                <div class="app-badge">
+                    <i class="fas fa-mobile-alt"></i> <strong>📱 App Information</strong><br />
+                    <span class="label">App Name:</span> Learn Sylheti (লার্ন সিলেটি)<br />
+                    <span class="label">Package Name:</span> com.hellobangladeshi.learnsylhetiapp<br />
+                    <span class="label">Developer:</span> <strong>Farabi Walid</strong><br />
+                    <span class="label">Offered by:</span> <strong>Hello Bangladeshi</strong><br />
+                    <span class="label">Category:</span> Education / Language Learning
+                </div>
+
+                <!-- ===== FOOTER ===== -->
+                <div class="footer-note">
+                    <p><i class="far fa-copyright"></i> ২০২৬ Hello Bangladeshi — All rights reserved.</p>
+                    <p>This Privacy Policy is prepared in compliance with Google Play Store policies and Bangladesh data protection laws.</p>
+                    <p style="margin-top: 6px;">
+                        <a href="https://hellobangladeshi.github.io/" target="_blank"><i class="fas fa-arrow-left"></i> Back to main site</a>
+                    </p>
+                </div>
+
+            </div>
         </div>
-
-        <h2>2. Microphone & Audio Data</h2>
-        <p>The app requests permission to access your <strong>Microphone (RECORD_AUDIO)</strong> for speech recognition and pronunciation practice. 
-        <ul>
-            <li>Audio data is processed in real-time for feedback.</li>
-            <li>We <strong>DO NOT</strong> store, record, or upload your voice data to any server.</li>
-        </ul></p>
-
-        <h2>3. Information We Collect</h2>
-        <h3>3.1 Automatically Collected Data</h3>
-        <ul>
-            <li><strong>Device Info:</strong> Model, OS version, and unique device identifiers (Advertising ID).</li>
-            <li><strong>Usage Data:</strong> Lesson progress, quiz scores, and app interactions.</li>
-        </ul>
-        <h3>3.2 In-App Purchases</h3>
-        <p>Payments are handled by <strong>Google Play Billing</strong>. We do not store your credit card info; we only receive confirmation of your "Premium" status.</p>
-
-        <h2>4. Third-Party Services</h2>
-        <p>We use trusted partners to improve your experience:</p>
-        <ul>
-            <li><strong>Google AdMob:</strong> For showing ads. They may use your Advertising ID for personalization. <a href="https://policies.google.com/privacy">Policy</a></li>
-            <li><strong>Firebase:</strong> For Remote Config (app updates) and anonymous Analytics.</li>
-        </ul>
-
-        <h2>5. Data Retention</h2>
-        <p>Your learning data is stored <strong>locally</strong> on your device. Uninstalling the app or using the "Reset Progress" feature in Settings will permanently delete this data.</p>
-
-        <h2>6. Contact Us</h2>
-        <p>For any privacy concerns, email us at: <a href="mailto:hello@hellobangladeshi.com">hello@hellobangladeshi.com</a></p>
-        
-        <div class="footer">Last Updated: August 18, 2026</div>
     </div>
 
-    <!-- BENGALI SECTION -->
-    <div id="bn-content" style="display:none;">
-        <h1>প্রাইভেসি পলিসি - সিলেটি শিখুন</h1>
-        <p><strong>কার্যকর তারিখ:</strong> ১৮ আগস্ট, ২০২৬</p>
-        <p><strong>Hello Bangladeshi</strong> কর্তৃক তৈরি <strong>সিলেটি শিখুন (Learn Sylheti)</strong> অ্যাপে আপনাকে স্বাগতম। আপনার গোপনীয়তা আমাদের কাছে অত্যন্ত গুরুত্বপূর্ণ। এই পলিসিতে আমাদের কিবোর্ড, অডিও রেকর্ডিং এবং ইন-অ্যাপ পারচেজ সম্পর্কিত তথ্য ব্যবহারের নিয়মাবলী দেওয়া হলো।</p>
-
-        <h2>১. সিলেটি কিবোর্ড (IME Service)</h2>
-        <div class="warning-box">
-            <div class="security-badge">🔒 জিরো ডেটা কালেকশন</div>
-            <p>আমাদের <strong>সিলেটি কাস্টম কিবোর্ড</strong> আপনার গোপনীয়তার কথা মাথায় রেখে তৈরি করা হয়েছে। আপনি কিবোর্ডে যা টাইপ করেন, আমরা তা সংগ্রহ, সংরক্ষণ বা কোথাও প্রেরণ করি <strong>না</strong>। আপনার সমস্ত টাইপিং শুধুমাত্র আপনার ডিভাইসেই প্রসেস হয়। আমরা আপনার পাসওয়ার্ড, ক্রেডিট কার্ড নম্বর বা ব্যক্তিগত বার্তার কোনো তথ্য পাই না।</p>
-        </div>
-
-        <h2>২. মাইক্রোফোন ও অডিও ডেটা</h2>
-        <p>আপনার উচ্চারণ প্র্যাকটিস এবং স্পিচ রিকগনিশনের জন্য অ্যাপটি <strong>Microphone (RECORD_AUDIO)</strong> পারমিশন চেয়ে থাকে।
-        <ul>
-            <li>অডিও ডেটা শুধুমাত্র তাৎক্ষণিক ফিডব্যাকের জন্য ব্যবহার করা হয়।</li>
-            <li>আমরা আপনার ভয়েস রেকর্ড করি না বা কোনো সার্ভারে আপলোড করি না।</li>
-        </ul></p>
-
-        <h2>৩. সংগৃহীত তথ্য</h2>
-        <h3>৩.১ স্বয়ংক্রিয় তথ্য</h3>
-        <ul>
-            <li><strong>ডিভাইস তথ্য:</strong> মডেল, ওএস ভার্সন এবং অ্যাডভারটাইজিং আইডি।</li>
-            <li><strong>ব্যবহারের তথ্য:</strong> আপনার লেসন প্রগ্রেস এবং কুইজ স্কোর।</li>
-        </ul>
-        <h3>৩.২ ইন-অ্যাপ পারচেজ</h3>
-        <p>সমস্ত পেমেন্ট <strong>Google Play Billing</strong> এর মাধ্যমে সম্পন্ন হয়। আমরা আপনার পেমেন্ট কার্ডের তথ্য সংরক্ষণ করি না।</p>
-
-        <h2>৪. তৃতীয় পক্ষের পরিষেবা</h2>
-        <ul>
-            <li><strong>Google AdMob:</strong> বিজ্ঞাপন দেখানোর জন্য। <a href="https://policies.google.com/privacy">পলিসি দেখুন</a></li>
-            <li><strong>Firebase:</strong> রিমোট কনফিগ (আপডেট) এবং বেনামী অ্যানালিটিক্স এর জন্য।</li>
-        </ul>
-
-        <h2>৫. ডেটা মুছে ফেলা</h2>
-        <p>আপনার শেখার সমস্ত তথ্য আপনার <strong>ডিভাইসেই</strong> সংরক্ষিত থাকে। অ্যাপটি আনইনস্টল করলে বা সেটিংস থেকে "Reset Progress" করলে সমস্ত ডেটা মুছে যাবে।</p>
-
-        <h2>৬. যোগাযোগ</h2>
-        <p>প্রাইভেসি সংক্রান্ত প্রশ্নের জন্য ইমেইল করুন: <a href="mailto:hello@hellobangladeshi.com">hello@hellobangladeshi.com</a></p>
-        
-        <div class="footer">সর্বশেষ আপডেট: ১৮ আগস্ট, ২০২৬</div>
+    <!-- ===== SCROLL TO TOP ===== -->
+    <div class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
     </div>
-</div>
 
-<script>
-    function toggleLang(lang) {
-        document.getElementById('en-content').style.display = lang === 'en' ? 'block' : 'none';
-        document.getElementById('bn-content').style.display = lang === 'bn' ? 'block' : 'none';
-        document.querySelectorAll('.lang-toggle button').forEach(btn => {
-            btn.classList.remove('active');
-            if(btn.textContent.toLowerCase().includes(lang === 'en' ? 'english' : 'বাংলা')) {
-                btn.classList.add('active');
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== 1. THEME SYSTEM (Green / Pink based on day) =====
+        (function setTheme() {
+            const today = new Date();
+            const dayOfWeek = today.getDay(); // 0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat
+
+            // Green: Mon, Wed, Fri (1, 3, 5)  |  Pink: Tue, Thu, Sat (2, 4, 6)  |  Sunday: Green (default)
+            let theme = 'theme-green';
+            if (dayOfWeek === 2 || dayOfWeek === 4 || dayOfWeek === 6) {
+                theme = 'theme-pink';
+            }
+            document.body.classList.add(theme);
+        })();
+
+        // ===== 2. LANGUAGE TOGGLE =====
+        function setLanguage(lang) {
+            // Update button states
+            document.getElementById('langBn').classList.toggle('active', lang === 'bn');
+            document.getElementById('langEn').classList.toggle('active', lang === 'en');
+
+            // Show/hide sections
+            document.querySelectorAll('.lang-section').forEach(el => {
+                el.classList.toggle('active', el.dataset.lang === lang);
+            });
+
+            // Store preference
+            try {
+                localStorage.setItem('privacy_lang', lang);
+            } catch (e) { /* ignore */ }
+        }
+
+        // Restore saved language preference
+        (function restoreLang() {
+            try {
+                const saved = localStorage.getItem('privacy_lang');
+                if (saved) {
+                    setLanguage(saved);
+                }
+            } catch (e) { /* ignore */ }
+        })();
+
+        // ===== 3. SCROLL TO TOP =====
+        const scrollBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('active');
+            } else {
+                scrollBtn.classList.remove('active');
             }
         });
-    }
-</script>
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
 </body>
 </html>
