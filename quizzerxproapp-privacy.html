@@ -188,6 +188,50 @@
             border-bottom: 1px solid #1b6b72;
         }
 
+        /* ----- COMPANY & DEVELOPER SECTION (NEW) ----- */
+        .company-section {
+            background: #f0f6fa;
+            padding: 1.5rem 1.8rem;
+            border-radius: 28px;
+            margin-top: 2rem;
+            border-left: 6px solid #2b7a78;
+            transition: background 0.2s;
+        }
+
+        .company-section:hover {
+            background: #e6eff5;
+        }
+
+        .company-section .company-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .company-section .company-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .company-section .company-item i {
+            color: #2b7a78;
+            font-size: 1.1rem;
+            width: 1.5rem;
+            text-align: center;
+        }
+
+        .company-section .company-item a {
+            border-bottom: none;
+            font-weight: 600;
+        }
+
+        .company-section .company-item a:hover {
+            border-bottom: 1px solid #1b6b72;
+        }
+
         /* Contact block */
         .contact-block {
             background: #f0f6fa;
@@ -221,6 +265,10 @@
             border: 1px solid rgba(43, 122, 120, 0.15);
         }
 
+        .email-badge a {
+            border-bottom: none;
+        }
+
         /* FOOTER */
         .footer-note {
             margin-top: 2.5rem;
@@ -240,6 +288,15 @@
         .footer-note i {
             color: #2b7a78;
             opacity: 0.7;
+        }
+
+        .footer-note .footer-link {
+            border-bottom: none;
+            font-weight: 500;
+        }
+
+        .footer-note .footer-link:hover {
+            border-bottom: 1px solid #1b6b72;
         }
 
         /* ----- RESPONSIVE TWEAKS ----- */
@@ -270,6 +327,11 @@
             .email-badge {
                 width: 100%;
                 text-align: center;
+            }
+
+            .company-section .company-grid {
+                flex-direction: column;
+                gap: 0.6rem;
             }
         }
 
@@ -304,7 +366,7 @@
         <p style="font-size: 1.05rem; margin-top: 0.2rem;">
             <span class="brand-tag"><i class="fas fa-bolt" style="margin-right: 6px;"></i> QuizzerX Pro</span>
             is a premium quiz app built with privacy at its core. Developed by 
-            <strong>Farabi Walid / Hello Bangladeshi</strong>.
+            <strong>Farabi Walid</strong> and <strong>Hello Bangladeshi</strong>.
         </p>
 
         <!-- 1. Information Collection -->
@@ -364,11 +426,58 @@
             </span>
         </div>
 
+        <!-- 9. About Hello Bangladeshi (New Section) -->
+        <h2><i class="fas fa-info-circle"></i> 9. About Hello Bangladeshi</h2>
+        <p>
+            <strong>Hello Bangladeshi</strong> is a platform dedicated to connecting Bangladeshis worldwide. 
+            Founded by <strong>Farabi Walid</strong>, we build innovative, privacy-first applications for the global Bangladeshi community. 
+            Our mission is to create secure, high-quality digital experiences that bring people together.
+        </p>
+        <p>
+            Learn more about our work and other apps on our official website:
+            <a href="https://hellobangladeshi.github.io/" target="_blank" rel="noopener">
+                <i class="fas fa-globe"></i> hellobangladeshi.github.io
+            </a>
+        </p>
+
+        <div class="company-section">
+            <div class="company-grid">
+                <span class="company-item">
+                    <i class="fas fa-user-tie"></i>
+                    <strong>Developer:</strong> Farabi Walid
+                </span>
+                <span class="company-item">
+                    <i class="fas fa-building"></i>
+                    <strong>Company:</strong> Hello Bangladeshi
+                </span>
+                <span class="company-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>Location:</strong> Sylhet, Bangladesh
+                </span>
+                <span class="company-item">
+                    <i class="fas fa-globe"></i>
+                    <strong>Website:</strong>
+                    <a href="https://hellobangladeshi.github.io/" target="_blank" rel="noopener">
+                        hellobangladeshi.github.io
+                    </a>
+                </span>
+                <span class="company-item">
+                    <i class="fas fa-phone"></i>
+                    <strong>Phone:</strong> +8801603297187
+                </span>
+            </div>
+        </div>
+
         <!-- Footer -->
         <div class="footer-note">
             <span><i class="far fa-copyright"></i> 2026 Hello Bangladeshi — All rights reserved.</span>
             <span><i class="fas fa-circle" style="font-size: 0.3rem; opacity: 0.4;"></i></span>
             <span><i class="fas fa-mobile-alt"></i> QuizzerX Pro v2.0</span>
+            <span>
+                <a href="https://hellobangladeshi.github.io/" target="_blank" rel="noopener" class="footer-link">
+                    <i class="fas fa-external-link-alt"></i> Visit Hello Bangladeshi
+                </a>
+            </span>
         </div>
 
     </div>
