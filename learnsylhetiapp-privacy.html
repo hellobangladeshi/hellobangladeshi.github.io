@@ -476,7 +476,7 @@
                     <ul>
                         <li><strong>ডিভাইস তথ্য</strong> — মডেল, OS সংস্করণ, স্ক্রিন সাইজ, ভাষা সেটিংস।</li>
                         <li><strong>অ্যাপ ব্যবহার সংক্রান্ত তথ্য</strong> — কোন পাঠ সম্পূর্ণ হয়েছে, কুইজ স্কোর, স্ট্রিক ডেটা, শেখার সময়, শেখা শব্দভাণ্ডার।</li>
-                        <li><strong>ক্র্যাশ ও পারফরম্যান্স ডেটা</strong> — অ্যাপের স্থিতিশীলতা উন্নত করতে বেনামী ক্র্যাশ লগ।</li>
+                        <li><strong>ক্র্যাশ ও পারফরম্যান্স ডেটা</strong> — অ্যাপের স্থিতিশীলতা ও কর্মক্ষমতা উন্নত করতে Firebase Crashlytics-এর মাধ্যমে বেনামী ক্র্যাশ লগ ও ডায়াগনস্টিক তথ্য সংগ্রহ করা হয়। এই তথ্যের মধ্যে ডিভাইসের ধরন, অপারেটিং সিস্টেম ভার্সন, অ্যাপ ভার্সন এবং ক্র্যাশ হওয়ার সময় স্ট্যাক ট্রেস অন্তর্ভুক্ত থাকতে পারে।</li>
                         <li><strong>বিজ্ঞাপন আইডি</strong> — Google AdMob-এর মাধ্যমে প্রাসঙ্গিক বিজ্ঞাপন দেখানোর জন্য।</li>
                     </ul>
                     <h3>📊 ডেটাস্টোর ও রুম ডেটাবেস:</h3>
@@ -499,7 +499,7 @@
                     <ul>
                         <li><strong>Device information</strong> — model, OS version, screen size, language settings.</li>
                         <li><strong>App usage data</strong> — completed lessons, quiz scores, streak data, learning time, vocabulary learned.</li>
-                        <li><strong>Crash &amp; performance data</strong> — anonymous crash logs to improve app stability.</li>
+                        <li><strong>Crash &amp; performance data</strong> — To improve app stability and performance, we collect anonymous crash logs and diagnostic information via Firebase Crashlytics. This may include device model, OS version, app version, and stack traces at the time of a crash.</li>
                         <li><strong>Advertising ID</strong> — used to serve relevant ads via Google AdMob.</li>
                     </ul>
                     <h3>📊 DataStore &amp; Room Database:</h3>
@@ -540,12 +540,12 @@
                     <p>আমরা আপনার ব্যক্তিগত তথ্য <strong>কখনোই বিক্রি করি না</strong> বা বাণিজ্যিক উদ্দেশ্যে তৃতীয় পক্ষের কাছে হস্তান্তর করি না। তবে নিম্নলিখিত ক্ষেত্রে তথ্য শেয়ার হতে পারে:</p>
                     <ul>
                         <li><strong>আইনগত প্রয়োজন:</strong> আদালতের আদেশ, আইন প্রয়োগকারী সংস্থার বৈধ অনুরোধ।</li>
-                        <li><strong>সেবা প্রদানকারী:</strong> Google AdMob, Firebase — যাদের নিজস্ব গোপনীয়তা নীতি রয়েছে।</li>
+                        <li><strong>সেবা প্রদানকারী:</strong> Google AdMob, Firebase (যার মধ্যে Crashlytics অন্তর্ভুক্ত) — যাদের নিজস্ব গোপনীয়তা নীতি রয়েছে।</li>
                     </ul>
                     <div class="highlight-box">
                         <i class="fas fa-server"></i> <strong>থার্ড-পার্টি সার্ভিস:</strong><br />
                         • <strong>Google AdMob</strong> — ব্যানার ও ইন্টারস্টিশিয়াল বিজ্ঞাপন।<br />
-                        • <strong>Firebase</strong> — বিশ্লেষণ, ক্র্যাশ রিপোর্টিং ও রিমোট কনফিগারেশন।<br />
+                        • <strong>Firebase Crashlytics</strong> — ক্র্যাশ রিপোর্টিং ও ডায়াগনস্টিকস।<br />
                         • <strong>Google Play Services</strong> — ইন-অ্যাপ কেনাকাটা ও আপডেটের জন্য।
                     </div>
                 </div>
@@ -555,12 +555,12 @@
                     <p>We <strong>never</strong> sell your personal information or transfer it to third parties for commercial purposes. However, data may be shared in the following cases:</p>
                     <ul>
                         <li><strong>Legal requirement:</strong> Court orders, valid requests from law enforcement.</li>
-                        <li><strong>Service providers:</strong> Google AdMob, Firebase — which have their own privacy policies.</li>
+                        <li><strong>Service providers:</strong> Google AdMob, Firebase (including Crashlytics) — which have their own privacy policies.</li>
                     </ul>
                     <div class="highlight-box">
                         <i class="fas fa-server"></i> <strong>Third-Party Services:</strong><br />
                         • <strong>Google AdMob</strong> — banner &amp; interstitial ads.<br />
-                        • <strong>Firebase</strong> — analytics, crash reporting &amp; remote configuration.<br />
+                        • <strong>Firebase Crashlytics</strong> — crash reporting &amp; diagnostics.<br />
                         • <strong>Google Play Services</strong> — in-app purchases &amp; updates.
                     </div>
                 </div>
@@ -671,12 +671,12 @@
                 <!-- ===== 10. Data Retention ===== -->
                 <div class="policy-section lang-section active" data-lang="bn">
                     <h2><i class="fas fa-clock"></i> ১০. ডাটা রিটেনশন</h2>
-                    <p>আপনার শেখার ডেটা ততদিন সংরক্ষিত থাকে যতদিন অ্যাপটি আপনার ডিভাইসে ইনস্টল থাকে। অ্যাপ আনইন্সটল করলে সব স্থানীয় ডেটা মুছে যায়। আপনি সেটিংস থেকে অগ্রগতি রিসেট করলেও ডেটা মুছে যায়।</p>
+                    <p>আপনার শেখার ডেটা ততদিন সংরক্ষিত থাকে যতদিন অ্যাপটি আপনার ডিভাইসে ইনস্টল থাকে। অ্যাপ আনইন্সটল করলে সব স্থানীয় ডেটা মুছে যায়। আপনি সেটিংস থেকে অগ্রগতি রিসেট করলেও ডেটা মুছে যায়। Firebase Crashlytics-এ সংগৃহীত ক্র্যাশ ডেটা সাধারণত ৯০ দিনের জন্য সংরক্ষিত থাকে এবং তারপর স্বয়ংক্রিয়ভাবে মুছে যায়।</p>
                 </div>
 
                 <div class="policy-section lang-section" data-lang="en">
                     <h2><i class="fas fa-clock"></i> 10. Data Retention</h2>
-                    <p>Your learning data remains stored as long as the app is installed on your device. Uninstalling the app removes all local data. Resetting progress from Settings also deletes the data.</p>
+                    <p>Your learning data remains stored as long as the app is installed on your device. Uninstalling the app removes all local data. Resetting progress from Settings also deletes the data. Crash data collected via Firebase Crashlytics is typically retained for 90 days and then automatically deleted.</p>
                 </div>
 
                 <!-- ===== 11. Contact ===== -->
@@ -711,7 +711,7 @@
                     <p>We may update this Privacy Policy from time to time. For significant changes, we will notify you via app notification or email. The latest version will always be available on this page.</p>
                 </div>
 
-                <!-- ===== 13. NEW: Smart Reminders & Notifications ===== -->
+                <!-- ===== 13. Smart Reminders & Notifications ===== -->
                 <div class="policy-section lang-section active" data-lang="bn">
                     <h2><i class="fas fa-bell"></i> ১৩. স্মার্ট রিমাইন্ডার ও নোটিফিকেশন</h2>
                     <p>আমাদের অ্যাপে একটি <strong>"স্মার্ট রিমাইন্ডার"</strong> সিস্টেম যুক্ত করা হয়েছে, যা আপনার শেখার ধারাবাহিকতা বজায় রাখতে সহায়তা করে। এটি ডুয়ালিঙ্গোর মতোই কাজ করে —</p>
@@ -739,6 +739,41 @@
                     </ul>
                     <div class="highlight-box">
                         <i class="fas fa-shield-alt"></i> <strong>Privacy Assurance:</strong> These notifications are completely <strong>local</strong> — no data is sent anywhere. Decisions are made solely by reading the last learning timestamp from your device's <strong>DataStore</strong>.
+                    </div>
+                </div>
+
+                <!-- ===== 14. NEW: Firebase Crashlytics ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-bug"></i> ১৪. Firebase Crashlytics</h2>
+                    <p>আমরা অ্যাপের স্থিতিশীলতা ও কর্মক্ষমতা উন্নত করতে <strong>Firebase Crashlytics</strong> ব্যবহার করি। এটি Google-এর একটি শক্তিশালী ক্র্যাশ রিপোর্টিং টুল যা অ্যাপ ক্র্যাশ হলে রিয়েল-টাইমে আমাদেরকে রিপোর্ট পাঠায়।</p>
+                    <p><strong>Firebase Crashlytics কী সংগ্রহ করে:</strong></p>
+                    <ul>
+                        <li>ডিভাইসের মডেল, ব্র্যান্ড, ওএস ভার্সন ও ভাষা সেটিংস।</li>
+                        <li>অ্যাপের ভার্সন ও বিল্ড নম্বর।</li>
+                        <li>ক্র্যাশ হওয়ার সময় স্ট্যাক ট্রেস (অ্যাপের কোন অংশে সমস্যা হয়েছে তার বিস্তারিত)।</li>
+                        <li>ডিভাইসের মেমোরি, স্টোরেজ ও ব্যাটারির অবস্থা (ঐচ্ছিক)।</li>
+                        <li>অ্যাপ ব্যবহারের সময় সংগৃহীত বেনামী ডায়াগনস্টিক ডেটা।</li>
+                    </ul>
+                    <p><strong>কেন ব্যবহার করি:</strong> শুধুমাত্র অ্যাপের বাগ খুঁজে বের করা ও ফিক্স করার জন্য। এই ডেটা ব্যবহার করে কাউকে ব্যক্তিগতভাবে শনাক্ত করা সম্ভব নয়।</p>
+                    <div class="highlight-box">
+                        <i class="fas fa-check-circle"></i> <strong>আপনার নিয়ন্ত্রণ:</strong> আপনি চাইলে ডিভাইস সেটিংস থেকে Firebase-এর ডেটা সংগ্রহ বন্ধ করতে পারেন (Android: Settings → Google → Ads → Opt out of Ads Personalization, তবে এটি সরাসরি Crashlytics-কে প্রভাবিত নাও করতে পারে)। Firebase-এর সম্পূর্ণ ডেটা নীতি জানতে <a href="https://firebase.google.com/support/privacy" target="_blank" style="color: #69C9D0;">এই লিংকে</a> দেখুন।
+                    </div>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-bug"></i> 14. Firebase Crashlytics</h2>
+                    <p>We use <strong>Firebase Crashlytics</strong> to improve the stability and performance of our app. It is a powerful crash reporting tool by Google that sends us real-time reports when the app crashes.</p>
+                    <p><strong>What Firebase Crashlytics collects:</strong></p>
+                    <ul>
+                        <li>Device model, brand, OS version, and language settings.</li>
+                        <li>App version and build number.</li>
+                        <li>Stack traces at the time of a crash (detailed information on which part of the app had an issue).</li>
+                        <li>Device memory, storage, and battery status (optional).</li>
+                        <li>Anonymous diagnostic data collected during app usage.</li>
+                    </ul>
+                    <p><strong>Why we use it:</strong> Solely to identify and fix bugs in the app. This data cannot be used to personally identify anyone.</p>
+                    <div class="highlight-box">
+                        <i class="fas fa-check-circle"></i> <strong>Your Control:</strong> You can opt-out of Firebase data collection from your device settings (Android: Settings → Google → Ads → Opt out of Ads Personalization, though this may not directly affect Crashlytics). For Firebase's full data policy, please visit <a href="https://firebase.google.com/support/privacy" target="_blank" style="color: #69C9D0;">this link</a>.
                     </div>
                 </div>
 
