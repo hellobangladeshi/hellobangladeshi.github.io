@@ -2,74 +2,367 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Color Match Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Privacy Policy - Color Match Game | Hello Bangladeshi</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        h2 { color: #2980b9; margin-top: 30px; }
-        p { margin-bottom: 15px; }
-        ul { margin-bottom: 15px; }
-        .contact-info { background: #f9f9f9; padding: 15px; border-left: 5px solid #3498db; }
-        footer { margin-top: 50px; font-size: 0.9em; color: #7f8c8d; text-align: center; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #0a0e27, #1a1d3a, #2d1b4e);
+            color: #fff;
+            line-height: 1.8;
+            min-height: 100vh;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+
+        .privacy-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .privacy-header {
+            background: linear-gradient(135deg, rgba(238, 29, 82, 0.20), rgba(105, 201, 208, 0.10));
+            padding: 40px 32px 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+
+        .privacy-header .icon-shield {
+            font-size: 3.2rem;
+            background: linear-gradient(135deg, #EE1D52, #69C9D0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .privacy-header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #EE1D52, #69C9D0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .privacy-header .subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .badge-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(105, 201, 208, 0.15);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #69C9D0;
+            margin-top: 10px;
+        }
+
+        .content-inner {
+            padding: 32px 32px 20px;
+        }
+
+        .policy-section {
+            margin-bottom: 28px;
+            padding-left: 20px;
+            border-left: 3px solid #EE1D52;
+            transition: all 0.2s;
+        }
+
+        .policy-section:hover {
+            border-left-color: #69C9D0;
+        }
+
+        .policy-section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #69C9D0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-section h2 i {
+            color: #EE1D52;
+        }
+
+        .policy-section p {
+            opacity: 0.9;
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+        }
+
+        .policy-section ul {
+            margin: 10px 0 14px 24px;
+            opacity: 0.88;
+        }
+
+        .policy-section li {
+            margin-bottom: 6px;
+            font-size: 0.96rem;
+        }
+
+        .policy-section li strong {
+            color: #69C9D0;
+        }
+
+        .app-badge {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 16px;
+            padding: 18px 22px;
+            font-size: 0.88rem;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            line-height: 1.8;
+        }
+
+        .app-badge i {
+            color: #69C9D0;
+            width: 24px;
+        }
+
+        .app-badge .label {
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding-top: 28px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.82rem;
+            opacity: 0.6;
+        }
+
+        .footer-note a {
+            color: #69C9D0;
+            text-decoration: none;
+        }
+
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px 12px 40px;
+            }
+            .privacy-header {
+                padding: 28px 18px 20px;
+            }
+            .privacy-header h1 {
+                font-size: 1.7rem;
+            }
+            .content-inner {
+                padding: 20px 16px 12px;
+            }
+            .policy-section {
+                padding-left: 12px;
+                margin-bottom: 24px;
+            }
+            .policy-section h2 {
+                font-size: 1.2rem;
+            }
+            .app-badge {
+                font-size: 0.82rem;
+                padding: 14px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-header h1 {
+                font-size: 1.4rem;
+            }
+            .policy-section h2 {
+                font-size: 1.1rem;
+            }
+            .policy-section p, .policy-section li {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <h1>Privacy Policy</h1>
-    <p>Last updated: August 27, 2026</p>
+<div class="container">
+    <div class="privacy-card">
 
-    <p><strong>Color Match Game</strong> ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and disclose your information when you use our mobile application.</p>
+        <!-- HEADER -->
+        <div class="privacy-header">
+            <div class="icon-shield"><i class="fas fa-shield-alt"></i></div>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">Color Match Game — Your privacy is our priority</p>
+            <span class="badge-date"><i class="far fa-calendar-alt"></i> Last Updated: August 27, 2026</span>
+        </div>
 
-    <h2>1. Information Collection and Use</h2>
-    <p>For a better experience, while using our service, we may require you to provide us with certain personally identifiable information. The information that we request will be retained on your device and is not collected by us in any way.</p>
-    <p>The app does use third-party services that may collect information used to identify you:</p>
-    <ul>
-        <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
-        <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
-        <li><a href="https://firebase.google.com/support/privacy" target="_blank">Google Analytics for Firebase</a></li>
-        <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Crashlytics</a></li>
-    </ul>
+        <!-- CONTENT -->
+        <div class="content-inner">
 
-    <h2>2. Log Data</h2>
-    <p>We want to inform you that whenever you use our service, in a case of an error in the app, we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our service, the time and date of your use of the service, and other statistics.</p>
+            <!-- Section 1 -->
+            <div class="policy-section">
+                <h2><i class="fas fa-info-circle"></i> 1. Introduction</h2>
+                <p><strong>Color Match Game</strong> ("we", "our", or "us") is a fun and challenging game app that tests your color recognition and quick decision-making skills. This app is an initiative of <strong>Hello Bangladeshi</strong>.</p>
+                <p>Your privacy is our top priority. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application. By using this app, you agree to the terms of this policy.</p>
+            </div>
 
-    <h2>3. Cookies</h2>
-    <p>Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.</p>
-    <p>This service does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services.</p>
+            <!-- Section 2 -->
+            <div class="policy-section">
+                <h2><i class="fas fa-database"></i> 2. Information We Collect</h2>
+                
+                <h3 style="font-size:1.05rem; font-weight:600; margin:16px 0 8px 0; color:#FFD93D;">📱 Automatically Collected Information:</h3>
+                <ul>
+                    <li><strong>Device Information</strong> — Model, OS version, unique device ID.</li>
+                    <li><strong>Gameplay Data</strong> — Score, levels, completed challenges, time played, correct/incorrect answers.</li>
+                    <li><strong>App Usage Data</strong> — Which features are used, session duration, crash reports.</li>
+                    <li><strong>IP Address</strong> — For approximate location and security purposes.</li>
+                </ul>
 
-    <h2>4. Service Providers</h2>
-    <p>We may employ third-party companies and individuals due to the following reasons:</p>
-    <ul>
-        <li>To facilitate our service;</li>
-        <li>To provide the service on our behalf;</li>
-        <li>To perform service-related services; or</li>
-        <li>To assist us in analyzing how our service is used.</li>
-    </ul>
+                <h3 style="font-size:1.05rem; font-weight:600; margin:16px 0 8px 0; color:#FFD93D;">📊 Third-Party Services:</h3>
+                <ul>
+                    <li><strong>Google AdMob</strong> — For showing personalized ads based on device ID and usage.</li>
+                    <li><strong>Google Analytics for Firebase</strong> — For analyzing app performance and usage.</li>
+                    <li><strong>Firebase Crashlytics</strong> — For collecting and analyzing app crash data.</li>
+                </ul>
+            </div>
 
-    <h2>5. Security</h2>
-    <p>We value your trust in providing us your information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.</p>
+            <!-- Section 3 -->
+            <div class="policy-section">
+                <h2><i class="fas fa-bullseye"></i> 3. How We Use Your Information</h2>
+                <ul>
+                    <li>✅ To improve app performance and user experience.</li>
+                    <li>✅ To track game scores and progress.</li>
+                    <li>✅ To show relevant advertisements (AdMob).</li>
+                    <li>✅ To identify and fix bugs and crashes.</li>
+                    <li>✅ To analyze how the app is used and make improvements.</li>
+                </ul>
+            </div>
 
-    <h2>6. Children’s Privacy</h2>
-    <p>These services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers.</p>
+            <!-- Section 4 -->
+            <div class="policy-section">
+                <h2><i class="fas fa-share-alt"></i> 4. Data Sharing</h2>
+                <p>We <strong>never sell</strong> your personal information to third parties. However, data may be shared in the following cases:</p>
+                <ul>
+                    <li><strong>Legal Requirements:</strong> If required by law or valid court order.</li>
+                    <li><strong>Service Providers:</strong> Firebase, AdMob, and Google Analytics have their own privacy policies.</li>
+                    <li><strong>Public Display:</strong> Leaderboard shows your username and score to other players.</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Third-Party Services Used:</strong></p>
+                <ul>
+                    <li>• <strong>Google Firebase</strong> — Database, authentication, crash reporting</li>
+                    <li>• <strong>Google AdMob</strong> — Banner and interstitial ads</li>
+                    <li>• <strong>Google Analytics for Firebase</strong> — Usage analytics</li>
+                </ul>
+            </div>
 
-    <h2>7. In-App Purchases</h2>
-    <p>Our app offers In-App Purchases (Pro version). All financial transactions are handled securely by the Google Play Billing system. We do not store your credit card details or financial information on our servers.</p>
+            <!-- Section 5 -->
+            <div class="policy-section">
+                <h2><i class="fas fa-lock"></i> 5. Data Security</h2>
+                <ul>
+                    <li>🔐 <strong>Encryption:</strong> Sensitive data is stored in encrypted format.</li>
+                    <li>🔐 <strong>Firebase Security Rules:</strong> Strict access control.</li>
+                    <li>🔐 <strong>Regular Audits:</strong> We regularly review security measures.</li>
+                </ul>
+                <p>⚠️ Please note that no method of transmission over the internet is 100% secure. We strive to protect your data but cannot guarantee absolute security.</p>
+            </div>
 
-    <h2>8. Changes to This Privacy Policy</h2>
-    <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+            <!-- Section 6 -->
+            <div class="policy-section">
+                <h2><i class="fas fa-child"></i> 6. Children's Privacy</h2>
+                <p>Our app is <strong>not intended for children under 13</strong>. We do not knowingly collect personal information from children under 13. If you are a parent and believe your child has provided us with information, please contact us and we will delete it immediately.</p>
+            </div>
 
-    <h2>9. Contact Us</h2>
-    <div class="contact-info">
-        <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us:</p>
-        <p><strong>Developer:</strong> Farabi Walid</p>
-        <p><strong>Email:</strong> support@hellobangladeshi.com</p>
-        <p><strong>Website:</strong> <a href="https://hellobangladeshi.com" target="_blank">hellobangladeshi.com</a></p>
+            <!-- Section 7 -->
+            <div class="policy-section">
+                <h2><i class="fas fa-shopping-cart"></i> 7. In-App Purchases</h2>
+                <p>Our app offers In-App Purchases (Pro version, Ad-Free package, Extra Lives, etc.). All financial transactions are handled securely by <strong>Google Play Billing</strong>. <strong>We do not store your credit card or financial information on our servers.</strong></p>
+            </div>
+
+            <!-- Section 8 -->
+            <div class="policy-section">
+                <h2><i class="fas fa-ad"></i> 8. Advertisements (Google AdMob)</h2>
+                <p>We use AdMob to display ads to keep the app free. AdMob may use your device data to show personalized ads. If you prefer not to receive personalized ads, you can opt out via your device's Google Ad Settings (Android: Settings → Google → Ads → Opt out of Ads Personalization).</p>
+            </div>
+
+            <!-- Section 9 -->
+            <div class="policy-section">
+                <h2><i class="fas fa-percent"></i> 9. App Permissions</h2>
+                <ul>
+                    <li><strong>Internet Access:</strong> Required for loading ads, analytics, and syncing game data.</li>
+                    <li><strong>Network State:</strong> To check internet connection status.</li>
+                </ul>
+            </div>
+
+            <!-- Section 10 -->
+            <div class="policy-section">
+                <h2><i class="fas fa-sync-alt"></i> 10. Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. The latest version will always be posted on this page. We will notify you of any significant changes via the app or email.</p>
+            </div>
+
+            <!-- Section 11: Contact -->
+            <div class="policy-section">
+                <h2><i class="fas fa-envelope"></i> 11. Contact Us</h2>
+                <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
+                <ul>
+                    <li><strong>📧 Email:</strong> support@hellobangladeshi.com</li>
+                    <li><strong>📱 Phone/WhatsApp:</strong> +8801603297187</li>
+                    <li><strong>🌐 Website:</strong> <a href="https://hellobangladeshi.com" target="_blank" style="color:#69C9D0;">https://hellobangladeshi.com</a></li>
+                    <li><strong>📌 Developer:</strong> Farabi Walid</li>
+                </ul>
+            </div>
+
+            <!-- APP INFO BADGE -->
+            <div class="app-badge">
+                <i class="fas fa-mobile-alt"></i> <strong>📱 App Information</strong><br>
+                <span class="label">App Name:</span> Color Match Game<br>
+                <span class="label">Package Name:</span> com.hellobangladeshi.colormatchgame<br>
+                <span class="label">Developer:</span> <strong>Farabi Walid</strong><br>
+                <span class="label">Offered by:</span> <strong>Hello Bangladeshi</strong><br>
+                <span class="label">Category:</span> Game / Puzzle / Entertainment
+            </div>
+
+            <!-- FOOTER -->
+            <div class="footer-note">
+                <p><i class="far fa-copyright"></i> 2026 Hello Bangladeshi — All Rights Reserved.</p>
+                <p>This Privacy Policy is compliant with Google Play Store policies.</p>
+                <p style="margin-top: 6px;">
+                    <a href="https://hellobangladeshi.com" target="_blank"><i class="fas fa-arrow-left"></i> Back to Website</a>
+                </p>
+            </div>
+
+        </div>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Hello Bangladeshi. All rights reserved.</p>
-    </footer>
+</div>
 
 </body>
 </html>
