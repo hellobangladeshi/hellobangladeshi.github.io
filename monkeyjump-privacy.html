@@ -1,54 +1,408 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width'>
-    <title>Privacy Policy - The Monkey Jump</title>
-    <style> 
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding: 1em; line-height: 1.6; color: #333; }
-        h2 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        ul { padding-left: 20px; }
-        .footer { margin-top: 30px; font-size: 0.9em; color: #7f8c8d; }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>Privacy Policy - The Monkey Jump | Hello Bangladeshi</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #0a0e27, #1a1d3a, #2d1b4e);
+            color: #fff;
+            line-height: 1.8;
+            min-height: 100vh;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+
+        .privacy-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .privacy-header {
+            background: linear-gradient(135deg, rgba(238, 29, 82, 0.20), rgba(105, 201, 208, 0.10));
+            padding: 40px 32px 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+
+        .privacy-header .icon-shield {
+            font-size: 3.2rem;
+            background: linear-gradient(135deg, #EE1D52, #69C9D0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .privacy-header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #EE1D52, #69C9D0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .privacy-header .subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .badge-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(105, 201, 208, 0.15);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #69C9D0;
+            margin-top: 10px;
+        }
+
+        .content-inner {
+            padding: 32px 32px 20px;
+        }
+
+        .policy-section {
+            margin-bottom: 28px;
+            padding-left: 20px;
+            border-left: 3px solid #EE1D52;
+            transition: all 0.2s;
+        }
+
+        .policy-section:hover {
+            border-left-color: #69C9D0;
+        }
+
+        .policy-section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #69C9D0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-section h2 i {
+            color: #EE1D52;
+        }
+
+        .policy-section h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 16px 0 8px 0;
+            color: #FFD93D;
+        }
+
+        .policy-section p {
+            opacity: 0.9;
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+        }
+
+        .policy-section ul {
+            margin: 10px 0 14px 24px;
+            opacity: 0.88;
+        }
+
+        .policy-section li {
+            margin-bottom: 6px;
+            font-size: 0.96rem;
+        }
+
+        .policy-section li strong {
+            color: #69C9D0;
+        }
+
+        .app-badge {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 16px;
+            padding: 18px 22px;
+            font-size: 0.88rem;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            line-height: 1.8;
+        }
+
+        .app-badge i {
+            color: #69C9D0;
+            width: 24px;
+        }
+
+        .app-badge .label {
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding-top: 28px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.82rem;
+            opacity: 0.6;
+        }
+
+        .footer-note a {
+            color: #69C9D0;
+            text-decoration: none;
+        }
+
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px 12px 40px;
+            }
+            .privacy-header {
+                padding: 28px 18px 20px;
+            }
+            .privacy-header h1 {
+                font-size: 1.7rem;
+            }
+            .content-inner {
+                padding: 20px 16px 12px;
+            }
+            .policy-section {
+                padding-left: 12px;
+                margin-bottom: 24px;
+            }
+            .policy-section h2 {
+                font-size: 1.2rem;
+            }
+            .app-badge {
+                font-size: 0.82rem;
+                padding: 14px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-header h1 {
+                font-size: 1.4rem;
+            }
+            .policy-section h2 {
+                font-size: 1.1rem;
+            }
+            .policy-section p,
+            .policy-section li {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p>This privacy policy applies to the <strong>The Monkey Jump</strong> app (herein referred to as "Application") for mobile devices, which was created by <strong>Hellobangladeshi</strong> (herein referred to as "Service Provider") as a Commercial service.</p>
 
-    <h2>Information Collection and Use</h2>
-    <p>The Application collects and uses information to provide a better gaming experience. The information collected may include device identifiers, usage statistics, and purchase history.</p>
-    
-    <p>The Application does use third-party services that may collect information used to identify you. Below are the links to the privacy policies of the third-party service providers used by the Application:</p>
-    <ul>
-        <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
-        <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
-        <li><a href="https://firebase.google.com/support/privacy" target="_blank">Google Analytics for Firebase</a></li>
-        <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Crashlytics</a></li>
-    </ul>
+    <div class="container">
+        <div class="privacy-card">
 
-    <h2>In-App Purchases (Google Play Billing)</h2>
-    <p>The Application offers premium features via Google Play Billing. When you make a purchase, Google collects payment information according to their own privacy policy. We do not store your credit card details on our servers; we only receive confirmation of the successful transaction to unlock your premium content.</p>
+            <!-- HEADER -->
+            <div class="privacy-header">
+                <div class="icon-shield"><i class="fas fa-shield-alt"></i></div>
+                <h1>Privacy Policy</h1>
+                <p class="subtitle">The Monkey Jump — Your privacy is our priority</p>
+                <span class="badge-date"><i class="far fa-calendar-alt"></i> Last Updated: August 31, 2026</span>
+            </div>
 
-    <h2>Log Data</h2>
-    <p>In case of an error in the Application, we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing the Application, the time and date of your use of the Application, and other statistics.</p>
+            <!-- CONTENT -->
+            <div class="content-inner">
 
-    <h2>Cookies</h2>
-    <p>Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. The Application does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services.</p>
+                <!-- Section 1: Introduction -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-info-circle"></i> 1. Introduction</h2>
+                    <p><strong>The Monkey Jump</strong> ("we", "our", or "us") is a fun and exciting platformer game app. This app is an initiative of <strong>Hello Bangladeshi</strong>.</p>
+                    <p>Your privacy is our top priority. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application. By using this app, you agree to the terms of this policy.</p>
+                </div>
 
-    <h2>Security</h2>
-    <p>We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable.</p>
+                <!-- Section 2: Information We Collect -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-database"></i> 2. Information We Collect</h2>
 
-    <h2>Children’s Privacy</h2>
-    <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers.</p>
+                    <h3>📱 Automatically Collected Information:</h3>
+                    <ul>
+                        <li><strong>Device Information</strong> — Model, OS version, unique device ID.</li>
+                        <li><strong>Gameplay Data</strong> — Score, levels, completed challenges, time played, correct/incorrect answers.</li>
+                        <li><strong>App Usage Data</strong> — Which features are used, session duration, crash reports.</li>
+                        <li><strong>IP Address</strong> — For approximate location and security purposes.</li>
+                    </ul>
 
-    <h2>Changes to This Privacy Policy</h2>
-    <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+                    <h3>📊 Third-Party Services:</h3>
+                    <ul>
+                        <li><strong>Google AdMob</strong> — For showing personalized ads based on device ID and usage.</li>
+                        <li><strong>Google Analytics for Firebase</strong> — For analyzing app performance and usage.</li>
+                        <li><strong>Firebase Crashlytics</strong> — For collecting and analyzing app crash data.</li>
+                        <li><strong>Google Play Services</strong> — For in-app purchases and authentication.</li>
+                    </ul>
+                </div>
 
-    <h2>Contact Us</h2>
-    <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <strong>support@hellobangladeshi.com</strong>.</p>
+                <!-- Section 3: How We Use Your Information -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-bullseye"></i> 3. How We Use Your Information</h2>
+                    <ul>
+                        <li>✅ To improve app performance and user experience.</li>
+                        <li>✅ To track game scores and progress.</li>
+                        <li>✅ To show relevant advertisements (AdMob).</li>
+                        <li>✅ To identify and fix bugs and crashes.</li>
+                        <li>✅ To analyze how the app is used and make improvements.</li>
+                    </ul>
+                </div>
 
-    <div class="footer">
-        <p>This privacy policy page was generated on 2026-08-31.</p>
+                <!-- Section 4: Data Sharing -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-share-alt"></i> 4. Data Sharing</h2>
+                    <p>We <strong>never sell</strong> your personal information to third parties. However, data may be shared in the following cases:</p>
+                    <ul>
+                        <li><strong>Legal Requirements:</strong> If required by law or valid court order.</li>
+                        <li><strong>Service Providers:</strong> Firebase, AdMob, and Google Analytics have their own privacy policies.</li>
+                        <li><strong>Public Display:</strong> Leaderboard shows your username and score to other players.</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>Third-Party Services Used:</strong></p>
+                    <ul>
+                        <li>• <strong>Google Firebase</strong> — Database, authentication, crash reporting</li>
+                        <li>• <strong>Google AdMob</strong> — Banner and interstitial ads</li>
+                        <li>• <strong>Google Analytics for Firebase</strong> — Usage analytics</li>
+                        <li>• <strong>Google Play Billing</strong> — In-app purchases</li>
+                    </ul>
+                </div>
+
+                <!-- Section 5: Data Security -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-lock"></i> 5. Data Security</h2>
+                    <ul>
+                        <li>🔐 <strong>Encryption:</strong> Sensitive data is stored in encrypted format.</li>
+                        <li>🔐 <strong>Firebase Security Rules:</strong> Strict access control.</li>
+                        <li>🔐 <strong>Regular Audits:</strong> We regularly review security measures.</li>
+                    </ul>
+                    <p>⚠️ Please note that no method of transmission over the internet is 100% secure. We strive to protect your data but cannot guarantee absolute security.</p>
+                </div>
+
+                <!-- Section 6: Children's Privacy -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-child"></i> 6. Children's Privacy</h2>
+                    <p>Our app is <strong>not intended for children under 13</strong>. We do not knowingly collect personal information from children under 13. If you are a parent and believe your child has provided us with information, please contact us and we will delete it immediately.</p>
+                </div>
+
+                <!-- Section 7: In-App Purchases -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-shopping-cart"></i> 7. In-App Purchases</h2>
+                    <p>Our app offers In-App Purchases (Pro version, Ad-Free package, Extra Lives, etc.). All financial transactions are handled securely by <strong>Google Play Billing</strong>. <strong>We do not store your credit card or financial information on our servers.</strong></p>
+                </div>
+
+                <!-- Section 8: Advertisements -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-ad"></i> 8. Advertisements (Google AdMob)</h2>
+                    <p>We use AdMob to display ads to keep the app free. AdMob may use your device data to show personalized ads. If you prefer not to receive personalized ads, you can opt out via your device's Google Ad Settings (Android: Settings → Google → Ads → Opt out of Ads Personalization).</p>
+                </div>
+
+                <!-- Section 9: App Permissions -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-percent"></i> 9. App Permissions</h2>
+                    <ul>
+                        <li><strong>Internet Access:</strong> Required for loading ads, analytics, and syncing game data.</li>
+                        <li><strong>Network State:</strong> To check internet connection status.</li>
+                    </ul>
+                </div>
+
+                <!-- Section 10: Data Deletion Request -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-trash-alt"></i> 10. Data Deletion Request</h2>
+                    <p>As we do not collect personal accounts or store user data on our servers, users can delete all local data (coins, levels, progress) by simply uninstalling the application from their device. If you have any concerns or wish to request the removal of any analytics data associated with your device ID, please contact us at <strong>support.hellobangladeshi@gmail.com</strong>.</p>
+                </div>
+
+                <!-- Section 11: Changes to This Policy -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-sync-alt"></i> 11. Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy from time to time. The latest version will always be posted on this page. We will notify you of any significant changes via the app or email.</p>
+                </div>
+
+                <!-- Section 12: Contact Us -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-envelope"></i> 12. Contact Us</h2>
+                    <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
+                    <ul>
+                        <li><strong>📧 Email:</strong> support.hellobangladeshi@gmail.com</li>
+                        <li><strong>📱 Phone/WhatsApp:</strong> +8801603297187</li>
+                        <li><strong>🌐 Website:</strong> <a href="https://hellobangladeshi.github.io/" target="_blank" style="color:#69C9D0;">https://hellobangladeshi.github.io/</a></li>
+                        <li><strong>📌 Developer:</strong> Farabi Walid</li>
+                    </ul>
+                </div>
+
+                <!-- Section 13: Local Storage & User-Provided Name -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-user-secret"></i> 13. Local Storage & User-Provided Name</h2>
+                    <ul>
+                        <li><strong>No Personal Data Collected on Servers:</strong> The app does <strong>not</strong> collect, store, or transmit any personal information (such as your name or email address) to our servers.</li>
+                        <li><strong>Username Stored Locally:</strong> Any name or username you choose to set within the app is stored <strong>only on your device</strong> using <strong>Local Storage</strong>. This information is used solely for in-app personalization and leaderboard display.</li>
+                        <li><strong>Data Deletion on Uninstall:</strong> If you uninstall the app or clear the app's data from your device settings, all locally stored information (including your username and game progress) will be <strong>permanently deleted</strong> and cannot be recovered.</li>
+                        <li><strong>No Sharing or Selling:</strong> We <strong>never</strong> share, sell, or transfer your locally stored username or any other personal data to third parties.</li>
+                    </ul>
+                </div>
+
+                <!-- Section 14: Privacy-First Approach -->
+                <div class="policy-section">
+                    <h2><i class="fas fa-heart"></i> 14. Our Commitment to Your Privacy</h2>
+                    <p>We respect your privacy and are committed to protecting it. <strong>The Monkey Jump</strong> is designed with a <strong>privacy-first</strong> approach:</p>
+                    <ul>
+                        <li>✅ No personal information is required to play the game.</li>
+                        <li>✅ All game data is stored locally on your device.</li>
+                        <li>✅ We do not track you across other apps or websites.</li>
+                        <li>✅ You are in complete control of your data — you can delete it anytime by clearing the app data or uninstalling.</li>
+                    </ul>
+                    <p>We believe that you should enjoy the game without worrying about your privacy. That is why we keep data collection to an absolute minimum and never misuse the information we have access to.</p>
+                </div>
+
+                <!-- APP INFO BADGE -->
+                <div class="app-badge">
+                    <i class="fas fa-mobile-alt"></i> <strong>📱 App Information</strong><br />
+                    <span class="label">App Name:</span> The Monkey Jump<br />
+                    <span class="label">Package Name:</span> com.hellobangladeshi.monkeyjump<br />
+                    <span class="label">Developer:</span> <strong>Farabi Walid</strong><br />
+                    <span class="label">Offered by:</span> <strong>Hello Bangladeshi</strong><br />
+                    <span class="label">Category:</span> Game / Arcade / Entertainment
+                </div>
+
+                <!-- FOOTER -->
+                <div class="footer-note">
+                    <p><i class="far fa-copyright"></i> 2026 Hello Bangladeshi — All Rights Reserved.</p>
+                    <p>This Privacy Policy is compliant with Google Play Store policies.</p>
+                    <p style="margin-top: 6px;">
+                        <a href="https://hellobangladeshi.com" target="_blank"><i class="fas fa-arrow-left"></i> Back to Website</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
