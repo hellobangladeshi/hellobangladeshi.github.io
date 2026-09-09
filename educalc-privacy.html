@@ -1,106 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - EduCalc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Privacy Policy - EduCalc | Hello Bangladeshi</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f7f6;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #0a0e27, #1a1d3a, #2d1b4e);
+            color: #fff;
+            line-height: 1.8;
+            min-height: 100vh;
+            padding: 0;
+            overflow-x: hidden;
         }
+
         .container {
-            background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
         }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+
+        .privacy-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
         }
-        h2 {
-            color: #2980b9;
-            margin-top: 30px;
-        }
-        p, ul {
-            margin-bottom: 15px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .footer {
-            margin-top: 50px;
+
+        .privacy-header {
+            background: linear-gradient(135deg, rgba(238, 29, 82, 0.20), rgba(105, 201, 208, 0.10));
+            padding: 40px 32px 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             text-align: center;
-            font-size: 0.9em;
-            color: #7f8c8d;
         }
-        a {
-            color: #3498db;
+
+        .privacy-header .icon-shield {
+            font-size: 3.2rem;
+            background: linear-gradient(135deg, #EE1D52, #69C9D0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .privacy-header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #EE1D52, #69C9D0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .privacy-header .subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .badge-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(105, 201, 208, 0.15);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #69C9D0;
+            margin-top: 10px;
+        }
+
+        .content-inner {
+            padding: 32px 32px 20px;
+        }
+
+        .policy-section {
+            margin-bottom: 28px;
+            padding-left: 20px;
+            border-left: 3px solid #EE1D52;
+            transition: all 0.2s;
+        }
+
+        .policy-section:hover {
+            border-left-color: #69C9D0;
+        }
+
+        .policy-section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #69C9D0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-section h2 i {
+            color: #EE1D52;
+        }
+
+        .policy-section h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 16px 0 8px 0;
+            color: #FFD93D;
+        }
+
+        .policy-section p {
+            opacity: 0.9;
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+        }
+
+        .policy-section ul {
+            margin: 10px 0 14px 24px;
+            opacity: 0.88;
+        }
+
+        .policy-section li {
+            margin-bottom: 6px;
+            font-size: 0.96rem;
+        }
+
+        .policy-section li strong {
+            color: #69C9D0;
+        }
+
+        .policy-section a {
+            color: #69C9D0;
             text-decoration: none;
         }
-        a:hover {
+
+        .policy-section a:hover {
             text-decoration: underline;
+        }
+
+        .app-badge {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 16px;
+            padding: 18px 22px;
+            font-size: 0.88rem;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            line-height: 1.8;
+        }
+
+        .app-badge i {
+            color: #69C9D0;
+            width: 24px;
+        }
+
+        .app-badge .label {
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding-top: 28px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.82rem;
+            opacity: 0.6;
+        }
+
+        .footer-note a {
+            color: #69C9D0;
+            text-decoration: none;
+        }
+
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px 12px 40px;
+            }
+            .privacy-header {
+                padding: 28px 18px 20px;
+            }
+            .privacy-header h1 {
+                font-size: 1.7rem;
+            }
+            .content-inner {
+                padding: 20px 16px 12px;
+            }
+            .policy-section {
+                padding-left: 12px;
+                margin-bottom: 24px;
+            }
+            .policy-section h2 {
+                font-size: 1.2rem;
+            }
+            .app-badge {
+                font-size: 0.82rem;
+                padding: 14px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-header h1 {
+                font-size: 1.4rem;
+            }
+            .policy-section h2 {
+                font-size: 1.1rem;
+            }
+            .policy-section p, .policy-section li {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Privacy Policy</h1>
-    <p>Last updated: October 26, 2023</p>
+    <div class="privacy-card">
 
-    <p><strong>EduCalc</strong> ("we", "our", or "us") operates the EduCalc mobile application. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>
+        <!-- HEADER -->
+        <div class="privacy-header">
+            <div class="icon-shield"><i class="fas fa-shield-alt"></i></div>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">EduCalc — Your privacy is our priority</p>
+            <span class="badge-date"><i class="far fa-calendar-alt"></i> Last Updated: October 26, 2023</span>
+        </div>
 
-    <h2>1. Information Collection and Use</h2>
-    <p>We do not collect any personally identifiable information (PII) from our users. However, the app uses third-party services that may collect information used to identify you.</p>
+        <!-- CONTENT -->
+        <div class="content-inner">
 
-    <h2>2. Third-Party Services</h2>
-    <p>Our app integrates several third-party services for analytics, advertising, and billing purposes. These services have their own Privacy Policies:</p>
-    <ul>
-        <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
-        <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
-        <li><a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a></li>
-        <li><a href="https://firebase.google.com/support/privacy/" target="_blank">Firebase Crashlytics</a></li>
-        <li><a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice" target="_blank">Google Play Billing</a></li>
-    </ul>
+            <!-- Section 1: Introduction -->
+            <div class="policy-section">
+                <h2><i class="fas fa-info-circle"></i> 1. Introduction</h2>
+                <p><strong>EduCalc</strong> ("we", "our", or "us") operates the EduCalc mobile application. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>
+                <p>This app is an initiative of <strong>Hello Bangladeshi</strong>. Your privacy is our top priority.</p>
+            </div>
 
-    <h2>3. Log Data</h2>
-    <p>We want to inform you that whenever you use our Service, in a case of an error in the app, we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.</p>
+            <!-- Section 2: Information Collection and Use -->
+            <div class="policy-section">
+                <h2><i class="fas fa-database"></i> 2. Information Collection and Use</h2>
+                <p>We do not collect any personally identifiable information (PII) from our users. However, the app uses third-party services that may collect information used to identify you.</p>
+            </div>
 
-    <h2>4. Permissions Used</h2>
-    <p>To provide all features of the app, we require the following permissions:</p>
-    <ul>
-        <li><strong>INTERNET & NETWORK STATE:</strong> To fetch remote configuration and display advertisements.</li>
-        <li><strong>BILLING:</strong> To allow users to purchase premium features.</li>
-        <li><strong>VIBRATE:</strong> To provide haptic feedback during games and interactions.</li>
-    </ul>
+            <!-- Section 3: Third-Party Services -->
+            <div class="policy-section">
+                <h2><i class="fas fa-share-alt"></i> 3. Third-Party Services</h2>
+                <p>Our app integrates several third-party services for analytics, advertising, and billing purposes. These services have their own Privacy Policies:</p>
+                <ul>
+                    <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
+                    <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
+                    <li><a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a></li>
+                    <li><a href="https://firebase.google.com/support/privacy/" target="_blank">Firebase Crashlytics</a></li>
+                    <li><a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice" target="_blank">Google Play Billing</a></li>
+                </ul>
+            </div>
 
-    <h2>5. Cookies</h2>
-    <p>Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory. This Service does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services.</p>
+            <!-- Section 4: Log Data -->
+            <div class="policy-section">
+                <h2><i class="fas fa-chart-line"></i> 4. Log Data</h2>
+                <p>We want to inform you that whenever you use our Service, in a case of an error in the app, we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.</p>
+            </div>
 
-    <h2>6. Children’s Privacy</h2>
-    <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers.</p>
+            <!-- Section 5: Permissions Used -->
+            <div class="policy-section">
+                <h2><i class="fas fa-percent"></i> 5. Permissions Used</h2>
+                <p>To provide all features of the app, we require the following permissions:</p>
+                <ul>
+                    <li><strong>INTERNET & NETWORK STATE:</strong> To fetch remote configuration and display advertisements.</li>
+                    <li><strong>BILLING:</strong> To allow users to purchase premium features.</li>
+                    <li><strong>VIBRATE:</strong> To provide haptic feedback during games and interactions.</li>
+                </ul>
+            </div>
 
-    <h2>7. Security</h2>
-    <p>We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.</p>
+            <!-- Section 6: Cookies -->
+            <div class="policy-section">
+                <h2><i class="fas fa-cookie-bite"></i> 6. Cookies</h2>
+                <p>Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory. This Service does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services.</p>
+            </div>
 
-    <h2>8. Changes to This Privacy Policy</h2>
-    <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+            <!-- Section 7: Children's Privacy -->
+            <div class="policy-section">
+                <h2><i class="fas fa-child"></i> 7. Children's Privacy</h2>
+                <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers.</p>
+            </div>
 
-    <h2>9. Contact Us</h2>
-    <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:</p>
-    <p>Email: <a href="mailto:farabiwalid0@gmail.com">farabiwalid0@gmail.com</a></p>
-</div>
+            <!-- Section 8: Security -->
+            <div class="policy-section">
+                <h2><i class="fas fa-lock"></i> 8. Security</h2>
+                <p>We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.</p>
+            </div>
 
-<div class="footer">
-    <p>&copy; 2023 Hello Bangladeshi - Developed by Farabi Walid</p>
+            <!-- Section 9: Changes to This Privacy Policy -->
+            <div class="policy-section">
+                <h2><i class="fas fa-sync-alt"></i> 9. Changes to This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+            </div>
+
+            <!-- Section 10: Contact Us -->
+            <div class="policy-section">
+                <h2><i class="fas fa-envelope"></i> 10. Contact Us</h2>
+                <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:</p>
+                <ul>
+                    <li><strong>📧 Email:</strong> <a href="mailto:farabiwalid0@gmail.com">farabiwalid0@gmail.com</a></li>
+                    <li><strong>📱 Phone/WhatsApp:</strong> +8801603297187</li>
+                    <li><strong>🌐 Website:</strong> <a href="https://hellobangladeshi.github.io/" target="_blank">https://hellobangladeshi.github.io/</a></li>
+                    <li><strong>📌 Developer:</strong> Farabi Walid</li>
+                </ul>
+            </div>
+
+            <!-- Section 11: Local Storage & User-Provided Data -->
+            <div class="policy-section">
+                <h2><i class="fas fa-user-secret"></i> 11. Local Storage & User Data</h2>
+                <ul>
+                    <li><strong>No Personal Data Stored on Servers:</strong> The app does <strong>not</strong> collect, store, or transmit any personal information (such as your name or email address) to our servers.</li>
+                    <li><strong>Data Stored Locally:</strong> All user data such as preferences, settings, and game progress are stored <strong>only on your device</strong> using local storage.</li>
+                    <li><strong>Data Deletion:</strong> If you uninstall the app or clear the app's data from your device settings, all locally stored information will be <strong>permanently deleted</strong> and cannot be recovered.</li>
+                    <li><strong>No Sharing or Selling:</strong> We <strong>never</strong> share, sell, or transfer your data to third parties.</li>
+                </ul>
+            </div>
+
+            <!-- Section 12: Our Commitment -->
+            <div class="policy-section">
+                <h2><i class="fas fa-heart"></i> 12. Our Commitment to Your Privacy</h2>
+                <p>We respect your privacy and are committed to protecting it. <strong>EduCalc</strong> is designed with a <strong>privacy-first</strong> approach:</p>
+                <ul>
+                    <li>✅ No personal information is required to use the app.</li>
+                    <li>✅ All user data is stored locally on your device.</li>
+                    <li>✅ We do not track you across other apps or websites.</li>
+                    <li>✅ You are in complete control of your data — you can delete it anytime by clearing the app data or uninstalling.</li>
+                </ul>
+                <p>We believe that you should use the app without worrying about your privacy. That is why we keep data collection to an absolute minimum and never misuse the information we have access to.</p>
+            </div>
+
+            <!-- APP INFO BADGE -->
+            <div class="app-badge">
+                <i class="fas fa-mobile-alt"></i> <strong>📱 App Information</strong><br>
+                <span class="label">App Name:</span> EduCalc<br>
+                <span class="label">Package Name:</span> com.hellobangladeshi.educalc<br>
+                <span class="label">Developer:</span> <strong>Farabi Walid</strong><br>
+                <span class="label">Offered by:</span> <strong>Hello Bangladeshi</strong><br>
+                <span class="label">Category:</span> Education / Utility
+            </div>
+
+            <!-- FOOTER -->
+            <div class="footer-note">
+                <p><i class="far fa-copyright"></i> 2023 Hello Bangladeshi — All Rights Reserved.</p>
+                <p>This Privacy Policy is compliant with Google Play Store policies.</p>
+                <p style="margin-top: 6px;">
+                    <a href="https://hellobangladeshi.com" target="_blank"><i class="fas fa-arrow-left"></i> Back to Website</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 </body>
