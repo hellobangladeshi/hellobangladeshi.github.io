@@ -1,205 +1,727 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>Privacy Policy - Bangla Status</title>
+    <meta name="description" content="Bangla Status app privacy policy - your data security is our priority." />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
     <style>
-        :root {
-            --primary-color: #0f766e;
-            --primary-dark: #115e59;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-color: #334155;
-            --heading-color: #0f172a;
-            --border-color: #e2e8f0;
+        /* ===== BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.7;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+            min-height: 100vh;
+            padding: 0;
+            overflow-x: hidden;
+            transition: background 0.6s ease, color 0.4s ease;
         }
 
+        /* ===== THEME: TEAL (Default) ===== */
+        body.theme-teal {
+            background: linear-gradient(145deg, #0a1a1a, #0f2e2e, #0a1f1f);
+            color: #c8e6e6;
+        }
+        body.theme-teal .privacy-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(15, 118, 110, 0.35);
+        }
+        body.theme-teal .privacy-header {
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.25), rgba(13, 148, 136, 0.10));
+        }
+        body.theme-teal .privacy-header h1,
+        body.theme-teal .icon-shield {
+            background: linear-gradient(135deg, #0f766e, #14b8a6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        body.theme-teal .badge-date {
+            background: rgba(15, 118, 110, 0.18);
+            color: #5eead4;
+        }
+        body.theme-teal .policy-section {
+            border-left-color: #0f766e;
+        }
+        body.theme-teal .policy-section:hover {
+            border-left-color: #14b8a6;
+        }
+        body.theme-teal .policy-section h2 {
+            color: #5eead4;
+        }
+        body.theme-teal .policy-section h2 i {
+            color: #0f766e;
+        }
+        body.theme-teal .policy-section h3 {
+            color: #FFD93D;
+        }
+        body.theme-teal .policy-section li strong {
+            color: #5eead4;
+        }
+        body.theme-teal .highlight-box {
+            background: rgba(15, 118, 110, 0.08);
+            border: 1px solid rgba(15, 118, 110, 0.25);
+        }
+        body.theme-teal .highlight-box i {
+            color: #5eead4;
+        }
+        body.theme-teal .app-badge {
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        body.theme-teal .app-badge i {
+            color: #5eead4;
+        }
+        body.theme-teal .footer-note a {
+            color: #5eead4;
+        }
+        body.theme-teal .scroll-top {
+            background: linear-gradient(135deg, #0f766e, #14b8a6);
+        }
+        body.theme-teal .scroll-top:hover {
+            background: linear-gradient(135deg, #115e59, #0d9488);
+        }
+
+        /* ===== THEME: AMBER ===== */
+        body.theme-amber {
+            background: linear-gradient(145deg, #1a120a, #2a1e0a, #1f160d);
+            color: #f5e6d3;
+        }
+        body.theme-amber .privacy-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+        }
+        body.theme-amber .privacy-header {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(251, 191, 36, 0.10));
+        }
+        body.theme-amber .privacy-header h1,
+        body.theme-amber .icon-shield {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        body.theme-amber .badge-date {
+            background: rgba(245, 158, 11, 0.18);
+            color: #fcd34d;
+        }
+        body.theme-amber .policy-section {
+            border-left-color: #f59e0b;
+        }
+        body.theme-amber .policy-section:hover {
+            border-left-color: #fbbf24;
+        }
+        body.theme-amber .policy-section h2 {
+            color: #fcd34d;
+        }
+        body.theme-amber .policy-section h2 i {
+            color: #f59e0b;
+        }
+        body.theme-amber .policy-section h3 {
+            color: #FFD93D;
+        }
+        body.theme-amber .policy-section li strong {
+            color: #fcd34d;
+        }
+        body.theme-amber .highlight-box {
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+        }
+        body.theme-amber .highlight-box i {
+            color: #fcd34d;
+        }
+        body.theme-amber .app-badge {
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        body.theme-amber .app-badge i {
+            color: #fcd34d;
+        }
+        body.theme-amber .footer-note a {
+            color: #fcd34d;
+        }
+        body.theme-amber .scroll-top {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+        }
+        body.theme-amber .scroll-top:hover {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+        }
+
+        /* ===== COMMON STYLES ===== */
         .container {
-            max-width: 850px;
-            margin: 30px auto;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border: 1px solid var(--border-color);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
         }
 
-        h1 {
-            color: var(--primary-color);
-            font-size: 28px;
+        .privacy-card {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .privacy-header {
+            padding: 40px 32px 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+
+        .icon-shield {
+            font-size: 3.2rem;
             margin-bottom: 8px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 12px;
         }
 
-        .subtitle {
-            font-size: 14px;
-            color: #64748b;
-            margin-bottom: 24px;
+        .privacy-header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
 
-        h2 {
-            color: var(--heading-color);
-            font-size: 20px;
-            margin-top: 28px;
-            margin-bottom: 12px;
+        .privacy-header .subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 300;
         }
 
-        p, li {
-            font-size: 15px;
+        .badge-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 10px;
         }
 
-        ul {
+        .content-inner {
+            padding: 32px 32px 20px;
+        }
+
+        .policy-section {
+            margin-bottom: 32px;
             padding-left: 20px;
-            margin-bottom: 16px;
+            border-left: 3px solid;
+            transition: all 0.3s ease;
         }
 
-        li {
-            margin-bottom: 8px;
+        .policy-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 18px 0 10px 0;
+        }
+
+        .policy-section p {
+            opacity: 0.9;
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+        }
+
+        .policy-section ul,
+        .policy-section ol {
+            margin: 10px 0 14px 24px;
+            opacity: 0.88;
+        }
+
+        .policy-section li {
+            margin-bottom: 6px;
+            font-size: 0.96rem;
         }
 
         .highlight-box {
-            background-color: #f0fdf4;
-            border-left: 4px solid var(--primary-color);
-            padding: 16px;
-            border-radius: 4px;
-            margin: 20px 0;
+            border-radius: 16px;
+            padding: 18px 22px;
+            margin: 18px 0;
         }
 
-        a {
-            color: var(--primary-color);
+        .highlight-box i {
+            margin-right: 8px;
+        }
+
+        .app-badge {
+            border-radius: 16px;
+            padding: 18px 22px;
+            font-size: 0.88rem;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .app-badge i {
+            width: 24px;
+        }
+
+        .app-badge .label {
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding-top: 28px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.82rem;
+            opacity: 0.6;
+        }
+
+        .footer-note a {
             text-decoration: none;
         }
-
-        a:hover {
+        .footer-note a:hover {
             text-decoration: underline;
         }
 
-        .contact-card {
-            background: #f1f5f9;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 24px;
+        /* ===== LANGUAGE TOGGLE ===== */
+        .lang-toggle {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 18px;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 13px;
-            color: #94a3b8;
+        .lang-toggle button {
+            padding: 6px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            background: transparent;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .lang-toggle button.active {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.5);
+            color: #fff;
+        }
+
+        .lang-toggle button:hover {
+            border-color: rgba(255, 255, 255, 0.5);
+            color: #fff;
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 999;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+            border: none;
+            color: #fff;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-4px) scale(1.05);
+        }
+
+        .scroll-top i {
+            font-size: 1.2rem;
+        }
+
+        /* ===== HIDE LANGUAGE SECTIONS ===== */
+        .lang-section {
+            display: none;
+        }
+        .lang-section.active {
+            display: block;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px 12px 40px;
+            }
+            .privacy-header {
+                padding: 28px 18px 20px;
+            }
+            .privacy-header h1 {
+                font-size: 1.7rem;
+            }
+            .content-inner {
+                padding: 20px 16px 12px;
+            }
+            .policy-section {
+                padding-left: 12px;
+                margin-bottom: 24px;
+            }
+            .policy-section h2 {
+                font-size: 1.25rem;
+            }
+            .policy-section ul,
+            .policy-section ol {
+                margin-left: 16px;
+            }
+            .app-badge {
+                font-size: 0.82rem;
+                padding: 14px 16px;
+            }
+            .scroll-top {
+                width: 44px;
+                height: 44px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .lang-toggle {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-header h1 {
+                font-size: 1.4rem;
+            }
+            .policy-section h2 {
+                font-size: 1.1rem;
+            }
+            .policy-section p,
+            .policy-section li {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Privacy Policy for Bangla Status</h1>
-    <p class="subtitle">Effective Date: October 2024 | Last Updated: March 2025</p>
+    <div class="container">
+        <div class="privacy-card">
 
-    <div class="highlight-box">
-        <strong>Summary:</strong> Welcome to <strong>Bangla Status (বাংলা স্ট্যাটাস)</strong>, operated by <strong>HelloBangladeshi</strong>. Your privacy is paramount to us. This Privacy Policy explains how our Android application handles data, permissions, third-party services, and user privacy rights in compliance with Google Play Developer Policies.
+            <!-- ===== LANGUAGE TOGGLE ===== -->
+            <div class="lang-toggle" style="padding: 20px 32px 0;">
+                <button id="langBn" class="active" onclick="setLanguage('bn')">বাংলা</button>
+                <button id="langEn" onclick="setLanguage('en')">English</button>
+            </div>
+
+            <!-- ===== HEADER (Bangla) ===== -->
+            <div class="privacy-header lang-section active" data-lang="bn">
+                <div class="icon-shield"><i class="fas fa-shield-alt"></i></div>
+                <h1>গোপনীয়তা নীতি</h1>
+                <p class="subtitle">বাংলা স্ট্যাটাস — আপনার তথ্যের নিরাপত্তাই আমাদের অঙ্গীকার</p>
+                <span class="badge-date"><i class="far fa-calendar-alt"></i> সর্বশেষ আপডেট: ২৫ আগস্ট, ২০২৫</span>
+            </div>
+
+            <!-- ===== HEADER (English) ===== -->
+            <div class="privacy-header lang-section" data-lang="en">
+                <div class="icon-shield"><i class="fas fa-shield-alt"></i></div>
+                <h1>Privacy Policy</h1>
+                <p class="subtitle">Bangla Status — Your data security is our commitment</p>
+                <span class="badge-date"><i class="far fa-calendar-alt"></i> Last Updated: 25 August, 2025</span>
+            </div>
+
+            <!-- ===== CONTENT ===== -->
+            <div class="content-inner">
+
+                <!-- ===== 1. Introduction ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-info-circle"></i> ১. ভূমিকা</h2>
+                    <p><strong>বাংলা স্ট্যাটাস (Bangla Status)</strong> (“আমরা”, “আমাদের”, “অ্যাপ”) একটি লাইফস্টাইল ও কোটস অ্যাপ্লিকেশন যা নির্বাচিত বাংলা স্ট্যাটাস, কোটস, ইসলামিক কন্টেন্ট, বিশেষ দিনের শুভেচ্ছা এবং একটি কোট মেকার স্টুডিও প্রদান করে। এই অ্যাপটি <strong>হ্যালো বাংলাদেশী (HelloBangladeshi)</strong>-এর একটি উদ্যোগ।</p>
+                    <p>আপনার গোপনীয়তা রক্ষা করা আমাদের কাছে সর্বোচ্চ অগ্রাধিকার। এই গোপনীয়তা নীতি ব্যাখ্যা করে আমরা কীভাবে আপনার তথ্য সংগ্রহ করি, ব্যবহার করি এবং সুরক্ষিত রাখি। এই অ্যাপ ব্যবহার করলে আপনি এই নীতির শর্তাবলীতে সম্মত হয়েছেন বলে গণ্য হবে।</p>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-info-circle"></i> 1. Introduction</h2>
+                    <p><strong>Bangla Status</strong> ("we", "our", "app") is a lifestyle and quotes application providing curated Bengali statuses, quotes, Islamic content, special day greetings, and a Quote Maker studio. This app is an initiative of <strong>HelloBangladeshi</strong>.</p>
+                    <p>Protecting your privacy is our highest priority. This Privacy Policy explains how we collect, use, and safeguard your information. By using this app, you agree to the terms of this policy.</p>
+                </div>
+
+                <!-- ===== 2. What We Collect ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-database"></i> ২. আমরা কী কী তথ্য সংগ্রহ করি</h2>
+                    <h3>📝 আপনি যেসব তথ্য সরাসরি দেন:</h3>
+                    <ul>
+                        <li><strong>কোট মেকারে তৈরি কন্টেন্ট</strong> — আপনার তৈরি কোটস, ব্যাকগ্রাউন্ড ছবি ও ফেভারিট তালিকা শুধুমাত্র আপনার ডিভাইসে সংরক্ষিত থাকে। আমরা আপনার ব্যক্তিগত ছবি বা কাস্টম কোটস কোনো বাহ্যিক সার্ভারে আপলোড করি <strong>না</strong>।</li>
+                        <li><strong>ফেভারিট ও বুকমার্ক</strong> — আপনার পছন্দের স্ট্যাটাস, কোটস ও শুভেচ্ছা সংরক্ষণ করতে।</li>
+                    </ul>
+                    <h3>📱 স্বয়ংক্রিয়ভাবে সংগৃহীত তথ্য:</h3>
+                    <ul>
+                        <li><strong>ডিভাইস তথ্য</strong> — মডেল, OS সংস্করণ, সিস্টেম ভাষা, স্ক্রিন সাইজ।</li>
+                        <li><strong>বিজ্ঞাপন আইডি (AAID)</strong> — Google AdMob-এর মাধ্যমে প্রাসঙ্গিক বিজ্ঞাপন দেখানোর জন্য।</li>
+                        <li><strong>অ্যাপ ব্যবহার সংক্রান্ত তথ্য</strong> — অ্যাপ লঞ্চ, স্ক্রিন ভিউ, ফিচার ব্যবহার, পারফরম্যান্স স্ট্যাটিস্টিকস।</li>
+                        <li><strong>ইন-অ্যাপ পারচেজ ডেটা</strong> — প্রিমিয়াম সাবস্ক্রিপশন বা ওয়ান-টাইম পারচেজ ("বাংলা স্ট্যাটাস প্রো") সম্পূর্ণভাবে <strong>Google Play Billing</strong>-এর মাধ্যমে প্রসেস করা হয়। আমরা আপনার ক্রেডিট কার্ড, ডেবিট কার্ড বা ব্যাংকিং তথ্য সংরক্ষণ বা প্রসেস করি <strong>না</strong>।</li>
+                    </ul>
+                    <h3>📊 লোকাল স্টোরেজ:</h3>
+                    <ul>
+                        <li><strong>স্থানীয় স্টোরেজ:</strong> আপনার ফেভারিট, ডাউনলোড করা কোটস এবং তৈরি করা ছবি আপনার ডিভাইসেই সংরক্ষিত থাকে।</li>
+                        <li><strong>কোনো রিমোট সার্ভার নেই:</strong> আমরা আপনার ব্যক্তিগত কন্টেন্ট কোনো রিমোট সার্ভারে পাঠাই <strong>না</strong>।</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-database"></i> 2. What Information We Collect</h2>
+                    <h3>📝 Information you provide directly:</h3>
+                    <ul>
+                        <li><strong>Quote Maker content</strong> — Your created quotes, background images, and favorite lists are stored strictly on your local device. We do <strong>not</strong> upload your personal photos or custom quotes to any external server.</li>
+                        <li><strong>Favorites &amp; Bookmarks</strong> — To save your favorite statuses, quotes, and greetings.</li>
+                    </ul>
+                    <h3>📱 Automatically collected information:</h3>
+                    <ul>
+                        <li><strong>Device information</strong> — model, OS version, system language, screen size.</li>
+                        <li><strong>Advertising ID (AAID)</strong> — used to serve relevant ads via Google AdMob.</li>
+                        <li><strong>App usage data</strong> — app launches, screen views, feature usage, performance statistics.</li>
+                        <li><strong>In-App Purchases / Billing Data</strong> — Premium subscriptions or one-time purchases ("Bangla Status Pro") are processed entirely through <strong>Google Play Billing</strong>. We do not store or process your credit card, debit card, or banking details.</li>
+                    </ul>
+                    <h3>📊 Local Storage:</h3>
+                    <ul>
+                        <li><strong>Local Storage:</strong> Your favorites, downloaded quotes, and created images are stored locally on your device.</li>
+                        <li><strong>No Remote Server:</strong> We do <strong>not</strong> send your personal content to any remote server.</li>
+                    </ul>
+                </div>
+
+                <!-- ===== 3. Permissions ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-permissions"></i> ৩. আমরা যে পারমিশন ব্যবহার করি</h2>
+                    <p>আমাদের অ্যাপ শুধুমাত্র প্রয়োজনীয় সিস্টেম পারমিশন অনুরোধ করে:</p>
+                    <ul>
+                        <li><strong>🌐 INTERNET &amp; ACCESS_NETWORK_STATE</strong> — অনলাইন কোট আপডেট, Remote Config সেটিংস, বিজ্ঞাপন প্রদর্শন এবং Google Play Billing অনুরোধ প্রসেস করার জন্য।</li>
+                        <li><strong>📁 WRITE_EXTERNAL_STORAGE (Max API 28)</strong> — শুধুমাত্র লিগ্যাসি অ্যান্ড্রয়েড ভার্সনে (Android 9 এবং নিচে) জেনারেট করা কোট ইমেজ আপনার গ্যালারিতে সংরক্ষণ করার জন্য।</li>
+                        <li><strong>🖼️ System Photo Picker</strong> — কোট মেকারে কাস্টম ব্যাকগ্রাউন্ড ছবি নির্বাচন করার জন্য। এটি অ্যান্ড্রয়েডের সিকিউর সিস্টেম পিকার ব্যবহার করে এবং কোনো ব্রড ফটো লাইব্রেরি পারমিশন প্রয়োজন হয় না।</li>
+                        <li><i class="fas fa-info-circle" style="color: #5eead4;"></i> কোনো পারমিশন ট্র্যাকিং বা প্রোফাইলিংয়ের জন্য ব্যবহার করা হয় না।</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-permissions"></i> 3. Permissions We Use</h2>
+                    <p>Our app strictly requests only essential system permissions:</p>
+                    <ul>
+                        <li><strong>🌐 INTERNET &amp; ACCESS_NETWORK_STATE</strong> — Required to fetch online quote updates, Remote Config settings, display advertisements, and process Google Play Billing requests.</li>
+                        <li><strong>📁 WRITE_EXTERNAL_STORAGE (Max API 28)</strong> — Used only on legacy Android versions (Android 9 and lower) to save generated quote images to your device's photo gallery.</li>
+                        <li><strong>🖼️ System Photo Picker</strong> — Used when choosing custom background photos in Quote Maker. It operates via Android's secure system picker and requires no broad photo library permissions.</li>
+                        <li><i class="fas fa-info-circle" style="color: #5eead4;"></i> No permission is used for tracking or profiling.</li>
+                    </ul>
+                </div>
+
+                <!-- ===== 4. Third-Party Services ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-share-alt"></i> ৪. থার্ড-পার্টি সার্ভিস ও অ্যানালিটিক্স</h2>
+                    <p>অ্যাপ রক্ষণাবেক্ষণ, মনিটাইজেশন এবং ফিচার উন্নতির জন্য আমরা বিশ্বস্ত Google SDK ব্যবহার করি। এই থার্ড-পার্টি প্রদানকারীরা তাদের নিজস্ব গোপনীয়তা নীতির অধীনে বেনামী ডেটা সংগ্রহ করতে পারে:</p>
+                    <ul>
+                        <li><strong>Google Play Services:</strong> কোর অ্যান্ড্রয়েড ফাংশনালিটি ও নিরাপত্তার জন্য।</li>
+                        <li><strong>Google AdMob:</strong> ব্যানার, ইন্টারস্টিশিয়াল ও রিওয়ার্ডেড বিজ্ঞাপন প্রদর্শন করে। AdMob বিজ্ঞাপন পরিবেশন ও জালিয়াতি সনাক্তকরণের জন্য বিজ্ঞাপন আইডি ব্যবহার করে।</li>
+                        <li><strong>Google User Messaging Platform (UMP):</strong> EEA ও UK-এর বাসিন্দাদের কাছ থেকে GDPR অনুসারে ব্যক্তিগতকৃত বা অ-ব্যক্তিগতকৃত বিজ্ঞাপনের জন্য সম্মতি চাওয়ার জন্য।</li>
+                        <li><strong>Firebase (Analytics, Remote Config &amp; Firestore):</strong> সমষ্টিগত ব্যবহারের ডেটা বিশ্লেষণ করে এবং ডায়নামিক অ্যাপ সেটিংস প্রদান করে।</li>
+                        <li><strong>Google Play In-App Billing:</strong> বাংলা স্ট্যাটাস প্রো-এর জন্য নিরাপদ পেমেন্ট প্রসেসিং পরিচালনা করে।</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <i class="fas fa-server"></i> <strong>থার্ড-পার্টি গোপনীয়তা নীতি:</strong><br />
+                        • <a href="https://policies.google.com/privacy" target="_blank" style="color: #5eead4;">Google Privacy Policy</a><br />
+                        • <a href="https://support.google.com/admob/answer/6128543" target="_blank" style="color: #5eead4;">AdMob &amp; Privacy Info</a><br />
+                        • <a href="https://firebase.google.com/support/privacy" target="_blank" style="color: #5eead4;">Firebase Privacy Policy</a><br />
+                        • <a href="https://play.google.com/about/play-terms/" target="_blank" style="color: #5eead4;">Google Play Terms</a>
+                    </div>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-share-alt"></i> 4. Third-Party Services &amp; Analytics</h2>
+                    <p>To support app maintenance, monetization, and feature improvements, we use trusted Google SDKs. These third-party providers may collect anonymous data subject to their respective privacy policies:</p>
+                    <ul>
+                        <li><strong>Google Play Services:</strong> Used for core Android functionality and security.</li>
+                        <li><strong>Google AdMob:</strong> Serves banner, interstitial, and rewarded advertisements. AdMob uses advertising IDs for ad serving and fraud detection.</li>
+                        <li><strong>Google User Messaging Platform (UMP):</strong> Used to request consent from users residing in the European Economic Area (EEA) and the UK for personalized or non-personalized ads in compliance with GDPR.</li>
+                        <li><strong>Firebase (Analytics, Remote Config &amp; Firestore):</strong> Analyzes aggregated usage data and delivers dynamic app settings.</li>
+                        <li><strong>Google Play In-App Billing:</strong> Handles secure payment processing for Bangla Status Pro.</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <i class="fas fa-server"></i> <strong>Third-Party Privacy Policies:</strong><br />
+                        • <a href="https://policies.google.com/privacy" target="_blank" style="color: #5eead4;">Google Privacy Policy</a><br />
+                        • <a href="https://support.google.com/admob/answer/6128543" target="_blank" style="color: #5eead4;">AdMob &amp; Privacy Info</a><br />
+                        • <a href="https://firebase.google.com/support/privacy" target="_blank" style="color: #5eead4;">Firebase Privacy Policy</a><br />
+                        • <a href="https://play.google.com/about/play-terms/" target="_blank" style="color: #5eead4;">Google Play Terms</a>
+                    </div>
+                </div>
+
+                <!-- ===== 5. GDPR ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-gavel"></i> ৫. GDPR / ইউরোপীয় অর্থনৈতিক এলাকা (EEA) গোপনীয়তা অধিকার</h2>
+                    <p>আপনি যদি ইউরোপীয় অর্থনৈতিক এলাকা (EEA) বা যুক্তরাজ্যের (UK) বাসিন্দা হন, তাহলে জেনারেল ডেটা প্রোটেকশন রেগুলেশন (GDPR) এর অধীনে আপনার নির্দিষ্ট গোপনীয়তা অধিকার রয়েছে। আমাদের অ্যাপ Google User Messaging Platform (UMP) SDK ব্যবহার করে অ্যাপ খোলার সময় বিজ্ঞাপন ব্যক্তিগতকরণ এবং কুকিজ সম্মতির উপর স্পষ্ট নিয়ন্ত্রণ প্রদান করে। আপনি যেকোনো সময় অ্যাপ সেটিংস বা ডিভাইস গোপনীয়তা নিয়ন্ত্রণের মাধ্যমে আপনার সম্মতির পছন্দ পরিবর্তন করতে পারেন।</p>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-gavel"></i> 5. GDPR / European Economic Area (EEA) Privacy Rights</h2>
+                    <p>If you are a resident of the European Economic Area (EEA) or the United Kingdom (UK), you have specific privacy rights under the General Data Protection Regulation (GDPR). Our app utilizes the Google User Messaging Platform (UMP) SDK to provide you with explicit control over ad personalization and cookies consent upon opening the app. You may modify your consent choices at any time through the app settings or device privacy controls.</p>
+                </div>
+
+                <!-- ===== 6. Children ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-child"></i> ৬. শিশুদের গোপনীয়তা</h2>
+                    <p><strong>বাংলা স্ট্যাটাস</strong> ১৩ বছর বা তার বেশি বয়সী সাধারণ দর্শকদের জন্য предназначен। আমরা ইচ্ছাকৃতভাবে ১৩ বছরের কম বয়সী শিশুদের কাছ থেকে ব্যক্তিগত তথ্য সংগ্রহ বা অনুরোধ করি না। যদি আপনি বিশ্বাস করেন যে ১৩ বছরের কম বয়সী একটি শিশু আমাদের অ্যাপের মাধ্যমে ব্যক্তিগত ডেটা প্রদান করেছে, তাহলে অনুগ্রহ করে অবিলম্বে আমাদের সাথে যোগাযোগ করুন, এবং আমরা সেই তথ্য মুছে ফেলার জন্য দ্রুত ব্যবস্থা নেব।</p>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-child"></i> 6. Children's Privacy</h2>
+                    <p><strong>Bangla Status</strong> is intended for a general audience aged 13 and older. We do not knowingly collect or solicit personal information from children under the age of 13. If you believe a child under 13 has provided personal data through our app, please contact us immediately, and we will take prompt action to remove such information.</p>
+                </div>
+
+                <!-- ===== 7. Data Retention ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-clock"></i> ৭. ডাটা রিটেনশন ও ডিলিট</h2>
+                    <p>সমস্ত ব্যবহারকারীর ফেভারিট, ডাউনলোড করা কোটস এবং তৈরি করা ছবি আপনার ডিভাইসে স্থানীয়ভাবে সংরক্ষিত থাকে। অ্যাপ্লিকেশন আনইন্সটল করা বা অ্যান্ড্রয়েড সেটিংসের মাধ্যমে অ্যাপ ডেটা ক্লিয়ার করলে সমস্ত স্থানীয়ভাবে সংরক্ষিত ডেটা স্থায়ীভাবে মুছে যাবে। Google পরিষেবাগুলি দ্বারা সংগৃহীত বেনামী অ্যানালিটিক্স এবং বিজ্ঞাপন ডেটা Google-এর স্ট্যান্ডার্ড রিটেনশন সময়সূচী অনুযায়ী সংরক্ষিত থাকে।</p>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-clock"></i> 7. Data Retention &amp; Deletion</h2>
+                    <p>All user favorites, downloaded quotes, and created images are stored locally on your device. Uninstalling the application or clearing app data via Android Settings will permanently remove all locally saved data. Anonymous analytics and advertising data collected by Google services are retained according to Google's standard retention schedules.</p>
+                </div>
+
+                <!-- ===== 8. Security ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-lock"></i> ৮. নিরাপত্তা</h2>
+                    <p>আমরা ডেটা নিরাপত্তাকে অগ্রাধিকার দিই। Firebase এবং Google পরিষেবাগুলির সাথে সমস্ত নেটওয়ার্ক ট্রান্সমিশন এনক্রিপ্টেড HTTPS/TLS সংযোগ ব্যবহার করে। তবে, অনুগ্রহ করে মনে রাখবেন যে ইন্টারনেটের মাধ্যমে ট্রান্সমিশন বা ইলেকট্রনিক স্টোরেজের কোনো পদ্ধতিই ১০০% নিরাপদ নয়।</p>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-lock"></i> 8. Security</h2>
+                    <p>We prioritize data security. All network transmissions with Firebase and Google services use encrypted HTTPS/TLS connections. However, please remember that no method of transmission over the internet or electronic storage is 100% secure.</p>
+                </div>
+
+                <!-- ===== 9. Changes ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-sync-alt"></i> ৯. এই নীতির পরিবর্তন</h2>
+                    <p>আমরা সময়ের সাথে এই গোপনীয়তা নীতি আপডেট করতে পারি। বড় ধরনের পরিবর্তন হলে অ্যাপের নোটিফিকেশন বা ইমেইলের মাধ্যমে অবহিত করব। সর্বশেষ সংস্করণ সবসময় এই পৃষ্ঠায় প্রকাশিত থাকবে।</p>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-sync-alt"></i> 9. Changes to This Policy</h2>
+                    <p>We may update our Privacy Policy periodically to reflect app updates or regulatory changes. Any modifications will be posted on this page with an updated "Last Updated" date. You are advised to review this page periodically for changes.</p>
+                </div>
+
+                <!-- ===== 10. Contact ===== -->
+                <div class="policy-section lang-section active" data-lang="bn">
+                    <h2><i class="fas fa-envelope"></i> ১০. যোগাযোগ</h2>
+                    <p>এই গোপনীয়তা নীতি বা আমাদের অ্যাপ অনুশীলন সম্পর্কে আপনার কোনো প্রশ্ন, পরামর্শ বা উদ্বেগ থাকলে, নির্দ্বিধায় আমাদের সাথে যোগাযোগ করুন:</p>
+                    <ul>
+                        <li><strong>📧 ইমেইল:</strong> support.hellobangladeshi@gmail.com</li>
+                        <li><strong>📱 ফোন/WhatsApp:</strong> +8801603297187</li>
+                        <li><strong>🌐 ওয়েবসাইট:</strong> <a href="https://hellobangladeshi.github.io/" target="_blank" style="color: #5eead4;">https://hellobangladeshi.github.io/</a></li>
+                    </ul>
+                </div>
+
+                <div class="policy-section lang-section" data-lang="en">
+                    <h2><i class="fas fa-envelope"></i> 10. Contact Us</h2>
+                    <p>If you have any questions, suggestions, or concerns regarding this Privacy Policy or our app practices, please feel free to contact us:</p>
+                    <ul>
+                        <li><strong>📧 Email:</strong> support.hellobangladeshi@gmail.com</li>
+                        <li><strong>📱 Phone/WhatsApp:</strong> +8801603297187</li>
+                        <li><strong>🌐 Website:</strong> <a href="https://hellobangladeshi.github.io/" target="_blank" style="color: #5eead4;">https://hellobangladeshi.github.io/</a></li>
+                    </ul>
+                </div>
+
+                <!-- ===== APP BADGE ===== -->
+                <div class="app-badge">
+                    <i class="fas fa-mobile-alt"></i> <strong>📱 App Information</strong><br />
+                    <span class="label">App Name:</span> Bangla Status (বাংলা স্ট্যাটাস)<br />
+                    <span class="label">Package Name:</span> com.hellobangladeshi.banglastatus<br />
+                    <span class="label">Developer:</span> <strong>HelloBangladeshi</strong><br />
+                    <span class="label">Category:</span> Lifestyle / Quotes
+                </div>
+
+                <!-- ===== FOOTER ===== -->
+                <div class="footer-note">
+                    <p><i class="far fa-copyright"></i> ২০২৫ HelloBangladeshi — All rights reserved.</p>
+                    <p>This Privacy Policy is prepared in compliance with Google Play Store policies and Bangladesh data protection laws.</p>
+                    <p style="margin-top: 6px;">
+                        <a href="https://hellobangladeshi.github.io/" target="_blank"><i class="fas fa-arrow-left"></i> Back to main site</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    <h2>1. Overview & Core Features</h2>
-    <p>
-        <strong>Bangla Status</strong> is a lifestyle and quotes application providing curated Bengali statuses, quotes, Islamic content, special days greetings, and a Quote Maker studio.
-        The app is designed to work seamlessly offline and online. Most created graphics, saved quotes, and favorites are stored locally on your device.
-    </p>
-
-    <h2>2. Information We Collect</h2>
-    <p>We do not require users to create an account or provide personal identifiers like name, phone number, or address. However, certain non-personal and device technical data is collected automatically through third-party services integrated into the app:</p>
-
-    <ul>
-        <li><strong>Device Identifiers & Technical Information:</strong> IP address, device model, operating system version, system language, and unique Advertising ID (AAID).</li>
-        <li><strong>App Usage & Analytics Data:</strong> App launches, screen views, feature usage, and performance statistics.</li>
-        <li><strong>User Generated Content (Local Storage):</strong> Quotes created in Quote Maker, background images selected from device gallery, and favorite lists are stored strictly on your local device. We do not upload your personal photos or custom quotes to any external server.</li>
-        <li><strong>In-App Purchases / Billing Data:</strong> Premium subscriptions or one-time purchases ("Bangla Status Pro") are processed entirely through <strong>Google Play Billing</strong>. We do not store or process your credit card, debit card, or banking details.</li>
-    </ul>
-
-    <h2>3. Permissions Used in the App</h2>
-    <p>Our app strictly requests only essential system permissions:</p>
-    <ul>
-        <li><strong>INTERNET & ACCESS_NETWORK_STATE:</strong> Required to fetch online quote updates, Remote Config settings, display advertisements, and process Google Play Billing requests.</li>
-        <li><strong>WRITE_EXTERNAL_STORAGE (Max API 28):</strong> Used only on legacy Android versions (Android 9 and lower) to save generated quote images to your device's photo gallery.</li>
-        <li><strong>System Photo Picker:</strong> Used when choosing custom background photos in Quote Maker. It operates via Android's secure system picker and requires no broad photo library permissions.</li>
-    </ul>
-
-    <h2>4. Third-Party Services & Analytics</h2>
-    <p>To support app maintenance, monetization, and feature improvements, we use trusted Google SDKs. These third-party providers may collect anonymous data subject to their respective privacy policies:</p>
-
-    <ul>
-        <li>
-            <strong>Google Play Services:</strong> Used for core Android functionality and security.
-            <br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
-        </li>
-        <li>
-            <strong>Google AdMob:</strong> Serves banner, interstitial, and rewarded advertisements. AdMob uses advertising IDs for ad serving and fraud detection.
-            <br><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob & Privacy Info</a>
-        </li>
-        <li>
-            <strong>Google User Messaging Platform (UMP):</strong> Used to request consent from users residing in the European Economic Area (EEA) and the UK for personalized or non-personalized ads in compliance with GDPR.
-        </li>
-        <li>
-            <strong>Firebase (Analytics, Remote Config & Firestore):</strong> Analyzes aggregated usage data and delivers dynamic app settings.
-            <br><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a>
-        </li>
-        <li>
-            <strong>Google Play In-App Billing:</strong> Handles secure payment processing for Bangla Status Pro.
-            <br><a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play Terms</a>
-        </li>
-    </ul>
-
-    <h2>5. GDPR / European Economic Area (EEA) Privacy Rights</h2>
-    <p>
-        If you are a resident of the European Economic Area (EEA) or the United Kingdom (UK), you have specific privacy rights under the General Data Protection Regulation (GDPR). 
-        Our app utilizes the Google User Messaging Platform (UMP) SDK to provide you with explicit control over ad personalization and cookies consent upon opening the app. You may modify your consent choices at any time through the app settings or device privacy controls.
-    </p>
-
-    <h2>6. Children's Privacy</h2>
-    <p>
-        <strong>Bangla Status</strong> is intended for a general audience aged 13 and older. We do not knowingly collect or solicit personal information from children under the age of 13. If you believe a child under 13 has provided personal data through our app, please contact us immediately, and we will take prompt action to remove such information.
-    </p>
-
-    <h2>7. Data Retention & Deletion</h2>
-    <p>
-        All user favorites, downloaded quotes, and created images are stored locally on your device. Uninstalling the application or clearing app data via Android Settings will permanently remove all locally saved data. Anonymous analytics and advertising data collected by Google services are retained according to Google's standard retention schedules.
-    </p>
-
-    <h2>8. Security</h2>
-    <p>
-        We prioritize data security. All network transmissions with Firebase and Google services use encrypted HTTPS/TLS connections. However, please remember that no method of transmission over the internet or electronic storage is 100% secure.
-    </p>
-
-    <h2>9. Changes to This Privacy Policy</h2>
-    <p>
-        We may update our Privacy Policy periodically to reflect app updates or regulatory changes. Any modifications will be posted on this page with an updated "Last Updated" date. You are advised to review this page periodically for changes.
-    </p>
-
-    <div class="contact-card">
-        <h2>10. Contact Us</h2>
-        <p>If you have any questions, suggestions, or concerns regarding this Privacy Policy or our app practices, please feel free to contact us:</p>
-        <ul>
-            <li><strong>Developer / Publisher:</strong> HelloBangladeshi</li>
-            <li><strong>Application Name:</strong> Bangla Status</li>
-            <li><strong>Email:</strong> <a href="mailto:hellobangladeshi.app@gmail.com">hellobangladeshi.app@gmail.com</a></li>
-            <li><strong>Privacy Policy URL:</strong> <a href="https://hellobangladeshi.github.io/banglastatus-privacy.html">https://hellobangladeshi.github.io/banglastatus-privacy.html</a></li>
-        </ul>
+    <!-- ===== SCROLL TO TOP ===== -->
+    <div class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
     </div>
 
-    <footer>
-        &copy; 2025 HelloBangladeshi. All Rights Reserved. | Bangla Status App
-    </footer>
-</div>
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== 1. THEME SYSTEM (Teal / Amber based on day) =====
+        (function setTheme() {
+            const today = new Date();
+            const dayOfWeek = today.getDay();
+
+            let theme = 'theme-teal';
+            if (dayOfWeek === 1 || dayOfWeek === 3 || dayOfWeek === 5) {
+                theme = 'theme-amber';
+            }
+            document.body.classList.add(theme);
+        })();
+
+        // ===== 2. LANGUAGE TOGGLE =====
+        function setLanguage(lang) {
+            document.getElementById('langBn').classList.toggle('active', lang === 'bn');
+            document.getElementById('langEn').classList.toggle('active', lang === 'en');
+
+            document.querySelectorAll('.lang-section').forEach(el => {
+                el.classList.toggle('active', el.dataset.lang === lang);
+            });
+
+            try {
+                localStorage.setItem('privacy_lang', lang);
+            } catch (e) { /* ignore */ }
+        }
+
+        (function restoreLang() {
+            try {
+                const saved = localStorage.getItem('privacy_lang');
+                if (saved) {
+                    setLanguage(saved);
+                }
+            } catch (e) { /* ignore */ }
+        })();
+
+        // ===== 3. SCROLL TO TOP =====
+        const scrollBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('active');
+            } else {
+                scrollBtn.classList.remove('active');
+            }
+        });
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
 </body>
 </html>
