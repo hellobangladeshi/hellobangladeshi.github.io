@@ -1382,6 +1382,8 @@ footer {
             <button class="filter-btn" data-filter="productivity">প্রোডাক্টিভিটি</button>
             <button class="filter-btn" data-filter="utility">ইউটিলিটি</button>
             <button class="filter-btn" data-filter="entertainment">বিনোদন</button>
+            <button class="filter-btn" data-filter="game">গেম</button>
+            <button class="filter-btn" data-filter="education">শিক্ষা</button>
         </div>
 
         <div class="apps-grid" id="dynamicAppsGrid">
@@ -1711,12 +1713,16 @@ footer {
             <div class="footer-section">
                 <h4>আমাদের অ্যাপস</h4>
                 <ul class="footer-links">
-                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.hellosylhetiapp" target="_blank"><i class="fas fa-chevron-right"></i> Hello Sylheti</a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.earthquakealertpro" target="_blank"><i class="fas fa-chevron-right"></i> Earthquake Alert Pro</a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.bhappsstore.qrcodescanner" target="_blank"><i class="fas fa-chevron-right"></i> QR Scanner & Generator</a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.hellobangladeshi" target="_blank"><i class="fas fa-chevron-right"></i> Hello Bangladeshi</a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.colormatchpro" target="_blank"><i class="fas fa-chevron-right"></i> Color Match Pro</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.banglastatus" target="_blank"><i class="fas fa-chevron-right"></i> Bangla Status & Stories</a></li>
                     <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.educalc" target="_blank"><i class="fas fa-chevron-right"></i> EduCalc</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.themonkeyjump" target="_blank"><i class="fas fa-chevron-right"></i> The Monkey Jump</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.colormatchgame" target="_blank"><i class="fas fa-chevron-right"></i> Color Match Game</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.quizzerxpro" target="_blank"><i class="fas fa-chevron-right"></i> QuizzerX Pro</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.learnsylhetiapp" target="_blank"><i class="fas fa-chevron-right"></i> Learn Sylheti</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.bhappsstore.quizzerx" target="_blank"><i class="fas fa-chevron-right"></i> QuizzerX</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.hellosylhetiapp" target="_blank"><i class="fas fa-chevron-right"></i> Hello Sylheti</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.hellobangladeshi.earthquakealertpro" target="_blank"><i class="fas fa-chevron-right"></i> Earthquake Alerts</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.bhappsstore.qrcodescanner" target="_blank"><i class="fas fa-chevron-right"></i> QR Scanner & Generator</a></li>
                 </ul>
             </div>
             
@@ -1751,7 +1757,7 @@ footer {
 <!-- Notification Toast -->
 <div class="notification-toast" id="notificationToast">
     <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
-    <span id="toastMessage">সফলভাবে সংরক্ষিত হয়েছে!</span>
+    <span id="toastMessage">সফলভাবে সংরক্ষিত হয়েছে!</span>
 </div>
 
 <!-- Scroll to Top Button -->
@@ -1871,28 +1877,121 @@ document.getElementById('contactForm')?.addEventListener('submit', function(e) {
     this.reset();
 });
 
-// Apps Data - Updated Order with correct privacy links
+// Apps Data - 10 Live Apps on Play Store
 const appsData = [
+    {
+        id: "banglastatus",
+        packageName: "com.hellobangladeshi.banglastatus",
+        name: "Bangla Status & Stories",
+        category: "entertainment",
+        iconUrl: null,
+        icon: "📝",
+        gradient: "linear-gradient(135deg,#EF0479,#FFD93D)",
+        description: "২৫+ ক্যাটাগরির সেরা বাংলা স্ট্যাটাস, ফেসবুক ক্যাপশন, ইসলামিক কোটস ও শিক্ষণীয় গল্প। ফটো কোটস মেকার সহ।",
+        stats: { downloads: "নতুন", rating: "৫.০ ★" },
+        privacyLink: "bangla-status-privacy.html",
+        isPublished: true
+    },
+    {
+        id: "educalc",
+        packageName: "com.hellobangladeshi.educalc",
+        name: "EduCalc",
+        category: "productivity",
+        iconUrl: null,
+        icon: "📐",
+        gradient: "linear-gradient(135deg,#4facfe,#00f2fe)",
+        description: "স্মার্ট ক্যালকুলেটর, সমীকরণ সমাধান, ইউনিট কনভার্টার ও মজার ম্যাথ গেমস — শিক্ষার্থীদের জন্য সম্পূর্ণ গণিত সহায়ক।",
+        stats: { downloads: "১K+", rating: "৪.৪ ★" },
+        privacyLink: "educalc-privacy.html",
+        isPublished: true
+    },
+    {
+        id: "themonkeyjump",
+        packageName: "com.hellobangladeshi.themonkeyjump",
+        name: "The Monkey Jump",
+        category: "game",
+        iconUrl: null,
+        icon: "🐵",
+        gradient: "linear-gradient(135deg,#11998e,#38ef7d)",
+        description: "১০০+ লেভেলের রোমাঞ্চকর জাঙ্গল অ্যাডভেঞ্চার! বানরকে নিয়ে ঝাঁপ দিয়ে সোনালী কলা সংগ্রহ করুন ও বিশ্ব র‍্যাঙ্কিংয়ে উঠুন।",
+        stats: { downloads: "নতুন", rating: "৫.০ ★" },
+        privacyLink: "monkey-jump-privacy.html",
+        isPublished: true
+    },
+    {
+        id: "colormatchgame",
+        packageName: "com.hellobangladeshi.colormatchgame",
+        name: "Color Match Game",
+        category: "game",
+        iconUrl: null,
+        icon: "🎨",
+        gradient: "linear-gradient(135deg,#f093fb,#f5576c)",
+        description: "১০০+ চ্যালেঞ্জিং লেভেলে রঙ ম্যাচ করে আপনার ভিজ্যুয়াল স্কিল ও ফোকাস পরীক্ষা করুন। ডেইলি রিওয়ার্ড ও গ্লোবাল লিডারবোর্ড!",
+        stats: { downloads: "নতুন", rating: "৫.০ ★" },
+        privacyLink: "color-match-game-privacy.html",
+        isPublished: true
+    },
+    {
+        id: "quizzerxpro",
+        packageName: "com.hellobangladeshi.quizzerxpro",
+        name: "QuizzerX Pro",
+        category: "education",
+        iconUrl: null,
+        icon: "🧠",
+        gradient: "linear-gradient(135deg,#667eea,#764ba2)",
+        description: "বিজ্ঞানের বিভিন্ন বিষয়ে প্রিমিয়াম কুইজ — সম্পূর্ণ বিজ্ঞাপনমুক্ত। ডেইলি চ্যালেঞ্জ, স্ট্রিক বোনাস ও অফলাইন মোড।",
+        stats: { downloads: "নতুন", rating: "৫.০ ★" },
+        privacyLink: "quizzerx-pro-privacy.html",
+        isPublished: true
+    },
+    {
+        id: "learnsylhetiapp",
+        packageName: "com.hellobangladeshi.learnsylhetiapp",
+        name: "Learn Sylheti",
+        category: "education",
+        iconUrl: null,
+        icon: "🗣️",
+        gradient: "linear-gradient(135deg,#f6d365,#fda085)",
+        description: "সহজে সিলেটি ভাষা শিখুন — দৈনন্দিন শব্দভাণ্ডার, উচ্চারণ ও সংস্কৃতির পাঠ সহ সম্পূর্ণ ইন্টারঅ্যাক্টিভ শিক্ষা অ্যাপ।",
+        stats: { downloads: "নতুন", rating: "৫.০ ★" },
+        privacyLink: "learn-sylheti-privacy.html",
+        isPublished: true
+    },
+    {
+        id: "quizzerx",
+        packageName: "com.bhappsstore.quizzerx",
+        name: "QuizzerX",
+        category: "education",
+        iconUrl: null,
+        icon: "❓",
+        gradient: "linear-gradient(135deg,#30cfd0,#330867)",
+        description: "সাধারণ জ্ঞান, বিজ্ঞান, ইতিহাস, খেলাধুলা ও ভূগোল নিয়ে মজার কুইজ অ্যাপ। প্রতিদিন নতুন প্রশ্নে নিজেকে চ্যালেঞ্জ করুন।",
+        stats: { downloads: "নতুন", rating: "৫.০ ★" },
+        privacyLink: "quizzerx-privacy.html",
+        isPublished: true
+    },
     {
         id: "hellosylheti",
         packageName: "com.hellobangladeshi.hellosylhetiapp",
         name: "Hello Sylheti",
         category: "entertainment",
         iconUrl: null,
+        icon: "🗣️",
         gradient: "linear-gradient(135deg,#EE1D52,#C4123E)",
         description: "সিলেটি ভাষা ও সংস্কৃতির অনন্য প্ল্যাটফর্ম। স্থানীয় তথ্য, সংযোগ ও সেবা একসাথে।",
         stats: { downloads: "৫০০+", rating: "৪.৮ ★" },
-        privacyLink: "https://hellobangladeshi.github.io//hello-sylheti-privacy.html",
+        privacyLink: "hello-sylheti-privacy.html",
         isPublished: true
     },
     {
         id: "earthquakealertpro",
         packageName: "com.hellobangladeshi.earthquakealertpro",
-        name: "Earthquake Alert Pro",
+        name: "Earthquake Alerts & Safety",
         category: "utility",
         iconUrl: null,
+        icon: "🔴",
         gradient: "linear-gradient(135deg,#E53935,#C62828)",
-        description: "ভূমিকম্পের আগাম সতর্কতা, রিয়েল-টাইম আপডেট এবং নিরাপত্তা টিপস সহ একটি শক্তিশালী অ্যাপ।",
+        description: "রিয়েল-টাইম ভূমিকম্প সতর্কতা, ইন্টারঅ্যাক্টিভ ম্যাপ, পরিবার নিরাপত্তা ও সারভাইভাল গাইড — USGS ডেটা দ্বারা চালিত।",
         stats: { downloads: "৫০০+", rating: "৪.৯ ★" },
         privacyLink: "earthquake-alert-privacy.html",
         isPublished: true
@@ -1904,43 +2003,9 @@ const appsData = [
         category: "utility",
         iconUrl: "https://play-lh.googleusercontent.com/7gRctAbqtSbveRRfLUE64Djg84IChnj18RjTTJssRZEB7ufhIB4I_diNdplHupazzGpkedgUpbM2yk1fCQ2XFw=s64-rw",
         gradient: "linear-gradient(135deg,#30cfd0,#330867)",
-        description: "দ্রুত ও নিরাপদ QR ও Barcode স্ক্যানার। লাইটওয়েট এবং বিজ্ঞাপনমুক্ত অভিজ্ঞতা।",
+        description: "দ্রুত ও নিরাপদ QR ও Barcode স্ক্যানার। কাস্টম রঙে QR তৈরি করুন, ইতিহাস সংরক্ষণ করুন — লাইটওয়েট ও নিরাপদ।",
         stats: { downloads: "৮K+", rating: "৪.৭ ★" },
         privacyLink: "qr-scanner-generator-privacy-policy.html",
-        isPublished: true
-    },
-    {
-        id: "hellobangladeshi",
-        packageName: "com.hellobangladeshi.hellobangladeshi",
-        name: "Hello Bangladeshi",
-        category: "productivity",
-        iconUrl: null,
-        gradient: "linear-gradient(135deg,#EF0479,#FFD93D)",
-        description: "বাংলাদেশিদের জন্য একটি ইউনিক প্ল্যাটফর্ম – কানেক্ট, শেয়ার এবং সুযোগ খুঁজুন।",
-        stats: { downloads: "১০K+", rating: "৪.৮ ★" },
-        privacyLink: "privacy-policy.html",
-        isPublished: true
-    },
-    {
-        id: "colormatchpro",
-        packageName: "com.hellobangladeshi.colormatchpro",
-        name: "Color Match Pro",
-        category: "entertainment",
-        iconUrl: null,
-        gradient: "linear-gradient(135deg,#a8edea,#fed6e3)",
-        description: "রঙ চিনে ম্যাচ করুন! মজাদার গেম যা রিফ্লেক্স ও ফোকাস বাড়ায়।",
-        stats: { downloads: "২K+", rating: "৪.৬ ★" },
-        isPublished: true
-    },
-    {
-        id: "educalc",
-        packageName: "com.hellobangladeshi.educalc",
-        name: "EduCalc",
-        category: "productivity",
-        iconUrl: null,
-        gradient: "linear-gradient(135deg,#4facfe,#00f2fe)",
-        description: "শিক্ষার্থীদের জন্য স্মার্ট ক্যালকুলেটর – দ্রুত ও নির্ভুল হিসাব।",
-        stats: { downloads: "১K+", rating: "৪.৪ ★" },
         isPublished: true
     }
 ];
@@ -1949,7 +2014,9 @@ function getCategoryName(category) {
     const categories = {
         'productivity': 'প্রোডাক্টিভিটি',
         'utility': 'ইউটিলিটি',
-        'entertainment': 'বিনোদন'
+        'entertainment': 'বিনোদন',
+        'game': 'গেম',
+        'education': 'শিক্ষা'
     };
     return categories[category] || category;
 }
@@ -1957,16 +2024,9 @@ function getCategoryName(category) {
 function createAppCard(app) {
     let iconHtml = '';
     if (app.iconUrl && app.isPublished) {
-        iconHtml = `<img src="${app.iconUrl}" alt="${app.name}" class="app-icon-img">`;
+        iconHtml = `<img src="${app.iconUrl}" alt="${app.name}" class="app-icon-img" onerror="this.outerHTML='<div style=\\'font-size:3rem\\'>${app.icon || '📱'}</div>'">`;
     } else {
-        const iconMap = {
-            'Hello Bangladeshi': '🇧🇩',
-            'Hello Sylheti': '🗣️',
-            'Color Match Pro': '🎨',
-            'EduCalc': '📐',
-            'Earthquake Alert Pro': '🔴'
-        };
-        iconHtml = `<div style="font-size: 3rem;">${iconMap[app.name] || '📱'}</div>`;
+        iconHtml = `<div style="font-size: 3rem;">${app.icon || '📱'}</div>`;
     }
 
     let statsHtml = '';
@@ -1975,8 +2035,6 @@ function createAppCard(app) {
             <span><i class="fas fa-download"></i> ${app.stats.downloads}</span>
             <span><i class="fas fa-star"></i> ${app.stats.rating}</span>
         </div>`;
-    } else if (app.isPublished) {
-        statsHtml = `<div class="app-stats"><span><i class="fas fa-check-circle"></i> প্লে স্টোরে উপলব্ধ</span></div>`;
     }
 
     const privacyButton = app.privacyLink && app.isPublished ? `
