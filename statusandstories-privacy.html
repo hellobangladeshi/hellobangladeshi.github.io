@@ -1,193 +1,1604 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Status & Stories</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>Privacy Policy — Status & Stories</title>
+    <meta name="description" content="Privacy Policy for Status & Stories app by Hello Bangladeshi. Your privacy is our priority." />
+    <meta name="theme-color" content="#6366F1" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Privacy Policy — Status & Stories" />
+    <meta property="og:description" content="Learn how Status & Stories collects, uses, and protects your data." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hellobangladeshi.github.io/status-stories/privacy" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Privacy Policy — Status & Stories" />
+    <meta name="twitter:description" content="Your privacy is our priority." />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
     <style>
+        /* ============================================ */
+        /* DESIGN TOKENS — Status & Stories Palette     */
+        /* ============================================ */
         :root {
-            --primary: #4F46E5;
-            --primary-dark: #3730A3;
-            --text-main: #1F2937;
-            --text-muted: #4B5563;
-            --bg-body: #F3F4F6;
-            --card-bg: #FFFFFF;
-            --border: #E5E7EB;
+            /* Brand */
+            --primary: #6366F1;
+            --primary-dark: #4F46E5;
+            --primary-light: #818CF8;
+            --primary-pale: #E0E7FF;
+            --secondary: #2DD4BF;
+            --secondary-dark: #14B8A6;
+            --accent-coral: #F472B6;
+
+            /* Semantic */
+            --success: #22C55E;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            --info: #3B82F6;
+
+            /* Light theme surfaces */
+            --bg-body: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --bg-elevated: #F1F5F9;
+            --bg-subtle: #F9FAFB;
+
+            /* Light theme text */
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-tertiary: #94A3B8;
+
+            /* Borders & shadows */
+            --border: #E2E8F0;
+            --border-strong: #CBD5E1;
+            --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+            --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
+
+            /* Layout */
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --max-width: 1100px;
+        }
+
+        /* Dark theme */
+        [data-theme="dark"] {
+            --bg-body: #0B1020;
+            --bg-card: #151B2E;
+            --bg-elevated: #1E2538;
+            --bg-subtle: #1A2036;
+
+            --text-primary: #F8FAFC;
+            --text-secondary: #A0AEC0;
+            --text-tertiary: #6B7280;
+
+            --border: #2A3247;
+            --border-strong: #374151;
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        /* ============================================ */
+        /* BASE                                         */
+        /* ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
         }
 
         body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            font-family: 'Inter', 'Hind Siliguri', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
             line-height: 1.7;
-            color: var(--text-main);
-            background-color: var(--bg-body);
-            margin: 0;
-            padding: 20px 12px;
+            color: var(--text-primary);
+            background: var(--bg-body);
+            min-height: 100vh;
+            padding: 24px 16px 80px;
+            transition: background 0.4s ease, color 0.4s ease;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 850px;
-            margin: 30px auto;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        body.lang-bn {
+            font-family: 'Hind Siliguri', 'Inter', sans-serif;
+        }
+
+        /* ============================================ */
+        /* PROGRESS BAR                                 */
+        /* ============================================ */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent-coral));
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease;
+            box-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
+        }
+
+        /* ============================================ */
+        /* FLOATING CONTROLS                            */
+        /* ============================================ */
+        .floating-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 999;
+        }
+
+        .ctrl-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
             border: 1px solid var(--border);
-        }
-
-        .header {
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            color: var(--primary);
-            font-size: 2rem;
-            margin: 0 0 8px 0;
-        }
-
-        .effective-date {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        h2 {
-            color: var(--primary-dark);
-            font-size: 1.35rem;
-            margin-top: 32px;
-            margin-bottom: 12px;
-            border-left: 4px solid var(--primary);
-            padding-left: 12px;
-        }
-
-        p, li {
-            color: var(--text-muted);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow-md);
             font-size: 1rem;
         }
 
-        ul {
-            padding-left: 20px;
-            margin-bottom: 20px;
+        .ctrl-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: var(--shadow-lg);
         }
 
-        li {
+        .ctrl-btn:active {
+            transform: translateY(0);
+        }
+
+        /* ============================================ */
+        /* CONTAINER                                    */
+        /* ============================================ */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        /* ============================================ */
+        /* SIDEBAR TOC                                  */
+        /* ============================================ */
+        .toc {
+            position: sticky;
+            top: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 22px 18px;
+            box-shadow: var(--shadow-sm);
+            max-height: calc(100vh - 48px);
+            overflow-y: auto;
+        }
+
+        .toc-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            margin-bottom: 14px;
+            padding-left: 8px;
+        }
+
+        .toc a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 12px;
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin-bottom: 2px;
+        }
+
+        .toc a:hover {
+            background: var(--bg-elevated);
+            color: var(--primary);
+        }
+
+        .toc a.active {
+            background: var(--primary-pale);
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        [data-theme="dark"] .toc a.active {
+            background: rgba(99, 102, 241, 0.18);
+            color: var(--primary-light);
+        }
+
+        .toc a .num {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-tertiary);
+            min-width: 20px;
+        }
+
+        .toc a.active .num {
+            color: var(--primary);
+        }
+
+        /* ============================================ */
+        /* MAIN CARD                                    */
+        /* ============================================ */
+        .main-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .main-card::after {
+            content: '';
+            position: absolute;
+            top: -80px;
+            left: -80px;
+            width: 240px;
+            height: 240px;
+            background: radial-gradient(circle, rgba(45, 212, 191, 0.14) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ============================================ */
+        /* HERO HEADER                                  */
+        /* ============================================ */
+        .hero {
+            padding: 52px 44px 40px;
+            position: relative;
+            z-index: 1;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(45, 212, 191, 0.05) 100%);
+        }
+
+        .hero-icon {
+            width: 68px;
+            height: 68px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.35);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            line-height: 1.15;
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            max-width: 620px;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .badge.primary {
+            background: rgba(99, 102, 241, 0.12);
+            border-color: rgba(99, 102, 241, 0.3);
+            color: var(--primary-dark);
+        }
+
+        .badge.success {
+            background: rgba(34, 197, 94, 0.12);
+            border-color: rgba(34, 197, 94, 0.3);
+            color: var(--success);
+        }
+
+        [data-theme="dark"] .badge.primary {
+            color: var(--primary-light);
+        }
+
+        /* ============================================ */
+        /* LANGUAGE TABS                                */
+        /* ============================================ */
+        .lang-tabs {
+            display: flex;
+            gap: 8px;
+            padding: 20px 44px 0;
+            position: relative;
+            z-index: 1;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .lang-tab {
+            padding: 10px 22px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: var(--text-tertiary);
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: -1px;
+        }
+
+        .lang-tab:hover {
+            color: var(--text-primary);
+        }
+
+        .lang-tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        /* ============================================ */
+        /* CONTENT BODY                                 */
+        /* ============================================ */
+        .content {
+            padding: 40px 44px 44px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lang-content {
+            display: none;
+            animation: fadeIn 0.35s ease;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================ */
+        /* SECTIONS                                     */
+        /* ============================================ */
+        .section {
+            margin-bottom: 44px;
+            scroll-margin-top: 100px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             margin-bottom: 8px;
         }
 
-        a {
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(99, 102, 241, 0.12);
+            color: var(--primary);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: var(--text-primary);
+        }
+
+        .section-summary {
+            font-size: 0.9rem;
+            color: var(--text-tertiary);
+            margin-bottom: 18px;
+            padding-left: 52px;
+            font-style: italic;
+        }
+
+        .section h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 24px 0 10px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section p {
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+            font-size: 0.98rem;
+        }
+
+        .section ul, .section ol {
+            margin: 8px 0 18px 22px;
+            color: var(--text-secondary);
+        }
+
+        .section li {
+            margin-bottom: 10px;
+            font-size: 0.96rem;
+            line-height: 1.65;
+        }
+
+        .section li strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .section a {
             color: var(--primary);
             text-decoration: none;
             font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border 0.2s ease;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .section a:hover {
+            border-bottom-color: var(--primary);
+        }
+
+        /* ============================================ */
+        /* CALLOUT BOXES                                */
+        /* ============================================ */
+        .callout {
+            display: flex;
+            gap: 14px;
+            padding: 18px 20px;
+            border-radius: var(--radius-md);
+            margin: 20px 0;
+            border: 1px solid var(--border);
+            background: var(--bg-subtle);
+        }
+
+        .callout i {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .callout-info {
+            background: rgba(59, 130, 246, 0.08);
+            border-color: rgba(59, 130, 246, 0.25);
+        }
+        .callout-info i { color: var(--info); }
+
+        .callout-success {
+            background: rgba(34, 197, 94, 0.08);
+            border-color: rgba(34, 197, 94, 0.25);
+        }
+        .callout-success i { color: var(--success); }
+
+        .callout-warning {
+            background: rgba(245, 158, 11, 0.08);
+            border-color: rgba(245, 158, 11, 0.28);
+        }
+        .callout-warning i { color: var(--warning); }
+
+        .callout p {
+            margin: 0;
+            font-size: 0.94rem;
+        }
+
+        /* ============================================ */
+        /* DATA TABLE                                   */
+        /* ============================================ */
+        .data-table-wrap {
+            overflow-x: auto;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            margin: 18px 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .data-table thead {
+            background: var(--bg-elevated);
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 16px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 13px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table td strong {
+            color: var(--text-primary);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .tag-local {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--success);
+        }
+
+        .tag-anon {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--info);
+        }
+
+        /* ============================================ */
+        /* CONTACT CARDS                                */
+        /* ============================================ */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            margin: 22px 0;
         }
 
         .contact-card {
-            background-color: #F9FAFB;
+            background: var(--bg-subtle);
             border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-card .cc-icon {
+            width: 42px;
+            height: 42px;
             border-radius: 12px;
-            padding: 20px;
-            margin-top: 25px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1rem;
+            flex-shrink: 0;
         }
 
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            color: var(--text-muted);
+        .contact-card .cc-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-tertiary);
+            margin-bottom: 3px;
+        }
+
+        .contact-card .cc-value {
             font-size: 0.9rem;
-            border-top: 1px solid var(--border);
-            padding-top: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            word-break: break-word;
         }
 
-        @media (max-width: 600px) {
+        /* ============================================ */
+        /* FAQ ACCORDION                                */
+        /* ============================================ */
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            margin-bottom: 10px;
+            overflow: hidden;
+            background: var(--bg-subtle);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 16px 20px;
+            background: transparent;
+            border: none;
+            text-align: left;
+            font-family: inherit;
+            font-size: 0.96rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-elevated);
+        }
+
+        .faq-question i {
+            color: var(--primary);
+            transition: transform 0.25s ease;
+            font-size: 0.85rem;
+        }
+
+        .faq-item.open .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding: 0 20px 18px;
+            margin: 0;
+            font-size: 0.92rem;
+        }
+
+        /* ============================================ */
+        /* ACCEPT BUTTON                                */
+        /* ============================================ */
+        .accept-box {
+            margin-top: 36px;
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(45, 212, 191, 0.06));
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            text-align: center;
+        }
+
+        .accept-box p {
+            margin-bottom: 16px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .accept-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary-dark));
+            color: #fff;
+            border: none;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+        }
+
+        .accept-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.5);
+        }
+
+        .accept-btn:active {
+            transform: translateY(0);
+        }
+
+        .accept-btn.accepted {
+            background: var(--success);
+            pointer-events: none;
+        }
+
+        /* ============================================ */
+        /* FOOTER                                       */
+        /* ============================================ */
+        .footer {
+            margin-top: 40px;
+            padding: 28px 44px;
+            border-top: 1px solid var(--border);
+            background: var(--bg-subtle);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer p {
+            margin-bottom: 6px;
+        }
+
+        /* ============================================ */
+        /* SCROLL PROGRESS RING (FAB)                   */
+        /* ============================================ */
+        .scroll-fab {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+            z-index: 998;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .scroll-fab.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .scroll-fab:hover {
+            transform: translateY(-3px) scale(1.05);
+            border-color: var(--primary);
+        }
+
+        /* ============================================ */
+        /* RESPONSIVE                                   */
+        /* ============================================ */
+        @media (max-width: 960px) {
             .container {
-                padding: 20px;
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
-            h1 {
-                font-size: 1.6rem;
+            .toc {
+                position: relative;
+                top: 0;
+                max-height: none;
+                padding: 16px;
+            }
+            .toc-list {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 12px 10px 100px;
+            }
+            .hero {
+                padding: 36px 24px 28px;
+            }
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            .hero-icon {
+                width: 54px;
+                height: 54px;
+                font-size: 1.4rem;
+            }
+            .lang-tabs {
+                padding: 16px 24px 0;
+            }
+            .content {
+                padding: 28px 24px 32px;
+            }
+            .section h2 {
+                font-size: 1.2rem;
+            }
+            .section-summary {
+                padding-left: 0;
+                margin-bottom: 14px;
+            }
+            .footer {
+                padding: 24px 20px;
+            }
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+            .floating-controls {
+                top: 12px;
+                right: 12px;
+                gap: 6px;
+            }
+            .ctrl-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+            .scroll-fab {
+                bottom: 16px;
+                right: 16px;
+                width: 48px;
+                height: 48px;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================ */
+        /* ACCESSIBILITY                                */
+        /* ============================================ */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* ============================================ */
+        /* PRINT                                        */
+        /* ============================================ */
+        @media print {
+            .floating-controls, .scroll-fab, .progress-bar,
+            .toc, .lang-tabs, .accept-box, .footer a {
+                display: none !important;
+            }
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .main-card {
+                box-shadow: none;
+                border: none;
+            }
+            body {
+                background: #fff;
+                color: #000;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h1>Privacy Policy for Status & Stories</h1>
-        <div class="effective-date">Last Updated: March 2025</div>
+    <!-- Reading Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Floating Controls -->
+    <div class="floating-controls">
+        <button class="ctrl-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="ctrl-btn" onclick="window.print()" title="Print / Save PDF" aria-label="Print">
+            <i class="fas fa-print"></i>
+        </button>
     </div>
 
-    <p>Welcome to <strong>Status & Stories</strong> ("the App"), developed and operated by <strong>Hello Bangladeshi</strong> (Muhammad Walid Ahmed). We are committed to protecting your privacy and ensuring a safe, transparent mobile experience.</p>
+    <div class="container">
 
-    <p>This Privacy Policy explains how our application collects, uses, and safeguards information when you use our mobile application on Android devices.</p>
+        <!-- ============================================ -->
+        <!-- SIDEBAR TOC                                  -->
+        <!-- ============================================ -->
+        <aside class="toc" aria-label="Table of contents">
+            <div class="toc-title">Contents</div>
+            <nav class="toc-list">
+                <a href="#intro" class="toc-link"><span class="num">01</span> Introduction</a>
+                <a href="#collect" class="toc-link"><span class="num">02</span> Information We Collect</a>
+                <a href="#third-party" class="toc-link"><span class="num">03</span> Third-Party Services</a>
+                <a href="#ads" class="toc-link"><span class="num">04</span> Ads & Consent</a>
+                <a href="#children" class="toc-link"><span class="num">05</span> Children's Privacy</a>
+                <a href="#retention" class="toc-link"><span class="num">06</span> Data Retention</a>
+                <a href="#security" class="toc-link"><span class="num">07</span> Data Security</a>
+                <a href="#changes" class="toc-link"><span class="num">08</span> Policy Changes</a>
+                <a href="#faq" class="toc-link"><span class="num">09</span> FAQ</a>
+                <a href="#contact" class="toc-link"><span class="num">10</span> Contact Us</a>
+            </nav>
+        </aside>
 
-    <h2>1. Information We Collect and Use</h2>
+        <!-- ============================================ -->
+        <!-- MAIN CARD                                    -->
+        <!-- ============================================ -->
+        <main class="main-card">
 
-    <h3>A. Local App Data (On-Device Storage)</h3>
-    <p>The App operates primarily offline and stores content locally on your device using Room Database and internal storage:</p>
-    <ul>
-        <li><strong>Favorites & Saved Items:</strong> Statuses, quotes, and short stories you mark as favorite are saved locally on your phone.</li>
-        <li><strong>Quote Maker Studio Creations:</strong> Images generated using our Quote Maker Studio are saved directly to your device's storage. We do not upload or store your personal images on external servers.</li>
-    </ul>
+            <!-- HERO -->
+            <header class="hero">
+                <div class="hero-icon">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <h1>Privacy Policy</h1>
+                <p class="hero-subtitle">
+                    Status & Stories — Your privacy is our highest priority. Learn how we handle your data with transparency and care.
+                </p>
+                <div class="badges">
+                    <span class="badge primary"><i class="fas fa-tag"></i> Version 1.0</span>
+                    <span class="badge"><i class="far fa-calendar-alt"></i> Last Updated: March 2025</span>
+                    <span class="badge success"><i class="fas fa-lock"></i> No Personal Data Sold</span>
+                </div>
+            </header>
 
-    <h3>B. Automatically Collected Data</h3>
-    <p>While using our App, certain non-personal technical information may be collected automatically by third-party SDKs integrated into the App to provide advertising, analytics, and app functionality:</p>
-    <ul>
-        <li>Device information (Device Model, OS Version, Language Settings)</li>
-        <li>Advertising ID (Google Advertising ID for personalized or non-personalized ads)</li>
-        <li>App performance data (Crash logs, performance metrics, and usage statistics)</li>
-    </ul>
+            <!-- LANGUAGE TABS -->
+            <div class="lang-tabs" role="tablist">
+                <button class="lang-tab active" data-lang="en" role="tab" aria-selected="true">English</button>
+                <button class="lang-tab" data-lang="bn" role="tab" aria-selected="false">বাংলা</button>
+            </div>
 
-    <h2>2. Third-Party Services & SDKs</h2>
-    <p>The App utilizes trusted third-party services that may collect information used to identify you in accordance with their respective privacy policies. Direct links to third-party privacy policies:</p>
-    <ul>
-        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a></li>
-        <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob & UMP (Consent SDK)</a></li>
-        <li><a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener">Google Analytics for Firebase</a></li>
-        <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Crashlytics & Remote Config</a></li>
-        <li><a href="https://play.google.com/billing" target="_blank" rel="noopener">Google Play In-App Billing</a></li>
-    </ul>
+            <!-- ============================================ -->
+            <!-- ENGLISH CONTENT                              -->
+            <!-- ============================================ -->
+            <div class="content lang-content active" data-lang="en">
 
-    <h2>3. Advertising & User Consent (AdMob & GDPR)</h2>
-    <p>Our App serves advertisements provided by Google AdMob. To comply with privacy laws worldwide (including GDPR and Google's EU User Consent Policy):</p>
-    <ul>
-        <li>We integrate Google's <strong>User Messaging Platform (UMP)</strong> SDK to ask for your explicit consent regarding personalized ads where legally required.</li>
-        <li>You can manage or reset your advertising preferences at any time from your device's system settings under <em>Settings > Google > Ads</em>.</li>
-    </ul>
+                <!-- 1. Introduction -->
+                <section class="section" id="intro">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-info-circle"></i></div>
+                        <h2>1. Introduction</h2>
+                    </div>
+                    <p class="section-summary">Who we are and what this policy covers.</p>
+                    <p>Welcome to <strong>Status &amp; Stories</strong> ("the App"), developed and operated by <strong>Hello Bangladeshi</strong> (Muhammad Walid Ahmed). We are committed to protecting your privacy and ensuring a safe, transparent mobile experience.</p>
+                    <p>This Privacy Policy explains how our application collects, uses, and safeguards information when you use our mobile application on Android devices.</p>
+                </section>
 
-    <h2>4. Children’s Privacy</h2>
-    <p>Our App is intended for a general audience and does not knowingly collect personal identifiable information from children under the age of 13 (or under 16 in the EEA). If you are a parent or guardian and believe that your child has provided us with personal information, please contact us immediately, and we will take appropriate steps to remove such information.</p>
+                <!-- 2. What we collect -->
+                <section class="section" id="collect">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-database"></i></div>
+                        <h2>2. Information We Collect and Use</h2>
+                    </div>
+                    <p class="section-summary">Most data stays on your device. We only collect what's needed.</p>
 
-    <h2>5. Data Retention and Deletion</h2>
-    <p>Because your user data (like favorite statuses, downloads, and custom images) is stored locally on your device, you have complete control over it:</p>
-    <ul>
-        <li>You can clear your favorites or download history at any time from the <strong>App Settings</strong> screen.</li>
-        <li>Uninstalling the App will automatically erase all local data saved by the App.</li>
-    </ul>
+                    <h3><i class="fas fa-mobile-screen"></i> A. Local App Data (On-Device Storage)</h3>
+                    <p>The App operates primarily offline and stores content locally on your device using Room Database and internal storage:</p>
+                    <ul>
+                        <li><strong>Favorites &amp; Saved Items:</strong> Statuses, quotes, and short stories you mark as favorite are saved locally on your phone.</li>
+                        <li><strong>Quote Maker Studio Creations:</strong> Images generated using our Quote Maker Studio are saved directly to your device's storage. We do not upload or store your personal images on external servers.</li>
+                    </ul>
 
-    <h2>6. Data Security</h2>
-    <p>We value your trust in using our application. We implement industry-standard security measures provided by the Android OS framework and official Google Jetpack libraries to protect your local data.</p>
+                    <h3><i class="fas fa-robot"></i> B. Automatically Collected Data</h3>
+                    <p>While using our App, certain non-personal technical information may be collected automatically by third-party SDKs integrated into the App to provide advertising, analytics, and app functionality:</p>
 
-    <h2>7. Changes to This Privacy Policy</h2>
-    <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted.</p>
+                    <div class="data-table-wrap">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Data Type</th>
+                                    <th>Purpose</th>
+                                    <th>Storage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Device info</strong><br><small>Model, OS version, language</small></td>
+                                    <td>App compatibility &amp; optimization</td>
+                                    <td><span class="tag tag-anon">Anonymous</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Advertising ID</strong><br><small>Google AAID</small></td>
+                                    <td>Personalized / non-personalized ads</td>
+                                    <td><span class="tag tag-anon">Anonymous</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Performance data</strong><br><small>Crash logs, usage stats</small></td>
+                                    <td>Stability &amp; improvement</td>
+                                    <td><span class="tag tag-anon">Anonymous</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Favorites &amp; created quotes</strong></td>
+                                    <td>Personal app experience</td>
+                                    <td><span class="tag tag-local">Local only</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-    <h2>8. Contact Us</h2>
-    <p>If you have any questions, feedback, or suggestions about our Privacy Policy or the App, feel free to contact us:</p>
-    
-    <div class="contact-card">
-        <strong>Developer:</strong> Muhammad Walid Ahmed<br>
-        <strong>Studio:</strong> Hello Bangladeshi<br>
-        <strong>Email:</strong> <a href="mailto:support.hellobangladeshi@gmail.com">support.hellobangladeshi@gmail.com</a><br>
-        <strong>Website:</strong> <a href="https://hellobangladeshi.github.io/" target="_blank" rel="noopener">https://hellobangladeshi.github.io/</a>
+                    <div class="callout callout-success">
+                        <i class="fas fa-shield-halved"></i>
+                        <p><strong>Your content stays with you.</strong> We never upload your personal quotes, images, or favorites to external servers.</p>
+                    </div>
+                </section>
+
+                <!-- 3. Third-party -->
+                <section class="section" id="third-party">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-plug"></i></div>
+                        <h2>3. Third-Party Services &amp; SDKs</h2>
+                    </div>
+                    <p class="section-summary">Trusted partners that help the app run smoothly.</p>
+                    <p>The App utilizes trusted third-party services that may collect information used to identify you in accordance with their respective privacy policies. Direct links to third-party privacy policies:</p>
+                    <ul>
+                        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a></li>
+                        <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob &amp; UMP (Consent SDK)</a></li>
+                        <li><a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener">Google Analytics for Firebase</a></li>
+                        <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Crashlytics &amp; Remote Config</a></li>
+                        <li><a href="https://play.google.com/billing" target="_blank" rel="noopener">Google Play In-App Billing</a></li>
+                    </ul>
+                </section>
+
+                <!-- 4. Ads -->
+                <section class="section" id="ads">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-rectangle-ad"></i></div>
+                        <h2>4. Advertising &amp; User Consent (AdMob &amp; GDPR)</h2>
+                    </div>
+                    <p class="section-summary">You control how ads are personalized.</p>
+                    <p>Our App serves advertisements provided by Google AdMob. To comply with privacy laws worldwide (including GDPR and Google's EU User Consent Policy):</p>
+                    <ul>
+                        <li>We integrate Google's <strong>User Messaging Platform (UMP)</strong> SDK to ask for your explicit consent regarding personalized ads where legally required.</li>
+                        <li>You can manage or reset your advertising preferences at any time from your device's system settings under <em>Settings → Google → Ads</em>.</li>
+                    </ul>
+                    <div class="callout callout-info">
+                        <i class="fas fa-circle-info"></i>
+                        <p>EU/UK users will see a consent dialog on first launch, as required by GDPR.</p>
+                    </div>
+                </section>
+
+                <!-- 5. Children -->
+                <section class="section" id="children">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-child"></i></div>
+                        <h2>5. Children's Privacy</h2>
+                    </div>
+                    <p class="section-summary">Safe for a general audience — no data from children under 13.</p>
+                    <p>Our App is intended for a general audience and does not knowingly collect personal identifiable information from children under the age of 13 (or under 16 in the EEA). If you are a parent or guardian and believe that your child has provided us with personal information, please contact us immediately, and we will take appropriate steps to remove such information.</p>
+                </section>
+
+                <!-- 6. Retention -->
+                <section class="section" id="retention">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-clock-rotate-left"></i></div>
+                        <h2>6. Data Retention and Deletion</h2>
+                    </div>
+                    <p class="section-summary">You have full control over your data.</p>
+                    <p>Because your user data (like favorite statuses, downloads, and custom images) is stored locally on your device, you have complete control over it:</p>
+                    <ul>
+                        <li>You can clear your favorites or download history at any time from the <strong>App Settings</strong> screen.</li>
+                        <li>Uninstalling the App will automatically erase all local data saved by the App.</li>
+                    </ul>
+                </section>
+
+                <!-- 7. Security -->
+                <section class="section" id="security">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-lock"></i></div>
+                        <h2>7. Data Security</h2>
+                    </div>
+                    <p class="section-summary">Industry-standard protection for your data.</p>
+                    <p>We value your trust in using our application. We implement industry-standard security measures provided by the Android OS framework and official Google Jetpack libraries to protect your local data.</p>
+                </section>
+
+                <!-- 8. Changes -->
+                <section class="section" id="changes">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-arrows-rotate"></i></div>
+                        <h2>8. Changes to This Privacy Policy</h2>
+                    </div>
+                    <p class="section-summary">We'll always keep you informed.</p>
+                    <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted.</p>
+                </section>
+
+                <!-- 9. FAQ -->
+                <section class="section" id="faq">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-circle-question"></i></div>
+                        <h2>9. Frequently Asked Questions</h2>
+                    </div>
+                    <p class="section-summary">Quick answers to common questions.</p>
+
+                    <div class="faq-item">
+                        <button class="faq-question">Do you collect my personal data? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>No. We don't collect names, emails, or phone numbers. Only anonymous technical data (device info, AAID) is collected by third-party SDKs like AdMob and Firebase.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Where are my quotes and images saved? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>All your favorites, quotes, and Quote Maker images are saved <strong>locally on your device</strong>. We never upload them to our servers.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do I delete my data? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Clear data from App Settings or simply uninstall the app. All local data will be permanently deleted.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Can I opt out of personalized ads? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Yes. Go to your device settings → Google → Ads, and turn off "Personalized ads" or reset your advertising ID.</p></div>
+                    </div>
+                </section>
+
+                <!-- 10. Contact -->
+                <section class="section" id="contact">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-envelope"></i></div>
+                        <h2>10. Contact Us</h2>
+                    </div>
+                    <p class="section-summary">Reach out anytime — we're here to help.</p>
+                    <p>If you have any questions, feedback, or suggestions about our Privacy Policy or the App, feel free to contact us:</p>
+
+                    <div class="contact-grid">
+                        <a href="mailto:support.hellobangladeshi@gmail.com" class="contact-card">
+                            <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <div class="cc-label">Email</div>
+                                <div class="cc-value">support.hellobangladeshi@gmail.com</div>
+                            </div>
+                        </a>
+                        <a href="https://hellobangladeshi.github.io/" target="_blank" rel="noopener" class="contact-card">
+                            <div class="cc-icon"><i class="fas fa-globe"></i></div>
+                            <div>
+                                <div class="cc-label">Website</div>
+                                <div class="cc-value">hellobangladeshi.github.io</div>
+                            </div>
+                        </a>
+                        <div class="contact-card">
+                            <div class="cc-icon"><i class="fas fa-user"></i></div>
+                            <div>
+                                <div class="cc-label">Developer</div>
+                                <div class="cc-value">Muhammad Walid Ahmed</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accept Box -->
+                    <div class="accept-box">
+                        <p><i class="fas fa-handshake-angle"></i> By continuing to use Status &amp; Stories, you acknowledge this Privacy Policy.</p>
+                        <button class="accept-btn" id="acceptBtn">
+                            <i class="fas fa-check"></i> I Understand &amp; Agree
+                        </button>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- ============================================ -->
+            <!-- BANGLA CONTENT                               -->
+            <!-- ============================================ -->
+            <div class="content lang-content" data-lang="bn">
+
+                <section class="section" id="bn-intro">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-info-circle"></i></div>
+                        <h2>১. ভূমিকা</h2>
+                    </div>
+                    <p class="section-summary">আমরা কারা এবং এই নীতিতে কী কী আছে।</p>
+                    <p><strong>Status &amp; Stories</strong> ("অ্যাপ")-এ স্বাগতম, যা <strong>Hello Bangladeshi</strong> (Muhammad Walid Ahmed) দ্বারা বিকাশিত ও পরিচালিত। আমরা আপনার গোপনীয়তা রক্ষা এবং একটি নিরাপদ, স্বচ্ছ মোবাইল অভিজ্ঞতা নিশ্চিত করতে প্রতিশ্রুতিবদ্ধ।</p>
+                    <p>এই গোপনীয়তা নীতিতে ব্যাখ্যা করা হয়েছে যে আমরা কীভাবে আপনার তথ্য সংগ্রহ, ব্যবহার এবং সুরক্ষিত রাখি যখন আপনি অ্যান্ড্রয়েড ডিভাইসে আমাদের অ্যাপ ব্যবহার করেন।</p>
+                </section>
+
+                <section class="section" id="bn-collect">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-database"></i></div>
+                        <h2>২. আমরা কী কী তথ্য সংগ্রহ করি</h2>
+                    </div>
+                    <p class="section-summary">বেশিরভাগ তথ্য আপনার ডিভাইসেই থাকে। শুধু প্রয়োজনীয়টুকুই সংগ্রহ করা হয়।</p>
+
+                    <h3><i class="fas fa-mobile-screen"></i> ক. লোকাল অ্যাপ ডেটা (ডিভাইসে সংরক্ষিত)</h3>
+                    <p>অ্যাপটি মূলত অফলাইনে কাজ করে এবং Room Database ও ইন্টারনাল স্টোরেজ ব্যবহার করে আপনার ডিভাইসেই কন্টেন্ট সংরক্ষণ করে:</p>
+                    <ul>
+                        <li><strong>ফেভারিট ও সংরক্ষিত আইটেম:</strong> আপনি যে স্ট্যাটাস, কোটস বা ছোট গল্প ফেভারিট করেন তা আপনার ফোনে লোকালি সংরক্ষিত থাকে।</li>
+                        <li><strong>Quote Maker Studio-তে তৈরি কন্টেন্ট:</strong> আমাদের Quote Maker Studio দিয়ে তৈরি ছবি সরাসরি আপনার ডিভাইসের স্টোরেজে সংরক্ষিত হয়। আমরা আপনার ব্যক্তিগত ছবি বাহ্যিক সার্ভারে আপলোড বা সংরক্ষণ করি না।</li>
+                    </ul>
+
+                    <h3><i class="fas fa-robot"></i> খ. স্বয়ংক্রিয়ভাবে সংগৃহীত তথ্য</h3>
+                    <p>অ্যাপ ব্যবহারের সময়, বিজ্ঞাপন, অ্যানালিটিক্স এবং অ্যাপ কার্যকারিতা প্রদানের জন্য অ্যাপে সংযুক্ত থার্ড-পার্টি SDK-এর মাধ্যমে কিছু অ-ব্যক্তিগত প্রযুক্তিগত তথ্য স্বয়ংক্রিয়ভাবে সংগ্রহ করা হতে পারে:</p>
+
+                    <div class="data-table-wrap">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ডেটার ধরন</th>
+                                    <th>উদ্দেশ্য</th>
+                                    <th>সংরক্ষণ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>ডিভাইস তথ্য</strong><br><small>মডেল, OS ভার্সন, ভাষা</small></td>
+                                    <td>অ্যাপ সামঞ্জস্য ও অপ্টিমাইজেশন</td>
+                                    <td><span class="tag tag-anon">বেনামী</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>বিজ্ঞাপন আইডি</strong><br><small>Google AAID</small></td>
+                                    <td>ব্যক্তিগতকৃত / অ-ব্যক্তিগতকৃত বিজ্ঞাপন</td>
+                                    <td><span class="tag tag-anon">বেনামী</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>পারফরম্যান্স ডেটা</strong><br><small>ক্র্যাশ লগ, ব্যবহারের পরিসংখ্যান</small></td>
+                                    <td>স্থিতিশীলতা ও উন্নয়ন</td>
+                                    <td><span class="tag tag-anon">বেনামী</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ফেভারিট ও তৈরি কোটস</strong></td>
+                                    <td>ব্যক্তিগত অ্যাপ অভিজ্ঞতা</td>
+                                    <td><span class="tag tag-local">শুধু লোকাল</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="callout callout-success">
+                        <i class="fas fa-shield-halved"></i>
+                        <p><strong>আপনার কন্টেন্ট আপনার কাছেই থাকে।</strong> আমরা কখনোই আপনার ব্যক্তিগত কোটস, ছবি বা ফেভারিট বাহ্যিক সার্ভারে আপলোড করি না।</p>
+                    </div>
+                </section>
+
+                <section class="section" id="bn-third-party">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-plug"></i></div>
+                        <h2>৩. থার্ড-পার্টি সার্ভিস ও SDK</h2>
+                    </div>
+                    <p class="section-summary">বিশ্বস্ত পার্টনার যারা অ্যাপ সচল রাখতে সাহায্য করে।</p>
+                    <p>অ্যাপটি বিশ্বস্ত থার্ড-পার্টি সার্ভিস ব্যবহার করে যারা তাদের নিজস্ব গোপনীয়তা নীতি অনুযায়ী তথ্য সংগ্রহ করতে পারে। সরাসরি লিংক:</p>
+                    <ul>
+                        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a></li>
+                        <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob ও UMP (Consent SDK)</a></li>
+                        <li><a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener">Google Analytics for Firebase</a></li>
+                        <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Crashlytics ও Remote Config</a></li>
+                        <li><a href="https://play.google.com/billing" target="_blank" rel="noopener">Google Play In-App Billing</a></li>
+                    </ul>
+                </section>
+
+                <section class="section" id="bn-ads">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-rectangle-ad"></i></div>
+                        <h2>৪. বিজ্ঞাপন ও ইউজার সম্মতি (AdMob ও GDPR)</h2>
+                    </div>
+                    <p class="section-summary">বিজ্ঞাপন কীভাবে ব্যক্তিগতকৃত হবে তা আপনার নিয়ন্ত্রণে।</p>
+                    <p>আমাদের অ্যাপ Google AdMob-এর মাধ্যমে বিজ্ঞাপন প্রদর্শন করে। বিশ্বব্যাপী গোপনীয়তা আইন (GDPR এবং Google-এর EU ইউজার সম্মতি নীতি সহ) মেনে চলার জন্য:</p>
+                    <ul>
+                        <li>আমরা Google-এর <strong>User Messaging Platform (UMP)</strong> SDK সংযুক্ত করেছি যাতে আইনগতভাবে প্রয়োজন হলে ব্যক্তিগতকৃত বিজ্ঞাপনের জন্য আপনার স্পষ্ট সম্মতি চাওয়া যায়।</li>
+                        <li>আপনি যেকোনো সময় আপনার ডিভাইসের সিস্টেম সেটিংস <em>Settings → Google → Ads</em>-এর মাধ্যমে বিজ্ঞাপন পছন্দ পরিচালনা বা রিসেট করতে পারেন।</li>
+                    </ul>
+                    <div class="callout callout-info">
+                        <i class="fas fa-circle-info"></i>
+                        <p>EU/UK ব্যবহারকারীরা প্রথমবার অ্যাপ খোলার সময় একটি সম্মতি ডায়ালগ দেখবেন, যা GDPR অনুযায়ী বাধ্যতামূলক।</p>
+                    </div>
+                </section>
+
+                <section class="section" id="bn-children">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-child"></i></div>
+                        <h2>৫. শিশুদের গোপনীয়তা</h2>
+                    </div>
+                    <p class="section-summary">সাধারণ দর্শকের জন্য নিরাপদ — ১৩ বছরের কম বয়সীদের কাছ থেকে কোনো ডেটা নয়।</p>
+                    <p>আমাদের অ্যাপ সাধারণ দর্শকদের জন্য এবং জেনেশুনে ১৩ বছরের কম বয়সী শিশুদের (EEA-তে ১৬ বছরের কম) কাছ থেকে ব্যক্তিগত তথ্য সংগ্রহ করে না। আপনি যদি অভিভাবক হন এবং বিশ্বাস করেন যে আপনার সন্তান আমাদের ব্যক্তিগত তথ্য দিয়েছে, তাহলে অনুগ্রহ করে অবিলম্বে আমাদের সাথে যোগাযোগ করুন, আমরা সেই তথ্য সরানোর জন্য উপযুক্ত পদক্ষেপ নেব।</p>
+                </section>
+
+                <section class="section" id="bn-retention">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-clock-rotate-left"></i></div>
+                        <h2>৬. ডেটা সংরক্ষণ ও ডিলিট</h2>
+                    </div>
+                    <p class="section-summary">আপনার ডেটার উপর সম্পূর্ণ নিয়ন্ত্রণ আপনার।</p>
+                    <p>যেহেতু আপনার ইউজার ডেটা (ফেভারিট স্ট্যাটাস, ডাউনলোড এবং কাস্টম ইমেজ) আপনার ডিভাইসে লোকালি সংরক্ষিত থাকে, তাই এর উপর আপনার সম্পূর্ণ নিয়ন্ত্রণ রয়েছে:</p>
+                    <ul>
+                        <li>আপনি <strong>App Settings</strong> স্ক্রিন থেকে যেকোনো সময় আপনার ফেভারিট বা ডাউনলোড হিস্ট্রি ক্লিয়ার করতে পারেন।</li>
+                        <li>অ্যাপ আনইন্সটল করলে অ্যাপ দ্বারা সংরক্ষিত সমস্ত লোকাল ডেটা স্বয়ংক্রিয়ভাবে মুছে যাবে।</li>
+                    </ul>
+                </section>
+
+                <section class="section" id="bn-security">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-lock"></i></div>
+                        <h2>৭. ডেটা নিরাপত্তা</h2>
+                    </div>
+                    <p class="section-summary">আপনার ডেটার জন্য ইন্ডাস্ট্রি-স্ট্যান্ডার্ড সুরক্ষা।</p>
+                    <p>আমরা আমাদের অ্যাপ ব্যবহারে আপনার বিশ্বাসকে মূল্য দিই। আমরা আপনার লোকাল ডেটা সুরক্ষিত রাখতে Android OS ফ্রেমওয়ার্ক এবং অফিসিয়াল Google Jetpack লাইব্রেরি দ্বারা প্রদত্ত ইন্ডাস্ট্রি-স্ট্যান্ডার্ড নিরাপত্তা ব্যবস্থা প্রয়োগ করি।</p>
+                </section>
+
+                <section class="section" id="bn-changes">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-arrows-rotate"></i></div>
+                        <h2>৮. এই নীতির পরিবর্তন</h2>
+                    </div>
+                    <p class="section-summary">আমরা সবসময় আপনাকে জানাব।</p>
+                    <p>আমরা সময়ে সময়ে আমাদের গোপনীয়তা নীতি আপডেট করতে পারি। তাই, যেকোনো পরিবর্তনের জন্য আপনি পর্যায়ক্রমে এই পৃষ্ঠাটি পর্যালোচনা করুন। এই পৃষ্ঠায় নতুন গোপনীয়তা নীতি পোস্ট করে আমরা পরিবর্তন সম্পর্কে অবহিত করব। এই পরিবর্তনগুলো পোস্ট করার পরপরই কার্যকর হয়।</p>
+                </section>
+
+                <section class="section" id="bn-faq">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-circle-question"></i></div>
+                        <h2>৯. প্রায়শই জিজ্ঞাসিত প্রশ্ন</h2>
+                    </div>
+                    <p class="section-summary">সাধারণ প্রশ্নের দ্রুত উত্তর।</p>
+
+                    <div class="faq-item">
+                        <button class="faq-question">আপনারা কি আমার ব্যক্তিগত ডেটা সংগ্রহ করেন? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>না। আমরা নাম, ইমেইল বা ফোন নম্বর সংগ্রহ করি না। শুধুমাত্র AdMob ও Firebase-এর মতো থার্ড-পার্টি SDK বেনামী প্রযুক্তিগত ডেটা (ডিভাইস তথ্য, AAID) সংগ্রহ করে।</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">আমার কোটস ও ছবি কোথায় সংরক্ষিত হয়? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>আপনার সমস্ত ফেভারিট, কোটস এবং Quote Maker ছবি <strong>আপনার ডিভাইসে লোকালি</strong> সংরক্ষিত হয়। আমরা সেগুলো কখনো আমাদের সার্ভারে আপলোড করি না।</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">কীভাবে আমার ডেটা ডিলিট করব? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>App Settings থেকে ডেটা ক্লিয়ার করুন বা শুধু অ্যাপ আনইন্সটল করুন। সমস্ত লোকাল ডেটা স্থায়ীভাবে মুছে যাবে।</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">আমি কি ব্যক্তিগতকৃত বিজ্ঞাপন থেকে অপ্ট-আউট করতে পারি? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>হ্যাঁ। আপনার ডিভাইস সেটিংস → Google → Ads-এ যান এবং "Personalized ads" বন্ধ করুন বা আপনার বিজ্ঞাপন আইডি রিসেট করুন।</p></div>
+                    </div>
+                </section>
+
+                <section class="section" id="bn-contact">
+                    <div class="section-head">
+                        <div class="section-icon"><i class="fas fa-envelope"></i></div>
+                        <h2>১০. যোগাযোগ</h2>
+                    </div>
+                    <p class="section-summary">যেকোনো সময় যোগাযোগ করুন — আমরা সাহায্য করতে প্রস্তুত।</p>
+                    <p>আমাদের গোপনীয়তা নীতি বা অ্যাপ সম্পর্কে আপনার কোনো প্রশ্ন, মতামত বা পরামর্শ থাকলে নির্দ্বিধায় আমাদের সাথে যোগাযোগ করুন:</p>
+
+                    <div class="contact-grid">
+                        <a href="mailto:support.hellobangladeshi@gmail.com" class="contact-card">
+                            <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <div class="cc-label">ইমেইল</div>
+                                <div class="cc-value">support.hellobangladeshi@gmail.com</div>
+                            </div>
+                        </a>
+                        <a href="https://hellobangladeshi.github.io/" target="_blank" rel="noopener" class="contact-card">
+                            <div class="cc-icon"><i class="fas fa-globe"></i></div>
+                            <div>
+                                <div class="cc-label">ওয়েবসাইট</div>
+                                <div class="cc-value">hellobangladeshi.github.io</div>
+                            </div>
+                        </a>
+                        <div class="contact-card">
+                            <div class="cc-icon"><i class="fas fa-user"></i></div>
+                            <div>
+                                <div class="cc-label">ডেভেলপার</div>
+                                <div class="cc-value">Muhammad Walid Ahmed</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accept-box">
+                        <p><i class="fas fa-handshake-angle"></i> Status &amp; Stories ব্যবহার চালিয়ে যাওয়ার মাধ্যমে, আপনি এই গোপনীয়তা নীতি স্বীকার করছেন।</p>
+                        <button class="accept-btn" id="acceptBtnBn">
+                            <i class="fas fa-check"></i> আমি বুঝেছি এবং সম্মত
+                        </button>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                <p>&copy; 2025 Hello Bangladeshi. All rights reserved.</p>
+                <p>Status &amp; Stories — <a href="https://hellobangladeshi.github.io/" target="_blank" rel="noopener">Back to main site</a></p>
+            </footer>
+
+        </main>
     </div>
 
-    <div class="footer">
-        &copy; 2025 Hello Bangladeshi. All rights reserved.
-    </div>
-</div>
+    <!-- Scroll to Top FAB -->
+    <button class="scroll-fab" id="scrollFab" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        /* ============================================ */
+        /* THEME TOGGLE                                 */
+        /* ============================================ */
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            localStorage.setItem('policy_theme', theme);
+        }
+
+        (function initTheme() {
+            const saved = localStorage.getItem('policy_theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+        })();
+
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        /* ============================================ */
+        /* LANGUAGE TABS                                */
+        /* ============================================ */
+        const langTabs = document.querySelectorAll('.lang-tab');
+        const langContents = document.querySelectorAll('.lang-content');
+
+        function switchLang(lang) {
+            langTabs.forEach(t => {
+                t.classList.toggle('active', t.dataset.lang === lang);
+                t.setAttribute('aria-selected', t.dataset.lang === lang);
+            });
+            langContents.forEach(c => c.classList.toggle('active', c.dataset.lang === lang));
+            document.body.classList.toggle('lang-bn', lang === 'bn');
+            localStorage.setItem('policy_lang', lang);
+        }
+
+        langTabs.forEach(tab => {
+            tab.addEventListener('click', () => switchLang(tab.dataset.lang));
+        });
+
+        (function initLang() {
+            const saved = localStorage.getItem('policy_lang');
+            if (saved) switchLang(saved);
+        })();
+
+        /* ============================================ */
+        /* READING PROGRESS                             */
+        /* ============================================ */
+        const progressBar = document.getElementById('progressBar');
+        const scrollFab = document.getElementById('scrollFab');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = percent + '%';
+
+            scrollFab.classList.toggle('visible', scrollTop > 400);
+        });
+
+        scrollFab.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        /* ============================================ */
+        /* ACTIVE TOC LINK                              */
+        /* ============================================ */
+        const sections = document.querySelectorAll('.section');
+        const tocLinks = document.querySelectorAll('.toc-link');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id.replace('bn-', '');
+                    tocLinks.forEach(link => {
+                        const href = link.getAttribute('href');
+                        link.classList.toggle('active', href === '#' + id);
+                    });
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+
+        sections.forEach(s => observer.observe(s));
+
+        /* ============================================ */
+        /* FAQ ACCORDION                                */
+        /* ============================================ */
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                // Close all in the same content block
+                item.closest('.lang-content').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        /* ============================================ */
+        /* ACCEPT BUTTON                                */
+        /* ============================================ */
+        function setupAccept(btnId) {
+            const btn = document.getElementById(btnId);
+            if (!btn) return;
+            if (localStorage.getItem('policy_accepted') === 'true') {
+                btn.classList.add('accepted');
+                btn.innerHTML = '<i class="fas fa-circle-check"></i> Accepted';
+            }
+            btn.addEventListener('click', () => {
+                localStorage.setItem('policy_accepted', 'true');
+                btn.classList.add('accepted');
+                btn.innerHTML = '<i class="fas fa-circle-check"></i> Accepted';
+            });
+        }
+
+        setupAccept('acceptBtn');
+        setupAccept('acceptBtnBn');
+    </script>
 
 </body>
 </html>
